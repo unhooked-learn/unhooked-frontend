@@ -1,11 +1,25 @@
 /*
-** TailwindCSS Configuration File
-**
-** Docs: https://tailwindcss.com/docs/configuration
-** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
-*/
+ ** TailwindCSS Configuration File
+ **
+ ** Docs: https://tailwindcss.com/docs/configuration
+ ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
+ */
+
+const defaultTheme = require('tailwindcss/defaultTheme')
+const aspectRatioPlugin = require('tailwindcss-plugin-aspect-ratio')
+
 module.exports = {
-  theme: {},
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter var', ...defaultTheme.fontFamily.sans]
+      }
+    }
+  },
   variants: {},
-  plugins: []
+  plugins: [
+    require('@tailwindcss/custom-forms'),
+    require('@tailwindcss/ui'),
+    aspectRatioPlugin({ full: true })
+  ]
 }
