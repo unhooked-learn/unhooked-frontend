@@ -1,14 +1,13 @@
 export const state = () => ({
-  user: 
+  user: {
+    name: 'John Doe',
+    score: 250000
+  },
+  achievements: [
     {
-      name: 'John Doe',
-      score: 250000
-    },
-  achivements:
-    [{
       name: 'First Unit',
       icon: 'dice-one',
-      description: 'You have completed the first unit. Gratulations!',
+      description: 'You have completed the first unit. Gratulation!',
       active: true
     },
     {
@@ -53,14 +52,14 @@ export const state = () => ({
       description: '',
       active: false
     }
-    ]  
+  ]
 })
 
 export const getters = {
   user(state) {
     return state.user
   },
-  achivements(state) {
-    return state.achivements
+  achievements(state) {
+    return state.achievements
   }
 }

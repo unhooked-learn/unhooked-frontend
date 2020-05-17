@@ -1,10 +1,12 @@
 <template>
   <div class="h-screen font-sans antialiased bg-gray-50">
-    <div class="max-w-md mx-auto relative">
+    <div class="relative max-w-md mx-auto">
       <nuxt />
       <UHNavigation />
-      <UHModal />
-    </div>  
+      <client-only>
+        <UHModal />
+      </client-only>
+    </div>
   </div>
 </template>
 

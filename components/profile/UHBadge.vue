@@ -1,24 +1,31 @@
 <template>
-    <div>
-        <div class="w-16 h-16 rounded-full bg-gray-800 text-center flex m-auto mb-6" :class= "{'shadow-md':active,'opacity-25':!active}">
-          <font-awesome-icon :icon="icon" class="fa-2x text-gray-100 m-auto"/>
-        </div>
+  <div @click="selectBadge(badge)">
+    <div
+      class="flex w-16 h-16 m-auto mb-6 text-center bg-gray-800 rounded-full"
+      :class="{ 'shadow-md': badge.active, 'opacity-25': !badge.active }"
+    >
+      <font-awesome-icon
+        :icon="badge.icon"
+        class="m-auto text-gray-100 fa-2x"
+      />
     </div>
-
+  </div>
 </template>
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   name: 'UHBadge',
   props: {
-    icon: {
-      type: String,
+    badge: {
+      type: Object,
       required: true
-    },
-    active: {
-      type: Boolean,
-      default: false
     }
   },
-  computed: {}
+  methods: {
+    ...mapActions({
+      selectBadge: 'selectBadge'
+    })
+  }
 }
 </script>
