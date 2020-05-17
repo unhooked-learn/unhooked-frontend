@@ -3,7 +3,7 @@
     <a
       :href="href"
       @click="navigate"
-      class="flex items-center px-4 py-2 rounded-full"
+      class="flex items-center px-4 py-2 rounded-full outline-none focus:shadow-outline focus:bg-blue-100"
       :class="{
         'bg-blue-100 text-blue-600': isActive,
         'text-gray-400 hover:text-gray-600': !isActive
