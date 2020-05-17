@@ -3,7 +3,7 @@
     <header class="text-gray-100">
       <div class="py-4 text-center bg-gray-800">    
         <div class="absolute top-5 right-5 ">
-          <font-awesome-icon icon="pen"/>
+          <font-awesome-icon icon="pen" @click="showModal"/>
         </div>
 
         <font-awesome-icon icon="user-circle" class="fa-7x" />
@@ -52,6 +52,14 @@ export default {
       user: 'profile/user',
       achivements: 'profile/achivements'
     })
+  },
+  methods: {
+  showModal () {
+    this.$modal.show('modal');
+  },
+  hideModal () {
+    this.$modal.hide('modal');
   }
+}
 }
 </script>
