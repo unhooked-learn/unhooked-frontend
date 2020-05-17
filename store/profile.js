@@ -2,20 +2,20 @@ export const state = () => ({
   user: 
     {
       name: 'John Doe',
-      score: 0
+      score: 250000
     },
   achivements:
     [{
       name: 'First Unit',
       icon: 'dice-one',
       description: 'You have completed the first unit. Gratulations!',
-      active: false
+      active: true
     },
     {
       name: 'Second Unit',
       icon: 'dice-two',
       description: 'You have completed the second unit.',
-      active: false
+      active: true
     },
     {
       name: 'Third Unit',
@@ -45,7 +45,7 @@ export const state = () => ({
       name: 'Like a Ghost',
       icon: 'ghost',
       description: 'Buhuhuhu!',
-      active: false
+      active: true
     },
     {
       name: 'Gamer',

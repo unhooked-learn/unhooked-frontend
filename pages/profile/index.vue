@@ -29,7 +29,6 @@
         Badges
       </h3>
     </div>
-
     <div class="px-2 mt-6 flex flex-wrap" >   
       <UHBadge class="w-1/3" :key="idx" v-for="(achivement, idx) in achivements" :icon="achivement.icon" :active="achivement.active"/>
     </div>
