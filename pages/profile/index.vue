@@ -10,6 +10,7 @@
         <h2 class="py-3 font-semibold uppercase">{{ user.name }}</h2>
       </div>
     </header>
+    <main class="mb-16">
     <div class="relative z-0">
       <div class="absolute inset-0 bg-gray-800 h-1/2 -z-10"></div>
 
@@ -32,7 +33,7 @@
     <div class="px-2 mt-6 flex flex-wrap" >   
       <UHBadge class="w-1/3" :key="idx" v-for="(achivement, idx) in achivements" :icon="achivement.icon" :active="achivement.active"/>
     </div>
-
+    </main>
   </div>
 </template>
 

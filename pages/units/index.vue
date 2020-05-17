@@ -1,8 +1,8 @@
 <template>
-  <div class="">
-    <header class="text-white bg-gray-800">
+  <div class="flex flex-col justify-between h-screen">
+    <header class="text-white bg-gray-800 h-full flex flex-col justify-between">
       <div class="px-4 py-12">
-        <h2>Hi Jon Doe!</h2>
+        <h2>Hi {{user.name}}!</h2>
         <p>Let's learn something new</p>
       </div>
 
@@ -14,7 +14,7 @@
         </h3>
       </div>
     </header>
-
+    <main class="mb-16">
     <div class="relative pt-2 mb-10">
       <div class="absolute inset-0 bg-gray-800 h-2/3"></div>
       <client-only>
@@ -30,6 +30,7 @@
         </flickity>
       </client-only>
     </div>
+    </main>
   </div>
 </template>
 
@@ -55,7 +56,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      units: 'units/units'
+      units: 'units/units',
+      user: 'profile/user'
     })
   }
 }
