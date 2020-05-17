@@ -1,5 +1,24 @@
 <template>
-  <div>KnowledgeBase</div>
+  <div>
+    <header class="px-4 pt-12 text-white bg-gray-800">
+      <h3 class="font-semibold tracking-wider text-gray-400 uppercase text-md">
+        Knowledge Base
+      </h3>
+    </header>
+    <main class="mb-16">
+      <div class="relative z-0 h-full pt-8 mb-10">
+        <div class="absolute inset-0 bg-gray-800 h-1/6 -z-10"></div>
+
+        <div class="mx-2">
+          <div class="flex flex-wrap -mx-2">
+            <div class="w-1/2 p-2" :key="n" v-for="n in 10">
+              <div class="w-full h-32 bg-gray-300 rounded shadow-lg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
 </template>
 
 <script>
