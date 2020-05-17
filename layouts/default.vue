@@ -1,9 +1,7 @@
 <template>
-  <div class="h-screen pt-16 font-sans antialiased bg-gray-50">
-    <div class="max-w-sm mx-auto overflow-hidden bg-white rounded-md shadow-md">
-      <nuxt />
-      <UHNavigation />
-    </div>
+  <div class="h-screen font-sans antialiased bg-gray-50">
+    <nuxt />
+    <UHNavigation />
   </div>
 </template>
 

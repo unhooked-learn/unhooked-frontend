@@ -17,16 +17,18 @@
 
     <div class="relative pt-2 mb-10">
       <div class="absolute inset-0 bg-gray-800 h-2/3"></div>
-      <flickity ref="flickity" :options="flickityOptions">
-        <UHUnitCard
-          class="mx-2"
-          :unit="unit"
-          :active="unit.active"
-          :complete="unit.complete"
-          :key="idx"
-          v-for="(unit, idx) in units"
-        />
-      </flickity>
+      <client-only>
+        <flickity ref="flickity" :options="flickityOptions">
+          <UHUnitCard
+            class="mx-2"
+            :unit="unit"
+            :active="unit.active"
+            :complete="unit.complete"
+            :key="idx"
+            v-for="(unit, idx) in units"
+          />
+        </flickity>
+      </client-only>
     </div>
   </div>
 </template>
