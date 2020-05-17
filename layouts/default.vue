@@ -1,7 +1,9 @@
 <template>
   <div class="h-screen font-sans antialiased bg-gray-50">
-    <nuxt />
-    <UHNavigation />
+    <div class="max-w-md mx-auto relative">
+      <nuxt />
+      <UHNavigation />
+    </div>  
   </div>
 </template>
 
