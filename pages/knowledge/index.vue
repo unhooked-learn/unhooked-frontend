@@ -12,7 +12,18 @@
         <div class="mx-2">
           <div class="flex flex-wrap -mx-2">
             <div class="w-1/2 p-2" :key="n" v-for="n in 10">
-              <div class="w-full h-32 bg-gray-300 rounded shadow-lg"></div>
+              <div class="w-full h-32 rounded shadow-lg">
+              <div class="min-w-full my-2 overflow-hidden text-white rounded-md shadow-md bg-gray-600 text-white">
+                <div class="object-cover aspect aspect-1/2">
+                  <img class="object-cover" src="" />
+                </div>
+                <div class="p-4 leading-none">
+                  <h4 class="text-lg text-gray-100">
+                    Title
+                  </h4>
+                </div>
+              </div>
+              </div>
             </div>
           </div>
         </div>

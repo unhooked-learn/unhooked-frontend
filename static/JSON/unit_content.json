@@ -1,0 +1,26 @@
+[
+    {
+      "id":1,
+      "headline":"Fear of missing out",
+      "text" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia suscipit, exercitationem consequuntur dicta odio illum cupiditate nobis dolores pariatur ipsum totam tenetur laudantium quisquam eaque vel hic voluptatibus saepe. Dolore.",
+      "order_id": 1,
+      "media_name" : "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=250&q=80",
+      "type" : "Content_Type_1"
+    },
+    {
+      "id":2,
+      "headline":"Infinite scolling",
+      "text" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia suscipit, exercitationem consequuntur dicta odio illum cupiditate nobis dolores pariatur ipsum totam tenetur laudantium quisquam eaque vel hic voluptatibus saepe. Dolore.",
+      "order_id": 1,
+        "media_name" : "https://images.unsplash.com/photo-1588058365548-9efe5acb8077?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=250&q=80",
+      "type" : "Content_Type_2"
+    },
+    {
+      "id":2,
+      "headline":"Pull to refresh",
+      "text" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia suscipit, exercitationem consequuntur dicta odio illum cupiditate nobis dolores pariatur ipsum totam tenetur laudantium quisquam eaque vel hic voluptatibus saepe. Dolore.",
+      "order_id": 1,
+      "media_name" : "https://images.unsplash.com/photo-1530467212787-ae644315e6bb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=250&q=60",
+      "type" : "Content_Type_3"
+    }
+]
