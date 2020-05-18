@@ -18,16 +18,20 @@
           <div
             class="px-4 py-1 text-lg font-semibold text-center text-gray-700 bg-gray-200 rounded-md"
           >
-            XP {{ user.score }}
+            {{ $t('pages.profile.xp') }} {{ user.score }}
           </div>
         </div>
       </div>
 
+      <div>
+        <nuxt-link :to="switchLocalePath('en')">EN</nuxt-link> /
+        <nuxt-link :to="switchLocalePath('de')">DE</nuxt-link>
+      </div>
       <div class="px-4 mt-6">
         <h3
           class="font-semibold tracking-wider text-gray-600 uppercase text-md "
         >
-          Badges
+          {{ $t('pages.profile.badges') }}
         </h3>
       </div>
       <div class="flex flex-wrap px-2 mt-6">
