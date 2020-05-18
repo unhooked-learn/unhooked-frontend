@@ -3,7 +3,6 @@
     <div class="relative max-w-md mx-auto">
       <nuxt />
       <UHNavigation />
-      {{ localePath('/') }}
       <client-only>
         <UHModal />
       </client-only>
