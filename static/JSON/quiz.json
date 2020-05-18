@@ -1,0 +1,118 @@
+
+{
+    "quiz": [
+      {
+        "id": 1,
+        "headline": "The FOMO Quiz",
+        "questions": [
+          {
+            "id": 1,
+            "type": "MultipleChoice",
+            "order": 1,
+            "title": "Was ist Obst?",
+            "text": "Wähle die richtige Antwort!",
+            "question-answer": [
+              {
+                "id": 1,
+                "answer_text": "Banane",
+                "validation_text": "Bananen gehören zu den Obstsorten",
+                "is_correct": true,
+                "match_text": null,
+                "position": null
+              },
+              {
+                "id": 2,
+                "answer_text": "Apfel",
+                "validation_text": "Äpfel gehören zu den Obstsorten",
+                "is_correct": true,
+                "match_text": null,
+                "position": null
+              },
+              {
+                "id": 3,
+                "answer_text": "Kohlrabi",
+                "validation_text": "Kohlrabi gehört zu den Gemüsesorten",
+                "is_correct": false,
+                "match_text": null,
+                "position": null
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "type": "Matching",
+            "order": 3,
+            "title": "Welche Farbe hat welches Obst?",
+            "text": "Matche das Obst mit seinen Farben",
+            "question-answer": [
+              {
+                "id": 1,
+                "answer_text": "Erdbeeren",
+                "validation_text": "Erbeeren sind rot",
+                "is_correct": true,
+                "match_text": "rot",
+                "position": null
+              },
+              {
+                "id": 2,
+                "answer_text": "Heidelbeeren",
+                "validation_text": "Heidelbeeren sind blau",
+                "is_correct": true,
+                "match_text": "blau",
+                "position": null
+              },
+              {
+                "id": 3,
+                "answer_text": "Orange",
+                "validation_text": "Orangen sind orange",
+                "is_correct": true,
+                "match_text": "orange",
+                "position": null
+              },
+              {
+                "id": 4,
+                "answer_text": "",
+                "validation_text": "",
+                "is_correct": false,
+                "match_text": "grün",
+                "position": null
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "type": "FillTheBlank",
+            "order": 4,
+            "title": "“Fülle den Text aus”",
+            "text": "Rosen sind {{answer_1}} und Veilchen sind {{answer_2}}. ",
+            "question-answer": [
+              {
+                "id": 1,
+                "answer_text": "rot",
+                "validation_text": "Rosen sind rot",
+                "is_correct": true,
+                "match_text": null,
+                "position": 0
+              },
+              {
+                "id": 2,
+                "answer_text": "blau",
+                "validation_text": "Veilchen sind blau",
+                "is_correct": true,
+                "match_text": null,
+                "position": 1
+              },
+              {
+                "id": 3,
+                "answer_text": "rosa",
+                "validation_text": "",
+                "is_correct": false,
+                "match_text": null,
+                "position": null
+              }
+            ]
+          }
+        ]
+      }
+    ]
+   }   

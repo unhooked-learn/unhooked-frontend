@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "orderId": 1,
+      "name": "Fear Of Missing Out",
+      "maxScore": 100
+    },
+    {
+      "id": 2,
+      "orderId": 2,
+      "name": "Infinite Scrolling",
+      "maxScore": 200
+    },
+    {
+      "id": 3,
+      "orderId": 3,
+      "name": "Infinite Scrolling",
+      "maxScore": 500
+    }
+]
