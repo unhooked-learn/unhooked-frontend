@@ -1,16 +1,16 @@
 <template>
   <div class="flex flex-col justify-between h-screen">
     <header class="text-white bg-gray-800 h-full flex flex-col justify-between">
-      <div class="px-4 py-12">
-        <h2>Hi {{user.name}}!</h2>
-        <p>Let's learn something new</p>
+      <div class="px-4 py-8">
+        <h2 class="font-semibold"> {{ $t('pages.course.welcome') }} {{user.name}}!</h2>
+        <p class="px-1 py-2"> {{ $t('pages.course.intro') }}</p>
       </div>
 
       <div class="px-4">
         <h3
           class="font-semibold tracking-wider text-gray-400 uppercase text-md "
         >
-          Units
+           {{ $t('pages.course.label') }}
         </h3>
       </div>
     </header>

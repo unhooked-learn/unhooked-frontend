@@ -1,5 +1,5 @@
 <template>
-  <div>onboarding..</div>
+  <div> {{ $t('pages.onboarding.label') }}</div>
 </template>
 
 <script>

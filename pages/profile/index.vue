@@ -5,6 +5,10 @@
         <div class="absolute top-5 right-5 ">
           <font-awesome-icon icon="pen" @click="showModal" />
         </div>
+        <div class="absolute top-5 left-5 ">
+          <nuxt-link :to="switchLocalePath('en')">EN</nuxt-link> /
+          <nuxt-link :to="switchLocalePath('de')">DE</nuxt-link>
+        </div>
 
         <font-awesome-icon icon="user-circle" class="fa-7x" />
         <h2 class="py-3 font-semibold uppercase">{{ user.name }}</h2>
@@ -21,11 +25,6 @@
             {{ $t('pages.profile.xp') }} {{ user.score }}
           </div>
         </div>
-      </div>
-
-      <div>
-        <nuxt-link :to="switchLocalePath('en')">EN</nuxt-link> /
-        <nuxt-link :to="switchLocalePath('de')">DE</nuxt-link>
       </div>
       <div class="px-4 mt-6">
         <h3

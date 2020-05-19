@@ -2,7 +2,7 @@
   <div>
     <header class="px-4 pt-12 text-white bg-gray-800">
       <h3 class="font-semibold tracking-wider text-gray-400 uppercase text-md">
-        Knowledge Base
+        {{ $t('pages.knowledgebase.label') }}
       </h3>
     </header>
     <main class="mb-16">
@@ -15,7 +15,7 @@
               <div class="w-full h-32 rounded shadow-lg">
               <div class="min-w-full my-2 overflow-hidden text-white rounded-md shadow-md bg-gray-600 text-white">
                 <div class="object-cover aspect aspect-1/2">
-                  <img class="object-cover" src="" />
+                  <img class="object-cover" src="https://dummyimage.com/164x82/c7c7c7/242424.png&text=Picture" />
                 </div>
                 <div class="p-4 leading-none">
                   <h4 class="text-lg text-gray-100">
