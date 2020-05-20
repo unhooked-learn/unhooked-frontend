@@ -27,6 +27,33 @@ const keys = {
     onboarding: {
       skip: 'Skip Onboarding',
       label: 'Onboarding'
+    },
+    login: {
+      text: 'Sign in to your account',
+      remember: 'Remember me',
+      register: 'Register',
+      login: 'Login'
+    },
+    register: {
+      label: 'Registration',
+      text: 'Fill in to your register your account',
+      email: 'Email address',
+      name: 'Name',
+      password: 'Password',
+      password2: 'reenter Password',
+      register: 'Sign Up'
+    },
+    settings: {
+      label: 'Settings',
+      text: 'Here you can change your account data',
+      email: 'Email address',
+      name: 'Name',
+      password: 'Password',
+      password2: 'reenter Password',
+      language: 'Language',
+      english: 'English',
+      german: 'German',
+      save: 'Save'
     }
   }
 }

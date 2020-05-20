@@ -30,6 +30,33 @@ export default context => {
         onboarding: {
           skip: 'Skip Onboarding',
           label: 'Einführung'
+        },
+        login: {
+          text: 'Logge dich in deinen Account ein',
+          remember: 'Login speichern',
+          register: 'Registrieren',
+          login: 'Einloggen'
+        },
+        register: {
+          label: 'Registrierung',
+          text: 'Fülle die Felder aus um dich zu registrieren',
+          email: 'Email Adresse',
+          name: 'Name',
+          password: 'Passwort',
+          password2: 'Password wiederholen',
+          register: 'Registrieren'
+        },
+        settings: {
+          label: 'Einstellungen',
+          text: 'Hier kannst du deine Nutzerdaten und weitere Einstellungen ändern.',
+          email: 'Email Adresse',
+          name: 'Name',
+          password: 'Passwort',
+          password2: 'Passwort wiederholen',
+          language: 'Sprache',
+          english: 'Englisch',
+          german: 'Deutsch',
+          save: 'Speichern'
         }
       }
     })

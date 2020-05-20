@@ -3,15 +3,11 @@
     <header class="text-gray-100">
       <div class="py-4 text-center bg-gray-800">
         <div class="absolute top-5 right-5 ">
-          <font-awesome-icon icon="pen" @click="showModal" />
-        </div>
-        <div class="absolute top-5 left-5 ">
-          <nuxt-link :to="switchLocalePath('en')">EN</nuxt-link> /
-          <nuxt-link :to="switchLocalePath('de')">DE</nuxt-link>
+          <nuxt-link :to="localePath('/profile/settings')"><font-awesome-icon icon="pen" /></nuxt-link> 
         </div>
 
         <font-awesome-icon icon="user-circle" class="fa-7x" />
-        <h2 class="py-3 font-semibold uppercase">{{ user.name }}</h2>
+        <nuxt-link :to="localePath('/auth/login')"><h2 class="py-3 font-semibold uppercase">{{ user.name }}</h2></nuxt-link>
       </div>
     </header>
     <main class="mb-16">
