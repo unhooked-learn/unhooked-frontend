@@ -9,6 +9,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const aspectRatioPlugin = require('tailwindcss-plugin-aspect-ratio')
 
 module.exports = {
+  purge: ['./**/*.html', './**/*.vue'],
   theme: {
     extend: {
       fontFamily: {
