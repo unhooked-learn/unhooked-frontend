@@ -1,10 +1,10 @@
 [
-    {
-      "unit_id": 1,
-      "value" : 4
-    },
-    {
-      "unit_id": 2,
-      "value" : 3
-    }
- ]
+  {
+    "unitId": 1,
+    "value": 4
+  },
+  {
+    "unitId": 2,
+    "value": 3
+  }
+]
