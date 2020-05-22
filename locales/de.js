@@ -10,6 +10,12 @@ export default context => {
         },
         modal: {
           close: 'Schließen'
+        },
+        input: {
+          email: 'Email Adresse',
+          name: 'Name',
+          password: 'Passwort',
+          repeatPassword: 'Password wiederholen'
         }
       },
       pages: {
@@ -40,19 +46,11 @@ export default context => {
         register: {
           label: 'Registrierung',
           text: 'Fülle die Felder aus um dich zu registrieren',
-          email: 'Email Adresse',
-          name: 'Name',
-          password: 'Passwort',
-          repeatPassword: 'Password wiederholen',
           register: 'Registrieren'
         },
         settings: {
           label: 'Einstellungen',
           text: 'Hier kannst du deine Nutzerdaten und weitere Einstellungen ändern.',
-          email: 'Email Adresse',
-          name: 'Name',
-          password: 'Passwort',
-          repeatPassword: 'Passwort wiederholen',
           language: 'Sprache',
           english: 'Englisch',
           german: 'Deutsch',

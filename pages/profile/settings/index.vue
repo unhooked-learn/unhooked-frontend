@@ -2,7 +2,7 @@
 <div class="flex items-center justify-center min-h-screen px-4 py-12 bg-gray-50 sm:px-6 lg:px-8">
   <div class="w-full max-w-md">
     <div class="absolute top-5 left-5 ">
-        <nuxt-link :to="localePath('/auth/login')"><font-awesome-icon icon="chevron-left"/></nuxt-link>
+        <nuxt-link :to="localePath('profile')"><font-awesome-icon icon="chevron-left"/></nuxt-link>
     </div>  
     <div>
       <div class="text-center">
@@ -25,7 +25,7 @@
         </div>
         <UHInput
             label="email"
-            :placeholder="$t('pages.settings.email')"
+            :placeholder="$t('general.input.email')"
             type="email"
             class="rounded-t-md"
             v-model='form.email'
@@ -36,7 +36,7 @@
         </UHInput>
         <UHInput
             label="name"
-            :placeholder="$t('pages.settings.name')"
+            :placeholder="$t('general.input.name')"
             v-model='form.name'
         >
           <template #prepent>
@@ -45,7 +45,7 @@
         </UHInput>
         <UHInput
             label="password"
-            :placeholder="$t('pages.settings.password')"
+            :placeholder="$t('general.input.password')"
             type="password"
             v-model='form.password'
         >
@@ -55,8 +55,9 @@
         </UHInput>
         <UHInput
             label="repeatPassword"
-            :placeholder="$t('pages.settings.repeatPassword')"
+            :placeholder="$t('general.input.repeatPassword')"
             type="password"
+            class="rounded-b-md"
             v-model='form.repeatPassword'
         >
           <template #prepent>

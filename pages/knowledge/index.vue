@@ -9,22 +9,31 @@
       <div class="relative z-0 h-full pt-8 mb-10">
         <div class="absolute inset-0 bg-gray-800 h-1/6 -z-10"></div>
 
+             <!-- {{movies}} -->
+
         <div class="mx-2">
           <div class="flex flex-wrap -mx-2">
-            <div class="w-1/2 p-2" :key="n" v-for="n in 10">
-              <div class="w-full h-32 rounded shadow-lg">
-              <div class="min-w-full my-2 overflow-hidden text-white rounded-md shadow-md bg-gray-600 text-white">
+
+            <div class="w-1/2 p-2" :key="movie" v-for="movie in movies">
+
+              <nuxt-link :to="localePath(`/knowledge/${movie.imdbID}`)">
+              <div class="w-full h-48 rounded shadow-lg">
+              <div class="min-w-full min-h-full my-2 overflow-hidden text-white bg-gray-600 rounded-md shadow-md">
                 <div class="object-cover aspect aspect-1/2">
-                  <img class="object-cover" src="https://dummyimage.com/164x82/c7c7c7/242424.png&text=Picture" />
+                  <img class="object-cover" :src="movie.Poster" />
                 </div>
                 <div class="p-4 leading-none">
-                  <h4 class="text-lg text-gray-100">
-                    Title
+                  <h4 class="text-gray-100 text-md">
+                    {{movie.Title}}
                   </h4>
                 </div>
               </div>
               </div>
+              </nuxt-link>
+
             </div>
+
+
           </div>
         </div>
       </div>
@@ -34,6 +43,11 @@
 
 <script>
 export default {
+  
+  async asyncData ({ params, $axios }) {
+    const data = await $axios.$get(`http://www.omdbapi.com/?s=Star%20Wars&page=1&apikey=466f9280`)
+    return { movies: data.Search }
+  },
   transition: {
     name: 'page',
     enterClass: 'opacity-0 scale-70',
@@ -42,6 +56,6 @@ export default {
     leaveClass: 'opacity-100 scale-100',
     leaveToClass: 'opacity-0 scale-70',
     leaveActiveClass: 'transition-all transtion-1000 ease-out'
-  }
+  },
 }
 </script>

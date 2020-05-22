@@ -1,43 +1,59 @@
 <template>
-<div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-md w-full">
+<div class="flex items-center justify-center min-h-screen px-4 py-12 bg-gray-50 sm:px-6 lg:px-8">
+  <div class="w-full max-w-md">
     <div class="absolute top-5 left-5 ">
         <nuxt-link :to="localePath('profile')"><font-awesome-icon icon="chevron-left"/></nuxt-link>
     </div>  
     <div>
       <Logo />
-      <h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
+      <h2 class="mt-6 text-3xl font-extrabold leading-9 text-center text-gray-900">
         {{ $t('pages.login.text') }}
       </h2>
     </div>
     <form class="mt-8" action="#" method="POST">
       <input type="hidden" name="remember" value="true" />
       <div class="rounded-md shadow-sm">
-        <div>
-          <input aria-label="Email address" name="email" type="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Email address" />
-        </div>
-        <div class="-mt-px">
-          <input aria-label="Password" name="password" type="password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Password" />
-        </div>
+        <UHInput
+            label="email"
+            :placeholder="$t('general.input.email')"
+            type="email"
+            class="rounded-t-md"
+            v-model='form.email'
+        >
+          <template #prepent>
+            <font-awesome-icon icon="envelope" class="opacity-50 fa-1x"/>
+          </template>
+        </UHInput>
+        <UHInput
+            label="password"
+            :placeholder="$t('general.input.password')"
+            type="password"
+            class="rounded-b-md"
+            v-model='form.password'
+        >
+          <template #prepent>
+            <font-awesome-icon icon="key" class="opacity-50 fa-1x"/>
+          </template>
+        </UHInput>
       </div>
 
-      <div class="mt-6 flex items-center justify-between">
+      <div class="flex items-center justify-between mt-6">
         <div class="flex items-center">
-          <input id="remember_me" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out" />
-          <label for="remember_me" class="ml-2 block text-sm leading-5 text-gray-900">
+          <input id="remember_me" type="checkbox" class="w-4 h-4 text-indigo-600 transition duration-150 ease-in-out form-checkbox" />
+          <label for="remember_me" class="block ml-2 text-sm leading-5 text-gray-900">
              {{ $t('pages.login.remember') }}
           </label>
         </div>
 
         <div class="text-sm leading-5">
-          <nuxt-link class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150" :to="localePath('/auth/register')">{{ $t('pages.login.register') }}</nuxt-link>
+          <nuxt-link class="font-medium text-indigo-600 transition duration-150 ease-in-out hover:text-indigo-500 focus:outline-none focus:underline" :to="localePath('/auth/register')">{{ $t('pages.login.register') }}</nuxt-link>
         </div>
       </div>
 
       <div class="mt-6">
-        <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
-          <span class="absolute left-0 inset-y-0 flex items-center pl-3">
-            <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400 transition ease-in-out duration-150" fill="currentColor" viewBox="0 0 20 20">
+        <button type="submit" class="relative flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md group hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+            <svg class="w-5 h-5 text-indigo-500 transition duration-150 ease-in-out group-hover:text-indigo-400" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
             </svg>
           </span>
@@ -51,11 +67,22 @@
 
 <script>
 import Logo from '@/components/Logo'
+import UHInput from '@/components/generics/UHInput'
 
 export default {
   name: 'login',
   components: {
-    Logo
+    Logo,
+    UHInput
+  },
+  data(){
+    return {
+      form: {
+        email:'',
+        password:'',
+      },
+
+    }
   },
   computed: {
   },

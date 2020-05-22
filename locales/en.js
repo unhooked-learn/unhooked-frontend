@@ -7,6 +7,12 @@ const keys = {
     },
     modal: {
       close: 'Close'
+    },
+    input: {
+      email: 'Email address',
+      name: 'Name',
+      password: 'Password',
+      repeatPassword: 'repeat Password',
     }
   },
   pages: {
@@ -32,24 +38,16 @@ const keys = {
       text: 'Sign in to your account',
       remember: 'Remember me',
       register: 'Register',
-      login: 'Login'
+      login: 'Login',
     },
     register: {
       label: 'Registration',
       text: 'Fill in to your register your account',
-      email: 'Email address',
-      name: 'Name',
-      password: 'Password',
-      repeatPassword: 'repeat Password',
       register: 'Sign Up'
     },
     settings: {
       label: 'Settings',
       text: 'Here you can change your account data',
-      email: 'Email address',
-      name: 'Name',
-      password: 'Password',
-      repeatPassword: 'repeat Password',
       language: 'Language',
       english: 'English',
       german: 'German',
