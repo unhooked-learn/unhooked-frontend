@@ -40,7 +40,7 @@ const keys = {
       email: 'Email address',
       name: 'Name',
       password: 'Password',
-      password2: 'reenter Password',
+      repeatPassword: 'repeat Password',
       register: 'Sign Up'
     },
     settings: {
@@ -49,7 +49,7 @@ const keys = {
       email: 'Email address',
       name: 'Name',
       password: 'Password',
-      password2: 'reenter Password',
+      repeatPassword: 'repeat Password',
       language: 'Language',
       english: 'English',
       german: 'German',

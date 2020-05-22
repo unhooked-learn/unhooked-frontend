@@ -43,7 +43,7 @@ export default context => {
           email: 'Email Adresse',
           name: 'Name',
           password: 'Passwort',
-          password2: 'Password wiederholen',
+          repeatPassword: 'Password wiederholen',
           register: 'Registrieren'
         },
         settings: {
@@ -52,7 +52,7 @@ export default context => {
           email: 'Email Adresse',
           name: 'Name',
           password: 'Passwort',
-          password2: 'Passwort wiederholen',
+          repeatPassword: 'Passwort wiederholen',
           language: 'Sprache',
           english: 'Englisch',
           german: 'Deutsch',

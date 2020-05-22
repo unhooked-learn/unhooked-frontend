@@ -1,6 +1,6 @@
 <template>
-<div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-md w-full">
+<div class="flex items-center justify-center min-h-screen px-4 py-12 bg-gray-50 sm:px-6 lg:px-8">
+  <div class="w-full max-w-md">
     <div class="absolute top-5 left-5 ">
         <nuxt-link :to="localePath('/auth/login')"><font-awesome-icon icon="chevron-left"/></nuxt-link>
     </div>  
@@ -8,49 +8,65 @@
       <div class="text-center">
         <font-awesome-icon icon="user-circle" class="fa-5x" />
       </div>  
-      <h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
+      <h2 class="mt-4 text-3xl font-extrabold leading-9 text-center text-gray-900">
         {{ $t('pages.settings.label') }}
       </h2>
     </div>
-    <form class="mt-8" action="#" method="POST">
+    <form class="mt-4" action="#" method="POST">
       <input type="hidden" name="remember" value="true" />
       <div class="rounded-md">
-        <div>
-          <h3 class="text-lg font-medium text-gray-900 ml-1 mb-4" >
+          <h3 class="mb-4 ml-1 text-lg font-medium text-gray-900" >
             {{ $t('pages.settings.text') }}
           </h3>  
-        </div>
-
         <div class="flex justify-between mb-3">
-          <font-awesome-icon icon="flag" class="fa-2x opacity-50"/>
-          <nuxt-link :to="switchLocalePath('en')" class="appearance-none rounded-none relative px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"> {{ $t('pages.settings.english') }}</nuxt-link>
-          <nuxt-link :to="switchLocalePath('de')" class="appearance-none rounded-none relative px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"> {{ $t('pages.settings.german') }}</nuxt-link>
+          <font-awesome-icon icon="flag" class="opacity-50 fa-2x"/>
+          <nuxt-link :to="switchLocalePath('en')" class="relative px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"> {{ $t('pages.settings.english') }}</nuxt-link>
+          <nuxt-link :to="switchLocalePath('de')" class="relative px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"> {{ $t('pages.settings.german') }}</nuxt-link>
         </div>
-
-        <div class="flex justify-between m-auto">
-            <font-awesome-icon icon="envelope" class="fa-2x opacity-50"/>
-            <input aria-label="Email address" name="email" type="email" required class="appearance-none rounded-none relative px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Email address" />
-        </div>
-        
-        <div class="flex justify-between m-auto">
-            <font-awesome-icon icon="user" class="fa-2x opacity-50"/>
-            <input aria-label="Name" name="name" type="name" required class="appearance-none rounded-none relative px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Name" />
-        </div>
-
-        <div class="flex justify-between m-auto">
-            <font-awesome-icon icon="key" class="fa-2x opacity-50"/>
-            <input aria-label="Password" name="Password" type="password" required class="appearance-none rounded-none relative px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Password" />
-        </div>
-        
-        <div class="flex justify-between m-auto">
-            <font-awesome-icon icon="key" class="fa-2x opacity-50"/>
-            <input aria-label="Password2" name="Password2" type="password2" required class="appearance-none rounded-none relative px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="reenter Password" />
-        </div>
-
+        <UHInput
+            label="email"
+            :placeholder="$t('pages.settings.email')"
+            type="email"
+            class="rounded-t-md"
+            v-model='form.email'
+        >
+          <template #prepent>
+            <font-awesome-icon icon="envelope" class="opacity-50 fa-1x"/>
+          </template>
+        </UHInput>
+        <UHInput
+            label="name"
+            :placeholder="$t('pages.settings.name')"
+            v-model='form.name'
+        >
+          <template #prepent>
+            <font-awesome-icon icon="user" class="opacity-50 fa-1x"/>
+          </template>
+        </UHInput>
+        <UHInput
+            label="password"
+            :placeholder="$t('pages.settings.password')"
+            type="password"
+            v-model='form.password'
+        >
+          <template #prepent>
+            <font-awesome-icon icon="key" class="opacity-50 fa-1x"/>
+          </template>
+        </UHInput>
+        <UHInput
+            label="repeatPassword"
+            :placeholder="$t('pages.settings.repeatPassword')"
+            type="password"
+            v-model='form.repeatPassword'
+        >
+          <template #prepent>
+            <font-awesome-icon icon="key" class="opacity-50 fa-1x"/>
+          </template>
+        </UHInput>
       </div>  
 
       <div class="mt-6">
-        <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+        <button type="submit" class="relative flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md group hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">
            {{ $t('pages.settings.save') }}
         </button>
       </div>
@@ -61,10 +77,23 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import UHInput from '@/components/generics/UHInput'
 
 export default {
   name: 'settings',
   components: {
+    UHInput
+  },
+  data(){
+    return {
+      form: {
+        email:'',
+        name:'',
+        password:'',
+        repeatPassword:''
+      },
+
+    }
   },
   computed: {
   },
