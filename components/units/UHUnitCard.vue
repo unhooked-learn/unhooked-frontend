@@ -1,5 +1,5 @@
 <template>
-  <div class="w-64">
+  <a href="#" @click="selectUnit(unit)" class="w-64">
     <div
       class="min-w-full my-2 overflow-hidden text-white rounded-md shadow-md "
       :class="{ 'bg-gray-600 text-white': active, 'bg-white': !active }"
@@ -35,10 +35,12 @@
         </p>
       </div>
     </div>
-  </div>
+  </a>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   name: 'UHUnitCard',
   props: {
@@ -55,6 +57,11 @@ export default {
       default: false
     }
   },
-  computed: {}
+  computed: {},
+  methods: {
+    ...mapActions({
+      selectUnit: 'units/selectUnit'
+    })
+  }
 }
 </script>

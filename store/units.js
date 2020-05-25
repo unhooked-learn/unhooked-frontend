@@ -1,3 +1,19 @@
+import { clone } from 'lodash'
+
+const unitStub = {
+  id: 0,
+  imgurl: '#',
+  heading: 'RAINBOW RIDE',
+  excerpt: 'Road to 120 Stars.',
+  complete: false,
+  active: false
+}
+
+const mutationsTypes = {
+  SELECT_UNIT: 'SELECT_UNIT',
+  CLEAR_UNIT: 'CLEAR_UNIT'
+}
+
 export const state = () => ({
   units: [
     {
@@ -30,11 +46,33 @@ export const state = () => ({
       complete: false,
       active: false
     }
-  ]
+  ],
+  selected: clone(unitStub)
 })
 
 export const getters = {
   units(state) {
     return state.units
+  },
+  unit(state) {
+    return state.selected
+  }
+}
+
+export const mutations = {
+  [mutationsTypes.SELECT_UNIT](state, unit) {
+    state.selected = unit
+  },
+  [mutationsTypes.CLEAR_UNIT](state) {
+    state.selected = clone(unitStub)
+  }
+}
+
+export const actions = {
+  selectUnit({ commit }, unit) {
+    commit(mutationsTypes.SELECT_UNIT, unit)
+  },
+  clearUnit({ commit }) {
+    commit(mutationsTypes.CLEAR_UNIT)
   }
 }

@@ -1,14 +1,20 @@
 <template>
-  <div @click="selectBadge(badge)">
-    <div
-      class="flex w-16 h-16 m-auto mb-6 text-center bg-gray-800 rounded-full"
-      :class="{ 'shadow-md': badge.active, 'opacity-25': !badge.active }"
+  <div class="flex justify-center">
+    <button
+      @click="showEarnedBadges(badge)"
+      class="rounded-full focus:outline-none focus:shadow-outline-teal"
+      :class="{ 'cursor-default': !badge.active }"
     >
-      <font-awesome-icon
-        :icon="badge.icon"
-        class="m-auto text-gray-100 fa-2x"
-      />
-    </div>
+      <div
+        class="flex w-16 h-16 text-center bg-gray-800 rounded-full"
+        :class="{ 'shadow-md': badge.active, 'opacity-25': !badge.active }"
+      >
+        <font-awesome-icon
+          :icon="badge.icon"
+          class="m-auto text-gray-100 fa-2x"
+        />
+      </div>
+    </button>
   </div>
 </template>
 <script>
@@ -24,8 +30,13 @@ export default {
   },
   methods: {
     ...mapActions({
-      selectBadge: 'selectBadge'
-    })
+      selectBadge: 'badge/selectBadge'
+    }),
+    showEarnedBadges() {
+      if (this.badge.active) {
+        this.selectBadge(this.badge)
+      }
+    }
   }
 }
 </script>

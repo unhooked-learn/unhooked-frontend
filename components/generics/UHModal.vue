@@ -1,78 +1,88 @@
 <template>
-  <div >
-    <modal :name="name" width="90%" height="70%" class="rounded-lg overflow-hidden">
-      <div class="text-center text-gray-700 bg-gray-200 h-full flex-col flex justify-between p-4">
-        <div class="">
-          <div class="relative z-0">
-            <div class="-m-4 absolute inset-0 bg-gray-600 h-3/5 -z-10 rounded-b-lg"></div>
-            <span v-if="selectedBadge.active" class="absolute top-0 left-0">
-            <font-awesome-icon
-                icon="check-circle"
-                class="fa-3x text-green-500"
-            />
-            </span>
-
-            <span class="absolute top-0 right-0">
-            <a href="#" @click.prevent="close">
-            <font-awesome-icon
+  <modal
+    :name="name"
+    width="90%"
+    height="70%"
+    class="overflow-hidden rounded-lg"
+    @before-close="beforeClose"
+  >
+    <div class="relative flex flex-col h-full">
+      <header class="pb-4 overflow-hidden rounded-tl-lg rounded-tr-lg">
+        <div
+          class="relative flex flex-col justify-end text-gray-200 bg-gray-600"
+        >
+          <div class="flex self-end">
+            <UHAccessibilityButton @click="close" class="z-10">
+              <font-awesome-icon
                 icon="times"
-                class="fa-lg text-white opacity-75"
-            />
-            </a>  
-            </span>
-
-            <div
-              class="shadow-lg flex w-32 h-32 m-auto text-center bg-gray-200 rounded-full"
-            >
-            <font-awesome-icon
-            :icon="selectedBadge.icon"
-            class="m-auto text-gray-800 fa-5x"
-            />
-            </div>
+                class="text-white opacity-75 hover:opacity-100 fa-lg"
+              />
+            </UHAccessibilityButton>
+            <slot name="heroImage" />
           </div>
-          <h1 class="py-3 font-semibold uppercase">{{selectedBadge.name}}</h1>
-          <p class="mt-2 text-sm">{{selectedBadge.description}}</p>
+          <div
+            class="flex justify-center"
+            :class="headingClasses"
+            v-if="$scopedSlots.cardHeading"
+          >
+            <h3 class="z-30 text-xl font-semibold leading-tight uppercase">
+              <slot name="cardHeading" />
+            </h3>
+          </div>
         </div>
-      
-        <a href="#" @click.prevent="close" class="group relative flex justify-center py-2 px-4 border text-md leading-5 font-medium rounded-md text-grey-800 bg-grey-600 hover:bg-gray-500 focus:outline-none focus:border-gray-900 focus:shadow-outline-grey active:bg-grey-700 transition duration-150 ease-in-out">
-          {{ $t('general.modal.close') }}
-        </a>
-      </div>
-    </modal>
-  </div>
+        <slot name="header" />
+      </header>
+
+      <main class="flex-grow">
+        <slot name="body" />
+      </main>
+
+      <footer class="p-4 pb-6">
+        <slot name="footer" :close="close"> </slot>
+      </footer>
+    </div>
+  </modal>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import UHAccessibilityButton from '@/components/generics/UHAccessibilityButton'
 
 export default {
   name: 'UHModal',
+  components: {
+    UHAccessibilityButton
+  },
+
   props: {
     name: {
-      tvpe: String,
+      type: String,
       required: false,
       default: 'modal'
+    },
+    headingClasses: {
+      type: String,
+      required: false,
+      default: 'pb-5'
     }
   },
-  computed: {
-    ...mapGetters({
-      selectedBadge: 'selectedBadge'
-    })
-  },
+
   methods: {
     open() {
       this.$modal.show(this.name)
     },
     close() {
+      console.log('close')
       this.$modal.hide(this.name)
-    }
-  },
-  watch: {
-    selectedBadge: {
-      handler(newValue) {
-        this.open()
-      }
+    },
+    beforeClose() {
+      this.$emit('beforeClose')
     }
   }
 }
 </script>
+
+<style>
+.vm--modal {
+  @apply rounded-lg !important;
+}
+</style>
