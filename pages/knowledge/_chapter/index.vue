@@ -21,6 +21,7 @@
 
 <script>
 export default {
+  layout: 'clear',
   async asyncData ({ params, $axios }) {
     const data = await $axios.$get(`http://www.omdbapi.com/?i=${params.chapter}&apikey=466f9280&plot=full`)
     return { movie: data }
