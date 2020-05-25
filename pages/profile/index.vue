@@ -29,9 +29,8 @@
           {{ $t('pages.profile.badges') }}
         </h3>
       </div>
-      <div class="flex flex-wrap px-2 mt-6">
+      <div class="grid grid-cols-3 gap-4 px-2 mt-6">
         <UHBadge
-          class="w-1/3"
           :key="idx"
           v-for="(achievement, idx) in achievements"
           :badge="achievement"

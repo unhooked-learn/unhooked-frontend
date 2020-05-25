@@ -3,7 +3,10 @@
     <div class="relative max-w-md mx-auto">
       <slot name="prepent">
         <client-only>
-          <UHModal />
+          <template>
+            <UHBadgeModal />
+            <UHUnitModal />
+          </template>
         </client-only>
       </slot>
       <nuxt />
@@ -13,11 +16,13 @@
 </template>
 
 <script>
-import UHModal from '@/components/generics/UHModal'
+import UHBadgeModal from '@/components/generics/UHBadgeModal'
+import UHUnitModal from '@/components/generics/UHUnitModal'
 
 export default {
   components: {
-    UHModal
+    UHBadgeModal,
+    UHUnitModal
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <Master>
     <UHNavigation />
-  </Master>  
+  </Master>
 </template>
 
 <script>
