@@ -56,7 +56,8 @@ module.exports = {
     '@nuxtjs/dotenv',
     'nuxt-fontawesome',
     // Doc: https://nuxt-community.github.io/nuxt-i18n/
-    'nuxt-i18n'
+    'nuxt-i18n',
+    '@nuxtjs/toast'
   ],
   /*
    ** Axios module configuration
@@ -75,6 +76,9 @@ module.exports = {
       }
     ]
   },
+
+  toast: {
+},
   /*
    ** i18n module configuration
    ** See https://nuxt-community.github.io/nuxt-i18n/options-reference.html

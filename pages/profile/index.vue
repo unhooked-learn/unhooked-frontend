@@ -23,13 +23,13 @@
     <main class="mb-16">
       <div class="relative z-0">
         <div class="absolute inset-0 bg-gray-800 h-1/2 -z-10"></div>
-
         <div class="flex justify-center">
-          <div
-            class="px-4 py-1 text-lg font-semibold text-center text-gray-700 bg-gray-200 rounded-md"
-          >
-            {{ $t('pages.profile.xp') }} {{ user.score }}
-          </div>
+          <div class= "px-4 py-1 text-lg font-semibold text-center text-gray-700 bg-gray-200 rounded-md">
+            <UHToast             
+              :text= user.score    
+            />
+            {{ $t('pages.profile.xp') }}
+          </div>  
         </div>
       </div>
       <div class="px-4 mt-6">
@@ -53,11 +53,13 @@
 <script>
 import { mapGetters } from 'vuex'
 import UHBadge from '@/components/profile/UHBadge'
+import UHToast from '@/components/generics/UHToast'
 
 export default {
   name: 'profile',
   components: {
-    UHBadge
+    UHBadge,
+    UHToast
   },
   computed: {
     ...mapGetters({
