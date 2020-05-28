@@ -1,7 +1,6 @@
 <template>
-    <a href="#" @click="showToast()" @click.prevent="">{{text}}</a>      
+  <a href="#" @click.prevent="showToast()">{{ text }}</a>
 </template>
-
 
 <script>
 export default {
@@ -9,7 +8,7 @@ export default {
   props: {
     text: {
       type: [String, Number],
-      required: true,
+      required: true
     },
     theme: {
       type: String,
@@ -19,23 +18,22 @@ export default {
     position: {
       type: String,
       required: false,
-      default: 'buttom-center'
+      default: 'bottom-center'
     },
     duration: {
       type: Number,
       required: false,
       default: 5000
-    },
+    }
   },
 
   methods: {
     showToast() {
-      this.$toasted.show(this.text, 
-      { 
-	      theme: "bubble", 
-	      position: "buttom-center", 
-	      duration : 5000
-      });
+      this.$toasted.show(this.text, {
+        theme: this.theme,
+        position: this.position,
+        duration: this.duration
+      })
     }
   }
 }
