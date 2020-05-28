@@ -41,11 +41,12 @@ export default context => {
           text: 'Logge dich in deinen Account ein',
           remember: 'Login speichern',
           register: 'Registrieren',
-          login: 'Einloggen'
+          login: 'Einloggen',
+          logout: 'Ausloggen'
         },
         register: {
           label: 'Registrierung',
-          text: 'Fülle die Felder aus um dich zu registrieren',
+          text: 'Fülle die Felder aus um dich zu registrieren. Dieses ist optional und nur nötig, wenn du deine Daten und Fortschritt behalten willst.',
           register: 'Registrieren'
         },
         settings: {

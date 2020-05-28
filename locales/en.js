@@ -39,10 +39,11 @@ const keys = {
       remember: 'Remember me',
       register: 'Register',
       login: 'Login',
+      logout: 'Logout'
     },
     register: {
       label: 'Registration',
-      text: 'Fill in to your register your account',
+      text: 'Fill in to your register your account. This feature is optional and only nessasary if you want to keep your data and progress.',
       register: 'Sign Up'
     },
     settings: {

@@ -5,9 +5,19 @@
         <div class="absolute top-5 right-5 ">
           <nuxt-link :to="localePath('/profile/settings')"><font-awesome-icon icon="pen" /></nuxt-link> 
         </div>
-
         <font-awesome-icon icon="user-circle" class="fa-7x" />
-        <nuxt-link :to="localePath('/auth/login')"><h2 class="py-3 font-semibold uppercase">{{ user.name }}</h2></nuxt-link>
+        <h2 class="pt-3 font-semibold uppercase">{{ user.name }}</h2>
+        <template v-if="user.registered">
+          <template v-if="user.loggedin">
+            <nuxt-link :to="localePath('/profile')" class="px-2 py-1 text-xs bg-gray-400 border-gray-800 rounded-full pill">{{ $t('pages.login.logout') }}</nuxt-link>
+          </template>
+          <template v-else>
+            <nuxt-link :to="localePath('/auth/login')" class="px-2 py-1 text-xs bg-gray-400 border-gray-800 rounded-full pill">{{ $t('pages.login.login') }}</nuxt-link>
+          </template>  
+        </template>
+        <template v-else>
+          <nuxt-link :to="localePath('/auth/register')" class="px-2 py-1 text-xs bg-gray-400 border-gray-800 rounded-full pill">{{ $t('pages.register.label') }}</nuxt-link>
+        </template>
       </div>
     </header>
     <main class="mb-16">
