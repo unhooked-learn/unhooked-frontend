@@ -1,4 +1,3 @@
-// just for testing
 export default context => {
   return new Promise(resolve => {
     resolve({
@@ -23,7 +22,12 @@ export default context => {
           label: 'Lerneinheiten',
           welcome: 'Hallo',
           intro: 'Willkommen in diesem Kurs. Hier wollen wir dir die manipulativen Mechanismen in Spiele/ und Social Media Anwendungen aufzeigen. Lass dich überraschen.',
-          module: 'Modul'
+          module: 'Modul',
+          status: {
+            complete: 'Abgeschlossen',
+            new: 'Neu',
+            active: 'open',
+          }
         },
         profile: {
           label: 'Profile',
