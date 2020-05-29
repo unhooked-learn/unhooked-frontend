@@ -16,6 +16,9 @@ export default context => {
           name: 'Name',
           password: 'Passwort',
           repeatPassword: 'Password wiederholen'
+        },
+        toast: {
+          gratulations: 'Herzlichen Glückwunsch! Du hast {points} Punkte erhalten'
         }
       },
       pages: {
@@ -28,7 +31,7 @@ export default context => {
         profile: {
           label: 'Profile',
           badges: 'Auszeichnungen',
-          xp: 'Erfahrung',
+          xp: 'Erfahrungspunkte',
           active: 'Aktiv seit {minutes} Minuten.'
         },
         knowledgebase: {
