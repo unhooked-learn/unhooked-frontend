@@ -78,6 +78,7 @@ module.exports = {
   },
 
   toast: {
+    iconPack: 'fontawesome'
 },
   /*
    ** i18n module configuration

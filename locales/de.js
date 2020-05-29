@@ -16,6 +16,10 @@ export default context => {
           name: 'Name',
           password: 'Passwort',
           repeatPassword: 'Password wiederholen'
+        },
+        toast: {
+          gratulations: 'Herzlichen Glückwunsch! Du hast ',
+          type: ' Punkte erhalten',
         }
       },
       pages: {

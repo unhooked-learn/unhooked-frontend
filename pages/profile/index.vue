@@ -26,7 +26,12 @@
         <div class="flex justify-center">
           <div class= "px-4 py-1 text-lg font-semibold text-center text-gray-700 bg-gray-200 rounded-md">
             <UHToast             
-              :text= user.score    
+              :preText="$t('general.toast.gratulations')"
+              :text="user.score"
+              :postText="$t('general.toast.type')"
+              type= 'success' 
+              icon= 'coins'
+              :close="$t('general.modal.close')" 
             />
             {{ $t('pages.profile.xp') }}
           </div>  
