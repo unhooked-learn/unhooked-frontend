@@ -28,7 +28,8 @@ const keys = {
     profile: {
       label: 'Profile',
       badges: 'Badges',
-      xp: 'XP'
+      xp: 'XP',
+      active: 'Active sinc {minutes} minutes.'
     },
     knowledgebase: {
       label: 'Knowledge Base'

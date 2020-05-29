@@ -7,6 +7,7 @@
         </div>
         <font-awesome-icon icon="user-circle" class="fa-7x" />
         <h2 class="pt-3 font-semibold uppercase">{{ user.name }}</h2>
+        <h4 class="mb-3 text-xs"> {{$t('pages.profile.active', {'minutes': showMinutes(user.timestamp)})}}</h4>
         <template v-if="user.registered">
           <template v-if="user.loggedin">
             <nuxt-link :to="localePath('/profile')" class="px-2 py-1 text-xs bg-gray-400 border-gray-800 rounded-full pill">{{ $t('pages.login.logout') }}</nuxt-link>
@@ -78,7 +79,10 @@ export default {
     },
     hideModal() {
       this.$modal.hide('modal')
-    }
+    },
+    showMinutes(timestamp) {
+      return (Math.floor((Date.now()-timestamp)/1000/60))
+    },
   }
 }
 </script>

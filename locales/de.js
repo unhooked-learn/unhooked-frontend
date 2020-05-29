@@ -31,7 +31,7 @@ export default context => {
         profile: {
           label: 'Profile',
           badges: 'Auszeichnungen',
-          xp: 'Erfahrungspunkte'
+          xp: 'Erfahrungspunkte',
         },
         knowledgebase: {
           label: 'Wissensdatenbank'
