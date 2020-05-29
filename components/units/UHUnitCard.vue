@@ -5,7 +5,7 @@
       :class="{ 'bg-gray-600 text-white': active, 'bg-white': !active }"
     >
       <div class="flex justify-end object-cover aspect aspect-1/2">
-        <img class="object-cover -z-10" :src="unit.imgurl" :alt="unit.heading">
+        <img class="object-cover" :src="unit.imgurl" :alt="unit.heading">
           <font-awesome-icon  v-if="complete" class="absolute pt-3 pr-3 text-green-400 fa-2x" icon="circle" />
           <font-awesome-icon  v-else-if="!complete&&!active" class="absolute pt-3 pr-3 text-blue-400 fa-2x" icon="circle" />
         </img>  
