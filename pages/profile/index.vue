@@ -33,7 +33,7 @@
               icon= 'coins'
               :close="$t('general.modal.close')" 
             />
-            {{ $t('pages.profile.xp') }}
+            {{ $t('pages.profile.xp', { points: user.score }) }}
           </div>  
         </div>
       </div>
