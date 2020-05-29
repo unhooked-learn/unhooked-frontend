@@ -28,7 +28,9 @@ export default context => {
         profile: {
           label: 'Profile',
           badges: 'Auszeichnungen',
-          xp: 'Erfahrung'
+          xp: 'Erfahrung',
+          active: 'Du benutzt diese App',
+          minutes: 'Minuten'
         },
         knowledgebase: {
           label: 'Wissensdatenbank'

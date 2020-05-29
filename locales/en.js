@@ -25,7 +25,9 @@ const keys = {
     profile: {
       label: 'Profile',
       badges: 'Badges',
-      xp: 'XP'
+      xp: 'XP',
+      active: 'You are using this app',
+      minutes: 'minutes'
     },
     knowledgebase: {
       label: 'Knowledge Base'

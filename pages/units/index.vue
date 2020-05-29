@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col justify-between h-screen">
-    <header class="text-white bg-gray-800 h-full flex flex-col justify-between">
+    <header class="flex flex-col justify-between h-full text-white bg-gray-800">
       <div class="px-4 py-8">
         <h2 class="font-semibold"> {{ $t('pages.course.welcome') }} {{user.name}}!</h2>
         <p class="px-1 py-2"> {{ $t('pages.course.intro') }}</p>
