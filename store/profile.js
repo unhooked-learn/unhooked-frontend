@@ -3,7 +3,8 @@ export const state = () => ({
     name: 'John Doe',
     score: 250000,
     registered: true,
-    loggedin: false
+    loggedin: false,
+    timestamp: Date.now()
   },
   achievements: [
     {
