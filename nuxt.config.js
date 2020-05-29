@@ -57,6 +57,7 @@ module.exports = {
     'nuxt-fontawesome',
     // Doc: https://nuxt-community.github.io/nuxt-i18n/
     'nuxt-i18n',
+    // Doc: https://github.com/shakee93/vue-toasted
     '@nuxtjs/toast'
   ],
   /*
