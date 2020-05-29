@@ -1,5 +1,5 @@
 <template>
-  <a href="#" @click.prevent="showToast()">{{ text }}</a>
+  <a href="#" @click.prevent="showToast()">{{ linkText }}</a>
 </template>
 
 <script>
@@ -10,12 +10,7 @@ export default {
       type: [String, Number],
       required: true
     },
-    preText: {
-      type: [String, Number],
-      required: false,
-      default: ''
-    },
-    postText: {
+    linkText: {
       type: [String, Number],
       required: false,
       default: ''
@@ -40,16 +35,6 @@ export default {
       required: false,
       default: ''
     },
-    fullWidth: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
-    fitToScreen: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
     keepOnHover: {
       type: Boolean,
       required: false,
@@ -68,12 +53,10 @@ export default {
   },
   methods: {
     showToast() {
-      this.$toasted.show(this.preText+this.text+this.postText, {
+      this.$toasted.show(this.text, {
         theme: this.theme,
         position: this.position,
         duration: this.duration,
-        fullWidth: this.fullWidth,
-        fitToScreen: this.fitToScreen,
         keepOnHover: this.keepOnHover,
         icon: this.icon,
         type: this.type,
