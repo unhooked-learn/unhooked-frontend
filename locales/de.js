@@ -18,8 +18,7 @@ export default context => {
           repeatPassword: 'Password wiederholen'
         },
         toast: {
-          gratulations: 'Herzlichen Glückwunsch! Du hast ',
-          type: ' Punkte erhalten',
+          gratulations: 'Herzlichen Glückwunsch! Du hast {points} Punkte erhalten'
         }
       },
       pages: {
@@ -32,7 +31,7 @@ export default context => {
         profile: {
           label: 'Profile',
           badges: 'Auszeichnungen',
-          xp: 'Erfahrung'
+          xp: 'Erfahrungspunkte'
         },
         knowledgebase: {
           label: 'Wissensdatenbank'
