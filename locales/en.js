@@ -15,8 +15,7 @@ const keys = {
       repeatPassword: 'repeat Password',
     },
     toast: {
-      gratulations: 'Gratulations! You have earned ',
-      type: ' Points',
+      gratulations: 'Gratulations! You have earned {points} Points'
     }
   },
   pages: {
