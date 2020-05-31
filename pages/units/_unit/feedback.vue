@@ -11,25 +11,22 @@
       </div>
           </div>
 
-      <div class="py-4 text-center bg-gray-800">
+      <div class="py-10 text-center bg-gray-800">
         <div class="absolute top-5 left-5 ">
           <nuxt-link :to="localePath('/units')"><font-awesome-icon icon="chevron-left" /></nuxt-link> 
         </div>
-        <h2 class="pt-3 font-semibold uppercase">Gratulations {{ user.name }}</h2>
-        <h4 class="mb-3 text-xs"> Text Text Text</h4>
 
       </div>
     </header>
     <main class="mb-16">
-      <div class="relative z-0">
-        <div class="absolute inset-0 h-1/2 -z-10"></div>
+      <div class="relative">
         <div class="flex justify-center">
           <div class="w-11/12">
             <div class= "px-4 py-1 text-lg font-semibold text-center text-gray-700 bg-gray-100 rounded-md shadow-md">
               <div class="mt-5">Infinite Scrolling</div>
               <h4 class="mb-3 text-base">Do you enjoy the course ? If so, please leave a rating!</h4>
               
-              <div class="mb-5 star-rating-container">
+              <div class="mb-1 star-rating-container">
                 <UHStarRating
                   :rating="rating"
                   :min-rating="minRating"
@@ -46,6 +43,7 @@
                 :limit="limit"
                 @rating-update="handleRatingUpdate"
               /> -->
+              <h4 class="mb-3 text-xs">3,5 out of 5 (17 votes)</h4>
             </div> 
           </div>  
         </div>

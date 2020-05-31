@@ -13,18 +13,19 @@
       v-for="(hs, i) in halfStars"
     >
       <font-awesome-icon icon="star-half"/>
-      <!-- <font-awesome-icon
+      <font-awesome-icon
+        class="opacity-25"
         flip="horizontal"
         :icon="['fas', 'star-half']"
-      /> -->
+      />
     </font-awesome-layers>
 
-    <!-- <font-awesome-icon
-      class="star"
-      :icon="['fas', 'minus']"
+    <font-awesome-icon
+      class="opacity-25 star"
+      :icon="['fas', 'star']"
       :key="`es${i}`"
       v-for="(es, i) in emptyStars"
-    /> -->
+    />
   </div>
 </template>
 
