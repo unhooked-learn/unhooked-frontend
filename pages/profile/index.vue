@@ -27,9 +27,8 @@
         <div class="flex justify-center">
           <div class= "px-4 py-1 text-lg font-semibold text-center text-gray-700 bg-gray-200 rounded-md">
             <UHToast             
-              :preText="$t('general.toast.gratulations')"
-              :text="user.score"
-              :postText="$t('general.toast.type')"
+              :text="$t('general.toast.gratulations', {points: user.score})"
+              :linkText= user.score
               type= 'success' 
               icon= 'coins'
               :close="$t('general.modal.close')" 
