@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100">
+  <div class="h-screen bg-gray-100">
     <header class="text-gray-100">
           <div class="w-full max-w-md">  
       <div class="absolute top-0 right-0 object-cover min-w-full aspect aspect-1/2">
@@ -13,18 +13,23 @@
 
       <div class="py-10 text-center bg-gray-800">
         <div class="absolute text-white top-5 left-5 ">
-          <nuxt-link :to="localePath('/units')"><font-awesome-icon icon="chevron-left" /></nuxt-link> 
+          <UHAccessibilityButton class="z-10" to='/units'>
+              <font-awesome-icon
+                icon="chevron-left"
+                class="text-white opacity-75 hover:opacity-100 fa-lg"
+              />
+          </UHAccessibilityButton>
         </div>
 
       </div>
     </header>
-    <main class="mb-16">
+    <main class="flex flex-col justify-between h-full">
       <div class="relative">
         <div class="flex justify-center">
           <div class="w-11/12">
             <div class= "px-4 py-1 text-lg font-semibold text-center text-gray-700 bg-gray-100 rounded-md shadow-md">
               <div class="mt-5">{{units[0].heading}}</div>
-              <h4 class="mb-3 text-base"> {{$t('pages.course.unit.feedback.text')}}</h4>
+              <h4 class="mt-3 mb-3 text-base"> {{$t('pages.course.unit.feedback.text')}}</h4>
               
               <div class="mb-1 star-rating-container">
                 <UHStarRating
@@ -48,26 +53,30 @@
           </div>  
         </div>
       </div>
-      <div class="px-4 mt-6">
+      <div class="px-4 mt-6 bg-gray-100">
         <h3
           class="font-semibold tracking-wider text-gray-600 uppercase text-md "
         >
           {{$t('pages.course.unit.achievement')}}
         </h3>
+        <div class="flex justify-center">
+          <div class="w-11/12 p-5 mt-2 mb-4 bg-gray-200 rounded-md shadow-md">
+            <div class="m-1 text-lg font-semibold text-center text-gray-700">{{achievements[0].description}}</div>
+            <UHBadge class="mb-5"
+              :badge="achievements[0]"
+            />
+            <div class="m-1 text-lg font-semibold text-center text-gray-700">{{achievements[6].description}}</div>
+            <UHBadge class="mb-5"
+              :badge="achievements[6]"
+            />
+            <div class="m-1 text-lg font-semibold text-center text-gray-700">{{achievements[11].description}}</div>
+            <UHBadge class="mb-5"
+              :badge="achievements[11]"
+            />
+          </div>
+        </div>  
       </div>
-      <div class="flex justify-center">
-        <div class="w-11/12 p-5 mt-2 bg-gray-200 rounded-md shadow-md">
-          <div class="m-1 text-lg font-semibold text-center text-gray-700">{{achievements[0].description}}</div>
-          <UHBadge class="mb-5"
-            :badge="achievements[0]"
-          />
-          <div class="m-1 text-lg font-semibold text-center text-gray-700">{{achievements[6].description}}</div>
-          <UHBadge
-            :badge="achievements[6]"
-          />
-        </div>
-      </div>  
-      <div class="flex justify-end m-5 mt-3">
+      <div class="flex justify-end p-5 bg-gray-100 border-t-2 rounded-t-lg">
         <UHButton class="" click="#">
           {{ $t('general.modal.close') }}
         </UHButton>
@@ -82,14 +91,17 @@ import UHStarRating from '@/components/generics/UHStarRating'
 import UHRatingInputs from '@/components/generics/UHRatingInputs'
 import UHBadge from '@/components/profile/UHBadge'
 import UHButton from '@/components/generics/UHButton'
+import UHAccessibilityButton from '@/components/generics/UHAccessibilityButton'
 
 export default {
   name: 'feedback',
+  layout: 'clear',
   components: {
     UHStarRating,
     UHRatingInputs,
     UHBadge, 
-    UHButton
+    UHButton,
+    UHAccessibilityButton
   },
   computed: {
     ...mapGetters({
