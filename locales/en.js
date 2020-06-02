@@ -23,7 +23,14 @@ const keys = {
       label: 'Units',
       welcome: 'Hi',
       intro: 'Welcome to this course. We want you to know the manipulative mechanisms in mobile games and social media apps. Let\'s get suprised.',
-      module: 'Module'
+      module: 'Module',
+      unit: {
+        feedback: {
+          text: 'Do you enjoy the course ? If so, please leave a rating!',
+          vote: '{points} out of {maxPoints} ({votes} votes)'
+        },
+        achievement: 'Achievements earned'
+      }
     },
     profile: {
       label: 'Profile',

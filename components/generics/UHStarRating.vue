@@ -1,14 +1,14 @@
 <template>
-  <div class="star-rating">
+  <div class="text-yellow-300">
     <font-awesome-icon
-      class="star fa-2x"
+      class="fa-2x"
       icon="star"
       :key="`fs${i}`"
       v-for="(fs, i) in fullStars"
     />
 
     <font-awesome-layers
-      class="star fa-2x"
+      class="fa-2x"
       :key="`hs${i}`"
       v-for="(hs, i) in halfStars"
     >
@@ -87,11 +87,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.star-rating > .star {
-  color: gold;
-  max-width: 10em;
-  margin: auto;
-}
-</style>
