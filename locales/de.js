@@ -60,6 +60,9 @@ export default context => {
           english: 'Englisch',
           german: 'Deutsch',
           save: 'Speichern'
+        },
+        infiniteScroll: {
+          label: 'Infinite Scroll'
         }
       }
     })
