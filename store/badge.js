@@ -9,11 +9,13 @@ let badgeStub = {
 
 const mutationsTypes = {
   SELECT_BADGE: 'SELECT_BADGE',
-  CLEAR_BADGE: 'CLEAR_BADGE'
+  CLEAR_BADGE: 'CLEAR_BADGE',
+  SET_BADGES: 'SET_BADGES'
 }
 
 export const state = () => ({
-  badge: clone(badgeStub)
+  badge: clone(badgeStub),
+  badges: []
 })
 
 export const mutations = {
@@ -22,6 +24,9 @@ export const mutations = {
   },
   [mutationsTypes.CLEAR_BADGE](state) {
     state.badge = clone(badgeStub)
+  },
+  [mutationsTypes.SET_BADGES](state, badges) {
+    state.badges = badges
   }
 }
 
@@ -31,11 +36,18 @@ export const actions = {
   },
   clearBadge({ commit }) {
     commit(mutationsTypes.CLEAR_BADGE)
+  },
+  async fetchBadges({ commit }) {
+    let badges = await this.$axios.$get('./mock/achievement/all.json')
+    commit(mutationsTypes.SET_BADGES, badges)
   }
 }
 
 export const getters = {
   badge(state) {
     return state.badge
+  },
+  badges(state) {
+    return state.badges
   }
 }

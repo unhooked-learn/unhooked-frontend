@@ -3,11 +3,17 @@
     <header class="text-gray-100">
       <div class="py-4 text-center bg-gray-800">
         <div class="absolute top-5 right-5 ">
-          <nuxt-link :to="localePath('/profile/settings')"><font-awesome-icon icon="pen" /></nuxt-link> 
+          <nuxt-link :to="localePath('/profile/settings')"
+            ><font-awesome-icon icon="pen"
+          /></nuxt-link>
         </div>
 
         <font-awesome-icon icon="user-circle" class="fa-7x" />
-        <nuxt-link :to="localePath('/auth/login')"><h2 class="py-3 font-semibold uppercase">{{ user.name }}</h2></nuxt-link>
+        <nuxt-link :to="localePath('/auth/login')">
+          <h2 class="py-3 font-semibold uppercase">
+            {{ user.name }}
+          </h2>
+        </nuxt-link>
       </div>
     </header>
     <main class="mb-16">
@@ -29,39 +35,60 @@
           {{ $t('pages.profile.badges') }}
         </h3>
       </div>
-      <div class="grid grid-cols-3 gap-4 px-2 mt-6">
-        <UHBadge
-          :key="idx"
-          v-for="(achievement, idx) in achievements"
-          :badge="achievement"
-        />
-      </div>
+      <transition
+        enter-active-class="duration-700 ease-out transtition-all"
+        leave-active-class="duration-700 ease-in transtition-all"
+        enter-class="scale-75 opacity-0 "
+        enter-to-class="scale-100 opacity-100 "
+        leave-class="scale-100 opacity-100 "
+        leave-to-class="scale-75 opacity-0 "
+      >
+        <div class="grid grid-cols-3 gap-4 px-2 mt-6">
+          <template v-if="$fetchState.pending">
+            <UHBadgeLoadingState v-for="i in 12" :key="i" />
+          </template>
+
+          <UHBadge
+            :key="idx"
+            v-else
+            v-for="(badge, idx) in badges"
+            :badge="badge"
+          />
+        </div>
+      </transition>
     </main>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import UHBadge from '@/components/profile/UHBadge'
+import UHBadgeLoadingState from '@/components/profile/UHBadgeLoadingState'
+
+//const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 export default {
   name: 'profile',
+  //fetchOnServer: false,
+  fetchDelay: 2000,
   components: {
-    UHBadge
+    UHBadge,
+    UHBadgeLoadingState
   },
   computed: {
     ...mapGetters({
       user: 'profile/user',
-      achievements: 'profile/achievements'
+      badges: 'badge/badges'
     })
   },
-  methods: {
-    showModal() {
-      this.$modal.show('modal')
-    },
-    hideModal() {
-      this.$modal.hide('modal')
+  activated() {
+    // Call fetch again if last fetch more than 5 minues ago
+    if (this.$fetchState.timestamp <= Date.now() - 1000 * 60 * 5) {
+      this.$fetch()
     }
+  },
+  async fetch() {
+    await this.$store.dispatch('badge/fetchBadges')
   }
 }
 </script>
