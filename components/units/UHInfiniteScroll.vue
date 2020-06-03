@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- component -->
-        <div v-for="item in items" :key="item.id" class="grid grid-cols-1 gap-6 px-4 my-6 md:px-6 lg:px-8">
+        <div v-for="(item, idx) in items" :key="idx" class="grid grid-cols-1 gap-6 px-4 my-6 md:px-6 lg:px-8">
             <slot name="item" v-bind:item="item"/>    
         </div>
 
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'UHUnitCard',
+  name: 'UHInfiniteScroll',
   props: {
       items: {
           required: true,
