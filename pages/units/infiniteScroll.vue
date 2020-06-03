@@ -1,12 +1,12 @@
 <template>
   <div>
-    <header class="px-4 pt-12 text-white bg-gray-800">
+    <header class="px-4 pt-8 text-white bg-gray-800">
       <h3 class="font-semibold tracking-wider text-gray-400 uppercase text-md">
         {{ $t('pages.infiniteScroll.label') }}
       </h3>
     </header>
-    <main class="mb-16">
-      <div class="relative z-0 h-full pt-8 mb-10">
+    <main>
+      <div class="relative z-0 h-full pt-2 mb-10">
         <div class="absolute inset-0 bg-gray-800 h-1/6 -z-10"></div>
         <UHInfiniteScroll :items="pictures" @refetch='fetch'>
           <template v-slot:item="{ item }">
@@ -38,6 +38,18 @@
             
           </template>  
         </UHInfiniteScroll>  
+        
+        <div class="fixed bottom-5 right-5" >
+          <button
+                  class="w-auto h-10 px-4 text-white transition duration-700 ease-in-out transform bg-gray-600 rounded-full shadow hover:scale-110 hover:bg-gray-700 active:shadow-lg mouse focus:outline-none">
+            <font-awesome-icon
+              icon="forward"
+              class="m-auto text-gray-100 fa-1x"
+            />
+            <span>{{$t('pages.infiniteScroll.skipButton')}}</span>
+          </button>
+        </div>
+
       </div>
     </main>
   </div>
@@ -60,8 +72,7 @@ export default {
     }
   },
   components: {
-      UHInfiniteScroll,
-      UHButton
+      UHInfiniteScroll
   },
   computed: {
     ...mapGetters({

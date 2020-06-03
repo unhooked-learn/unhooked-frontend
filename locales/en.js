@@ -59,7 +59,8 @@ const keys = {
       save: 'Save'
     },
     infiniteScroll: {
-      label: 'Unendliches Scrollen'
+      label: 'Unendliches Scrollen',
+      skipButton: 'Skip'
     }
   }
 }

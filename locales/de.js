@@ -62,7 +62,8 @@ export default context => {
           save: 'Speichern'
         },
         infiniteScroll: {
-          label: 'Infinite Scroll'
+          label: 'Infinite Scroll',
+          skipButton: 'Überspringen'
         }
       }
     })
