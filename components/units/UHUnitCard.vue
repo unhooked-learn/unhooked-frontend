@@ -5,7 +5,7 @@
       :class="{ 'bg-gray-600 text-white': active, 'bg-white': !active }"
     >
       <div class="object-cover aspect aspect-1/2">
-        <img class="object-cover" :src="unit.imgurl" :alt="unit.heading" />
+        <img class="object-cover" :src="unit.imgUrl" :alt="unit.name" />
       </div>
 
       <div class="p-4 leading-none">
@@ -25,7 +25,7 @@
           class="text-lg"
           :class="{ 'text-gray-100': active, 'text-gray-700': !active }"
         >
-          {{ unit.heading }}
+          {{ unit.name }}
         </h4>
         <p
           class="mt-2 text-sm"

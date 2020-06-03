@@ -70,7 +70,7 @@ import UHBadgeLoadingState from '@/components/profile/UHBadgeLoadingState'
 export default {
   name: 'profile',
   //fetchOnServer: false,
-  fetchDelay: 2000,
+  fetchDelay: 1000,
   components: {
     UHBadge,
     UHBadgeLoadingState
