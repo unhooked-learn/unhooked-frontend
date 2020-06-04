@@ -21,7 +21,7 @@
                 icon="forward"
                 class="m-auto text-gray-100 fa-1x"
               />
-              <span>{{$t('pages.infiniteScroll.skipButton')}}</span>
+              <span class="pl-2">{{$t('pages.infiniteScroll.skipButton')}}</span>
             </UHButton>
           </div>
         </client-only>
@@ -36,6 +36,7 @@
 
 import UHInfiniteScroll from '@/components/units/UHInfiniteScroll'
 import UHInstagramCard from '@/components/generics/UHInstagramCard'
+import UHButton from '@/components/generics/UHButton'
 import { mapGetters } from 'vuex'
 
 export default {
@@ -54,7 +55,8 @@ export default {
   },
   components: {
       UHInfiniteScroll,
-      UHInstagramCard
+      UHInstagramCard,
+      UHButton
   },
   computed: {
     ...mapGetters({
