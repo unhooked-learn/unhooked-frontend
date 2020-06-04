@@ -26,7 +26,7 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['~/assets/css/styles.css'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -64,7 +64,9 @@ module.exports = {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    // baseURL: './mock/'
+  },
   /*
    ** Fontawesome module configuration
    **
