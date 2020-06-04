@@ -42,7 +42,7 @@
                 {{
                   $t('pages.course.unit.feedback.vote', {
                     points: '3,5',
-                    maxPoints: rating,
+                    maxPoints: '5',
                     votes: '17'
                   })
                 }}

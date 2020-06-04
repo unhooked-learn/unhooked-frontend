@@ -33,7 +33,7 @@ export default context => {
             module: 'Modul {number}',
             feedback: {
               text: 'Wie findest du dieses Modul? Bitte lass eine Bewertung da!',
-              vote: 'Durchschnitt: {points} von {maxPoints} Punkten ({votes} Abstimmungen)',
+              vote: 'Durchschnitt: {points} von {maxPoints} Punkten ({votes} Votes)',
               selectedRating: "Du hast {rating} Sterne ausgewählt",
               selectRating: "Klick um {rating} Sterne auszuwählen",
               noRating: "Nichts ausgewählt",
