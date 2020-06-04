@@ -7,6 +7,7 @@
         </div>
         <font-awesome-icon icon="user-circle" class="fa-7x" />
         <h2 class="pt-3 font-semibold uppercase">{{ user.name }}</h2>
+        <h4 class="mb-3 text-xs"> {{$t('pages.profile.active', {'minutes': showMinutes(user.timestamp)})}}</h4>
         <template v-if="user.registered">
           <template v-if="user.loggedin">
             <nuxt-link :to="localePath('/profile')" class="px-2 py-1 text-xs bg-gray-400 border-gray-800 rounded-full pill">{{ $t('pages.login.logout') }}</nuxt-link>
@@ -23,13 +24,18 @@
     <main class="mb-16">
       <div class="relative z-0">
         <div class="absolute inset-0 bg-gray-800 h-1/2 -z-10"></div>
-
         <div class="flex justify-center">
-          <div
-            class="px-4 py-1 text-lg font-semibold text-center text-gray-700 bg-gray-200 rounded-md"
-          >
-            {{ $t('pages.profile.xp') }} {{ user.score }}
-          </div>
+          <div class= "px-4 py-1 text-lg font-semibold text-center text-gray-700 bg-gray-200 rounded-md">
+            <UHToast             
+              :preText="$t('general.toast.gratulations')"
+              :text="user.score"
+              :postText="$t('general.toast.type')"
+              type= 'success' 
+              icon= 'coins'
+              :close="$t('general.modal.close')" 
+            />
+            {{ $t('pages.profile.xp', { points: user.score }) }}
+          </div>  
         </div>
       </div>
       <div class="px-4 mt-6">
@@ -53,11 +59,13 @@
 <script>
 import { mapGetters } from 'vuex'
 import UHBadge from '@/components/profile/UHBadge'
+import UHToast from '@/components/generics/UHToast'
 
 export default {
   name: 'profile',
   components: {
-    UHBadge
+    UHBadge,
+    UHToast
   },
   computed: {
     ...mapGetters({
@@ -71,7 +79,10 @@ export default {
     },
     hideModal() {
       this.$modal.hide('modal')
-    }
+    },
+    showMinutes(timestamp) {
+      return (Math.floor((Date.now()-timestamp)/1000/60))
+    },
   }
 }
 </script>

@@ -13,6 +13,9 @@ const keys = {
       name: 'Name',
       password: 'Password',
       repeatPassword: 'repeat Password',
+    },
+    toast: {
+      gratulations: 'Gratulations! You have earned {points} Points'
     }
   },
   pages: {
@@ -30,7 +33,8 @@ const keys = {
     profile: {
       label: 'Profile',
       badges: 'Badges',
-      xp: 'XP'
+      xp: 'XP',
+      active: 'Active sinc {minutes} minutes.'
     },
     knowledgebase: {
       label: 'Knowledge Base'
