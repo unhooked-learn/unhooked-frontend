@@ -19,7 +19,7 @@
     <main class="mb-16">
       <div class="relative pt-2 mb-10">
         <div class="absolute inset-0 bg-gray-800 h-2/3"></div>
-        <UHMockLoadingState :count="2" v-if="$fetchState.pending">
+        <UHMockLoadingState :count="3" v-if="$fetchState.pending">
           <UHUnitCardLoadingState class="mx-2" :elementHeight="302" />
         </UHMockLoadingState>
 

@@ -1,7 +1,7 @@
 <template>
   <nav class="fixed inset-x-0 bottom-0">
     <div class="px-4 py-3 bg-white shadow-2xl rounded-tl-md rounded-tr-md">
-      <div class="flex justify-between">
+      <div class="flex justify-between sm:justify-around">
         <UHNavButton
           :to="localePath('units')"
           :name="$t('general.navigation.units')"

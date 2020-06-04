@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100">
+  <div>
     <header class="text-gray-100">
       <div class="py-4 text-center bg-gray-800">
         <div class="absolute top-5 right-5 ">
@@ -43,9 +43,9 @@
         leave-class="scale-100 opacity-100 "
         leave-to-class="scale-75 opacity-0 "
       >
-        <div class="grid grid-cols-3 gap-4 px-2 mt-6">
+        <div class="grid grid-cols-3 gap-4 px-2 mt-6 md:grid-cols-4 md:gap-8">
           <template v-if="$fetchState.pending">
-            <UHBadgeLoadingState v-for="i in 12" :key="i" />
+            <UHBadgeLoadingState v-for="i in 21" :key="i" />
           </template>
 
           <UHBadge
