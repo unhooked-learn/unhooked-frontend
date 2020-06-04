@@ -32,6 +32,7 @@ export default context => {
           label: 'Profile',
           badges: 'Auszeichnungen',
           xp: 'Erfahrungspunkte',
+          active: 'Aktiv seit {minutes} Minuten.'
         },
         knowledgebase: {
           label: 'Wissensdatenbank'
