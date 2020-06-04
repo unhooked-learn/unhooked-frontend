@@ -23,7 +23,12 @@ const keys = {
       label: 'Units',
       welcome: 'Hi',
       intro: 'Welcome to this course. We want you to know the manipulative mechanisms in mobile games and social media apps. Let\'s get suprised.',
-      module: 'Module'
+      module: 'Module',
+      status: {
+        complete: 'complete',
+        active: 'open',
+        new: 'new'
+      }
     },
     profile: {
       label: 'Profile',
