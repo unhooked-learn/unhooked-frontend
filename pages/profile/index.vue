@@ -33,7 +33,7 @@
         <template v-else>
           <nuxt-link
             :to="localePath('/auth/register')"
-            class="px-2 py-1 text-xs bg-gray-400 border-gray-800 rounded-full pill"
+            class="px-2 py-1 text-xs bg-gray-400 border-gray-800 rounded-full shadow-solid pill"
             >{{ $t('pages.register.label') }}</nuxt-link
           >
         </template>
@@ -44,12 +44,11 @@
         <div class="absolute inset-0 bg-gray-800 h-1/2 -z-10"></div>
         <div class="flex justify-center">
           <div
-            class="px-4 py-1 text-lg font-semibold text-center text-gray-700 bg-gray-200 rounded-md"
+            class="p-4 text-lg font-semibold text-center text-gray-700 bg-gray-200 rounded-md shadow-md"
           >
             <UHToast
-              :preText="$t('general.toast.gratulations')"
-              :text="user.score"
-              :postText="$t('general.toast.type')"
+              :text="$t('general.toast.gratulations',{points: user.score})"
+              :linkText="user.score"
               type="success"
               icon="coins"
               :close="$t('general.modal.close')"
