@@ -62,6 +62,10 @@ const keys = {
       english: 'English',
       german: 'German',
       save: 'Save'
+    },
+    infiniteScroll: {
+      label: 'Unendliches Scrollen',
+      skipButton: 'Skip'
     }
   }
 }
