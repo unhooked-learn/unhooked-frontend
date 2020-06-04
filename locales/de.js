@@ -18,6 +18,9 @@ export default context => {
         },
         toast: {
           gratulations: 'Herzlichen Glückwunsch! Du hast {points} Punkte erhalten'
+        },
+        button: {
+          skipButtonText: 'Überspringen'
         }
       },
       pages: {
@@ -25,7 +28,7 @@ export default context => {
           label: 'Lerneinheiten',
           welcome: 'Hallo',
           intro: 'Willkommen in diesem Kurs. Hier wollen wir dir die manipulativen Mechanismen in Spiele/ und Social Media Anwendungen aufzeigen. Lass dich überraschen.',
-          module: 'Modul',
+          module: 'Modul {number}',
           status: {
             complete: 'Abgeschlossen',
             new: 'Neu',
@@ -66,8 +69,7 @@ export default context => {
           save: 'Speichern'
         },
         infiniteScroll: {
-          label: 'Infinite Scroll',
-          skipButton: 'Überspringen'
+          label: 'Infinite Scroll'
         }
       }
     })

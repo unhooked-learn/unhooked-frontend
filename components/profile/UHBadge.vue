@@ -7,7 +7,7 @@
       :class="{ 'cursor-default': !badge.active }"
     >
       <div
-        class="flex w-16 h-16 text-center bg-gray-800 rounded-full"
+        class="flex w-16 h-16 text-center bg-gray-800 rounded-full md:w-24 md:h-24"
         :class="{ 'shadow-md': badge.active, 'opacity-25': !badge.active }"
       >
         <font-awesome-icon
