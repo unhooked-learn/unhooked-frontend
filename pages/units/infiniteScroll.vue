@@ -16,7 +16,7 @@
         
         <client-only>
           <div class="fixed bottom-5 right-5" >
-            <UHButton class="w-auto px-3 py-3 text-white transition transform bg-gray-600 rounded-full shadow hover:scale-110 hover:bg-gray-700 active:shadow-lg mouse focus:outline-none" @click="close()">
+            <UHButton class="w-auto px-3 py-3 text-white transition transform bg-gray-600 rounded-full shadow hover:scale-110 hover:bg-gray-700 active:shadow-lg mouse focus:outline-none">
               <font-awesome-icon
                 icon="forward"
                 class="m-auto text-gray-100 fa-1x"
@@ -70,7 +70,6 @@ export default {
         )
 
         this.pictures.push(...pictures.hits) 
-        // console.log(pictures)
         this.lastPage = Math.floor(pictures.totalHits/10)
     }
   },  
