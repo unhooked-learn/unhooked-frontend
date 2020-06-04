@@ -16,14 +16,13 @@
         
         <client-only>
           <div class="fixed bottom-5 right-5" >
-            <button v-show="enabled" 
-                    class="w-auto h-10 px-4 text-white transition duration-700 ease-in-out transform bg-gray-600 rounded-full shadow hover:scale-110 hover:bg-gray-700 active:shadow-lg mouse focus:outline-none">
+            <UHButton class="w-auto px-3 py-3 text-white transition transform bg-gray-600 rounded-full shadow hover:scale-110 hover:bg-gray-700 active:shadow-lg mouse focus:outline-none" @click="close()">
               <font-awesome-icon
                 icon="forward"
                 class="m-auto text-gray-100 fa-1x"
               />
               <span>{{$t('pages.infiniteScroll.skipButton')}}</span>
-            </button>
+            </UHButton>
           </div>
         </client-only>
 
@@ -31,6 +30,7 @@
     </main>
   </div>
 </template>
+
 
 <script>
 
