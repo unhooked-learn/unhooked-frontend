@@ -18,6 +18,9 @@ export default context => {
         },
         toast: {
           gratulations: 'Herzlichen Glückwunsch! Du hast {points} Punkte erhalten'
+        },
+        button: {
+          skipButtonText: 'Überspringen'
         }
       },
       pages: {
@@ -66,8 +69,7 @@ export default context => {
           save: 'Speichern'
         },
         infiniteScroll: {
-          label: 'Infinite Scroll',
-          skipButton: 'Überspringen'
+          label: 'Infinite Scroll'
         }
       }
     })

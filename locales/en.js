@@ -16,6 +16,9 @@ const keys = {
     },
     toast: {
       gratulations: 'Gratulations! You have earned {points} Points'
+    },
+    button: {
+      skipButtonText: 'Skip'
     }
   },
   pages: {
@@ -64,8 +67,7 @@ const keys = {
       save: 'Save'
     },
     infiniteScroll: {
-      label: 'Unendliches Scrollen',
-      skipButton: 'Skip'
+      label: 'Unendliches Scrollen'
     }
   }
 }
