@@ -61,11 +61,9 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters } from 'vuex'
 import UHBadge from '@/components/profile/UHBadge'
 import UHBadgeLoadingState from '@/components/profile/UHBadgeLoadingState'
-
-//const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 export default {
   name: 'profile',

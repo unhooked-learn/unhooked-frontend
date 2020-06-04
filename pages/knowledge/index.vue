@@ -5,29 +5,28 @@
         {{ $t('pages.knowledgebase.label') }}
       </h3>
     </header>
-    <main class="mb-16">
-      <div class="relative z-0 h-full pt-8 mb-10">
+    <main class="mb-16 ">
+      <div class="relative z-0 h-full px-2 pt-2 mb-10">
         <div class="absolute inset-0 bg-gray-800 h-1/6 -z-10"></div>
 
         <div class="mx-2">
           <div class="flex flex-wrap -mx-2">
-            <div class="w-1/2 p-2" :key="idx" v-for="(movie, idx) in movies">
-              <nuxt-link :to="localePath(`/knowledge/${movie.imdbID}`)">
-                <div class="w-full h-48 rounded shadow-lg">
-                  <div
-                    class="min-w-full min-h-full my-2 overflow-hidden text-white bg-gray-600 rounded-md shadow-md"
-                  >
-                    <div class="object-cover aspect aspect-1/2">
-                      <img class="object-cover" :src="movie.Poster" />
-                    </div>
-                    <div class="p-4 leading-none">
-                      <h4 class="text-gray-100 text-md">
-                        {{ movie.Title }}
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-              </nuxt-link>
+            <template v-if="$fetchState.pending">
+              <div class="w-1/2 p-2" v-for="i in 6" :key="i">
+                <UHKnowledgebaseCardLoadingState />
+              </div>
+            </template>
+
+            <div
+              v-else
+              class="w-1/2 p-2"
+              :key="idx"
+              v-for="(article, idx) in articles"
+            >
+              <UHKnowledgebaseCard
+                :to="localePath(`/knowledge/${article.imdbID}`)"
+                :movie="article"
+              />
             </div>
           </div>
         </div>
@@ -37,21 +36,30 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import UHKnowledgebaseCard from '@/components/knowledge/UHKnowledgebaseCard'
+import UHKnowledgebaseCardLoadingState from '@/components/knowledge/UHKnowledgebaseCardLoadingState'
+
 export default {
-  async asyncData({ params, $axios }) {
-    const data = await $axios.$get(
-      `http://www.omdbapi.com/?s=Star%20Wars&page=1&apikey=466f9280`
-    )
-    return { movies: data.Search }
+  fetchDelay: 1000,
+  // fetchOnServer: false,
+  components: {
+    UHKnowledgebaseCard,
+    UHKnowledgebaseCardLoadingState
   },
-  transition: {
-    name: 'page',
-    enterClass: 'opacity-0 scale-70',
-    enterToClass: 'opacity-100 scale-100',
-    enterActiveClass: 'transition-all transtion-1000 ease-in',
-    leaveClass: 'opacity-100 scale-100',
-    leaveToClass: 'opacity-0 scale-70',
-    leaveActiveClass: 'transition-all transtion-1000 ease-out'
+  computed: {
+    ...mapGetters({
+      articles: 'knowledge/articles'
+    })
+  },
+  activated() {
+    // Call fetch again if last fetch more than 5 minues ago
+    if (this.$fetchState.timestamp <= Date.now() - 1000 * 60 * 5) {
+      this.$fetch()
+    }
+  },
+  async fetch() {
+    await this.$store.dispatch('knowledge/fetch')
   }
 }
 </script>
