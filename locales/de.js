@@ -25,7 +25,7 @@ export default context => {
           label: 'Lerneinheiten',
           welcome: 'Hallo',
           intro: 'Willkommen in diesem Kurs. Hier wollen wir dir die manipulativen Mechanismen in Spiele/ und Social Media Anwendungen aufzeigen. Lass dich überraschen.',
-          module: 'Modul',
+          module: 'Modul {number}',
           status: {
             complete: 'Abgeschlossen',
             new: 'Neu',
