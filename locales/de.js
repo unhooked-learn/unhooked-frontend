@@ -20,7 +20,8 @@ export default context => {
           gratulations: 'Herzlichen Glückwunsch! Du hast {points} Punkte erhalten'
         },
         button: {
-          skipButtonText: 'Überspringen'
+          skipButtonText: 'Überspringen',
+          finished: 'Abschliessen'
         }
       },
       pages: {

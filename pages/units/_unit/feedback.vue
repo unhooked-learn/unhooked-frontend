@@ -48,30 +48,34 @@
                 }}
               </h4>
             </div>
-
             <div class="mt-6 mb-6 md:flex">
-                <div class="md:w-1/3">
-                  <legend class="text-sm tracking-wide uppercase">{{ $t('pages.course.unit.feedback.feedbackText') }}</legend>
-                </div>
-                <div class="mt-2 md:flex-1 mb:mt-0 md:px-3">
-                  <textarea class="w-full p-4 bg-white border-0 rounded-md shadow-lg" placeholder="..." rows="6"></textarea>
-                </div>
-              </div>      
-            
+              <div class="md:w-1/3">
+                <legend class="text-sm tracking-wide uppercase">
+                  {{ $t('pages.course.unit.feedback.feedbackText') }}
+                </legend>
+              </div>
+              <div class="mt-2 md:flex-1 mb:mt-0 md:px-3">
+                <textarea
+                  class="w-full p-4 bg-white border-0 rounded-md shadow-lg"
+                  placeholder="..."
+                  rows="6"
+                ></textarea>
+              </div>
+            </div>
           </div>
-      <div class="fixed bottom-5 right-5">
-        <UHButton
-          class="w-auto px-3 py-3 text-white transition transform bg-gray-600 rounded-full shadow hover:scale-110 hover:bg-gray-700 active:shadow-lg mouse focus:outline-none"
-        >
-          <span class="pr-2">{{ $t('general.modal.close') }}</span>
-          <font-awesome-icon icon="check" class="m-auto text-gray-100 fa-1x" />
-        </UHButton>
+          <div class="fixed bottom-5 right-5">
+            <UHButton
+              class="w-auto px-3 py-3 text-white transition transform bg-gray-600 rounded-full shadow hover:scale-110 hover:bg-gray-700 active:shadow-lg mouse focus:outline-none"
+            >
+              <span class="pr-2">{{ $t('general.button.finished') }}</span>
+              <font-awesome-icon
+                icon="check"
+                class="m-auto text-gray-100 fa-1x"
+              />
+            </UHButton>
+          </div>
         </div>
       </div>
-      </div>
-
-
-
     </main>
   </div>
 </template>

@@ -18,7 +18,8 @@ const keys = {
       gratulations: 'Gratulations! You have earned {points} Points'
     },
     button: {
-      skipButtonText: 'Skip'
+      skipButtonText: 'Skip',
+      finished: 'Finish'
     }
   },
   pages: {
