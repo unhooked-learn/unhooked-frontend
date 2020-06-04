@@ -75,10 +75,10 @@ export default {
 <style lang='scss'>
   .toasted-container {
     .toasted {
-      @apply p-3 leading-5;
+      @apply p-3 mr-2 leading-5;
       
       & > svg:first-child {
-        @apply mr-3 w-8 h-8;
+        @apply mr-3 ml-2 w-8 h-8;
 
       }
 

@@ -16,6 +16,9 @@ const keys = {
     },
     toast: {
       gratulations: 'Gratulations! You have earned {points} Points'
+    },
+    button: {
+      skipButtonText: 'Skip'
     }
   },
   pages: {
@@ -29,7 +32,12 @@ const keys = {
           text: 'Do you enjoy the course ? If so, please leave a rating!',
           vote: '{points} out of {maxPoints} ({votes} votes)'
         },
-        achievement: 'Achievements earned'
+        achievement: 'Achievements earned',
+      module: 'Module {number}',
+      status: {
+        complete: 'complete',
+        active: 'open',
+        new: 'new'
       }
     },
     profile: {
@@ -64,6 +72,9 @@ const keys = {
       english: 'English',
       german: 'German',
       save: 'Save'
+    },
+    infiniteScroll: {
+      label: 'Unendliches Scrollen'
     }
   }
 }

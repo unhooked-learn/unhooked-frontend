@@ -1,4 +1,3 @@
-// just for testing
 export default context => {
   return new Promise(resolve => {
     resolve({
@@ -19,6 +18,9 @@ export default context => {
         },
         toast: {
           gratulations: 'Herzlichen Glückwunsch! Du hast {points} Punkte erhalten'
+        },
+        button: {
+          skipButtonText: 'Überspringen'
         }
       },
       pages: {
@@ -28,11 +30,16 @@ export default context => {
           intro: 'Willkommen in diesem Kurs. Hier wollen wir dir die manipulativen Mechanismen in Spiele/ und Social Media Anwendungen aufzeigen. Lass dich überraschen.',
           module: 'Modul',
           unit: {
+            module: 'Modul {number}',
             feedback: {
               text: 'Wie findest du dieses Modul? Bitte lass eine Bewertung da!',
               vote: '{points} von {maxPoints} Punkten ({votes} Abstimmungen)'
             },
-            achievement: 'Freigeschaltete Errungenschaften'
+            achievement: 'Freigeschaltete Errungenschaften',
+          status: {
+            complete: 'Abgeschlossen',
+            new: 'Neu',
+            active: 'open',
           }
         },
         profile: {
@@ -67,6 +74,9 @@ export default context => {
           english: 'Englisch',
           german: 'Deutsch',
           save: 'Speichern'
+        },
+        infiniteScroll: {
+          label: 'Infinite Scroll'
         }
       }
     })

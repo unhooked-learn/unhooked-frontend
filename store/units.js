@@ -2,51 +2,20 @@ import { clone } from 'lodash'
 
 const unitStub = {
   id: 0,
-  imgurl: '#',
+  imgUrl: '#',
   heading: 'RAINBOW RIDE',
   excerpt: 'Road to 120 Stars.',
-  complete: false,
-  active: false
+  complete: false
 }
 
 const mutationsTypes = {
   SELECT_UNIT: 'SELECT_UNIT',
-  CLEAR_UNIT: 'CLEAR_UNIT'
+  CLEAR_UNIT: 'CLEAR_UNIT',
+  SET_UNITS: 'SET_UNITS'
 }
 
 export const state = () => ({
-  units: [
-    {
-      id: 1,
-      imgurl:
-        'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=250&q=80',
-      heading: 'Fear Of Missing Out',
-      excerpt:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, est.',
-      complete: false,
-      active: true
-    },
-    {
-      id: 2,
-      imgurl:
-        'https://images.unsplash.com/photo-1588058365548-9efe5acb8077?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=250&q=80',
-      heading: 'Infinite Scrolling',
-      excerpt:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, est.',
-      complete: true,
-      active: false
-    },
-    {
-      id: 3,
-      imgurl:
-        'https://images.unsplash.com/photo-1530467212787-ae644315e6bb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=250&q=60',
-      heading: 'Pull To Refresh',
-      excerpt:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, est.',
-      complete: false,
-      active: false
-    }
-  ],
+  units: [],
   selected: clone(unitStub)
 })
 
@@ -65,6 +34,9 @@ export const mutations = {
   },
   [mutationsTypes.CLEAR_UNIT](state) {
     state.selected = clone(unitStub)
+  },
+  [mutationsTypes.SET_UNITS](state, units) {
+    state.units = units
   }
 }
 
@@ -74,5 +46,9 @@ export const actions = {
   },
   clearUnit({ commit }) {
     commit(mutationsTypes.CLEAR_UNIT)
+  },
+  async fetch({ commit }) {
+    let units = await this.$axios.$get('./mock/unit/unit.json')
+    commit(mutationsTypes.SET_UNITS, units)
   }
 }
