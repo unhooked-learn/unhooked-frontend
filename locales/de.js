@@ -1,4 +1,3 @@
-// just for testing
 export default context => {
   return new Promise(resolve => {
     resolve({
@@ -16,6 +15,9 @@ export default context => {
           name: 'Name',
           password: 'Passwort',
           repeatPassword: 'Password wiederholen'
+        },
+        toast: {
+          gratulations: 'Herzlichen Glückwunsch! Du hast {points} Punkte erhalten'
         }
       },
       pages: {
@@ -23,12 +25,18 @@ export default context => {
           label: 'Lerneinheiten',
           welcome: 'Hallo',
           intro: 'Willkommen in diesem Kurs. Hier wollen wir dir die manipulativen Mechanismen in Spiele/ und Social Media Anwendungen aufzeigen. Lass dich überraschen.',
-          module: 'Modul'
+          module: 'Modul',
+          status: {
+            complete: 'Abgeschlossen',
+            new: 'Neu',
+            active: 'open',
+          }
         },
         profile: {
           label: 'Profile',
           badges: 'Auszeichnungen',
-          xp: 'Erfahrung'
+          xp: 'Erfahrungspunkte',
+          active: 'Aktiv seit {minutes} Minuten.'
         },
         knowledgebase: {
           label: 'Wissensdatenbank'
@@ -41,11 +49,12 @@ export default context => {
           text: 'Logge dich in deinen Account ein',
           remember: 'Login speichern',
           register: 'Registrieren',
-          login: 'Einloggen'
+          login: 'Einloggen',
+          logout: 'Ausloggen'
         },
         register: {
           label: 'Registrierung',
-          text: 'Fülle die Felder aus um dich zu registrieren',
+          text: 'Fülle die Felder aus um dich zu registrieren. Dieses ist optional und nur nötig, wenn du deine Daten und Fortschritt behalten willst.',
           register: 'Registrieren'
         },
         settings: {
@@ -55,6 +64,10 @@ export default context => {
           english: 'Englisch',
           german: 'Deutsch',
           save: 'Speichern'
+        },
+        infiniteScroll: {
+          label: 'Infinite Scroll',
+          skipButton: 'Überspringen'
         }
       }
     })

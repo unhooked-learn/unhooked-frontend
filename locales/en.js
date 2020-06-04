@@ -13,6 +13,9 @@ const keys = {
       name: 'Name',
       password: 'Password',
       repeatPassword: 'repeat Password',
+    },
+    toast: {
+      gratulations: 'Gratulations! You have earned {points} Points'
     }
   },
   pages: {
@@ -20,12 +23,18 @@ const keys = {
       label: 'Units',
       welcome: 'Hi',
       intro: 'Welcome to this course. We want you to know the manipulative mechanisms in mobile games and social media apps. Let\'s get suprised.',
-      module: 'Module'
+      module: 'Module',
+      status: {
+        complete: 'complete',
+        active: 'open',
+        new: 'new'
+      }
     },
     profile: {
       label: 'Profile',
       badges: 'Badges',
-      xp: 'XP'
+      xp: 'XP',
+      active: 'Active sinc {minutes} minutes.'
     },
     knowledgebase: {
       label: 'Knowledge Base'
@@ -39,10 +48,11 @@ const keys = {
       remember: 'Remember me',
       register: 'Register',
       login: 'Login',
+      logout: 'Logout'
     },
     register: {
       label: 'Registration',
-      text: 'Fill in to your register your account',
+      text: 'Fill in to your register your account. This feature is optional and only nessasary if you want to keep your data and progress.',
       register: 'Sign Up'
     },
     settings: {
@@ -52,6 +62,10 @@ const keys = {
       english: 'English',
       german: 'German',
       save: 'Save'
+    },
+    infiniteScroll: {
+      label: 'Unendliches Scrollen',
+      skipButton: 'Skip'
     }
   }
 }

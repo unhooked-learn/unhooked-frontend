@@ -1,7 +1,10 @@
 export const state = () => ({
   user: {
     name: 'John Doe',
-    score: 250000
+    score: 250000,
+    registered: true,
+    loggedin: false,
+    timestamp: Date.now()
   },
   achievements: [
     {
