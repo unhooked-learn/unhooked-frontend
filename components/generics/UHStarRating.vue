@@ -1,89 +1,51 @@
 <template>
-  <div class="text-yellow-300">
-    <font-awesome-icon
-      class="fa-2x"
-      icon="star"
-      :key="`fs${i}`"
-      v-for="(fs, i) in fullStars"
-    />
-
-    <font-awesome-layers
-      class="fa-2x"
-      :key="`hs${i}`"
-      v-for="(hs, i) in halfStars"
-    >
-      <font-awesome-icon 
-        icon="star-half"
-      />
-      <font-awesome-icon
-        class="opacity-25"
-        flip="horizontal"
-        :icon="['fas', 'star-half']"
-      />
-    </font-awesome-layers>
-
-    <font-awesome-icon
-      class="opacity-25 fa-2x star"
-      :icon="['fas', 'star']"
-      :key="`es${i}`"
-      v-for="(es, i) in emptyStars"
-    />
+  <div>
+    <client-only>
+    <div @mouseleave="showCurrentRating(0)" class="inline-block">
+      <star-rating 
+        inactive-color="#000"
+        v-bind:star-size="40"
+        v-model="boundRating"
+        :show-rating="false" 
+        @current-rating="showCurrentRating" 
+        @rating-selected="setCurrentSelectedRating" 
+        :increment="0.5"
+        :border-width="3"
+        :rounded-corners="true" :star-points="[23,2, 14,17, 0,19, 10,34, 7,50, 23,43, 38,50, 36,34, 46,19, 31,17]"
+      >
+      </star-rating>    
+        
+    </div>
+      <div class="pt-2 mb-2 cursor-pointer">
+        <div>{{currentRating}}</div>
+        <button class="text-sm" @click="boundRating = 0;currentRating = $t('pages.course.unit.feedback.noRating');">{{$t('pages.course.unit.feedback.resetRating')}}
+        </button>
+      </div>
+    </client-only>
   </div>
 </template>
 
 <script>
-import ratingIsValid from '@/lib/validate'
-
 export default {
   name: "UHStarRating",
-    beforeMount () {
-    let {rating, minRating, maxRating, starRatio, limit} = this
-    if (!ratingIsValid(rating, minRating, maxRating, starRatio, limit)) {
-      throw new Error(
-        `Illegal rating values detected. You should check your initial App state. (rating: ${rating}, minRating: ${minRating}, maxRating: ${maxRating}, starRatio: ${starRatio}, limit: ${limit})`
-      )
+    methods: {
+    setRating: function(rating) {
+      this.rating = this.$t('pages.course.unit.feedback.selectedRating', {rating: rating});
+    },
+    showCurrentRating: function(rating) {
+      this.currentRating = (rating === 0) ? this.currentSelectedRating : this.$t('pages.course.unit.feedback.selectRating', {rating: rating}); 
+    },
+    setCurrentSelectedRating: function(rating) {
+      this.currentSelectedRating = this.$t('pages.course.unit.feedback.selectedRating', {rating: rating});
     }
   },
-  props: {
-    minRating: {
-      type: Number,
-      default: 0
-    },
-    maxRating: {
-      type: Number,
-      default: 10
-    },
-    rating: {
-      type: Number,
-      default: 5
-    },
-    starRatio: {
-      type: Number,
-      default: 2
-    },
-    limit: {
-      type: Number,
-      default: 1000
+  data () {
+    return{
+      rating: this.$t('pages.course.unit.feedback.noRating'),
+      currentRating: this.$t('pages.course.unit.feedback.noRating'),
+      currentSelectedRating: this.$t('pages.course.unit.feedback.noRating'),
+      boundRating: 3,
     }
-  },
-  computed: {
-    fullStars () {
-      let { rating, starRatio } = this
-      return Math.floor(rating / starRatio)
-    },
-    halfStars () {
-      let { rating, starRatio } = this
-      let x = rating % starRatio
-      let i = (1 / 2) * starRatio
-      return x >= i ? 1 : 0
-    },
-    emptyStars () {
-      return this.maxStars - this.fullStars - this.halfStars
-    },
-    maxStars () {
-      let { maxRating, starRatio } = this
-      return Math.ceil(maxRating / starRatio)
-    }
-  },
+  }
 };
 </script>

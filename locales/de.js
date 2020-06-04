@@ -33,14 +33,20 @@ export default context => {
             module: 'Modul {number}',
             feedback: {
               text: 'Wie findest du dieses Modul? Bitte lass eine Bewertung da!',
-              vote: '{points} von {maxPoints} Punkten ({votes} Abstimmungen)'
+              vote: 'Durchschnitt: {points} von {maxPoints} Punkten ({votes} Abstimmungen)',
+              selectedRating: "Du hast {rating} Sterne ausgewählt",
+              selectRating: "Klick um {rating} Sterne auszuwählen",
+              noRating: "Nichts ausgewählt",
+              resetRating: "Auswahl zurücksetzen",
+              feedbackText: 'Lass uns ein Feedback da:',
             },
             achievement: 'Freigeschaltete Errungenschaften',
-          status: {
-            complete: 'Abgeschlossen',
-            new: 'Neu',
-            active: 'open',
-          }
+            status: {
+              complete: 'Abgeschlossen',
+              new: 'Neu',
+              active: 'open',
+            }
+          }  
         },
         profile: {
           label: 'Profile',

@@ -5,7 +5,9 @@ import vmodal from 'vue-js-modal'
 import { dom } from '@fortawesome/fontawesome-svg-core';
 import VueObserveVisibility from 'vue-observe-visibility'
 import VueFaker from 'vue-faker'
+import StarRating from 'vue-star-rating'
 
+Vue.component('star-rating', StarRating)
 Vue.use(VueFaker);
 Vue.use(VueObserveVisibility)
 Vue.component('flickity', Flickity)

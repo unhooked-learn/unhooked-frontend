@@ -29,7 +29,8 @@
     "vue-faker": "^1.0.1",
     "vue-flickity": "^1.2.1",
     "vue-js-modal": "^2.0.0-rc.3",
-    "vue-observe-visibility": "^0.4.6"
+    "vue-observe-visibility": "^0.4.6",
+    "vue-star-rating": "^1.6.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.0.0",

@@ -30,15 +30,21 @@ const keys = {
       unit: {
         feedback: {
           text: 'Do you enjoy the course ? If so, please leave a rating!',
-          vote: '{points} out of {maxPoints} ({votes} votes)'
+          vote: 'Average: {points} out of {maxPoints} ({votes} votes)',
+          selectedRating: "You have Selected: {rating} stars",
+          selectRating: "Click to select {rating} stars",
+          noRating: "No Rating Selected",
+          resetRating: "Reset rating",
+          feedbackText: 'Write us something',
         },
         achievement: 'Achievements earned',
-      module: 'Module {number}',
-      status: {
-        complete: 'complete',
-        active: 'open',
-        new: 'new'
-      }
+        module: 'Module {number}',
+        status: {
+          complete: 'complete',
+          active: 'open',
+          new: 'new'
+        }
+      }  
     },
     profile: {
       label: 'Profile',
