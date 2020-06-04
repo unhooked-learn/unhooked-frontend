@@ -1,8 +1,10 @@
 <template>
 <div class="flex items-center justify-center min-h-screen px-4 py-12 bg-gray-50 sm:px-6 lg:px-8">
   <div class="w-full max-w-md">
-    <div class="absolute top-5 left-5 ">
-        <nuxt-link :to="localePath('/auth/login')"><font-awesome-icon icon="chevron-left"/></nuxt-link>
+    <div class="absolute top-0 left-0">
+      <UHAccessibilityButton to='/auth/login'>
+        <font-awesome-icon icon="chevron-left" class="p-1 md:p-0 fa-2x" />
+      </UHAccessibilityButton>
     </div>  
     <div>
       <Logo />
@@ -74,12 +76,14 @@
 <script>
 import Logo from '@/components/Logo'
 import UHInput from '@/components/generics/UHInput'
+import UHAccessibilityButton from '@/components/generics/UHAccessibilityButton'
 
 export default {
   name: 'register',
   components: {
     Logo,
-    UHInput
+    UHInput,
+    UHAccessibilityButton
   },
   data(){
     return {

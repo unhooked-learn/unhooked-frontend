@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-center justify-center px-4 py-8 bg-gray-50 sm:px-6 lg:px-8"
+    class="flex items-center justify-center px-4 py-8 sm:px-6 lg:px-8"
   >
     <div class="w-full max-w-md">
       <div
@@ -8,14 +8,14 @@
       >
         <img
           :src="movie.Poster"
-          class="object-cover overflow-hidden rounded-b-md max-h-40"
+          class="object-cover overflow-hidden opacity-75 rounded-b-md max-h-40"
         />
       </div>
 
-      <div class="absolute top-0 left-0 text-white">
-        <nuxt-link :to="localePath('knowledge')">
-          <font-awesome-icon icon="chevron-left" class="m-5" />
-        </nuxt-link>
+      <div class="absolute top-0 left-0 text-white md:top-5 md:left-5">
+        <UHAccessibilityButton to='knowledge'>
+          <font-awesome-icon icon="chevron-left" class="p-1 md:p-0 fa-2x" />
+        </UHAccessibilityButton>  
       </div>
       <div>
         <h2
@@ -32,8 +32,14 @@
 </template>
 
 <script>
+
+import UHAccessibilityButton from '@/components/generics/UHAccessibilityButton'
+
 export default {
   layout: 'clear',
+  components: {
+    UHAccessibilityButton
+  },
   async asyncData({ params, $axios }) {
     const data = await $axios.$get(
       `http://www.omdbapi.com/?i=${params.chapter}&apikey=466f9280&plot=full`

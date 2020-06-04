@@ -1,5 +1,5 @@
 <template>
- <img class="mx-auto h-12 w-auto" src="@/assets/images/logo_big.png" alt="Unhooked Logo" />
+ <img class="w-auto mx-auto" src="@/assets/images/logo_big.png" alt="Unhooked Logo" />
 </template>
 <style>
 .NuxtLogo {

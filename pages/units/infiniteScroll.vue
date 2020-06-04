@@ -13,19 +13,7 @@
             <UHInstagramCard :item="item"/>            
           </template>  
         </UHInfiniteScroll>  
-        
-        <client-only>
-          <div class="fixed bottom-5 right-5" >
-            <UHButton class="w-auto px-3 py-3 text-white transition transform bg-gray-600 rounded-full shadow hover:scale-110 hover:bg-gray-700 active:shadow-lg mouse focus:outline-none">
-              <font-awesome-icon
-                icon="forward"
-                class="m-auto text-gray-100 fa-1x"
-              />
-              <span class="pl-2">{{$t('pages.infiniteScroll.skipButton')}}</span>
-            </UHButton>
-          </div>
-        </client-only>
-
+        <UHTimerButton :text="$t('general.button.skipButtonText')" />
       </div>
     </main>
   </div>
@@ -36,7 +24,7 @@
 
 import UHInfiniteScroll from '@/components/units/UHInfiniteScroll'
 import UHInstagramCard from '@/components/generics/UHInstagramCard'
-import UHButton from '@/components/generics/UHButton'
+import UHTimerButton from '@/components/generics/UHTimerButton'
 import { mapGetters } from 'vuex'
 
 export default {
@@ -56,7 +44,7 @@ export default {
   components: {
       UHInfiniteScroll,
       UHInstagramCard,
-      UHButton
+      UHTimerButton
   },
   computed: {
     ...mapGetters({

@@ -16,6 +16,9 @@ const keys = {
     },
     toast: {
       gratulations: 'Gratulations! You have earned {points} Points'
+    },
+    button: {
+      skipButtonText: 'Skip'
     }
   },
   pages: {
@@ -23,7 +26,7 @@ const keys = {
       label: 'Units',
       welcome: 'Hi',
       intro: 'Welcome to this course. We want you to know the manipulative mechanisms in mobile games and social media apps. Let\'s get suprised.',
-      module: 'Module',
+      module: 'Module {number}',
       status: {
         complete: 'complete',
         active: 'open',
@@ -64,8 +67,7 @@ const keys = {
       save: 'Save'
     },
     infiniteScroll: {
-      label: 'Unendliches Scrollen',
-      skipButton: 'Skip'
+      label: 'Unendliches Scrollen'
     }
   }
 }
