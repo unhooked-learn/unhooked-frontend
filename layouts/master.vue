@@ -1,6 +1,6 @@
 <template>
-  <div class="h-screen font-sans antialiased bg-gray-50">
-    <div class="relative max-w-md mx-auto">
+  <div class="h-screen font-sans antialiased bg-gray-100">
+    <div class="relative max-w-5xl mx-auto">
       <slot name="prepent">
         <client-only>
           <template>

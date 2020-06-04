@@ -1,6 +1,7 @@
 <template>
   <div class="flex justify-center">
     <button
+      :aria-label="badge.name"
       @click="showEarnedBadges(badge)"
       class="rounded-full focus:outline-none focus:shadow-outline-teal"
       :class="{ 'cursor-default': !badge.active }"
