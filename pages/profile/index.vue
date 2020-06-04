@@ -2,10 +2,10 @@
   <div>
     <header class="text-gray-100">
       <div class="py-4 text-center bg-gray-800">
-        <div class="absolute top-5 right-5 ">
-          <nuxt-link :to="localePath('/profile/settings')"
-            ><font-awesome-icon icon="pen"
-          /></nuxt-link>
+        <div class="absolute top-0 right-0 ">
+          <UHAccessibilityButton to='/profile/settings'>
+            <font-awesome-icon icon="pen" class="p-2 md:p-0 fa-2x" />
+          </UHAccessibilityButton>
         </div>
         <font-awesome-icon icon="user-circle" class="fa-7x" />
         <h2 class="pt-3 font-semibold uppercase">{{ user.name }}</h2>
@@ -39,12 +39,12 @@
         </template>
       </div>
     </header>
-    <main class="mb-16">
+    <main class="mb-16 bg-gray-100">
       <div class="relative z-0">
         <div class="absolute inset-0 bg-gray-800 h-1/2 -z-10"></div>
         <div class="flex justify-center">
           <div
-            class="p-4 text-lg font-semibold text-center text-gray-700 bg-gray-200 rounded-md shadow-md"
+            class="px-4 py-3 text-lg font-semibold text-center text-gray-700 bg-gray-200 rounded-md shadow-md"
           >
             <UHToast
               :text="$t('general.toast.gratulations',{points: user.score})"
@@ -94,6 +94,7 @@ import { mapGetters } from 'vuex'
 import UHBadge from '@/components/profile/UHBadge'
 import UHBadgeLoadingState from '@/components/profile/UHBadgeLoadingState'
 import UHToast from '@/components/generics/UHToast'
+import UHAccessibilityButton from '@/components/generics/UHAccessibilityButton'
 
 export default {
   name: 'profile',
@@ -102,7 +103,8 @@ export default {
   components: {
     UHBadge,
     UHBadgeLoadingState,
-    UHToast
+    UHToast,
+    UHAccessibilityButton
   },
   computed: {
     ...mapGetters({

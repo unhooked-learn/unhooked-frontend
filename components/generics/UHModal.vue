@@ -71,7 +71,6 @@ export default {
       this.$modal.show(this.name)
     },
     close() {
-      console.log('close')
       this.$modal.hide(this.name)
     },
     beforeClose() {

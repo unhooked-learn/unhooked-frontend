@@ -10,7 +10,7 @@ export default {
       [
         h('div', {
           class:
-            'flex w-16 h-16 text-center rounded-full shadow-md loading-state'
+            'flex w-16 h-16 md:w-24 md:h-24 text-center rounded-full shadow-md loading-state'
         })
       ]
     )
