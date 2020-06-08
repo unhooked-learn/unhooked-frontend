@@ -70,6 +70,14 @@ export default context => {
         },
         infiniteScroll: {
           label: 'Infinite Scroll'
+        },
+        pullToRefresh: {
+          label: 'Pull To Refresh',
+          news: 'Neuigkeiten',
+          errorLabel: "Fehler",
+          startLabel: "Aktualisierung Starten",
+          readyLabel: "Aktualisieren",
+          loadingLabel: "Lade..."
         }
       }
     })

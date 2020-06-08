@@ -68,7 +68,15 @@ const keys = {
     },
     infiniteScroll: {
       label: 'Unendliches Scrollen'
-    }
+    },
+    pullToRefresh: {
+      label: 'Pull To Refresh',
+      news: 'News',
+      errorLabel: "Error",
+      startLabel: "Start refresh",
+      readyLabel: "Refresh",
+      loadingLabel: "Lloading"
+    }  
   }
 }
 
