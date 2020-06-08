@@ -6,7 +6,7 @@
           <div class="relative pb-2/3">
             <img
               class="absolute object-cover w-full h-full "
-              :src="unit.imgurl"
+              :src="unit.imgUrl"
             />
           </div>
         </div>
@@ -16,7 +16,7 @@
     <template #body>
       <div class="px-4 mt-2">
         <h1 class="py-2 font-semibold uppercase">
-          #{{ unit.id }} {{ unit.heading }}
+          #{{ unit.id }} {{ unit.name }}
           <span
             class="ml-3 text-sm text-green-500 text-semibold"
             v-if="unit.complete"
