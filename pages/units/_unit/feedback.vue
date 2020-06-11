@@ -66,6 +66,7 @@
           <div class="fixed bottom-5 right-5">
             <UHButton
               class="w-auto px-3 py-3 text-white transition transform bg-gray-600 rounded-full shadow hover:scale-110 hover:bg-gray-700 active:shadow-lg mouse focus:outline-none"
+              @click="goHome"
             >
               <span class="pr-2">{{ $t('general.button.finished') }}</span>
               <font-awesome-icon
@@ -102,6 +103,13 @@ export default {
       achievements: 'profile/achievements',
       units: 'units/units'
     })
+  },
+  methods: {
+    goHome() {
+      this.$router.push({
+        path: this.localePath('units')
+      })
+    }
   },
   activated() {
     // Call fetch again if last fetch more than 5 minues ago
