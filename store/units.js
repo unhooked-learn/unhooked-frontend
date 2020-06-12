@@ -48,7 +48,10 @@ export const actions = {
     commit(mutationsTypes.CLEAR_UNIT)
   },
   async fetch({ commit }) {
-    let units = await this.$axios.$get('./mock/unit/unit.json')
+    this.$axios.setHeader("Access-Control-Allow-Origin", "*")
+    this.$axios.setHeader("Content-Type", "application/json")
+    let units = await this.$axios.$get('unit')
+    console.log(units)
     commit(mutationsTypes.SET_UNITS, units)
   }
 }

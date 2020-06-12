@@ -90,7 +90,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import UHBadge from '@/components/profile/UHBadge'
 import UHBadgeLoadingState from '@/components/profile/UHBadgeLoadingState'
 import UHToast from '@/components/generics/UHToast'
@@ -98,7 +98,7 @@ import UHAccessibilityButton from '@/components/generics/UHAccessibilityButton'
 
 export default {
   name: 'profile',
-  //fetchOnServer: false,
+  fetchOnServer: false,
   fetchDelay: 1000,
   components: {
     UHBadge,
@@ -119,9 +119,14 @@ export default {
     }
   },
   async fetch() {
-    await this.$store.dispatch('badge/fetchBadges')
+    // await this.$store.dispatch('badge/fetchBadges')
+    await this.$store.dispatch('profile/fetch')
+    // await this.user()
   },
   methods: {
+    ...mapActions({
+      // user: 'profile/fetch'
+    }),
     showMinutes(timestamp) {
       return (Math.floor((Date.now()-timestamp)/1000/60))
     },

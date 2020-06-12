@@ -65,7 +65,7 @@ module.exports = {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    // baseURL: './mock/'
+    baseURL: 'http://localhost:8080/'
   },
   /*
    ** Fontawesome module configuration
