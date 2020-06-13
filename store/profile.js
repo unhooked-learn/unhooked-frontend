@@ -26,9 +26,8 @@ export const mutations = {
 
 export const actions = {
   async fetch({ commit }) {
-    // this.$axios.setHeader("x-Username","emma")
+    this.$axios.setHeader("username","emma")
     this.$axios.setHeader("Access-Control-Allow-Origin", "*")
-    // this.$axios.setHeader("Content-Type", "text/plain")
     let user = await this.$axios.$get('user/details')
     console.log(user)
     commit(mutationsTypes.SET_USER, user)

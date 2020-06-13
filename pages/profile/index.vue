@@ -119,7 +119,7 @@ export default {
     }
   },
   async fetch() {
-    // await this.$store.dispatch('badge/fetchBadges')
+    await this.$store.dispatch('badge/fetchBadges')
     await this.$store.dispatch('profile/fetch')
     // await this.user()
   },
