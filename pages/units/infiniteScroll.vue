@@ -13,7 +13,7 @@
             <UHInstagramCard :item="item"/>            
           </template>  
         </UHInfiniteScroll>  
-        <UHTimerButton :text="$t('general.button.skipButtonText')" />
+        <UHTimerButton :timer="30000" :text="$t('general.button.skipButtonText')" />
       </div>
     </main>
   </div>
@@ -35,11 +35,7 @@ export default {
       pictures: [],
       lastPage: 1,
       name: "John Doe",
-      enabled: false
     }  
-  },
-  created() {
-    setTimeout(() => this.enabled = true, 10000)
   },
   components: {
       UHInfiniteScroll,
@@ -64,10 +60,7 @@ export default {
     }
   },  
   mounted() {
-      this.fetch(1),
-      setTimeout(() => {
-      this.timeout = 'Button';
-    }, 3000);
+      this.fetch(1)
   },
   transition: {
     name: 'page',

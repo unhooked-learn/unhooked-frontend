@@ -32,7 +32,7 @@ export const mutations = {
     state.user = user
   },
   [mutationsTypes.TRACK_ACTIVETIME](state) {
-    state.active.activeTime += 1
+    state.active.activeTime++
   }
 }
 
