@@ -67,6 +67,10 @@ export default {
     })
   },
 
+  mounted () {
+    this.$store.dispatch('profile/activeTime')
+  },
+
   activated() {
     // Call fetch again if last fetch more than 5 minues ago
     if (this.$fetchState.timestamp <= Date.now() - 1000 * 60 * 5) {

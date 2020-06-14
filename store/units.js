@@ -51,7 +51,7 @@ export const actions = {
     this.$axios.setHeader("Access-Control-Allow-Origin", "*")
     this.$axios.setHeader("Content-Type", "application/json")
     let units = await this.$axios.$get('unit')
-    console.log(units)
+    // console.log(units)
     commit(mutationsTypes.SET_UNITS, units)
   }
 }

@@ -35,7 +35,7 @@ export default {
   methods: {
     inputChange(event){
       this.$emit('input', event.target.value);
-      console.log(event.target.value);
+      // console.log(event.target.value);
     } 
   }
 }
