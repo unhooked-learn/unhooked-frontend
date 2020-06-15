@@ -85,6 +85,8 @@ import UHAccessibilityButton from '@/components/generics/UHAccessibilityButton'
 
 export default {
   name: 'settings',
+  fetchOnServer: false,
+  fetchDelay: 1000,
   components: {
     UHInput,
     UHAccessibilityButton
@@ -92,8 +94,8 @@ export default {
   data(){
     return {
       form: {
-        email:'',
-        name:'',
+        email: '',
+        name: '',
         password:'',
         repeatPassword:''
       },
@@ -101,6 +103,12 @@ export default {
     }
   },
   computed: {
+    ...mapGetters({
+      user: 'profile/user',
+    })
+  },
+  async fetch() {
+    await this.$store.dispatch('profile/fetch')
   },
   methods: {
     showModal() {
@@ -108,6 +116,15 @@ export default {
     },
     hideModal() {
       this.$modal.hide('modal')
+    }
+  },
+  watch: {
+    user: {
+      handler(user){
+        this.form.email = user.email
+        this.form.name = user.username
+      },
+      deep: true
     }
   }
 }

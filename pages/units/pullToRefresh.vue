@@ -9,7 +9,7 @@
       <div class="relative z-0 h-full pt-6 mb-10">
         <div class="absolute inset-0 bg-gray-800 h-1/6 -z-10"></div>
         <UHNewsCard/>
-        <UHTimerButton :text="$t('general.button.skipButtonText')" />
+        <UHTimerButton :timer="30000" :text="$t('general.button.skipButtonText')" />
       </div>
     </main>
   </div>
@@ -22,19 +22,7 @@ import UHTimerButton from '@/components/generics/UHTimerButton'
 export default {
   name: 'pullToRefresh',
   layout: 'clear',
-  data() {
-    return {
-      enabled: false,
-    }
-  },
-  created() {
-    setTimeout(() => (this.enabled = true), 10000)
-  },
-  mounted() {
-      setTimeout(() => {
-        this.timeout = 'Button'
-      }, 3000)
-  },
+
   components: {
     UHNewsCard,
     UHTimerButton

@@ -3,7 +3,7 @@ import { clone } from 'lodash'
 let badgeStub = {
   active: false,
   description: '',
-  icon: 'egg',
+  iconName: 'egg',
   name: ''
 }
 
@@ -38,7 +38,10 @@ export const actions = {
     commit(mutationsTypes.CLEAR_BADGE)
   },
   async fetchBadges({ commit }) {
-    let badges = await this.$axios.$get('./mock/achievement/all.json')
+    this.$axios.setHeader("username","emma")
+    this.$axios.setHeader("Content-Type", "application/json")
+    let badges = await this.$axios.$get('achievements')
+    // console.log(badges)
     commit(mutationsTypes.SET_BADGES, badges)
   }
 }

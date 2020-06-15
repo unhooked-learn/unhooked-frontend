@@ -20,7 +20,7 @@
           class="flex w-32 h-32 m-auto text-center bg-gray-200 rounded-full shadow-lg"
         >
           <font-awesome-icon
-            :icon="selectedBadge.icon"
+            :icon="selectedBadge.iconName"
             class="m-auto text-gray-800 fa-5x"
           />
         </div>
