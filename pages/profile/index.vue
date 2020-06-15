@@ -44,7 +44,7 @@
         <div class="absolute inset-0 bg-gray-800 h-1/2 -z-10"></div>
         <div class="flex justify-center">
           <div
-            class="px-4 py-3 text-lg font-semibold text-center text-gray-700 bg-gray-200 rounded-md shadow-md"
+            class="px-4 py-3 text-lg font-semibold text-center text-gray-700 bg-white rounded-md shadow-md"
           >
             <UHToast
               :text="$t('general.toast.gratulations',{points: user.totalScore})"

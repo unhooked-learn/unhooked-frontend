@@ -43,7 +43,9 @@ module.exports = {
     '@nuxtjs/tailwindcss',
 
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+
+    '@nuxtjs/pwa',
   ],
   /*
    ** Nuxt.js modules
@@ -60,6 +62,19 @@ module.exports = {
     // Doc: https://github.com/shakee93/vue-toasted
     '@nuxtjs/toast'
   ],
+  pwa: {
+    manifest: {
+      "name": "Unhooked",
+      "short_name": "Unhooked",
+      "start_url": ".",
+      "display": "fullscreen",
+      "background_color": "gray",
+      "description": "Manipulative Methods in Mobile Games: An E-Learning Unit",
+      "categories": ["elearning", "education", "course", "social media", "awareness"],
+      "dir": "ltr",
+      "orientation": "portrait"
+    }
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

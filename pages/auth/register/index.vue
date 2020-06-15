@@ -8,11 +8,11 @@
     </div>  
     <div>
       <Logo />
-      <h2 class="mt-6 text-3xl font-extrabold leading-9 text-center text-gray-900">
+      <h2 class="mt-4 text-3xl font-extrabold leading-9 text-center text-gray-900">
         {{ $t('pages.register.label') }}
       </h2>
     </div>
-    <form class="mt-8" action="#" method="POST">
+    <form class="mt-4" action="#" method="POST">
       <input type="hidden" name="remember" value="true" />
       <div class="rounded-md">
         <div>
@@ -63,7 +63,7 @@
         </UHInput>
       </div>  
 
-      <div class="mt-6">
+      <div class="mt-4">
         <button type="submit" class="relative flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md group hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">
            {{ $t('pages.register.register') }}
         </button>
