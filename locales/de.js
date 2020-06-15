@@ -20,7 +20,8 @@ export default context => {
           gratulations: 'Herzlichen Glückwunsch! Du hast {points} Punkte erhalten'
         },
         button: {
-          skipButtonText: 'Überspringen'
+          skipButtonText: 'Überspringen',
+          finished: 'Abschliessen'
         }
       },
       pages: {
@@ -28,12 +29,25 @@ export default context => {
           label: 'Lerneinheiten',
           welcome: 'Hallo',
           intro: 'Willkommen in diesem Kurs. Hier wollen wir dir die manipulativen Mechanismen in Spiele/ und Social Media Anwendungen aufzeigen. Lass dich überraschen.',
-          module: 'Modul {number}',
-          status: {
-            complete: 'Abgeschlossen',
-            new: 'Neu',
-            active: 'open',
-          }
+          module: 'Modul',
+          unit: {
+            module: 'Modul {number}',
+            feedback: {
+              text: 'Wie findest du dieses Modul? Bitte lass eine Bewertung da!',
+              vote: 'Durchschnitt: {points} von {maxPoints} Punkten ({votes} Votes)',
+              selectedRating: "Du hast {rating} Sterne ausgewählt",
+              selectRating: "Klick um {rating} Sterne auszuwählen",
+              noRating: "Nichts ausgewählt",
+              resetRating: "Auswahl zurücksetzen",
+              feedbackText: 'Lass uns ein Feedback da:',
+            },
+            achievement: 'Freigeschaltete Errungenschaften',
+            status: {
+              complete: 'Abgeschlossen',
+              new: 'Neu',
+              active: 'open',
+            }
+          }  
         },
         profile: {
           label: 'Profile',

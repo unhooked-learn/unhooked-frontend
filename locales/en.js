@@ -18,7 +18,8 @@ const keys = {
       gratulations: 'Gratulations! You have earned {points} Points'
     },
     button: {
-      skipButtonText: 'Skip'
+      skipButtonText: 'Skip',
+      finished: 'Finish'
     }
   },
   pages: {
@@ -26,12 +27,25 @@ const keys = {
       label: 'Units',
       welcome: 'Hi',
       intro: 'Welcome to this course. We want you to know the manipulative mechanisms in mobile games and social media apps. Let\'s get suprised.',
-      module: 'Module {number}',
-      status: {
-        complete: 'complete',
-        active: 'open',
-        new: 'new'
-      }
+      module: 'Module',
+      unit: {
+        feedback: {
+          text: 'Do you enjoy the course ? If so, please leave a rating!',
+          vote: 'Average: {points} out of {maxPoints} ({votes} votes)',
+          selectedRating: "You have Selected: {rating} stars",
+          selectRating: "Click to select {rating} stars",
+          noRating: "No Rating Selected",
+          resetRating: "Reset rating",
+          feedbackText: 'Write us something',
+        },
+        achievement: 'Achievements earned',
+        module: 'Module {number}',
+        status: {
+          complete: 'complete',
+          active: 'open',
+          new: 'new'
+        }
+      }  
     },
     profile: {
       label: 'Profile',
