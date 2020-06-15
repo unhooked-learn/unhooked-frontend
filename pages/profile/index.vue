@@ -8,10 +8,10 @@
           </UHAccessibilityButton>
         </div>
         <font-awesome-icon icon="user-circle" class="fa-7x" />
-        <h2 class="pt-3 font-semibold uppercase">{{ user.name }}</h2>
+        <h2 class="pt-3 font-semibold uppercase">{{ user.username }}</h2>
         <h4 class="mb-3 text-xs">
           {{
-            $t('pages.profile.active', { minutes: showMinutes(user.timestamp) })
+            $t('pages.profile.active', { minutes: active.activeTime })
           }}
         </h4>
         <template v-if="user.registered">
@@ -47,13 +47,13 @@
             class="px-4 py-3 text-lg font-semibold text-center text-gray-700 bg-white rounded-md shadow-md"
           >
             <UHToast
-              :text="$t('general.toast.gratulations',{points: user.score})"
-              :linkText="user.score"
+              :text="$t('general.toast.gratulations',{points: user.totalScore})"
+              :linkText="user.totalScore"
               type="success"
               icon="coins"
               :close="$t('general.modal.close')"
             />
-            {{ $t('pages.profile.xp', { points: user.score }) }}
+            {{ $t('pages.profile.xp', { points: user.totalScore }) }}
           </div>
         </div>
       </div>
@@ -90,7 +90,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import UHBadge from '@/components/profile/UHBadge'
 import UHBadgeLoadingState from '@/components/profile/UHBadgeLoadingState'
 import UHToast from '@/components/generics/UHToast'
@@ -98,7 +98,7 @@ import UHAccessibilityButton from '@/components/generics/UHAccessibilityButton'
 
 export default {
   name: 'profile',
-  //fetchOnServer: false,
+  fetchOnServer: false,
   fetchDelay: 1000,
   components: {
     UHBadge,
@@ -109,6 +109,7 @@ export default {
   computed: {
     ...mapGetters({
       user: 'profile/user',
+      active: 'profile/active',
       badges: 'badge/badges'
     })
   },
@@ -120,8 +121,13 @@ export default {
   },
   async fetch() {
     await this.$store.dispatch('badge/fetchBadges')
+    await this.$store.dispatch('profile/fetch')
+    // await this.user()
   },
   methods: {
+    ...mapActions({
+      // user: 'profile/fetch'
+    }),
     showMinutes(timestamp) {
       return (Math.floor((Date.now()-timestamp)/1000/60))
     },

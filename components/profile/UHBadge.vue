@@ -11,7 +11,7 @@
         :class="{ 'shadow-md': badge.active, 'opacity-25': !badge.active }"
       >
         <font-awesome-icon
-          :icon="badge.icon"
+          :icon="badge.iconName"
           class="m-auto text-gray-100 fa-2x"
         />
       </div>

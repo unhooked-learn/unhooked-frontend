@@ -14,7 +14,9 @@
                 <UHKnowledgebaseCardLoadingState />
               </div>
             </template>
-
+            <div v-else-if="$fetchState.error">
+              {{$fetchState.error.message}}
+            </div> 
             <div
               v-else
               :key="idx"

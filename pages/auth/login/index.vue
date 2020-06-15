@@ -74,6 +74,7 @@ import UHAccessibilityButton from '@/components/generics/UHAccessibilityButton'
 
 export default {
   name: 'login',
+  layout: 'clear',  
   components: {
     Logo,
     UHInput,

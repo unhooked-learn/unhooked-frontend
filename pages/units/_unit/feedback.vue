@@ -93,16 +93,18 @@ export default {
   layout: 'clear',
   components: {
     UHStarRating,
-    UHBadge,
     UHButton,
     UHAccessibilityButton
   },
   computed: {
     ...mapGetters({
       user: 'profile/user',
-      achievements: 'profile/achievements',
       units: 'units/units'
     })
+  },
+  async fetch() {
+    await this.$store.dispatch('profile/fetch')
+    await this.$store.dispatch('units/fetch')
   },
   methods: {
     goHome() {
