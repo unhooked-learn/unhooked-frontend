@@ -2,7 +2,7 @@ import { clone } from 'lodash'
 
 const unitStub = {
   id: 0,
-  imgUrl: '#',
+  mediaName: '#',
   heading: 'RAINBOW RIDE',
   excerpt: 'Road to 120 Stars.',
   complete: false

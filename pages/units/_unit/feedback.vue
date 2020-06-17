@@ -6,7 +6,7 @@
           class="absolute top-0 right-0 object-cover min-w-full aspect aspect-1/2"
         >
           <img
-            :src="units[0].imgUrl"
+            :src="units[0].mediaName"
             class="z-0 object-cover overflow-hidden max-h-40"
           />
         </div>

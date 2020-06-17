@@ -5,7 +5,7 @@
       :class="{ 'bg-gray-600 text-white': active, 'bg-white': !active }"
     >
     <div class="flex justify-end object-cover aspect aspect-1/2">
-      <img class="object-cover" :src="unit.imgUrl" :alt="unit.name" />
+      <img class="object-cover" :src="unit.mediaName" :alt="unit.name" />
       <font-awesome-icon  v-if="complete||!active" class="absolute pt-3 pr-3 fa-2x" :class="{'text-green-400':complete, 'text-blue-400':!complete&&!active}" icon="circle" />
 
     </div>

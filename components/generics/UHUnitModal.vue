@@ -6,7 +6,7 @@
           <div class="relative pb-2/3">
             <img
               class="absolute object-cover w-full h-full "
-              :src="unit.imgUrl"
+              :src="unit.mediaName"
             />
           </div>
         </div>
