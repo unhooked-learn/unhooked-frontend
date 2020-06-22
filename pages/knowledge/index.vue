@@ -23,8 +23,8 @@
               v-for="(article, idx) in articles"
             >
               <UHKnowledgebaseCard
-                :to="localePath(`/knowledge/${article.imdbID}`)"
-                :movie="article"
+                :to="localePath(`/knowledge/${article.id}`)"
+                :card="article"
               />
             </div>
           </div>

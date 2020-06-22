@@ -22,9 +22,9 @@ export const actions = {
   async fetch({ commit }) {
     this.$axios.setHeader("Access-Control-Allow-Origin", "*")
     this.$axios.setHeader("Content-Type", "application/json")
-    let { Search } = await this.$axios.$get(
-      'http://www.omdbapi.com/?s=Star%20Wars&page=1&apikey=466f9280'
+    let cards = await this.$axios.$get(
+      `${this.$axios.defaults.baseURL}knowledgebase`
     )
-    commit(mutationsTypes.SET_ARTICLES, Search)
+    commit(mutationsTypes.SET_ARTICLES, cards)
   }
 }

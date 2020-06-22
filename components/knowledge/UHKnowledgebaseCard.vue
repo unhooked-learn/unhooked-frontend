@@ -5,11 +5,11 @@
         class="min-w-full min-h-full my-2 overflow-hidden text-gray-800 bg-white rounded-md shadow-md"
       >
         <div class="object-cover aspect aspect-1/2">
-          <img class="object-cover" :src="movie.Poster" />
+          <img class="object-cover" :src="card.mediaName" />
         </div>
         <div class="p-4 leading-none">
           <h4 class="text-md">
-            {{ movie.Title }}
+            {{ card.title }}
           </h4>
         </div>
       </div>
@@ -22,14 +22,14 @@ export default {
   name: 'UHKnowledgebaseCard',
   props: {
     to: {
-      trype: String,
+      type: String,
       required: false,
       default: '#'
     },
-    movie: {
+    card: {
       type: Object,
       required: false,
-      default: () => ({ Poster: '#', Title: 'foo' })
+      default: () => ({ mediaName: '#', title: 'foo' })
     }
   }
 }

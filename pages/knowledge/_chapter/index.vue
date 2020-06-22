@@ -7,7 +7,7 @@
         class="absolute top-0 right-0 object-cover min-w-full aspect aspect-1/2"
       >
         <img
-          :src="movie.Poster"
+          :src="card.mediaName"
           class="object-cover overflow-hidden opacity-75 rounded-b-md max-h-40"
         />
       </div>
@@ -21,11 +21,11 @@
         <h2
           class="text-2xl font-extrabold leading-9 text-center text-gray-900 mt-36"
         >
-          {{ movie.Title }}
+          {{ card.title }}
         </h2>
       </div>
       <div class="mt-4 mb-4 text-gray-900">
-        {{ movie.Plot }}
+        {{ card.text }}
       </div>
     </div>
   </div>
@@ -42,9 +42,9 @@ export default {
   },
   async asyncData({ params, $axios }) {
     const data = await $axios.$get(
-      `http://www.omdbapi.com/?i=${params.chapter}&apikey=466f9280&plot=full`
+      `${$axios.defaults.baseURL}knowledgebase/${params.chapter}`
     )
-    return { movie: data }
+    return { card: data }
   }
 }
 </script>
