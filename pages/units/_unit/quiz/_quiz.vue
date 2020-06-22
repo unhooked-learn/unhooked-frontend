@@ -80,7 +80,7 @@ export default {
       } else {
         this.$router.push(
           this.localePath({
-            name: 'units-unit-evaluation',
+            name: 'units-unit-feedback',
             params: { unit: this.getUnitParams }
           })
         )

@@ -5,8 +5,7 @@
         <div
           class="absolute top-0 right-0 object-cover min-w-full aspect aspect-1/2"
         >
-          <img
-            :src="units[0].mediaName"
+          <img :src="units[getId()].mediaName"
             class="z-0 object-cover overflow-hidden max-h-40"
           />
         </div>
@@ -30,7 +29,7 @@
             <div
               class="px-4 py-1 text-lg font-semibold text-center text-gray-700 bg-white rounded-md shadow-md"
             >
-              <div class="mt-5">{{ units[0].heading }}</div>
+              <div class="mt-5">{{ units[getId()].name }}</div>
               <h4 class="mt-3 mb-3 text-base">
                 {{ $t('pages.course.unit.feedback.text') }}
               </h4>
@@ -41,9 +40,9 @@
               <h4 class="mb-3 text-xs">
                 {{
                   $t('pages.course.unit.feedback.vote', {
-                    points: '3,5',
+                    points: avgFeedback,
                     maxPoints: '5',
-                    votes: '17'
+                    votes: '2'
                   })
                 }}
               </h4>
@@ -98,19 +97,18 @@ export default {
   },
   computed: {
     ...mapGetters({
-      user: 'profile/user',
-      units: 'units/units'
+      units: 'units/units',
+      user: 'profile/user'
     })
-  },
-  async fetch() {
-    await this.$store.dispatch('profile/fetch')
-    await this.$store.dispatch('units/fetch')
   },
   methods: {
     goHome() {
       this.$router.push({
         path: this.localePath('units')
       })
+    },
+    getId() {
+      return +this.$nuxt._route.params.unit
     }
   },
   activated() {
@@ -121,6 +119,11 @@ export default {
   },
   async fetch() {
     await this.$store.dispatch('units/fetch')
+    await this.$store.dispatch('profile/fetch')
+  },
+  async asyncData ({params, $axios}) {
+    const data = await $axios.$get(`${$axios.defaults.baseURL}unit/${params.unit}/averagefeedback`)
+    return {avgFeedback: data}
   }
 }
 </script>
