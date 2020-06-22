@@ -83,17 +83,17 @@ export default {
         return itemState.ANSWER_IS_SELECTED
       }
 
-      if (this.item.isCorrect && this.check) {
+      if (this.item.correct && this.check) {
         return itemState.ANSWER_IS_CORRECT
       }
-      if (!this.item.isCorrect && this.check) {
+      if (!this.item.correct && this.check) {
         return itemState.ANSWER_IS_WRONG
       }
 
-      if (this.check && this.isCurrent && this.item.isCorrec) {
+      if (this.check && this.isCurrent && this.item.correct) {
         return itemState.ANSWER_IS_CORRECT_AND_SELECTED
       }
-      if (this.check && this.isCurrent && !this.item.isCorrec) {
+      if (this.check && this.isCurrent && !this.item.correct) {
         return itemState.ANSWER_IS_WRONG_AND_SELECTED
       }
     }

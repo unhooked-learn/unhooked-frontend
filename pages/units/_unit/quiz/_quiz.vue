@@ -7,14 +7,14 @@
       </div>
     </header>
     <main class="p-4">
-     <client-only>
- <component
-        :is="questionType"
-        :question="currentQuestion"
-        @check="checkAnswer"
-        @selectedAnswer="quizSelectedAnswer"
-      />
-     </client-only>
+      <client-only>
+        <component
+          :is="questionType"
+          :question="currentQuestion"
+          @check="checkAnswer"
+          @selectedAnswer="quizSelectedAnswer"
+        />
+      </client-only>
     </main>
     <transition>
       <UHQuestionToast :answers="selectedAnswer" v-if="showToast" @next="goToNextQuestion" />

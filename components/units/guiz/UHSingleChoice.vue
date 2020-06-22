@@ -35,7 +35,7 @@ export default {
     selectedAnswer: {
       handler(value) {
         this.quiz.item = {
-          isCorrect: value.isCorrect,
+          isCorrect: value.correct,
           validationTexts: [value.validationText]
         }
       }
