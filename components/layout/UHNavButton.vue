@@ -9,11 +9,11 @@
         'text-gray-400 hover:text-gray-600': !isActive
       }"
     >
-      <font-awesome-icon :icon="icon" class="w-4 fill-current" />
+      <div class="w-5 h-5">
+        <font-awesome-icon :icon="icon" class="fill-current" />
+      </div>
 
-      <p class="ml-2 text-sm text-blue-600 uppercase " v-if="isActive">
-        {{ name }}
-      </p>
+      <p class="ml-2 text-sm text-blue-600 uppercase" v-if="isActive">{{ name }}</p>
     </a>
   </nuxt-link>
 </template>

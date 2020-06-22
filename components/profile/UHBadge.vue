@@ -7,13 +7,15 @@
       :class="{ 'cursor-default': !badge.active }"
     >
       <div
-        class="flex w-16 h-16 text-center bg-gray-800 rounded-full md:w-24 md:h-24"
+        class="flex items-center justify-center w-16 h-16 text-center bg-gray-800 rounded-full md:w-24 md:h-24"
         :class="{ 'shadow-md': badge.active, 'opacity-25': !badge.active }"
       >
-        <font-awesome-icon
-          :icon="badge.iconName"
+       <div class="w-8 h-8">
+          <font-awesome-icon
+          :icon="badge.icon"
           class="m-auto text-gray-100 fa-2x"
         />
+       </div>
       </div>
     </button>
   </div>

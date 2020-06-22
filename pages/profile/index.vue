@@ -2,40 +2,44 @@
   <div>
     <header class="text-gray-100">
       <div class="py-4 text-center bg-gray-800">
-        <div class="absolute top-0 right-0 ">
-          <UHAccessibilityButton to='/profile/settings'>
-            <font-awesome-icon icon="pen" class="p-2 md:p-0 fa-2x" />
+        <div class="absolute top-0 right-0">
+          <UHAccessibilityButton to="/profile/settings">
+            <div class="w-16 p-2 md:p-0">
+              <font-awesome-icon icon="pen" class="fa-2x" />
+            </div>
           </UHAccessibilityButton>
         </div>
-        <font-awesome-icon icon="user-circle" class="fa-7x" />
+
+        <div class="flex justify-center">
+          <div class="w-16">
+            <font-awesome-icon icon="user-circle" class="fa-7x" />
+          </div>
+        </div>
+
         <h2 class="pt-3 font-semibold uppercase">{{ user.username }}</h2>
+
         <h4 class="mb-3 text-xs">
           {{
-            $t('pages.profile.active', { minutes: active.activeTime })
+          $t('pages.profile.active', { minutes: active.activeTime })
           }}
         </h4>
         <template v-if="user.registered">
-          <template v-if="user.loggedin">
-            <nuxt-link
-              :to="localePath('/profile')"
-              class="px-2 py-1 text-xs bg-gray-400 border-gray-800 rounded-full pill"
-              >{{ $t('pages.login.logout') }}</nuxt-link
-            >
-          </template>
-          <template v-else>
-            <nuxt-link
-              :to="localePath('/auth/login')"
-              class="px-2 py-1 text-xs bg-gray-400 border-gray-800 rounded-full pill"
-              >{{ $t('pages.login.login') }}</nuxt-link
-            >
-          </template>
+          <nuxt-link
+            v-if="user.loggedin"
+            :to="localePath('/profile')"
+            class="px-2 py-1 text-xs bg-gray-400 border-gray-800 rounded-full pill"
+          >{{ $t('pages.login.logout') }}</nuxt-link>
+          <nuxt-link
+            v-else
+            :to="localePath('/auth/login')"
+            class="px-2 py-1 text-xs bg-gray-400 border-gray-800 rounded-full pill"
+          >{{ $t('pages.login.login') }}</nuxt-link>
         </template>
         <template v-else>
           <nuxt-link
             :to="localePath('/auth/register')"
             class="px-2 py-1 text-xs bg-gray-400 border-gray-800 rounded-full shadow-solid pill"
-            >{{ $t('pages.register.label') }}</nuxt-link
-          >
+          >{{ $t('pages.register.label') }}</nuxt-link>
         </template>
       </div>
     </header>
@@ -59,10 +63,8 @@
       </div>
       <div class="px-4 mt-6">
         <h3
-          class="font-semibold tracking-wider text-gray-600 uppercase text-md "
-        >
-          {{ $t('pages.profile.badges') }}
-        </h3>
+          class="font-semibold tracking-wider text-gray-600 uppercase text-md"
+        >{{ $t('pages.profile.badges') }}</h3>
       </div>
       <transition
         enter-active-class="duration-700 ease-out transtition-all"
@@ -77,12 +79,7 @@
             <UHBadgeLoadingState v-for="i in 21" :key="i" />
           </template>
 
-          <UHBadge
-            :key="idx"
-            v-else
-            v-for="(badge, idx) in badges"
-            :badge="badge"
-          />
+          <UHBadge :key="idx" v-else v-for="(badge, idx) in badges" :badge="badge" />
         </div>
       </transition>
     </main>
@@ -129,8 +126,8 @@ export default {
       // user: 'profile/fetch'
     }),
     showMinutes(timestamp) {
-      return (Math.floor((Date.now()-timestamp)/1000/60))
-    },
+      return Math.floor((Date.now() - timestamp) / 1000 / 60)
+    }
   }
 }
 </script>
