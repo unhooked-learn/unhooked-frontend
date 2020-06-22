@@ -26,11 +26,11 @@
 <script>
 import { eq } from 'lodash'
 import { sluggify } from '@/helper'
-import multipleChose from '@/mixins/quiz/multipleChoice'
+import multipleChoice from '@/mixins/quiz/multipleChoice'
 
 export default {
   name: 'UHInputChoiceMultiple',
-  mixins: [multipleChose],
+  mixins: [multipleChoice],
   props: {
     item: {
       type: Object

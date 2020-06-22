@@ -72,7 +72,7 @@ export default {
      * init
      */
     initQuestionsAnswers() {
-      return this.quest.cpy.questionAnswer
+      return this.quest.cpy.questionAnswers
     },
 
     /**

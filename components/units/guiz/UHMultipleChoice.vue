@@ -1,13 +1,18 @@
 <template>
-  <UHQuestionElement type="mtc" :question="question" @check="isChecked" :hasAnswer="selectedAnswer">
+  <UHQuestionElement
+    type="mtc"
+    :question="question"
+    @check="isChecked"
+    :hasAnswer="selectedAnswers"
+  >
     <template #body>
       <div class="space-y-3">
         <UHInputChoiceMultiple
-          v-for="(item, idx) in question.questionAnswer"
+          v-for="(item, idx) in question.questionAnswers"
           :key="idx"
           :item="item"
           :check="quiz.check"
-          v-model="selectedAnswer"
+          v-model="selectedAnswers"
         />
       </div>
     </template>
@@ -28,37 +33,43 @@ export default {
   },
   data() {
     return {
-      selectedAnswer: []
+      selectedAnswers: []
     }
   },
   methods: {
     getValidationTexts(items) {
       return items.map(i => i.validationText)
     },
-    countCorrectAnswers(items) {
-      return items.reduce(
-        (a, b) => a + (b.isCorrect ? 1 : 0), 0
+    countCorrectAnswers(items, countOnly = true) {
+      const countRightAnswers = items.reduce(
+        (a, b) => a + (b.correct ? 1 : 0),
+        0
       )
+
+      const isCorrect = items.reduce((a, b) => a && b.correct, true)
+
+      return isCorrect || countOnly ? countRightAnswers : -1
     },
     hasCorrectAnswers(items) {
       // count all correct answers
-      const countAllCorrect = this.countCorrectAnswers(this.question.questionAnswer);
+      const countAllCorrect = this.countCorrectAnswers(
+        this.question.questionAnswers,
+        true
+      )
 
       // count all selected Correct answers
-      const countSelectCorrect = this.countCorrectAnswers(items);
+      const countSelectCorrect = this.countCorrectAnswers(items, false)
 
-     return countAllCorrect === countSelectCorrect
+      return countAllCorrect === countSelectCorrect
     }
   },
   watch: {
-    selectedAnswer: {
+    selectedAnswers: {
       handler(value) {
         this.quiz.item = {
           isCorrect: this.hasCorrectAnswers(value),
           validationTexts: this.getValidationTexts(value)
         }
-
-        //this.$emit('selectedAnswer', value)
       }
     }
   }

@@ -48,26 +48,27 @@ export default {
     }
   },
   computed: {
+    isAnswerCorrect() {
+      return this.answers.isCorrect ;
+    },
     getIcon() {
-      return this.answers.isCorrect ? 'check' : 'times'
+      return this.isAnswerCorrect ? 'check' : 'times'
     },
     toastColor() {
       return {
-        'text-green-700 bg-green-100': this.answers.isCorrect,
-        'text-red-700 bg-red-100': !this.answers.isCorrect
+        'text-green-700 bg-green-100': this.isAnswerCorrect,
+        'text-red-700 bg-red-100': !this.isAnswerCorrect
       }
     },
     headline() {
-      return this.answers.isCorrect
+      return this.isAnswerCorrect
         ? 'pages.quiz.answerCorret'
         : 'pages.quiz.answerWrong'
     },
     buttonColor() {
       return {
-        'border-green-800 hover:bg-green-800 hover:text-green-100': this.answers
-          .isCorrect,
-        'border-red-800 hover:bg-red-800 hover:text-red-100': !this.answers
-          .isCorrect
+        'border-green-800 hover:bg-green-800 hover:text-green-100': this.isAnswerCorrect,
+        'border-red-800 hover:bg-red-800 hover:text-red-100': !this.isAnswerCorrect
       }
     }
   }
