@@ -1,13 +1,53 @@
 {
-  "quiz": [
-    {
+  "quiz": {
       "id": 1,
-      "headline": "The FOMO Quiz",
+      "headline": "The Dummy Quiz",
       "questions": [
-        {
+         {
           "id": 1,
-          "type": "MultipleChoice",
+          "type": "SingleChoice",
           "order": 1,
+          "title": "Was ist keine Programmiersprache",
+          "text": "Wähle die richtige Antwort!",
+          "questionAnswer": [
+            {
+              "id": 1,
+              "answerText": "Brainfuck",
+              "validationText": "Brainfuck gehören zu den esoterischen Programmiersprachen.",
+              "isCorrect": false,
+              "matchText": null,
+              "position": null
+            },
+            {
+              "id": 2,
+              "answerText": "C#",
+              "validationText": "C# ist eine Programmiersprache",
+              "isCorrect": false,
+              "matchText": null,
+              "position": null
+            },
+            {
+              "id": 3,
+              "answerText": "C3PO",
+              "validationText": "Möge die Macht mit Dir sein! C3PO ist ein Roborer aus dem Star Wars universum. ",
+              "isCorrect": true,
+              "matchText": null,
+              "position": null
+            },
+            {
+              "id": 3,
+              "answerText": "Haskell",
+              "validationText": "Haskell ist eine Programmiersprache",
+              "isCorrect": false,
+              "matchText": null,
+              "position": null
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "type": "MultipleChoice",
+          "order": 2,
           "title": "Was ist Obst?",
           "text": "Wähle die richtige Antwort!",
           "questionAnswer": [
@@ -34,11 +74,19 @@
               "isCorrect": false,
               "matchText": null,
               "position": null
+            },
+            {
+              "id": 4,
+              "answerText": "Kartoffel",
+              "validationText": "Kartoffel gehört zu den Kn",
+              "isCorrect": false,
+              "matchText": null,
+              "position": null
             }
           ]
         },
         {
-          "id": 2,
+          "id": 3,
           "type": "Matching",
           "order": 3,
           "title": "Welche Farbe hat welches Obst?",
@@ -70,8 +118,8 @@
             },
             {
               "id": 4,
-              "answerText": "",
-              "validationText": "",
+              "answerText": "Kiwi",
+              "validationText": "Kiwi sind grün",
               "isCorrect": false,
               "matchText": "grün",
               "position": null
@@ -86,32 +134,93 @@
           "text": "Rosen sind {{answer_1}} und Veilchen sind {{answer_2}}. ",
           "questionAnswer": [
             {
-              "id": 1,
-              "answerText": "rot",
-              "validationText": "Rosen sind rot",
-              "isCorrect": true,
-              "matchText": null,
-              "position": 0
-            },
-            {
               "id": 2,
               "answerText": "blau",
               "validationText": "Veilchen sind blau",
               "isCorrect": true,
               "matchText": null,
+              "position": 2
+            },
+            {
+              "id": 1,
+              "answerText": "rot",
+              "validationText": "Rosen sind rot",
+              "isCorrect": true,
+              "matchText": null,
               "position": 1
             },
+          
             {
               "id": 3,
               "answerText": "rosa",
-              "validationText": "",
+              "validationText": "Rosen können auch rosa sein. ¯\\_(ツ)_/¯",
               "isCorrect": false,
               "matchText": null,
               "position": null
             }
           ]
+        },
+        {
+          "id": 5,
+          "type": "FillTheBlank",
+          "order": 5,
+          "title": "“Fülle den Text aus”",
+          "text": "Auch gibt es {{answer_1}}, der den Schmerz an sich liebt, sucht oder {{answer_2}}, nur, weil er Schmerz ist, es sei denn, es kommt zu zufälligen {{answer_3}}, in denen Mühen und Schmerz ihm große {{answer_4}} bereiten können. ",
+          "questionAnswer": [
+            {
+              "id": 3,
+              "answerText": "Umständen",
+              "validationText": " es kommt zu zufälligen Umständen, ",
+              "isCorrect": true,
+              "matchText": null,
+              "position": 3
+            },
+            {
+              "id": 5,
+              "answerText": "Folgen",
+              "validationText": " ja ja. die folgen halt..  ¯\\_(ツ)_/¯  ",
+              "isCorrect": false,
+              "matchText": null,
+              "position": null
+            },
+            {
+              "id": 1,
+              "answerText": "niemanden",
+              "validationText": "Auch gibt es niemanden",
+              "isCorrect": true,
+              "matchText": null,
+              "position": 1
+            },
+           
+            {
+              "id": 2,
+              "answerText": "wünscht",
+              "validationText": "sucht oder wünscht, nur",
+              "isCorrect": true,
+              "matchText": null,
+              "position": 2
+            },
+            
+            {
+              "id": 6,
+              "answerText": "Mühen",
+              "validationText": " Warum Mühen wir uns auch ab... ¯\\_(ツ)_/¯ ",
+              "isCorrect": false,
+              "matchText": null,            
+              "position": null
+            },
+            {
+              "id": 4,
+              "answerText": "Freude",
+              "validationText": " ihm große Freude bereiten können ",
+              "isCorrect": true,
+              "matchText": null,
+              "position": 4
+            }
+        
+           
+          ]
         }
       ]
     }
-  ]
 }

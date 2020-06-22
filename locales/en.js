@@ -12,7 +12,7 @@ const keys = {
       email: 'Email address',
       name: 'Name',
       password: 'Password',
-      repeatPassword: 'repeat Password',
+      repeatPassword: 'repeat Password'
     },
     toast: {
       gratulations: 'Gratulations! You have earned {points} Points'
@@ -26,17 +26,18 @@ const keys = {
     course: {
       label: 'Units',
       welcome: 'Hi',
-      intro: 'Welcome to this course. We want you to know the manipulative mechanisms in mobile games and social media apps. Let\'s get suprised.',
+      intro:
+        "Welcome to this course. We want you to know the manipulative mechanisms in mobile games and social media apps. Let's get suprised.",
       module: 'Module',
       unit: {
         feedback: {
           text: 'Do you enjoy the course ? If so, please leave a rating!',
           vote: 'Average: {points} out of {maxPoints} ({votes} votes)',
-          selectedRating: "You have Selected: {rating} stars",
-          selectRating: "Click to select {rating} stars",
-          noRating: "No Rating Selected",
-          resetRating: "Reset rating",
-          feedbackText: 'Write us something',
+          selectedRating: 'You have Selected: {rating} stars',
+          selectRating: 'Click to select {rating} stars',
+          noRating: 'No Rating Selected',
+          resetRating: 'Reset rating',
+          feedbackText: 'Write us something'
         },
         achievement: 'Achievements earned',
         module: 'Module {number}',
@@ -45,7 +46,7 @@ const keys = {
           active: 'open',
           new: 'new'
         }
-      }  
+      }
     },
     profile: {
       label: 'Profile',
@@ -69,7 +70,8 @@ const keys = {
     },
     register: {
       label: 'Registration',
-      text: 'Fill in to your register your account. This feature is optional and only nessasary if you want to keep your data and progress.',
+      text:
+        'Fill in to your register your account. This feature is optional and only nessasary if you want to keep your data and progress.',
       register: 'Sign Up'
     },
     settings: {
@@ -83,14 +85,24 @@ const keys = {
     infiniteScroll: {
       label: 'Unendliches Scrollen'
     },
+    quiz: {
+      answers: 'Answers:',
+      question: 'Question:',
+      answerChoose: 'Choose the right answer(s)!',
+      check: 'Check your answer',
+      answerCorret: "You're Correct!",
+      answerWrong: "You're Wrong!",
+      next: 'Next question',
+      steps: 'Question {current} of {total}'
+    },
     pullToRefresh: {
       label: 'Pull To Refresh',
       news: 'News',
-      errorLabel: "Error",
-      startLabel: "Start refresh",
-      readyLabel: "Refresh",
-      loadingLabel: "Lloading"
-    }  
+      errorLabel: 'Error',
+      startLabel: 'Start refresh',
+      readyLabel: 'Refresh',
+      loadingLabel: 'Lloading'
+    }
   }
 }
 
