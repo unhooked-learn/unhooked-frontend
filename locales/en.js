@@ -28,7 +28,7 @@ const keys = {
       welcome: 'Hi',
       intro:
         "Welcome to this course. We want you to know the manipulative mechanisms in mobile games and social media apps. Let's get suprised.",
-      module: 'Module',
+      module: 'Module {number}',
       unit: {
         feedback: {
           text: 'Do you enjoy the course ? If so, please leave a rating!',
@@ -40,7 +40,6 @@ const keys = {
           feedbackText: 'Write us something'
         },
         achievement: 'Achievements earned',
-        module: 'Module {number}',
         status: {
           complete: 'complete',
           active: 'open',

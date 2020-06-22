@@ -83,9 +83,9 @@ module.exports = {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  // axios: {
-  //   baseURL: 'https://unhooked-backend.herokuapp.com/'
-  // },
+   axios: {
+       baseURL: 'https://unhooked-backend.herokuapp.com/'
+   },
   /*
    ** Fontawesome module configuration
    **

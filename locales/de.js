@@ -31,9 +31,8 @@ export default context => {
           welcome: 'Hallo',
           intro:
             'Willkommen in diesem Kurs. Hier wollen wir dir die manipulativen Mechanismen in Spiele/ und Social Media Anwendungen aufzeigen. Lass dich überraschen.',
-          module: 'Modul',
+          module: 'Modul {number}',
           unit: {
-            module: 'Modul {number}',
             feedback: {
               text:
                 'Wie findest du dieses Modul? Bitte lass eine Bewertung da!',

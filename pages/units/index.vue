@@ -4,7 +4,7 @@
       <Logo class="hidden w-auto pl-10 pr-10 m-16 mx-auto bg-gray-100 rounded-full md:block shadow-solid"/>
       <div class="px-4 py-8 md:p-12">
         <h2 class="font-semibold">
-          {{ $t('pages.course.welcome') }} {{ user.name }}!
+          {{ $t('pages.course.welcome') }} {{ user.username }}!
         </h2>
         <p class="py-2">{{ $t('pages.course.intro') }}</p>
       </div>
@@ -79,6 +79,7 @@ export default {
   },
   async fetch() {
     await this.$store.dispatch('units/fetch')
+    await this.$store.dispatch('profile/fetch')
   }
 }
 </script>

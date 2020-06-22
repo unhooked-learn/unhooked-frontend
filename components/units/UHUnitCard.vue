@@ -5,11 +5,11 @@
       :class="{ 'bg-gray-600 text-white': active, 'bg-white': !active }"
     >
       <div class="flex justify-end object-cover aspect aspect-1/2">
-        <img class="object-cover" :src="unit.imgUrl" :alt="unit.name" />
+        <img class="object-cover" :src="unit.mediaName" :alt="unit.name" />
         <div class="absolute w-8 h-8 pt-3 pr-3">
           <font-awesome-icon
             v-if="complete||!active"
-            class="fa-2x"
+            class="fa-1x"
             :class="{'text-green-400':complete, 'text-blue-400':!complete&&!active}"
             icon="circle"
           />
@@ -27,9 +27,9 @@
             :class="{ 'bg-blue-600 border-blue-500':!active&&!complete, 'bg-green-500 border-green-400':complete, 'text-black bg-white-600 border-white-500':active}"
           >
             <div class="flex-initial max-w-full text-xs font-normal leading-none">
-              <div v-if="complete">{{$t('pages.course.status.complete')}}</div>
-              <div v-else-if="active">{{$t('pages.course.status.active')}}</div>
-              <div v-else>{{$t('pages.course.status.new')}}</div>
+              <div v-if="complete">{{$t('pages.course.unit.status.complete')}}</div>
+              <div v-else-if="active">{{$t('pages.course.unit.status.active')}}</div>
+              <div v-else>{{$t('pages.course.unit.status.new')}}</div>
             </div>
           </div>
         </h5>

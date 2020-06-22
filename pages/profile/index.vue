@@ -5,13 +5,13 @@
         <div class="absolute top-0 right-0">
           <UHAccessibilityButton to="/profile/settings">
             <div class="w-16 p-2 md:p-0">
-              <font-awesome-icon icon="pen" class="fa-2x" />
+              <font-awesome-icon icon="pen" class="pt-2 fa-2x" />
             </div>
           </UHAccessibilityButton>
         </div>
 
         <div class="flex justify-center">
-          <div class="w-16">
+          <div class="mt-3">
             <font-awesome-icon icon="user-circle" class="fa-7x" />
           </div>
         </div>

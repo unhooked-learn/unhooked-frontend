@@ -12,7 +12,7 @@
       >
        <div class="w-8 h-8">
           <font-awesome-icon
-          :icon="badge.icon"
+          :icon="badge.iconName"
           class="m-auto text-gray-100 fa-2x"
         />
        </div>
