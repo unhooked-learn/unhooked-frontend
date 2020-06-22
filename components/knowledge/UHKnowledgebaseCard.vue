@@ -1,6 +1,6 @@
 <template>
   <nuxt-link :to="to">
-    <div class="w-full h-48 rounded shadow-lg">
+    <div class="w-full rounded shadow-lg h-36">
       <div
         class="min-w-full min-h-full my-2 overflow-hidden text-gray-800 bg-white rounded-md shadow-md"
       >
