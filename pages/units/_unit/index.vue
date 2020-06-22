@@ -16,6 +16,7 @@
 import UHSingleChoice from '@/components/units/guiz/UHSingleChoice'
 import UHQuizProgress from '@/components/units/guiz/elements/UHQuizProgress'
 
+import { SnakeCaseCapsToPascalCase } from '@/helper'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
@@ -37,7 +38,7 @@ export default {
       currentQuestion: 'quiz/currentQuestion'
     }),
     questionType() {
-      return `UH${this.currentQuestion.type}`
+      return `UH${SnakeCaseCapsToPascalCase(this.currentQuestion.questionType)}`
     },
     getUnitParams() {
       return this.$route.params.unit

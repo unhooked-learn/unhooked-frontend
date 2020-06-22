@@ -7,14 +7,14 @@
       </div>
     </header>
     <main class="p-4">
-      <no-ssr>
-        <component
-          :is="questionType"
-          :question="currentQuestion"
-          @check="checkAnswer"
-          @selectedAnswer="quizSelectedAnswer"
-        />
-      </no-ssr>
+     <client-only>
+ <component
+        :is="questionType"
+        :question="currentQuestion"
+        @check="checkAnswer"
+        @selectedAnswer="quizSelectedAnswer"
+      />
+     </client-only>
     </main>
     <transition>
       <UHQuestionToast :answers="selectedAnswer" v-if="showToast" @next="goToNextQuestion" />
@@ -31,6 +31,7 @@ import UHFillTheBlank from '@/components/units/guiz/UHFillTheBlank'
 import UHQuizProgress from '@/components/units/guiz/elements/UHQuizProgress'
 import UHQuestionToast from '@/components/units/guiz/elements/UHQuestionToast'
 
+import { SnakeCaseCapsToPascalCase } from '@/helper'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
@@ -101,7 +102,7 @@ export default {
       currentQuestionNumber: 'quiz/current'
     }),
     questionType() {
-      return `UH${this.currentQuestion.type}`
+      return `UH${SnakeCaseCapsToPascalCase(this.currentQuestion.questionType)}`
     },
     getUnitParams() {
       return this.$route.params.unit
