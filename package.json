@@ -31,8 +31,8 @@
     "vue-flickity": "^1.2.1",
     "vue-js-modal": "^2.0.0-rc.3",
     "vue-observe-visibility": "^0.4.6",
-    "vue-star-rating": "^1.6.1",
-    "vue-pull-refresh": "^0.2.7"
+    "vue-pull-refresh": "^0.2.7",
+    "vue-star-rating": "^1.6.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.0.0",
@@ -50,7 +50,7 @@
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
-    "tailwindcss-plugin-aspect-ratio": "^1.0.1",
+    "tailwindcss-plugin-aspect-ratio": "^1.0.2",
     "vue-jest": "^4.0.0-0"
   }
 }
