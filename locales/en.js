@@ -44,6 +44,9 @@ const keys = {
           complete: 'complete',
           active: 'open',
           new: 'new'
+        },
+        modal: {
+          start: 'Start Unit'
         }
       }
     },
@@ -100,7 +103,7 @@ const keys = {
       errorLabel: 'Error',
       startLabel: 'Start refresh',
       readyLabel: 'Refresh',
-      loadingLabel: 'Lloading'
+      loadingLabel: 'Loading'
     }
   }
 }

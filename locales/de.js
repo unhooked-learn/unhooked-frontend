@@ -49,6 +49,9 @@ export default context => {
               complete: 'Abgeschlossen',
               new: 'Neu',
               active: 'open'
+            },
+            modal: {
+              start: 'Unit öffnen'
             }
           }
         },
