@@ -63,10 +63,16 @@ export default {
   methods: {
     hasCorrectAnswers(item) {
       // check if all gaps filled
+
       const hasCorrectCountAnswers = this.gaps.availableCount === item.length
 
       // check if all answers are correct
-      const hasCorrectAnswers = item.map(i => i.gap === i.position)
+
+      // temp fix -> fix it in db
+      let temp = item.map(i => ({ gap: i.gap, position: i.position + 1 }))
+
+      const hasCorrectAnswers = temp.map(i => i.gap === i.position)
+
       return [hasCorrectCountAnswers, ...hasCorrectAnswers].reduce(
         (a, b) => a && b
       )

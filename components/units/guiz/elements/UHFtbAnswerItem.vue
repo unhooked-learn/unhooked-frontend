@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import { clone } from 'lodash';
+
 export default {
   name: 'UHFtbAnswerItem',
   props: {
@@ -39,7 +41,13 @@ export default {
       this.$emit('remove', item)
     },
     isCorrect() {
-      return this.position === this.item.position
+      console.log('#+###item', this.item.answerText, this.position, this.item.position)
+
+      // temporarly fix for presentation !!!
+      let tmp = clone(this.item.position);
+
+
+      return this.position === (tmp+1)
     }
   },
   computed: {
