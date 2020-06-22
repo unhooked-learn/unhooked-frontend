@@ -1,5 +1,10 @@
 <template>
-  <UHQuestionElement type="mtc" :question="question" @check="isChecked" :hasAnswer="selectedAnswers">
+  <UHQuestionElement
+    type="mtc"
+    :question="question"
+    @check="isChecked"
+    :hasAnswer="selectedAnswers"
+  >
     <template #body>
       <div class="space-y-3">
         <UHInputChoiceMultiple
@@ -35,20 +40,27 @@ export default {
     getValidationTexts(items) {
       return items.map(i => i.validationText)
     },
-    countCorrectAnswers(items) {
-      console.log(items);
-      return items.reduce(
-        (a, b) => a + (b.correct ? 1 : 0), 0
+    countCorrectAnswers(items, countOnly = true) {
+      const countRightAnswers = items.reduce(
+        (a, b) => a + (b.correct ? 1 : 0),
+        0
       )
+
+      const isCorrect = items.reduce((a, b) => a && b.correct, true)
+
+      return isCorrect || countOnly ? countRightAnswers : -1
     },
     hasCorrectAnswers(items) {
       // count all correct answers
-      const countAllCorrect = this.countCorrectAnswers(this.question.questionAnswers);
+      const countAllCorrect = this.countCorrectAnswers(
+        this.question.questionAnswers,
+        true
+      )
 
       // count all selected Correct answers
-      const countSelectCorrect = this.countCorrectAnswers(items);
+      const countSelectCorrect = this.countCorrectAnswers(items, false)
 
-     return countAllCorrect === countSelectCorrect
+      return countAllCorrect === countSelectCorrect
     }
   },
   watch: {
@@ -58,8 +70,6 @@ export default {
           isCorrect: this.hasCorrectAnswers(value),
           validationTexts: this.getValidationTexts(value)
         }
-
-        //this.$emit('selectedAnswers', value)
       }
     }
   }
