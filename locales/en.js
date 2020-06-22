@@ -47,6 +47,11 @@ const keys = {
         },
         modal: {
           start: 'Start Unit'
+        },
+        slides: {
+          finished: 'Finished',
+          text: 'This was it for Unit {number}. If you are ready, you can start the quiz now.',
+          startQuiz: 'Start quiz'
         }
       }
     },

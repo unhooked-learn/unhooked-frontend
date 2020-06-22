@@ -52,6 +52,11 @@ export default context => {
             },
             modal: {
               start: 'Unit öffnen'
+            },
+            slides: {
+              finished: 'Abgeschlossen',
+              text: 'Das war es für Unit {number}. Wenn du bereit bist, kannst du das Quiz starten.',
+              startQuiz: 'Starte das Quiz'
             }
           }
         },
