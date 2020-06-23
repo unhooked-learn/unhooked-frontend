@@ -22,8 +22,9 @@ export const actions = {
   async fetch({ commit }) {
     this.$axios.setHeader("Access-Control-Allow-Origin", "*")
     this.$axios.setHeader("Content-Type", "application/json")
+    this.$axios.setHeader("username",`emma`)
     let cards = await this.$axios.$get(
-      `${this.$axios.defaults.baseURL}knowledgebase`
+      `${this.$axios.defaults.baseURL}user/knowledgebases`
     )
     commit(mutationsTypes.SET_ARTICLES, cards)
   }

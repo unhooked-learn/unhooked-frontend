@@ -22,7 +22,7 @@
               :key="idx"
               v-for="(article, idx) in articles"
             >
-              <UHKnowledgebaseCard
+              <UHKnowledgebaseCard v-if="article.unlocked"
                 :to="localePath(`/knowledge/${article.id}`)"
                 :card="article"
               />
@@ -47,7 +47,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-       articles: 'knowledge/articles'
+       articles: 'knowledge/articles',
     })
   },
   activated() {
