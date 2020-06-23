@@ -3,7 +3,7 @@
     <template #body>
       <div class="space-y-3">
         <UHInputChoiceSingle
-          v-for="(item, idx) in question.questionAnswer"
+          v-for="(item, idx) in question.questionAnswers"
           :key="idx"
           :item="item"
           :check="quiz.check"
@@ -35,7 +35,7 @@ export default {
     selectedAnswer: {
       handler(value) {
         this.quiz.item = {
-          isCorrect: value.isCorrect,
+          isCorrect: value.correct,
           validationTexts: [value.validationText]
         }
       }

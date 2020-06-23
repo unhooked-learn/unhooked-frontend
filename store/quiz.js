@@ -40,8 +40,8 @@ export const mutations = {
 
 export const actions = {
   async fetch({ commit }, params) {
-    let quiz = await this.$axios.$get('./mock/quiz/quiz.json')
-    commit(mutationsTypes.SET_QUIZ, quiz.quiz)
+    let quiz = await this.$axios.$get(`/unit/${params}/quiz`)
+    commit(mutationsTypes.SET_QUIZ, quiz)
   },
   setQuestion({ commit }, question) {
     commit(mutationsTypes.SET_QUESTION, question)

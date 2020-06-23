@@ -25,11 +25,11 @@
 
 <script>
 import { eq } from 'lodash'
-import multipleChose from '@/mixins/quiz/multipleChoice'
+import multipleChoice from '@/mixins/quiz/multipleChoice'
 
 export default {
   name: 'UHInputChoiceSingle',
-  mixins: [multipleChose],
+  mixins: [multipleChoice],
   props: {
     value: {
       type: [Object],
