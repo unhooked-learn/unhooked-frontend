@@ -28,9 +28,9 @@
               :key="idx"
               v-for="(block, idx) in article.knowledgebaseContents">
               <div class="flex justify-end object-cover mb-6 aspect aspect-1/2">
-                <img class="object-cover" :src="block.mediaName" :v-if="block.mediaType == 'IMAGE'">
+                <img class="object-cover rounded-lg" :src="block.mediaName" :v-if="block.mediaType == 'IMAGE'">
               </div>
-        <div class="py-2">
+        <div class="py-2 leading-relaxed text-justify break-words">
           {{block.text}}
         </div>
       </div>
