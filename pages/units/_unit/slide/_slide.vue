@@ -59,7 +59,7 @@ export default {
       contents: 'units/content'
     }),
     unitNumber() {
-        retrun this.$route.params.unit;
+        return this.$route.params.unit;
     }
   },
   activated() {
