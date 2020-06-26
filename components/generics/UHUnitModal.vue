@@ -32,8 +32,8 @@
 
     <template #footer="{close}">
       <div class="flex justify-between">
-        <UHButton disabled>
-          <span class="text-gray-500">Start Unit</span>
+        <UHButton @click="goToUnit">       
+            <span class="text-gray-500">{{ $t('pages.course.unit.modal.start') }}</span> 
         </UHButton>
         <UHButton secondary @click="close()">
           {{ $t('general.modal.close') }}
@@ -63,7 +63,15 @@ export default {
   methods: {
     ...mapActions({
       clearSelectedUnit: 'units/clearUnit'
-    })
+    }),
+    goToUnit() {
+       this.$router.push(
+          this.localePath({
+            name: 'units-unit-slide-slide',
+            params: { unit: this.unit.id, slide: 1 }
+          })
+        )
+    },
   },
   watch: {
     unit: {
