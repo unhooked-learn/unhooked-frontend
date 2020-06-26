@@ -15,7 +15,7 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
-    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/free-solid-svg-icons": "^5.13.1",
     "@nuxtjs/axios": "^5.10.3",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
@@ -24,15 +24,15 @@
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "lodash": "^4.17.15",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.13.0",
     "nuxt-fontawesome": "^0.4.0",
     "nuxt-i18n": "^6.11.1",
     "vue-faker": "^1.0.1",
     "vue-flickity": "^1.2.1",
     "vue-js-modal": "^2.0.0-rc.3",
     "vue-observe-visibility": "^0.4.6",
-    "vue-star-rating": "^1.6.1",
-    "vue-pull-refresh": "^0.2.7"
+    "vue-pull-refresh": "^0.2.7",
+    "vue-star-rating": "^1.6.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.0.0",
@@ -50,7 +50,7 @@
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
-    "tailwindcss-plugin-aspect-ratio": "^1.0.1",
-    "vue-jest": "^4.0.0-0"
+    "tailwindcss-plugin-aspect-ratio": "^1.0.2",
+    "vue-jest": "^4.0.0-beta.3"
   }
 }
