@@ -36,7 +36,7 @@ export const mutations = {
     state.selected = clone(unitStub)
   },
   [mutationsTypes.SET_UNITS](state, units) {
-    state.units = units
+    state.units = units.sort((a,b) => a.id - b.id)
   }
 }
 
