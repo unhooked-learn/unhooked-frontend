@@ -22,7 +22,9 @@ export default context => {
         },
         button: {
           skipButtonText: 'Überspringen',
-          finished: 'Abschliessen'
+          finished: 'Abschliessen',
+          register: 'Erstelle einen Account',
+          guest: 'Als Gast fortfahren'
         }
       },
       pages: {
@@ -62,8 +64,15 @@ export default context => {
           label: 'Wissensdatenbank'
         },
         onboarding: {
-          skip: 'Skip Onboarding',
-          label: 'Einführung'
+          skip: 'Überspringe die Einführung',
+          label: 'Einführung',
+          title: 'Willst du die Ketten sprengen?',
+          intro: 'Willkommen bei Unhooked, an online e-learning web application which shows you the manipulative mechanisms in mobile games and social media apps.',
+          question1: 'Wie machen es mobile Applikation das diese uns so viel Zeit kosten?',
+          question2: 'Warum kleben wir jede freie Minute an unserem Handy?',
+          question3: 'Wie verführen uns diese Applikation dass wir auch bei jedem Aufblinken des Handys wir zum Handy greifen und alles andere stehen und liegen lassen?', 
+          question4: 'Warum können Applikation und Soziale Medien sowas, dass sie uns so in den Bann ziehen?',
+          resumee: 'Diese E-Learning Anwendung adressiert genau diese Punkte und Problematiken.'
         },
         login: {
           text: 'Logge dich in deinen Account ein',
@@ -77,6 +86,12 @@ export default context => {
           text:
             'Fülle die Felder aus um dich zu registrieren. Dieses ist optional und nur nötig, wenn du deine Daten und Fortschritt behalten willst.',
           register: 'Registrieren'
+        },
+        guest: {
+          label: 'Dein Name',
+          text:
+            'Gebe deinen Namen im Texfeld ein um fortzufahren.',
+          login: 'Starte den Kurs'
         },
         settings: {
           label: 'Einstellungen',
