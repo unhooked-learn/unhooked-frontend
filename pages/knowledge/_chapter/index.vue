@@ -42,7 +42,7 @@ export default {
   },
   async asyncData({ params, $axios }) {
     const data = await $axios.$get(
-      `${$axios.defaults.baseURL}knowledgebase/${params.chapter}`
+      `knowledgebase/${params.chapter}`
     )
     return { card: data }
   }
