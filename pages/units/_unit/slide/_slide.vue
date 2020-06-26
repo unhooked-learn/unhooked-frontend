@@ -3,7 +3,7 @@
     <div
       class="p-6 font-semibold tracking-wider text-gray-400 uppercase text-md md:ml-8"
     >
-      {{ $t('pages.course.module', { number: $route.params.unit }) }}
+      {{ $t('pages.course.module', { number: unitNumber }) }}
     </div>
 
     <UHVerticalSlider :options="flickityOptions">
@@ -23,7 +23,7 @@
         <div class="my-6 text-lg font-semibold uppercase">
            {{ $t('pages.course.unit.slides.finished')}}
         </div>
-        <div class="mb-6">{{ $t('pages.course.unit.slides.text', { number: $route.params.unit }) }}</div>
+        <div class="mb-6">{{ $t('pages.course.unit.slides.text', { number: unitNumber }) }}</div>
         <UHButton @click="goToQuiz">{{ $t('pages.course.unit.slides.startQuiz')}}</UHButton>
       </div>
     </UHVerticalSlider>
@@ -57,7 +57,10 @@ export default {
   computed: {
     ...mapGetters({
       contents: 'units/content'
-    })
+    }),
+    unitNumber() {
+        retrun this.$route.params.unit;
+    }
   },
   activated() {
     // Call fetch again if last fetch more than 5 minues ago
