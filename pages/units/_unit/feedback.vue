@@ -40,9 +40,9 @@
               <h4 class="mb-3 text-xs">
                 {{
                   $t('pages.course.unit.feedback.vote', {
-                    points: avgFeedback,
+                    points: avgFeedback.averageValue,
                     maxPoints: '5',
-                    votes: '2'
+                    votes: avgFeedback.feedbackCount
                   })
                 }}
               </h4>
@@ -122,7 +122,7 @@ export default {
     await this.$store.dispatch('profile/fetch')
   },
   async asyncData ({params, $axios}) {
-    const data = await $axios.$get(`${$axios.defaults.baseURL}unit/${params.unit}/averagefeedback`)
+    const data = await $axios.$get(`unit/${params.unit}/averagefeedback`)
     return {avgFeedback: data}
   }
 }
