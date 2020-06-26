@@ -59,14 +59,12 @@ export const actions = {
     this.$axios.setHeader("Access-Control-Allow-Origin", "*")
     this.$axios.setHeader("Content-Type", "application/json")
     let units = await this.$axios.$get('unit')
-    // console.log(units)
     commit(mutationsTypes.SET_UNITS, units)
   },
   async fetchContent({ commit }, id) {
     this.$axios.setHeader("Access-Control-Allow-Origin", "*")
     this.$axios.setHeader("Content-Type", "application/json")
     let unitContent = await this.$axios.$get(`unit/${id}/contents`)
-    //console.log(unitContent)
     commit(mutationsTypes.SET_UNIT_CONTENT, unitContent)
   }
 }
