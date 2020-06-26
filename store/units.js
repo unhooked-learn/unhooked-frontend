@@ -11,12 +11,14 @@ const unitStub = {
 const mutationsTypes = {
   SELECT_UNIT: 'SELECT_UNIT',
   CLEAR_UNIT: 'CLEAR_UNIT',
-  SET_UNITS: 'SET_UNITS'
+  SET_UNITS: 'SET_UNITS',
+  SET_UNIT_CONTENT: 'SET_UNIT_CONTENT'
 }
 
 export const state = () => ({
   units: [],
-  selected: clone(unitStub)
+  selected: clone(unitStub),
+  content: []
 })
 
 export const getters = {
@@ -25,6 +27,9 @@ export const getters = {
   },
   unit(state) {
     return state.selected
+  },
+  content(state) {
+    return state.content
   }
 }
 
@@ -37,6 +42,9 @@ export const mutations = {
   },
   [mutationsTypes.SET_UNITS](state, units) {
     state.units = units
+  },
+  [mutationsTypes.SET_UNIT_CONTENT](state, content) {
+    state.content = content
   }
 }
 
@@ -51,7 +59,12 @@ export const actions = {
     this.$axios.setHeader("Access-Control-Allow-Origin", "*")
     this.$axios.setHeader("Content-Type", "application/json")
     let units = await this.$axios.$get('unit')
-    // console.log(units)
     commit(mutationsTypes.SET_UNITS, units)
+  },
+  async fetchContent({ commit }, id) {
+    this.$axios.setHeader("Access-Control-Allow-Origin", "*")
+    this.$axios.setHeader("Content-Type", "application/json")
+    let unitContent = await this.$axios.$get(`unit/${id}/contents`)
+    commit(mutationsTypes.SET_UNIT_CONTENT, unitContent)
   }
 }

@@ -44,6 +44,14 @@ const keys = {
           complete: 'complete',
           active: 'open',
           new: 'new'
+        },
+        modal: {
+          start: 'Start Unit'
+        },
+        slides: {
+          finished: 'Finished',
+          text: 'This was it for Unit {number}. If you are ready, you can start the quiz now.',
+          startQuiz: 'Start quiz'
         }
       }
     },
@@ -100,7 +108,7 @@ const keys = {
       errorLabel: 'Error',
       startLabel: 'Start refresh',
       readyLabel: 'Refresh',
-      loadingLabel: 'Lloading'
+      loadingLabel: 'Loading'
     }
   }
 }
