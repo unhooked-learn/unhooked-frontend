@@ -5,7 +5,7 @@
         <UHNavButton
           :to="localePath('units')"
           :name="$t('general.navigation.units')"
-          icon="graduation-cap"
+          icon="university"
         />
         <UHNavButton
           :to="localePath('knowledge')"

@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       flickityOptions: {
-        initialIndex: 3,
+        initialIndex: 0,
         prevNextButtons: false,
         pageDots: true,
         freeScroll: true

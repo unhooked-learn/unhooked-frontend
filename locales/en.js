@@ -28,7 +28,7 @@ const keys = {
       welcome: 'Hi',
       intro:
         "Welcome to this course. We want you to know the manipulative mechanisms in mobile games and social media apps. Let's get surprised.",
-      module: 'Module {number}',
+      module: 'Unit {number}',
       unit: {
         feedback: {
           text: 'Do you enjoy the course ? If so, please leave a rating!',
