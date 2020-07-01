@@ -2,7 +2,7 @@
   <div class="flex flex-col justify-between h-screen">
     <header class="flex flex-col justify-between h-full text-white bg-gray-800">
       <Logo class="hidden w-auto pl-10 pr-10 m-16 mx-auto bg-gray-100 rounded-full md:block shadow-solid"/>
-      <div class="px-4 py-8 md:p-12">
+      <div class="px-4 pt-4 md:p-12">
         <h2 class="font-semibold">
           {{ $t('pages.course.welcome') }} {{ user.username }}!
         </h2>

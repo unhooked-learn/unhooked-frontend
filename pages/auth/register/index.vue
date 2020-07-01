@@ -28,7 +28,7 @@
             v-model='form.email'
         >
           <template #prepent>
-            <font-awesome-icon icon="envelope" class="opacity-50 fa-1x"/>
+            <font-awesome-icon icon="envelope" class="w-5 mr-2 opacity-50 fa-1x"/>
           </template>
         </UHInput>
         <UHInput
@@ -37,7 +37,7 @@
             v-model='form.name'
         >
           <template #prepent>
-            <font-awesome-icon icon="user" class="opacity-50 fa-1x"/>
+            <font-awesome-icon icon="user" class="w-5 mr-2 opacity-50 fa-1x"/>
           </template>
         </UHInput>
         <UHInput
@@ -47,7 +47,7 @@
             v-model='form.password'
         >
           <template #prepent>
-            <font-awesome-icon icon="key" class="opacity-50 fa-1x"/>
+            <font-awesome-icon icon="key" class="w-5 mr-2 opacity-50 fa-1x"/>
           </template>
         </UHInput>
         <UHInput
@@ -58,7 +58,7 @@
             v-model='form.repeatPassword'
         >
           <template #prepent>
-            <font-awesome-icon icon="key" class="opacity-50 fa-1x"/>
+            <font-awesome-icon icon="key" class="w-5 mr-2 opacity-50 fa-1x"/>
           </template>
         </UHInput>
       </div>  

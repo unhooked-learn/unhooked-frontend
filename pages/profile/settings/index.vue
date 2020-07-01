@@ -3,12 +3,12 @@
   <div class="w-full max-w-md">
     <div class="absolute top-0 left-0 ">
       <UHAccessibilityButton to='profile'>
-        <font-awesome-icon icon="chevron-left" class="p-1 md:p-0 fa-2x" />
+        <font-awesome-icon icon="chevron-left" class="w-5 p-1 md:p-0 fa-2x" />
       </UHAccessibilityButton>
     </div>  
     <div>
-      <div class="text-center">
-        <font-awesome-icon icon="user-circle" class="fa-5x" />
+      <div class="flex flex-col items-center text-center">
+        <font-awesome-icon icon="user-circle" class="w-20 fa-5x" />
       </div>  
       <h2 class="mt-4 text-3xl font-extrabold leading-9 text-center text-gray-900">
         {{ $t('pages.settings.label') }}
@@ -21,7 +21,7 @@
             {{ $t('pages.settings.text') }}
           </h3>  
         <div class="flex justify-between mb-3">
-          <font-awesome-icon icon="flag" class="opacity-50 fa-2x"/>
+          <font-awesome-icon icon="flag" class="w-8 opacity-50 fa-2x"/>
           <nuxt-link :to="switchLocalePath('en')" class="relative px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"> {{ $t('pages.settings.english') }}</nuxt-link>
           <nuxt-link :to="switchLocalePath('de')" class="relative px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"> {{ $t('pages.settings.german') }}</nuxt-link>
         </div>
@@ -33,7 +33,7 @@
             v-model='form.email'
         >
           <template #prepent>
-            <font-awesome-icon icon="envelope" class="opacity-50 fa-1x"/>
+            <font-awesome-icon icon="envelope" class="w-5 mr-2 opacity-50 fa-1x"/>
           </template>
         </UHInput>
         <UHInput
@@ -42,7 +42,7 @@
             v-model='form.name'
         >
           <template #prepent>
-            <font-awesome-icon icon="user" class="opacity-50 fa-1x"/>
+            <font-awesome-icon icon="user" class="w-5 mr-2 opacity-50 fa-1x"/>
           </template>
         </UHInput>
         <UHInput
@@ -52,7 +52,7 @@
             v-model='form.password'
         >
           <template #prepent>
-            <font-awesome-icon icon="key" class="opacity-50 fa-1x"/>
+            <font-awesome-icon icon="key" class="w-5 mr-2 opacity-50 fa-1x"/>
           </template>
         </UHInput>
         <UHInput
@@ -63,7 +63,7 @@
             v-model='form.repeatPassword'
         >
           <template #prepent>
-            <font-awesome-icon icon="key" class="opacity-50 fa-1x"/>
+            <font-awesome-icon icon="key" class="w-5 mr-2 opacity-50 fa-1x"/>
           </template>
         </UHInput>
       </div>  
