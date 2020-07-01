@@ -9,7 +9,7 @@
         'text-gray-400 hover:text-gray-600': !isActive
       }"
     >
-      <div class="w-5 h-5">
+      <div class="w-5">
         <font-awesome-icon :icon="icon" class="fill-current" />
       </div>
 

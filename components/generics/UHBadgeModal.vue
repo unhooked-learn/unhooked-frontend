@@ -21,7 +21,7 @@
         >
           <font-awesome-icon
             :icon="selectedBadge.iconName"
-            class="m-auto text-gray-800 fa-5x"
+            class="w-20 m-auto text-gray-800 fa-5x"
           />
         </div>
       </div>

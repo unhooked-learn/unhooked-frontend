@@ -14,7 +14,7 @@
 
       <div class="absolute top-0 left-0 text-white md:top-5 md:left-5">
         <UHAccessibilityButton to='knowledge'>
-          <font-awesome-icon icon="chevron-left" class="p-1 md:p-0 fa-2x" />
+          <font-awesome-icon icon="chevron-left" class="w-5 p-1 md:p-0 fa-2x" />
         </UHAccessibilityButton>  
       </div>
       <div>
