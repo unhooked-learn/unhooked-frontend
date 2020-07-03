@@ -5,9 +5,21 @@ const mutationsTypes = {
   SET_QUESTION: 'SET_QUESTION'
 }
 
+const questionStub = {
+  id: 0,
+  orderId: 0,
+  questionAnswers: [],
+  questionType: "SINGLE_CHOICE",
+  text: "",
+  title: "",
+}
+
+
 export const state = () => ({
   quiz: {
-    questions: []
+    questions: [
+      questionStub
+    ]
   },
   current: 1
 })

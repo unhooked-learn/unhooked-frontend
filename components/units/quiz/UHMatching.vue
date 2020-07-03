@@ -41,9 +41,9 @@
 </template>
 
 <script>
-import UHQuestionElement from '@/components/units/guiz/UHQuestionElement'
-import UHFtbSelectedItem from '@/components/units/guiz/elements/UHFtbSelectedItem'
-import UHMatchingRow from '@/components/units/guiz/elements/UHMatchingRow'
+import UHQuestionElement from '@/components/units/quiz/UHQuestionElement'
+import UHFtbSelectedItem from '@/components/units/quiz/elements/UHFtbSelectedItem'
+import UHMatchingRow from '@/components/units/quiz/elements/UHMatchingRow'
 import { shuffle, clone, isEmpty } from 'lodash'
 
 import quiz from '@/mixins/quiz/quiz'

@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import UHQuestionElement from '@/components/units/guiz/UHQuestionElement'
-import UHInputChoiceSingle from '@/components/units/guiz/elements/UHInputChoiceSingle'
+import UHQuestionElement from '@/components/units/quiz/UHQuestionElement'
+import UHInputChoiceSingle from '@/components/units/quiz/elements/UHInputChoiceSingle'
 import quiz from '@/mixins/quiz/quiz'
 
 export default {

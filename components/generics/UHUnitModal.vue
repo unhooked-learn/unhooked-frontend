@@ -32,8 +32,8 @@
 
     <template #footer="{close}">
       <div class="flex justify-between">
-        <UHButton @click="goToUnit">       
-            <span class="text-gray-500">{{ $t('pages.course.unit.modal.start') }}</span> 
+        <UHButton @click="goToUnit" class="text-white bg-gray-800 hover:bg-gray-700">       
+            <span>{{ $t('pages.course.unit.modal.start') }}</span> 
         </UHButton>
         <UHButton secondary @click="close()">
           {{ $t('general.modal.close') }}
