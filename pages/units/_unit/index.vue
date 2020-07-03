@@ -1,45 +1,21 @@
-<template>
-  <div>
-    <header class="p-4 pb-6 text-white bg-gray-800">
-      <div>
-        <h1 class="text-lg font-semibold uppercase"># {{ getUnitParams }} - Unit</h1>
-        <UHQuizProgress />
-      </div>
-    </header>
-    <main class="p-4">
-      <component :is="questionType" :question="currentQuestion" />
-    </main>
-  </div>
-</template>
 
 <script>
-import UHSingleChoice from '@/components/units/guiz/UHSingleChoice'
-import UHQuizProgress from '@/components/units/guiz/elements/UHQuizProgress'
-
-import { SnakeCaseCapsToPascalCase } from '@/helper'
-import { mapGetters, mapActions } from 'vuex'
-
 export default {
   layout: 'clear',
-  components: {
-    UHSingleChoice,
-    UHQuizProgress
+
+  render(h) {
+    return h('div', '');
   },
-  data() {
-    return {}
+  created() {
+    this.$router.push(
+      this.localePath({
+          name: 'units-unit-quiz-quiz',
+          params: { unit: this.getUnitParams, quiz: 1 }
+        })
+    )
   },
-  async fetch() {
-    await this.$store.dispatch('quiz/fetch', this.getUnitParams)
-  },
-  mounted() {},
 
   computed: {
-    ...mapGetters({
-      currentQuestion: 'quiz/currentQuestion'
-    }),
-    questionType() {
-      return `UH${SnakeCaseCapsToPascalCase(this.currentQuestion.questionType)}`
-    },
     getUnitParams() {
       return this.$route.params.unit
     }

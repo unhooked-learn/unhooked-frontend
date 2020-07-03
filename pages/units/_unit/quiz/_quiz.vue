@@ -7,14 +7,19 @@
       </div>
     </header>
     <main class="p-4">
-      <client-only>
-        <component
-          :is="questionType"
-          :question="currentQuestion"
-          @check="checkAnswer"
-          @selectedAnswer="quizSelectedAnswer"
-        />
-      </client-only>
+      <template v-if="$fetchState.pending">
+        <UHQuizLoading />
+      </template>
+      <template v-else>
+        <client-only>
+          <component
+            :is="questionType"
+            :question="currentQuestion"
+            @check="checkAnswer"
+            @selectedAnswer="quizSelectedAnswer"
+          />
+        </client-only>
+      </template>
     </main>
     <transition>
       <UHQuestionToast :answers="selectedAnswer" v-if="showToast" @next="goToNextQuestion" />
@@ -23,13 +28,14 @@
 </template>
 
 <script>
-import UHSingleChoice from '@/components/units/guiz/UHSingleChoice'
-import UHMultipleChoice from '@/components/units/guiz/UHMultipleChoice'
-import UHMatching from '@/components/units/guiz/UHMatching'
-import UHFillTheBlank from '@/components/units/guiz/UHFillTheBlank'
+import UHQuizLoading from '@/components/units/quiz/UHQuizLoading'
+import UHSingleChoice from '@/components/units/quiz/UHSingleChoice'
+import UHMultipleChoice from '@/components/units/quiz/UHMultipleChoice'
+import UHMatching from '@/components/units/quiz/UHMatching'
+import UHFillTheBlank from '@/components/units/quiz/UHFillTheBlank'
 
-import UHQuizProgress from '@/components/units/guiz/elements/UHQuizProgress'
-import UHQuestionToast from '@/components/units/guiz/elements/UHQuestionToast'
+import UHQuizProgress from '@/components/units/quiz/elements/UHQuizProgress'
+import UHQuestionToast from '@/components/units/quiz/elements/UHQuestionToast'
 
 import { SnakeCaseCapsToPascalCase } from '@/helper'
 import { mapGetters, mapActions } from 'vuex'
@@ -37,6 +43,7 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   layout: 'clear',
   components: {
+    UHQuizLoading,
     UHSingleChoice,
     UHMultipleChoice,
     UHMatching,
@@ -57,7 +64,9 @@ export default {
   async fetch() {
     await this.$store.dispatch('quiz/fetch', this.getUnitParams)
   },
-  mounted() {},
+  created() {
+    // this.$fetch()
+  },
   methods: {
     ...mapActions({
       setQuestion: 'quiz/setQuestion'
@@ -102,6 +111,7 @@ export default {
       currentQuestionNumber: 'quiz/current'
     }),
     questionType() {
+      console.log('#####', this.currentQuestion)
       return `UH${SnakeCaseCapsToPascalCase(this.currentQuestion.questionType)}`
     },
     getUnitParams() {
@@ -112,7 +122,7 @@ export default {
     $route: {
       handler({ params }) {
         // set Quiz #
-        this.setQuestion(params.quiz)
+        this.setQuestion(params.quiz || 1)
       },
       immediate: true
     }
