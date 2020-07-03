@@ -7,11 +7,7 @@
     </header>
     <main class="mb-16 ">
       <div class="relative z-0 h-full px-2 pt-2 mb-10 bg-gray-100">
-<<<<<<< HEAD
-        <div class="absolute inset-0 bg-gray-800 h-1/6 -z-10"></div>
-=======
         <div class="absolute inset-0 bg-gray-800 h-1/3 -z-10"></div>
->>>>>>> master
           <div class="grid grid-cols-2 gap-4 px-2 mt-3 md:grid-cols-4 md:gap-8">
             <template v-if="$fetchState.pending">
               <div v-for="i in 6" :key="i">
@@ -26,11 +22,7 @@
               :key="idx"
               v-for="(article, idx) in articles"
             >
-<<<<<<< HEAD
-              <UHKnowledgebaseCard
-=======
               <UHKnowledgebaseCard v-if="article.unlocked"
->>>>>>> master
                 :to="localePath(`/knowledge/${article.id}`)"
                 :card="article"
               />

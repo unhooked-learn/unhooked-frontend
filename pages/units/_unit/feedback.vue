@@ -43,8 +43,6 @@
           </span>
         </div>
          <!-- /rating card -->
-
-<<<<<<< HEAD
         <div class="fixed bottom-5 right-4">
           <UHButton
             class="w-full px-3 py-3 text-white transition transform bg-gray-600 rounded-md shadow hover:scale-110 hover:bg-gray-700 active:shadow-lg mouse focus:outline-none"
@@ -53,34 +51,6 @@
             <div class="text-center">
               <span class="pr-2 uppercase">{{ $t('general.button.finished') }}</span>
               <font-awesome-icon icon="check" class="m-auto text-gray-100 fa-1x" />
-=======
-              <div class="mb-1 star-rating-container">
-                <UHStarRating />
-              </div>
-              <h4 class="mb-3 text-xs">
-                {{
-                  $t('pages.course.unit.feedback.vote', {
-                    points: avgFeedback.averageValue,
-                    maxPoints: '5',
-                    votes: avgFeedback.feedbackCount
-                  })
-                }}
-              </h4>
-            </div>
-            <div class="mt-6 mb-6 md:flex">
-              <div class="md:w-1/3">
-                <legend class="text-sm tracking-wide uppercase">
-                  {{ $t('pages.course.unit.feedback.feedbackText') }}
-                </legend>
-              </div>
-              <div class="mt-2 md:flex-1 mb:mt-0 md:px-3">
-                <textarea
-                  class="w-full p-4 bg-white border-0 rounded-md shadow-lg"
-                  placeholder="..."
-                  rows="6"
-                ></textarea>
-              </div>
->>>>>>> master
             </div>
           </UHButton>
         </div>
@@ -131,15 +101,9 @@ export default {
     await this.$store.dispatch('units/fetch')
     await this.$store.dispatch('profile/fetch')
   },
-<<<<<<< HEAD
   async asyncData({ params, $axios }) {
     const avgFeedback = await $axios.$get(`unit/${params.unit}/averagefeedback`)
     return { avgFeedback }
-=======
-  async asyncData ({params, $axios}) {
-    const data = await $axios.$get(`unit/${params.unit}/averagefeedback`)
-    return {avgFeedback: data}
->>>>>>> master
   }
 }
 </script>

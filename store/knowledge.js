@@ -30,10 +30,6 @@ export const actions = {
   async fetch({ commit }) {
     this.$axios.setHeader("Access-Control-Allow-Origin", "*")
     this.$axios.setHeader("Content-Type", "application/json")
-<<<<<<< HEAD
-    let cards = await this.$axios.$get('knowledgebase')
-    commit(mutationsTypes.SET_ARTICLES, cards)
-=======
     // TODO: HARDCODED USER
     this.$axios.setHeader("username",`emma`)
     let cards = await this.$axios.$get(
@@ -48,6 +44,5 @@ export const actions = {
       `knowledgebase/unit/${unit}`
     )
     commit(mutationsTypes.SET_ARTICLE, card)
->>>>>>> master
   }
 }
