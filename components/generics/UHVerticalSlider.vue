@@ -1,22 +1,22 @@
 <template>
   <client-only>
-    <flickity ref="flickity" :options="mergedOptions">
-      <slot />
-    </flickity>
+    <div>
+      <flickity ref="flickity" :options="mergedOptions" v-if="reinit">
+        <slot />
+      </flickity>
+    </div>
   </client-only>
 </template>
 
 <script>
-
-import { isEmpty } from "lodash"
+import { isEmpty } from 'lodash'
 
 export default {
   name: 'UHVertilcalSlider',
   props: {
     options: {
       type: Object,
-      default: () => ({
-      })
+      default: () => ({})
     }
   },
   data() {
@@ -26,7 +26,27 @@ export default {
         prevNextButtons: false,
         pageDots: true,
         freeScroll: true
+      },
+      reinit: true
+    }
+  },
+  methods: {
+    reInitSlider() {
+      // ¯\_(ツ)_/¯
+      this.$nextTick(() => {
+        this.reinit = false
+        this.$nextTick(() => {
+          this.reinit = true
+        })
+      })
+    }
+  },
+  computed: {
+    mergedOptions() {
+      if (isEmpty(this.options)) {
+        return this.flickityOptions
       }
+      return this.options
     }
   },
   computed: {
