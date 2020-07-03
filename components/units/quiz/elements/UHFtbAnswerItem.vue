@@ -41,11 +41,8 @@ export default {
       this.$emit('remove', item)
     },
     isCorrect() {
-      console.log('#+###item', this.item.answerText, this.position, this.item.position)
-
       // temporarly fix for presentation !!!
       let tmp = clone(this.item.position);
-
 
       return this.position === (tmp+1)
     }

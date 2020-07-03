@@ -27,8 +27,8 @@ const keys = {
       label: 'Units',
       welcome: 'Hi',
       intro:
-        "Welcome to this course. We want you to know the manipulative mechanisms in mobile games and social media apps. Let's get suprised.",
-      module: 'Module {number}',
+        "Welcome to this course. We want you to know the manipulative mechanisms in mobile games and social media apps. Let's get surprised.",
+      module: 'Unit {number}',
       unit: {
         feedback: {
           text: 'Do you enjoy the course ? If so, please leave a rating!',
@@ -78,7 +78,7 @@ const keys = {
     register: {
       label: 'Registration',
       text:
-        'Fill in to your register your account. This feature is optional and only nessasary if you want to keep your data and progress.',
+        'Fill in to your register your account. This feature is optional and only necessary if you want to keep your data and progress.',
       register: 'Sign Up'
     },
     settings: {

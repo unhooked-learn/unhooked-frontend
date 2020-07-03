@@ -25,7 +25,7 @@
           </span>
         </h1>
         <p class="text-sm">
-          {{ unit.excerpt }}
+          {{ unit.description }}
         </p>
       </div>
     </template>

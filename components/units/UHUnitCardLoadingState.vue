@@ -1,7 +1,7 @@
 <template>
   <div class="flex-shrink-0 w-64">
     <div
-      class="min-w-full my-2 overflow-hidden text-white bg-white rounded-md shadow-md"
+      class="min-w-full mb-2 overflow-hidden text-white bg-white rounded-md shadow-md h-80"
     >
       <div class="object-cover aspect aspect-1/2 loading-state"></div>
       <div class="p-4">

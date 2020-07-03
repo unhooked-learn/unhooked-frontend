@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-shrink-0 w-full rounded shadow-lg h-36">
+  <div class="flex-shrink-0 w-full mt-6 rounded shadow-lg h-36">
     <div
       class="min-w-full min-h-full my-2 overflow-hidden text-gray-800 bg-white rounded-md shadow-md"
     >

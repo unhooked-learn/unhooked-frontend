@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       flickityOptions: {
-        initialIndex: 3,
+        initialIndex: 0,
         prevNextButtons: false,
         pageDots: true,
         freeScroll: true
@@ -44,6 +44,14 @@ export default {
   computed: {
     mergedOptions() {
       if (isEmpty(this.options)) {
+        return this.flickityOptions
+      }
+      return this.options
+    }
+  },
+  computed: {
+    mergedOptions() {
+      if(isEmpty(this.options)){
         return this.flickityOptions
       }
       return this.options

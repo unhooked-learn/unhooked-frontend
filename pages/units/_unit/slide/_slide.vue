@@ -5,7 +5,6 @@
     >
       {{ $t('pages.course.module', { number: unitNumber }) }}
     </div>
-
     <UHVerticalSlider ref="slider" :options="flickityOptions">
       <div class="w-full p-5 bg-gray-100" :key="idx" v-for="(content, idx) in contents">
         <div class="my-6 text-lg font-semibold uppercase">{{ content.headline }}</div>
@@ -54,7 +53,7 @@ export default {
       contents: 'units/content'
     }),
     unitNumber() {
-        retrun this.$route.params.unit;
+        return this.$route.params.unit;
     }
   },
   activated() {
