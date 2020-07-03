@@ -42,6 +42,7 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default {
   layout: 'clear',
+  fetchDelay: 1000,
   components: {
     UHQuizLoading,
     UHSingleChoice,
@@ -111,7 +112,6 @@ export default {
       currentQuestionNumber: 'quiz/current'
     }),
     questionType() {
-      console.log('#####', this.currentQuestion)
       return `UH${SnakeCaseCapsToPascalCase(this.currentQuestion.questionType)}`
     },
     getUnitParams() {

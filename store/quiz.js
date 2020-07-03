@@ -35,7 +35,6 @@ export const getters = {
     return state.current
   },
   currentQuestion(state) {
-    console.log("currentQuestion", state.quiz.questions)
     return state.quiz.questions[state.current - 1]
   }
 }

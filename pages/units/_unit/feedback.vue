@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gray-100">
     <header class="absolute top-0 left-0 z-10 text-white">
-      <UHAccessibilityButton class="" to="/units">
+      <UHAccessibilityButton class to="/units">
         <font-awesome-icon icon="chevron-left" class="p-1 text-white md:p-0 fa-2x" />
       </UHAccessibilityButton>
     </header>
@@ -17,56 +17,45 @@
       </div>
 
       <div class="z-50 px-4 -mt-20">
-        <div class="flex justify-center">
-          <div class>
-            <div
-              class="px-4 py-1 text-lg font-semibold text-center text-gray-700 bg-white rounded-md shadow-md"
-            >
-              <template v-if="$fetchState.pending">
-                <div class="h-4 mt-5 loading-state"></div>
-              </template>
-              <h4 class="mt-5 text-lg uppercase" v-else>{{ units[getId()].name }}</h4>
+       <div class="h-full">
+          <!-- rating card -->
+        <div
+          class="px-4 py-1 text-lg font-semibold text-center text-gray-700 bg-white rounded-md shadow-md"
+        >
+          <template v-if="$fetchState.pending">
+            <div class="h-4 mt-5 loading-state"></div>
+          </template>
+          <h4 class="mt-5 text-lg uppercase" v-else>{{ units[getId()].name }}</h4>
 
-              <p class="my-3 text-base">{{ $t('pages.course.unit.feedback.text') }}</p>
+          <p class="my-3 text-base">{{ $t('pages.course.unit.feedback.text') }}</p>
 
-              <div class="mb-1 star-rating-container">
-                <UHStarRating />
-              </div>
-              <h4 class="mb-3 text-xs f">
-                {{
-                $t('pages.course.unit.feedback.vote', {
-                points: avgFeedback.averageValue,
-                maxPoints: '5',
-                votes: avgFeedback.feedbackCount
-                })
-                }}
-              </h4>
-            </div>
-            <div class="mt-6 mb-6 md:flex">
-              <div class="md:w-1/3">
-                <legend
-                  class="text-sm font-semibold tracking-wide uppercase"
-                >{{ $t('pages.course.unit.feedback.feedbackText') }}</legend>
-              </div>
-              <div class="mt-2 md:flex-1 mb:mt-0 md:px-3">
-                <textarea
-                  class="w-full p-4 bg-white border-0 rounded-md shadow-lg"
-                  placeholder="..."
-                  rows="6"
-                ></textarea>
-              </div>
-            </div>
+          <div class="mb-1 star-rating-container">
+            <UHStarRating />
           </div>
-          <div class="fixed bottom-5 right-5">
-            <UHButton
-              class="w-auto px-3 py-3 text-white transition transform bg-gray-600 rounded-full shadow hover:scale-110 hover:bg-gray-700 active:shadow-lg mouse focus:outline-none"
-              @click="goHome"
-            >
-              <span class="pr-2">{{ $t('general.button.finished') }}</span>
-              <font-awesome-icon icon="check" class="m-auto text-gray-100 fa-1x" />
-            </UHButton>
-          </div>
+          <span class="mb-3 text-xs">
+            {{
+            $t('pages.course.unit.feedback.vote', {
+            points: avgFeedback.averageValue,
+            maxPoints: '5',
+            votes: avgFeedback.feedbackCount
+            })
+            }}
+          </span>
         </div>
+         <!-- /rating card -->
+
+        <div class="fixed bottom-5 right-4">
+          <UHButton
+            class="w-full px-3 py-3 text-white transition transform bg-gray-600 rounded-md shadow hover:scale-110 hover:bg-gray-700 active:shadow-lg mouse focus:outline-none"
+            @click="goHome"
+          >
+            <div class="text-center">
+              <span class="pr-2 uppercase">{{ $t('general.button.finished') }}</span>
+              <font-awesome-icon icon="check" class="m-auto text-gray-100 fa-1x" />
+            </div>
+          </UHButton>
+        </div>
+       </div>
       </div>
     </main>
   </div>
