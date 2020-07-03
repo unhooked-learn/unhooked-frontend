@@ -42,10 +42,10 @@
 </template>
 
 <script>
-import UHQuestionElement from '@/components/units/guiz/UHQuestionElement'
-import UHFtbTextItem from '@/components/units/guiz/elements/UHFtbTextItem'
-import UHFtbAnswerItem from '@/components/units/guiz/elements/UHFtbAnswerItem'
-import UHFtbSelectedItem from '@/components/units/guiz/elements/UHFtbSelectedItem'
+import UHQuestionElement from '@/components/units/quiz/UHQuestionElement'
+import UHFtbTextItem from '@/components/units/quiz/elements/UHFtbTextItem'
+import UHFtbAnswerItem from '@/components/units/quiz/elements/UHFtbAnswerItem'
+import UHFtbSelectedItem from '@/components/units/quiz/elements/UHFtbSelectedItem'
 import fillTheBlank from '@/mixins/quiz/fillTheBlank'
 import quiz from '@/mixins/quiz/quiz'
 

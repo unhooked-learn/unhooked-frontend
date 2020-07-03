@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import UHQuestionElement from '@/components/units/guiz/UHQuestionElement'
+import UHQuestionElement from '@/components/units/quiz/UHQuestionElement'
 export default {
     name: 'UHMatching',
     components: {
