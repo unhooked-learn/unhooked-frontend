@@ -11,7 +11,7 @@
         <div v-if="content.mediaName" class="flex justify-end object-cover mb-6 aspect aspect-1/2">
           <img class="object-cover" :src="content.mediaName" :alt="content.headline" />
         </div>
-        <p class="mb-6 text-lg text-justify text-gray-900">{{ content.text }}</p>
+        <p class="mb-6 text-lg text-justify text-gray-900" v-html="content.text"></p>
       </div>
       <div class="w-full p-5 bg-gray-100">
         <div class="my-6 text-lg font-semibold uppercase">
@@ -93,4 +93,9 @@ export default {
     bottom: 100%;
   }
 }
+br {
+  @apply mb-3;
+  @apply block;
+  content: ""!important;
+} 
 </style>
