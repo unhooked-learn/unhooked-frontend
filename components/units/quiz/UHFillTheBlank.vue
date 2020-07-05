@@ -25,7 +25,7 @@
 
     <template #prebody>
       <div class="flex justify-between">
-        <div class="text-gray-600">{{question.title}}</div>
+        <div class="text-gray-600">{{question.text}}</div>
         <a href="#" class="text-purple-600" v-if="!quiz.check" @click.prevent="resetSelection">reset</a>
       </div>
     </template>

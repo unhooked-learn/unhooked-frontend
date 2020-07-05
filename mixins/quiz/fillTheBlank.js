@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     splitQuestion(question) {
-      return question.text
+      return question.title
         .split(regex)
         .map(i => i.split(' '))
         .reduce((a, b) => (a = [...a, ...b]))
