@@ -44,7 +44,7 @@ export const mutations = {
     state.units = units.sort((a,b) => a.orderId - b.orderId)
   },
   [mutationsTypes.SET_UNIT_CONTENT](state, content) {
-    state.content = content
+    state.content = content.sort((a,b) => a.orderId - b.orderId)
   }
 }
 
