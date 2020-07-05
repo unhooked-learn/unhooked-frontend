@@ -2,11 +2,9 @@
   <div class="slides">
     <div
       class="p-6 font-semibold tracking-wider text-gray-400 uppercase text-md md:ml-8"
-    >
-      {{ $t('pages.course.module', { number: unitNumber }) }}
-    </div>
+    >{{ $t('pages.course.module', { number: unitNumber }) }}</div>
     <UHVerticalSlider ref="slider" :options="flickityOptions">
-      <div class="w-full p-5 bg-gray-100" :key="idx" v-for="(content, idx) in contents">
+      <div class="w-full p-5 bg-gray-100 hyphenate" :key="idx" v-for="(content, idx) in contents">
         <div class="my-6 text-lg font-semibold uppercase">{{ content.headline }}</div>
         <div v-if="content.mediaName" class="flex justify-end object-cover mb-6 aspect aspect-1/2">
           <img class="object-cover" :src="content.mediaName" :alt="content.headline" />
@@ -14,9 +12,9 @@
         <p class="mb-6 text-lg text-justify text-gray-900" v-html="content.text"></p>
       </div>
       <div class="w-full p-5 bg-gray-100">
-        <div class="my-6 text-lg font-semibold uppercase">
-           {{ $t('pages.course.unit.slides.finished')}}
-        </div>
+        <div
+          class="my-6 text-lg font-semibold uppercase"
+        >{{ $t('pages.course.unit.slides.finished')}}</div>
         <div class="mb-6">{{ $t('pages.course.unit.slides.text', { number: unitNumber }) }}</div>
         <UHButton @click="goToQuiz">{{ $t('pages.course.unit.slides.startQuiz')}}</UHButton>
       </div>
@@ -53,7 +51,7 @@ export default {
       contents: 'units/content'
     }),
     unitNumber() {
-        return this.$route.params.unit;
+      return this.$route.params.unit
     }
   },
   activated() {
@@ -76,11 +74,11 @@ export default {
     }
   },
   watch: {
-    contents:{
+    contents: {
       handler() {
         // reinit slider
         this.$refs.slider.reInitSlider()
-      },
+      }
     }
   }
 }
@@ -96,6 +94,6 @@ export default {
 br {
   @apply mb-3;
   @apply block;
-  content: ""!important;
-} 
+  content: '' !important;
+}
 </style>
