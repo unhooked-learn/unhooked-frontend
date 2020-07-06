@@ -49,7 +49,7 @@ export default {
         'border-green-400':
           this.getButtonState() === itemState.ANSWER_IS_CORRECT,
         'border-red-400': this.getButtonState() === itemState.ANSWER_IS_WRONG,
-        'border-green-400 bg-green-400 text-white font-semibold':
+        'border-green-400 bg-green-500 text-white font-semibold':
           this.getButtonState() === itemState.ANSWER_IS_CORRECT &&
           this.isCurrent,
         'border-red-400 bg-red-400 text-white font-semibold':
