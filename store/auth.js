@@ -14,7 +14,14 @@ export const state = () => ({
 
 export const mutations = {
   [mutationTypes.SET_ERRORS](state, errors) {
-    state.errors = errors
+    state.errors = {
+      message: ''
+    }
+    if (errors.errors !== undefined) {
+      state.errors.message = errors.errors[0].defaultMessage
+    } else {
+      state.errors.message = errors.message
+    }
   },
   [mutationTypes.CLEAN_ERROR](state) {
     state.errors = {}
@@ -29,8 +36,8 @@ export const mutations = {
 
 export const actions = {
   setAuthUser({ commit }, user) {
-    this.$axios.setHeader('username', user.username);
-    this.$axios.setToken(user.token);
+    this.$axios.setHeader('username', user.username)
+    this.$axios.setToken(user.token)
 
     commit('profile/SET_USERNAME', user.username, { root: true })
     commit('profile/SET_EMAIL', user.email, { root: true })
@@ -60,7 +67,7 @@ export const actions = {
         dispatch('setAuthUser', response)
       })
       .catch(error => {
-        commit(mutationTypes.SET_ERRORS, error.response.data.message)
+        commit(mutationTypes.SET_ERRORS, error.response.data)
       })
   },
   // register
@@ -71,7 +78,7 @@ export const actions = {
         dispatch('setAuthUser', response)
       })
       .catch(error => {
-        commit(mutationTypes.SET_ERRORS, error.response.data.message)
+        commit(mutationTypes.SET_ERRORS, error.response.data)
       })
   },
 
@@ -108,6 +115,6 @@ export const getters = {
     return state.errors
   },
   hasToken(state) {
-    return !!state.user.token;
+    return !!state.user.token
   }
 }

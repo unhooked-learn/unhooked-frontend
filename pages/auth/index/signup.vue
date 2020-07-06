@@ -2,7 +2,7 @@
   <div>
     <h2
       class="mt-4 text-3xl font-extrabold leading-9 text-center text-gray-900"
-    >{{ $t('pages.auth.signin') }}</h2>
+    >{{ $t('pages.auth.signup') }}</h2>
 
     <form class="mt-4" @submit.prevent="signup(form)">
       <UHAuthErrors :autherrors="autherrors" />
@@ -28,7 +28,7 @@
           </template>
         </UHInput>
 
-        <UHAuthErrors :autherrors="passwordErros" />
+        <UHAuthErrors :autherrors="passwordErrors" />
 
         <UHInput
           label="password"
@@ -99,7 +99,7 @@ export default {
     passwordEqual() {
       return this.form.password === this.form.repeatPassword
     },
-    passwordErros() {
+    passwordErrors() {
       return !this.passwordEqual
         ? { message: 'Error: Passwords are not equal' }
         : {}

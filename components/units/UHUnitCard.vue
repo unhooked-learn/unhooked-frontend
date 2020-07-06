@@ -24,7 +24,7 @@
           {{$t('pages.course.module', {number:unit.orderId})}}
           <div
             class="px-2 py-1 font-medium text-white bg-white border rounded-full"
-            :class="{ 'bg-blue-600 border-blue-500':!active&&!complete, 'bg-green-500 border-green-400':complete, 'text-black bg-white-600 border-white-500':active}"
+            :class="{ 'bg-blue-600 border-blue-500':!active&&!complete, 'bg-green-500 border-green-500':complete, 'text-black bg-white-600 border-white-500':active}"
           >
             <div class="flex-initial max-w-full text-xs font-normal leading-none">
               <div v-if="complete">{{$t('pages.course.unit.status.complete')}}</div>
