@@ -58,7 +58,7 @@ export const actions = {
   async fetch({ commit }) {
     this.$axios.setHeader("Access-Control-Allow-Origin", "*")
     this.$axios.setHeader("Content-Type", "application/json")
-    let units = await this.$axios.$get('unit')
+    let units = await this.$axios.$get('user/units')
     commit(mutationsTypes.SET_UNITS, units)
   },
   async fetchContent({ commit }, id) {
