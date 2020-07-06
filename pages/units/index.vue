@@ -1,7 +1,9 @@
 <template>
   <div class="flex flex-col justify-between h-screen">
     <header class="flex flex-col justify-between h-full text-white bg-gray-800">
-      <Logo class="hidden w-auto pl-10 pr-10 m-16 mx-auto bg-gray-100 rounded-full md:block shadow-solid"/>
+      <Logo
+        class="hidden w-auto pl-10 pr-10 m-16 mx-auto bg-gray-100 rounded-full md:block shadow-solid"
+      />
       <div class="px-4 pt-4 md:p-12">
         <h2 class="font-semibold">
           {{ $t('pages.course.welcome') }} {{ user.username }}!
@@ -28,10 +30,10 @@
           <UHUnitCard
             class="mx-2"
             :unit="unit"
-            :active="unit.active"
-            :complete="unit.complete"
+            :active="isNewUnit(unit)"
+            :complete="!isNewUnit(unit)"
             :key="idx"
-            v-for="(unit, idx) in units"
+            v-for="(unit, idx) in unlockedUnits"
           />
         </UHVerticalSlider>
       </div>
@@ -64,12 +66,25 @@ export default {
     ...mapGetters({
       units: 'units/units',
       user: 'profile/user'
-    })
+    }),
+    unlockedUnits() {
+      return this.units.filter(item => item.unlocked)
+    },
+    currentUnit() {
+      return this.unlockedUnits[this.unlockedUnits.length - 1]
+    }
   },
-
-  mounted () {
+  methods: {
+    isNewUnit(unit) {
+      if (this.currentUnit == undefined) {
+        return false
+      }
+      return this.currentUnit.id === unit.id
+    }
+  },
+  mounted() {
     // refactor
-   this.$store.dispatch('profile/activeTime')
+    this.$store.dispatch('profile/activeTime')
   },
 
   activated() {
