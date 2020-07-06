@@ -5,7 +5,7 @@
         <div class="absolute top-0 right-0">
           <UHAccessibilityButton to="/profile/settings">
             <div class="w-12 p-2 md:p-0">
-              <font-awesome-icon icon="pen" class="pt-2  fa-2x" />
+              <font-awesome-icon icon="pen" class="pt-2 fa-2x" />
             </div>
           </UHAccessibilityButton>
         </div>
@@ -28,18 +28,18 @@
             v-if="user.loggedin"
             :to="localePath('/profile')"
             class="px-2 py-1 text-xs bg-gray-400 border-gray-800 rounded-full pill"
-          >{{ $t('pages.auth.signup') }}</nuxt-link>
+          >{{ $t('pages.auth.logout') }}</nuxt-link>
           <nuxt-link
             v-else
-            :to="localePath('/auth/login')"
+            :to="localePath('/auth/signin')"
             class="px-2 py-1 text-xs bg-gray-400 border-gray-800 rounded-full pill"
           >{{ $t('pages.auth.signin') }}</nuxt-link>
         </template>
         <template v-else>
           <nuxt-link
-            :to="localePath('/auth/register')"
+            :to="localePath('/auth/signup')"
             class="px-2 py-1 text-xs bg-gray-400 border-gray-800 rounded-full shadow-solid pill"
-          >{{ $t('pages.auth.registerText') }}</nuxt-link>
+          >{{ $t('pages.auth.signup') }}</nuxt-link>
         </template>
       </div>
     </header>

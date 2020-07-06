@@ -2,11 +2,13 @@
   <div>
     <header class="p-4 pb-6 text-white bg-gray-800">
       <div>
-        <h1 class="text-lg font-semibold uppercase"># {{ getUnitParams }} - Unit</h1>
+        <h1 class="text-lg font-semibold uppercase">
+          # {{ getUnitParams }} - Unit
+        </h1>
         <UHQuizProgress @goToQuestion="setNextQuestion" />
       </div>
     </header>
-    <main class="p-4">
+    <main class="p-4" :style="{ marginBottom: modalHeight + 'px' }">
       <template v-if="$fetchState.pending">
         <UHQuizLoading />
       </template>
@@ -22,7 +24,13 @@
       </template>
     </main>
     <transition>
-      <UHQuestionToast :answers="selectedAnswer" v-if="showToast" @next="goToNextQuestion" />
+      <UHQuestionToast
+        :answers="selectedAnswer"
+        v-show="showToast"
+        :is-visible="showToast"
+        @modalHeight="setModalHeight"
+        @next="goToNextQuestion"
+      />
     </transition>
   </div>
 </template>
@@ -41,6 +49,7 @@ import { SnakeCaseCapsToPascalCase } from '@/helper'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
+  name: 'UnitsUnitQuizQuiz',
   layout: 'clear',
   fetchDelay: 1000,
   components: {
@@ -49,7 +58,6 @@ export default {
     UHMultipleChoice,
     UHMatching,
     UHFillTheBlank,
-
     UHQuizProgress,
     UHQuestionToast
   },
@@ -59,7 +67,8 @@ export default {
       selectedAnswer: {
         isCorrect: false,
         validationTexts: []
-      }
+      },
+      modalHeight: 0
     }
   },
   async fetch() {
@@ -102,6 +111,9 @@ export default {
     },
     quizSelectedAnswer(value) {
       this.selectedAnswer = value
+    },
+    setModalHeight(height) {
+      this.modalHeight = height
     }
   },
 
