@@ -109,7 +109,7 @@ export default context => {
           answerChoose: 'Wähle die richtige(n) Antwort(en)!',
           check: 'Antwort Überprüfen.',
           answerCorret: 'Das ist Richtig!',
-          answerWrong: 'Das ist Falsch!',
+          answerWrong: 'Falsch oder zum Teil richtig!',
           next: 'Nächste Frage',
           steps: 'Frage {current} von {total}'
         },

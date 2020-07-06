@@ -102,7 +102,7 @@ const keys = {
       answerChoose: 'Choose the right answer(s)!',
       check: 'Check your answer',
       answerCorret: "You're Correct!",
-      answerWrong: "You're Wrong!",
+      answerWrong: "False or partly true!",
       next: 'Next question',
       steps: 'Question {current} of {total}'
     },
