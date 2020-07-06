@@ -12,7 +12,8 @@ const keys = {
       email: 'Email address',
       name: 'Name',
       password: 'Password',
-      repeatPassword: 'repeat Password'
+      repeatPassword: 'repeat Password',
+      username: 'Username'
     },
     toast: {
       gratulations: 'Gratulations! You have earned {points} Points'
@@ -50,7 +51,8 @@ const keys = {
         },
         slides: {
           finished: 'Finished',
-          text: 'This was it for Unit {number}. If you are ready, you can start the quiz now.',
+          text:
+            'This was it for Unit {number}. If you are ready, you can start the quiz now.',
           startQuiz: 'Start quiz'
         }
       }
@@ -68,18 +70,19 @@ const keys = {
       skip: 'Skip Onboarding',
       label: 'Onboarding'
     },
-    login: {
-      text: 'Sign in to your account',
+    auth: {
+      or: 'or',
+      welcomeBack: '<span class="font-bold">{username}</span>, welcome back!',
+      loginText: 'Sign in to your account',
       remember: 'Remember me',
-      register: 'Register',
-      login: 'Login',
-      logout: 'Logout'
-    },
-    register: {
-      label: 'Registration',
-      text:
+      signin: 'Register',
+      signup: 'Login',
+      logout: 'Logout',
+      registerText:
         'Fill in to your register your account. This feature is optional and only necessary if you want to keep your data and progress.',
-      register: 'Sign Up'
+      createUsername: 'create a username',
+      createUser: 'Create User',
+      useThisUsername: 'Use this username and continue'
     },
     settings: {
       label: 'Settings',

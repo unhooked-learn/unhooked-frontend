@@ -14,7 +14,8 @@ export default context => {
           email: 'Email Adresse',
           name: 'Name',
           password: 'Passwort',
-          repeatPassword: 'Password wiederholen'
+          repeatPassword: 'Password wiederholen',
+          username: 'Benutzername'
         },
         toast: {
           gratulations:
@@ -55,7 +56,8 @@ export default context => {
             },
             slides: {
               finished: 'Abgeschlossen',
-              text: 'Das war es für Unit {number}. Wenn du bereit bist, kannst du das Quiz starten.',
+              text:
+                'Das war es für Unit {number}. Wenn du bereit bist, kannst du das Quiz starten.',
               startQuiz: 'Starte das Quiz'
             }
           }
@@ -73,18 +75,20 @@ export default context => {
           skip: 'Skip Onboarding',
           label: 'Einführung'
         },
-        login: {
-          text: 'Logge dich in deinen Account ein',
+        auth: {
+          or: 'Oder',
+          welcomeBack:
+            '<span class="font-bold">{username}</span>, willkommen zurück!',
+          loginText: 'Logge dich in deinen Account ein',
           remember: 'Login speichern',
-          register: 'Registrieren',
-          login: 'Einloggen',
-          logout: 'Ausloggen'
-        },
-        register: {
-          label: 'Registrierung',
-          text:
+          signin: 'Registrieren',
+          signup: 'Einloggen',
+          logout: 'Ausloggen',
+          registerText:
             'Fülle die Felder aus um dich zu registrieren. Dieses ist optional und nur nötig, wenn du deine Daten und Fortschritt behalten willst.',
-          register: 'Registrieren'
+          createUsername: 'Einen Benutzernamen erstellen',
+          createUser: 'Benutzer erstellen',
+          useThisUsername: 'Benutze diesen Namen und fahre fort'
         },
         settings: {
           label: 'Einstellungen',

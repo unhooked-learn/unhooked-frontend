@@ -68,7 +68,8 @@ export default {
   },
 
   mounted () {
-    this.$store.dispatch('profile/activeTime')
+    // refactor
+   this.$store.dispatch('profile/activeTime')
   },
 
   activated() {
@@ -79,7 +80,6 @@ export default {
   },
   async fetch() {
     await this.$store.dispatch('units/fetch')
-    await this.$store.dispatch('profile/fetch')
   }
 }
 </script>

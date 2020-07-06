@@ -28,18 +28,12 @@ export const mutations = {
 
 export const actions = {
   async fetch({ commit }) {
-    this.$axios.setHeader("Access-Control-Allow-Origin", "*")
-    this.$axios.setHeader("Content-Type", "application/json")
-    // TODO: HARDCODED USER
-    this.$axios.setHeader("username",`emma`)
     let cards = await this.$axios.$get(
       `user/knowledgebases`
     )
     commit(mutationsTypes.SET_ARTICLES, cards)
   },
   async fetchArticle({ commit }, unit) {
-    this.$axios.setHeader("Access-Control-Allow-Origin", "*")
-    this.$axios.setHeader("Content-Type", "application/json")
     let card = await this.$axios.$get(
       `knowledgebase/unit/${unit}`
     )

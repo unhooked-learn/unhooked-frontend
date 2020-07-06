@@ -38,8 +38,6 @@ export const actions = {
     commit(mutationsTypes.CLEAR_BADGE)
   },
   async fetchBadges({ commit }) {
-    this.$axios.setHeader("username","emma")
-    this.$axios.setHeader("Content-Type", "application/json")
     let badges = await this.$axios.$get('achievements')
     // console.log(badges)
     commit(mutationsTypes.SET_BADGES, badges)

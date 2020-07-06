@@ -40,6 +40,7 @@ import UHKnowledgebaseCard from '@/components/knowledge/UHKnowledgebaseCard'
 import UHKnowledgebaseCardLoadingState from '@/components/knowledge/UHKnowledgebaseCardLoadingState'
 
 export default {
+  name: "KnowledgebaseIndex",
   fetchDelay: 1000,
   // fetchOnServer: false,
   components: {
