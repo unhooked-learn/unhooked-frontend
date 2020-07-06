@@ -14,7 +14,16 @@ export const state = () => ({
 
 export const mutations = {
   [mutationTypes.SET_ERRORS](state, errors) {
-    state.errors = errors
+    state.errors = {
+      message: ""
+    }
+    if(errors.errors !== undefined){
+      state.errors.message = errors.errors[0].defaultMessage  
+    }
+    else{
+    state.errors.message = errors.message
+    }
+
   },
   [mutationTypes.CLEAN_ERROR](state) {
     state.errors = {}
@@ -60,7 +69,7 @@ export const actions = {
         dispatch('setAuthUser', response)
       })
       .catch(error => {
-        commit(mutationTypes.SET_ERRORS, error.response.data.message)
+        commit(mutationTypes.SET_ERRORS, error.response.data)
       })
   },
   // register
@@ -71,7 +80,7 @@ export const actions = {
         dispatch('setAuthUser', response)
       })
       .catch(error => {
-        commit(mutationTypes.SET_ERRORS, error.response.data.message)
+        commit(mutationTypes.SET_ERRORS, error.response.data)
       })
   },
 
