@@ -37,22 +37,22 @@ export default {
       }
 
       return {
-        'text-blue-400': this.getButtonState() === itemState.ANSWER_IS_SELECTED,
-        'text-green-400': this.getButtonState() === itemState.ANSWER_IS_CORRECT,
-        'text-red-400': this.getButtonState() === itemState.ANSWER_IS_WRONG
+        'text-blue-500': this.getButtonState() === itemState.ANSWER_IS_SELECTED,
+        'text-green-500': this.getButtonState() === itemState.ANSWER_IS_CORRECT,
+        'text-red-500': this.getButtonState() === itemState.ANSWER_IS_WRONG
       }
     },
     checkBorderColor() {
       return {
-        'border-blue-400':
+        'border-blue-500':
           this.getButtonState() === itemState.ANSWER_IS_SELECTED,
-        'border-green-400':
+        'border-green-500':
           this.getButtonState() === itemState.ANSWER_IS_CORRECT,
-        'border-red-400': this.getButtonState() === itemState.ANSWER_IS_WRONG,
-        'border-green-400 bg-green-500 text-white font-semibold':
+        'border-red-500': this.getButtonState() === itemState.ANSWER_IS_WRONG,
+        'border-green-500 bg-green-500 text-white font-semibold':
           this.getButtonState() === itemState.ANSWER_IS_CORRECT &&
           this.isCurrent,
-        'border-red-400 bg-red-400 text-white font-semibold':
+        'border-red-500 bg-red-500 text-white font-semibold':
           this.getButtonState() === itemState.ANSWER_IS_WRONG && this.isCurrent
       }
     },
@@ -69,11 +69,11 @@ export default {
     },
     checkAnswer() {
       return {
-        'border-blue-400':
+        'border-blue-500':
           this.getButtonState() === itemState.ANSWER_IS_SELECTED,
-        'border-green-400':
+        'border-green-500':
           this.getButtonState() === itemState.ANSWER_IS_CORRECT,
-        'border-red-400': this.getButtonState() === itemState.ANSWER_IS_WRONG
+        'border-red-500': this.getButtonState() === itemState.ANSWER_IS_WRONG
       }
     }
   },

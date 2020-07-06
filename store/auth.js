@@ -15,15 +15,13 @@ export const state = () => ({
 export const mutations = {
   [mutationTypes.SET_ERRORS](state, errors) {
     state.errors = {
-      message: ""
+      message: ''
     }
-    if(errors.errors !== undefined){
-      state.errors.message = errors.errors[0].defaultMessage  
+    if (errors.errors !== undefined) {
+      state.errors.message = errors.errors[0].defaultMessage
+    } else {
+      state.errors.message = errors.message
     }
-    else{
-    state.errors.message = errors.message
-    }
-
   },
   [mutationTypes.CLEAN_ERROR](state) {
     state.errors = {}
@@ -38,8 +36,8 @@ export const mutations = {
 
 export const actions = {
   setAuthUser({ commit }, user) {
-    this.$axios.setHeader('username', user.username);
-    this.$axios.setToken(user.token);
+    this.$axios.setHeader('username', user.username)
+    this.$axios.setToken(user.token)
 
     commit('profile/SET_USERNAME', user.username, { root: true })
     commit('profile/SET_EMAIL', user.email, { root: true })
@@ -117,6 +115,6 @@ export const getters = {
     return state.errors
   },
   hasToken(state) {
-    return !!state.user.token;
+    return !!state.user.token
   }
 }

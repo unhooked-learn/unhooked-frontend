@@ -24,7 +24,7 @@
     </div>
 
     <slot name="footer" :isAnswerSelected="isAnswerSelected">
-      <div v-show="isAnswerSelected(hasAnswer)">
+      <div v-show="isAnswerSelected(hasAnswer)&&!check">
         <button
           @click.prevent="checkAnswer"
           class="flex justify-center w-full p-4 font-semibold text-white uppercase bg-gray-900 rounded-lg hover:bg-gray-800 mt-7"
