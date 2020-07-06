@@ -81,14 +81,15 @@ export default context => {
             '<span class="font-bold">{username}</span>, willkommen zurück!',
           loginText: 'Logge dich in deinen Account ein',
           remember: 'Login speichern',
-          signin: 'Registrieren',
-          signup: 'Einloggen',
+          signin: 'Einloggen',
+          signup: 'Registrieren',
           logout: 'Ausloggen',
           registerText:
             'Fülle die Felder aus um dich zu registrieren. Dieses ist optional und nur nötig, wenn du deine Daten und Fortschritt behalten willst.',
-          createUsername: 'Einen Benutzernamen erstellen',
-          createUser: 'Benutzer erstellen',
-          useThisUsername: 'Benutze diesen Namen und fahre fort'
+          createUsername: 'Gebe dir einen Namen',
+          createUser: 'Gastzugang',
+          useThisUsername: 'Benutze diesen Namen und fahre fort',
+          continue: 'Fortfahren'
         },
         settings: {
           label: 'Einstellungen',

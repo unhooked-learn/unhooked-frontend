@@ -75,14 +75,15 @@ const keys = {
       welcomeBack: '<span class="font-bold">{username}</span>, welcome back!',
       loginText: 'Sign in to your account',
       remember: 'Remember me',
-      signin: 'Register',
-      signup: 'Login',
+      signin: 'Login',
+      signup: 'Register',
       logout: 'Logout',
       registerText:
         'Fill in to your register your account. This feature is optional and only necessary if you want to keep your data and progress.',
       createUsername: 'create a username',
-      createUser: 'Create User',
-      useThisUsername: 'Use this username and continue'
+      createUser: 'Continue as a guest',
+      useThisUsername: 'Use this username and continue',
+      continue: 'Continue'
     },
     settings: {
       label: 'Settings',
