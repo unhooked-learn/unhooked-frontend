@@ -20,6 +20,7 @@ import UHBadgeModal from '@/components/generics/UHBadgeModal'
 import UHUnitModal from '@/components/generics/UHUnitModal'
 
 export default {
+  name: 'LayoutMaster',
   components: {
     UHBadgeModal,
     UHUnitModal

@@ -35,6 +35,7 @@ module.exports = {
    ** Plugins to load before mounting the App
    */
   plugins: [
+    { src: '~/plugins/axios.js' },
     { src: '~/plugins/both-sides.js' },
     { src: '~/plugins/client-only.js', mode: 'client' },
     { src: '~/plugins/server-only.js', mode: 'server' }
@@ -70,7 +71,7 @@ module.exports = {
     manifest: {
       "name": "Unhooked",
       "short_name": "Unhooked",
-      "start_url": ".",
+      //"start_url": ".",
       "display": "fullscreen",
       "background_color": "gray",
       "description": "Manipulative Methods in Mobile Games: An E-Learning Unit",
@@ -101,6 +102,12 @@ module.exports = {
 
   toast: {
     iconPack: 'fontawesome'
+},
+/**
+ * router
+ */
+router: {
+  middleware: ['authenticated']
 },
   /*
    ** i18n module configuration

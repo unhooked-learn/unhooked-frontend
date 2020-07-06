@@ -1,9 +1,31 @@
 <template>
   <div class="relative mt-1 rounded-md shadow-sm">
-    <div v-if="$scopedSlots.prepent" class="absolute inset-y-0 left-0 z-10 flex items-center justify-between pl-3 pointer-events-none">
-      <slot name="prepent"/>
+    <div
+      v-if="$scopedSlots.prepent"
+      class="absolute inset-y-0 left-0 z-10 flex items-center justify-between pl-3 pointer-events-none"
+      :class="{'text-red-800 ': hasError}"
+    >
+      <slot name="prepent" />
     </div>
-    <input :class="{'pl-8':$scopedSlots.prepent}" :aria-label="placeholder" :name="label" :type="type" :value="value" @input="inputChange" required class="relative z-0 w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none form-input focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" :placeholder="placeholder" />
+    <input
+      :class="{'pl-8':$scopedSlots.prepent,'pr-12': $scopedSlots.append, 'text-red-800 border-red-600  placeholder-red-500': hasError, 'text-gray-900 border-gray-300  placeholder-gray-500': !hasError }"
+      :aria-label="placeholder"
+      :name="label"
+      :type="type"
+      :value="value"
+      @input="inputChange"
+      required
+      class="relative z-0 w-full px-3 py-2 border appearance-none form-input focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5"
+      :placeholder="placeholder"
+    />
+
+    <div
+      v-if="$scopedSlots.append"
+      class="absolute inset-y-0 right-0 z-10 flex items-center justify-between"
+      :class="{'text-red-800 ': hasError}"
+    >
+        <slot name="append"/>
+    </div>
   </div>
 </template>
 
@@ -30,13 +52,16 @@ export default {
     value: {
       type: String,
       required: false
+    },
+    hasError: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
-    inputChange(event){
-      this.$emit('input', event.target.value);
-      // console.log(event.target.value);
-    } 
+    inputChange(event) {
+      this.$emit('input', event.target.value)
+    }
   }
 }
 </script>

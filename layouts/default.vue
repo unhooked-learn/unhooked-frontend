@@ -9,6 +9,7 @@ import UHNavigation from '@/components/layout/UHNavigation'
 import Master from './master'
 
 export default {
+  name: 'LayoutDefault',
   components: {
     UHNavigation,
     Master

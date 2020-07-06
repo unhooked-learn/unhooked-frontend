@@ -28,18 +28,18 @@
             v-if="user.loggedin"
             :to="localePath('/profile')"
             class="px-2 py-1 text-xs bg-gray-400 border-gray-800 rounded-full pill"
-          >{{ $t('pages.login.logout') }}</nuxt-link>
+          >{{ $t('pages.auth.signup') }}</nuxt-link>
           <nuxt-link
             v-else
             :to="localePath('/auth/login')"
             class="px-2 py-1 text-xs bg-gray-400 border-gray-800 rounded-full pill"
-          >{{ $t('pages.login.login') }}</nuxt-link>
+          >{{ $t('pages.auth.signin') }}</nuxt-link>
         </template>
         <template v-else>
           <nuxt-link
             :to="localePath('/auth/register')"
             class="px-2 py-1 text-xs bg-gray-400 border-gray-800 rounded-full shadow-solid pill"
-          >{{ $t('pages.register.label') }}</nuxt-link>
+          >{{ $t('pages.auth.registerText') }}</nuxt-link>
         </template>
       </div>
     </header>
