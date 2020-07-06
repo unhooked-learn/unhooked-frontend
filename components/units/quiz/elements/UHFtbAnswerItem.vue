@@ -41,10 +41,7 @@ export default {
       this.$emit('remove', item)
     },
     isCorrect() {
-      // temporarly fix for presentation !!!
-      let tmp = clone(this.item.position);
-
-      return this.position === (tmp+1)
+      return this.position === clone(this.item.position);
     }
   },
   computed: {

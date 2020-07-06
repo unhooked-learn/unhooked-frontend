@@ -67,9 +67,7 @@ export default {
       const hasCorrectCountAnswers = this.gaps.availableCount === item.length
 
       // check if all answers are correct
-
-      // temp fix -> fix it in db
-      let temp = item.map(i => ({ gap: i.gap, position: i.position + 1 }))
+      let temp = item.map(i => ({ gap: i.gap, position: i.position }))
 
       const hasCorrectAnswers = temp.map(i => i.gap === i.position)
 
