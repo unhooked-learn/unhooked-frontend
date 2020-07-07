@@ -93,8 +93,12 @@ const keys = {
       german: 'German',
       save: 'Save'
     },
+    imprint: {
+      label: 'Imprint',
+      buttonText: 'mprint'
+    },
     infiniteScroll: {
-      label: 'Unendliches Scrollen'
+      label: 'Infinite Scrolling'
     },
     quiz: {
       answers: 'Answers:',

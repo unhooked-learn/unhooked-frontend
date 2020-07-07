@@ -100,8 +100,12 @@ export default context => {
           german: 'Deutsch',
           save: 'Speichern'
         },
+        imprint: {
+          label: 'Impressum',
+          buttonText: 'mpressum'
+        },
         infiniteScroll: {
-          label: 'Infinite Scroll'
+          label: 'Unendliches Scrollen'
         },
         quiz: {
           answers: 'Antworten:',
