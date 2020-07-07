@@ -98,7 +98,8 @@ export default context => {
           language: 'Sprache',
           english: 'Englisch',
           german: 'Deutsch',
-          save: 'Speichern'
+          save: 'Speichern',
+          disclaimer: 'Diese Einstellung ändert nur die Beschriftungen und Kontrollelement Texte. Unit und Knowlegdebase Texte sind weiterhin in Englisch.'
         },
         infiniteScroll: {
           label: 'Infinite Scroll'
