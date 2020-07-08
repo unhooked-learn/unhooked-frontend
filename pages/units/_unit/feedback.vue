@@ -12,7 +12,7 @@
           <template v-if="$fetchState.pending">
             <div class="h-40 loading-state"></div>
           </template>
-          <img v-else :src="units[getId()].mediaName" class="z-0 object-cover" />
+          <img v-else :src="units[getId()-1].mediaName" class="z-0 object-cover" />
         </div>
       </div>
 
@@ -25,7 +25,7 @@
           <template v-if="$fetchState.pending">
             <div class="h-4 mt-5 loading-state"></div>
           </template>
-          <h4 class="mt-5 text-lg uppercase" v-else>{{ units[getId()].name }}</h4>
+          <h4 class="mt-5 text-lg uppercase" v-else>{{ units[getId()-1].name }}</h4>
 
           <p class="my-3 text-base">{{ $t('pages.course.unit.feedback.text') }}</p>
 
@@ -35,9 +35,9 @@
           <span class="mb-3 text-xs">
             {{
             $t('pages.course.unit.feedback.vote', {
-            points: avgFeedback.averageValue,
+            points: feedback.averageValue,
             maxPoints: '5',
-            votes: avgFeedback.feedbackCount
+            votes: feedback.feedbackCount
             })         
             }}
           </span>
@@ -78,7 +78,8 @@ export default {
   computed: {
     ...mapGetters({
       units: 'units/units',
-      user: 'profile/user'
+      user: 'profile/user',
+      feedback: 'units/feedback'
     })
   },
   methods: {
@@ -100,12 +101,12 @@ export default {
   async fetch() {
     await this.$store.dispatch('units/fetch')
     await this.$store.dispatch('profile/fetch')
-    // await this.$store.dispatch(`units/unlockUnit`, this.$route.params.unit++)
+    await this.$store.dispatch('units/fetchFeedback', this.$route.params.unit)
+    await this.$store.dispatch(`units/unlockUnit`, +(this.$route.params.unit)+1)
   },
-  async asyncData({ params, $axios }) {
-    const avgFeedback = await $axios.$get(`unit/${params.unit}/averagefeedback`)
-    return { avgFeedback }
-   }
-
+  // async asyncData({ params, $axios }) {
+  //   const avgFeedback = await $axios.$get(`unit/${params.unit}/averagefeedback`)
+  //   return { avgFeedback }
+  //  }
 }
 </script>
