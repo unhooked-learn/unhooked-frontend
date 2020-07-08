@@ -45,7 +45,7 @@ export const mutations = {
   },
   [mutationsTypes.SET_UNIT_CONTENT](state, content) {
     state.content = content.sort((a,b) => a.orderId - b.orderId)
-  }
+  },
 }
 
 export const actions = {
@@ -66,5 +66,11 @@ export const actions = {
     this.$axios.setHeader("Content-Type", "application/json")
     let unitContent = await this.$axios.$get(`unit/${id}/contents`)
     commit(mutationsTypes.SET_UNIT_CONTENT, unitContent)
+  },
+  async postFeedback({}, feedback ) {
+    await this.$axios.$post(`feedback/unit/${feedback.unit}?value=${feedback.rating}`)
+  },
+  async unlockUnit({}, unlock ) {
+    await this.$axios.$post(`user/unit/${unlock}`)
   }
 }

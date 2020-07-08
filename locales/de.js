@@ -43,7 +43,7 @@ export default context => {
               selectRating: 'Klick um {rating} Sterne auszuwählen',
               noRating: 'Nichts ausgewählt',
               resetRating: 'Auswahl zurücksetzen',
-              feedbackText: 'Lass uns ein Feedback da:'
+              postRating: 'Bewertung übermitteln'
             },
             achievement: 'Freigeschaltete Errungenschaften',
             status: {

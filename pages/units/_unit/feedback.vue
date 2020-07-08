@@ -1,10 +1,10 @@
 <template>
   <div class="bg-gray-100">
-    <header class="absolute top-0 left-0 z-10 text-white">
+    <!-- <header class="absolute top-0 left-0 z-10 text-white">
       <UHAccessibilityButton class to="/units">
         <font-awesome-icon icon="chevron-left" class="p-1 text-white md:p-0 fa-2x" />
       </UHAccessibilityButton>
-    </header>
+    </header> -->
 
     <main class="flex flex-col justify-between h-full">
       <div class="z-0 bg-gray-800 h-1/6">
@@ -38,7 +38,7 @@
             points: avgFeedback.averageValue,
             maxPoints: '5',
             votes: avgFeedback.feedbackCount
-            })
+            })         
             }}
           </span>
         </div>
@@ -88,7 +88,7 @@ export default {
       })
     },
     getId() {
-      return +this.$route.params.unit
+      return this.$route.params.unit
     }
   },
   activated() {
@@ -100,10 +100,12 @@ export default {
   async fetch() {
     await this.$store.dispatch('units/fetch')
     await this.$store.dispatch('profile/fetch')
+    // await this.$store.dispatch(`units/unlockUnit`, this.$route.params.unit++)
   },
   async asyncData({ params, $axios }) {
     const avgFeedback = await $axios.$get(`unit/${params.unit}/averagefeedback`)
     return { avgFeedback }
-  }
+   }
+
 }
 </script>
