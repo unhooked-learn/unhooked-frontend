@@ -102,7 +102,24 @@ export default context => {
         },
         imprint: {
           label: 'Impressum',
-          buttonText: 'mpressum'
+          buttonText: 'mpressum',
+          provider: {
+            heading: 'Dienstleister',
+            according: 'According to',
+            title: 'Hochschule für Technik und Wirtschaft Berlin',
+            subtitle: 'Fachbereich 4',
+          },
+          contact: {
+            heading: 'Kontakt',
+          },
+          sources: {
+            heading: 'Quellen',
+            title: 'Bildquellen und Rechte.',
+            text: 'Das Logo, Banner und alle Screenshots wurden von uns selbst aufgenommen. Die Quellen der einzelnen Units sind zudem in der Wissensdatenbank (Knowledgebase) aufgeführt.',
+          },
+          team: {
+            heading: 'Das Team',
+          }
         },
         infiniteScroll: {
           label: 'Unendliches Scrollen'
