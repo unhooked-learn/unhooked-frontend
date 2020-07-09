@@ -33,3 +33,7 @@ export const sluggify = (str, separator = '_') => {
     .replace(/-+$/, '') // trim - from end of text
     .replace(/-/g, separator)
 }
+
+export const uppercasify = (str) => {
+  return str.toUpperCase().replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/\s]/gi, '')
+}

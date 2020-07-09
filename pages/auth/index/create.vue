@@ -9,22 +9,26 @@
 
       <div class="rounded-md shadow-sm">
         <UHInput
-          label="text"
+          label="username"
           required
           :placeholder="$t('general.input.username')"
-          type="text"
+          type="username"
           class="rounded-b-md"
           :has-error="!isEmpty(autherrors)"
           v-model="form.user"
+          :transformer="uppercasify"
         >
           <template #prepent>
             <font-awesome-icon icon="user" class="w-5 mr-3 opacity-50 fa-1x" />
           </template>
 
           <template #append>
-           <button @click.prevent="createRandomName" class="z-20 h-full bg-gray-100 border border-gray-300 rounded-tr-md rounded-br-md">
+            <button
+              @click.prevent="createRandomName"
+              class="z-20 h-full bg-gray-100 border border-gray-300 rounded-tr-md rounded-br-md"
+            >
               <font-awesome-icon icon="sync" class="w-5 mx-3 opacity-50 fa-1x" />
-           </button>
+            </button>
           </template>
         </UHInput>
       </div>
@@ -44,6 +48,7 @@ import UHInput from '@/components/generics/UHInput'
 import UHAccessibilityButton from '@/components/generics/UHAccessibilityButton'
 import UHAuthErrors from '@/components/auth/UHAuthError'
 import { isEmpty } from 'lodash'
+import { uppercasify } from '@/helper'
 
 import { mapActions, mapGetters } from 'vuex'
 
@@ -69,15 +74,15 @@ export default {
     })
   },
   methods: {
+    uppercasify,
     isEmpty,
     ...mapActions({
       createUser: 'auth/createUser'
     }),
     createNewUser() {
-      if(!this.form.user) {
-        return;
+      if (!this.form.user) {
+        return
       }
-
       this.createUser(this.form.user)
 
       this.$router.push(
@@ -87,7 +92,9 @@ export default {
       )
     },
     createRandomName() {
-      this.form.user = this.$faker().helpers.slugify(this.$faker().name.firstName())
+      this.form.user = this.$faker()
+        .helpers.slugify(this.$faker().name.firstName())
+        .toUpperCase()
     }
   },
   mounted() {

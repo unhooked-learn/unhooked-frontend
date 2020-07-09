@@ -56,12 +56,23 @@ export default {
     hasError: {
       type: Boolean,
       default: false
+    },
+    transformer: {
+      type: Function,
+      default: (a) => a
     }
   },
   methods: {
     inputChange(event) {
-      this.$emit('input', event.target.value)
-    }
+      console.log(this.transformer)
+      
+      this.$emit('input', this.transformer(event.target.value))
+      // if (this.label == "username"){
+      //   this.$emit('input', event.target.value.toUpperCase().replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/\s]/gi, ''))  
+      // } else {
+      //   this.$emit('input', event.target.value)
+      // }
+    },
   }
 }
 </script>
