@@ -101,7 +101,7 @@ export default context => {
           save: 'Speichern'
         },
         infiniteScroll: {
-          label: 'Infinite Scroll'
+          label: 'Unendliches Scrollen'
         },
         quiz: {
           answers: 'Antworten:',
@@ -113,7 +113,11 @@ export default context => {
           next: 'Nächste Frage',
           steps: 'Frage {current} von {total}'
         },
-
+        game: {
+          label: 'Spiel',
+          text: 'Klicke den Button um ein kurzes Spiel zu diesem Thema zu starten.',
+          buttonText: 'Starte das Spiel',
+        },
         pullToRefresh: {
           label: 'Pull To Refresh',
           news: 'Neuigkeiten',

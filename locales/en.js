@@ -94,7 +94,7 @@ const keys = {
       save: 'Save'
     },
     infiniteScroll: {
-      label: 'Unendliches Scrollen'
+      label: 'Infinite Scrolling'
     },
     quiz: {
       answers: 'Answers:',
@@ -105,6 +105,11 @@ const keys = {
       answerWrong: "False or partly true!",
       next: 'Next question',
       steps: 'Question {current} of {total}'
+    },
+    game: {
+      label: 'Game',
+      text: 'Click the button to start a short game about this topic.',
+      buttonText: 'Start the game',
     },
     pullToRefresh: {
       label: 'Pull To Refresh',

@@ -11,8 +11,17 @@
         </div>
         <p class="mb-6 text-lg text-justify text-gray-900" v-html="content.text"></p>
       </div>
-      <div class="w-full p-5 bg-gray-100">
-        <div
+
+      <div v-if="units[(unitNumber)-1].gameType" class="w-full p-5 bg-gray-100">
+        <div 
+          class="my-6 text-lg font-semibold uppercase"
+        >{{ $t('pages.game.label')}}</div>
+        <div class="mb-6">{{ $t('pages.game.text')}}</div>
+        <UHButton @click="goToGame">{{ $t('pages.game.buttonText')}}</UHButton>
+      </div>
+      
+      <div v-else class="w-full p-5 bg-gray-100">
+        <div 
           class="my-6 text-lg font-semibold uppercase"
         >{{ $t('pages.course.unit.slides.finished')}}</div>
         <div class="mb-6">{{ $t('pages.course.unit.slides.text', { number: unitNumber }) }}</div>
@@ -48,7 +57,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      contents: 'units/content'
+      contents: 'units/content',
+      units: 'units/units'
     }),
     unitNumber() {
       return this.$route.params.unit
@@ -62,6 +72,7 @@ export default {
   },
   async fetch() {
     await this.$store.dispatch('units/fetchContent', this.$route.params.unit)
+    await this.$store.dispatch('units/fetch')
   },
   methods: {
     goToQuiz() {
@@ -71,6 +82,23 @@ export default {
           params: { unit: this.$route.params.unit, quiz: 1 }
         })
       )
+    },
+    goToGame() {
+      if(this.units[(this.unitNumber)-1].gameType == "INFINITE_SCROLL"){
+        this.$router.push(
+          this.localePath({
+            name: 'units-unit-infiniteScroll',
+            params: { unit: this.$route.params.unit }
+          })
+        )
+      }else{
+        this.$router.push(
+          this.localePath({
+            name: 'units-unit-pullToRefresh',
+            params: { unit: this.$route.params.unit }
+          })
+        )
+      }
     }
   },
   watch: {
