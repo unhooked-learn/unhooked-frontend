@@ -63,15 +63,8 @@ export default {
     }
   },
   methods: {
-    inputChange(event) {
-      console.log(this.transformer)
-      
+    inputChange(event) {      
       this.$emit('input', this.transformer(event.target.value))
-      // if (this.label == "username"){
-      //   this.$emit('input', event.target.value.toUpperCase().replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/\s]/gi, ''))  
-      // } else {
-      //   this.$emit('input', event.target.value)
-      // }
     },
   }
 }
