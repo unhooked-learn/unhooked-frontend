@@ -82,8 +82,7 @@
         <h6 class="text-sm font-semibold tracking-wide text-gray-600 uppercase ">Frontend</h6>
         <p
           class="mt-3 text-xs text-center text-gray-500"
-        >
-        
+        >“Creativity is allowing yourself to make mistakes. Design is knowing which ones to keep”. — Scott Adams
         </p>
       </div>
 
@@ -101,7 +100,7 @@
         <h6 class="text-sm font-semibold tracking-wide text-gray-600 uppercase">Frontend</h6>
         <p
           class="mt-3 text-xs italic text-center text-gray-500"
-        >"A user interface is like a joke. If you have to explain it, it’s not that good". — Martin Leblanc</p>
+        >“A user interface is like a joke. If you have to explain it, it’s not that good”. — Martin Leblanc</p>
       </div>
 
       <div class="flex flex-col items-center justify-center p-4 my-5 bg-white rounded-lg shadow-lg">
@@ -118,8 +117,7 @@
         <h6 class="text-sm font-semibold tracking-wide text-gray-600 uppercase">Backend</h6>
         <p
           class="mt-3 text-xs text-center text-gray-500"
-        >
-        
+        >“Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday’s code”. — Dan Salomon  
         </p>
       </div>
 
@@ -139,8 +137,7 @@
         <h6 class="text-sm font-semibold tracking-wide text-gray-600 uppercase ">Backend</h6>
         <p
           class="mt-3 text-xs text-center text-gray-500"
-        >
-        
+        >“It is not enough for code to work”. — Robert C. Martin
         </p>
       </div>
     </div>
