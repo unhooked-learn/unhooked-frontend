@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center py-5 bg-gray-100">
+  <div class="flex flex-col items-center py-5 bg-gray-100 border-t-2 border-b-2">
     <client-only>
       <template v-if="rated">
         <div>

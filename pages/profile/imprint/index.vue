@@ -54,7 +54,7 @@
           <p class="mt-2 text-gray-600">
             <font-awesome-icon
               icon="envelope"
-              class="inline-block mr-2 fa-1x"
+              class="inline-block h-5 mr-2 fa-1x"
             />
             <a
               class="text-blue-800 underline hover:text-blue-900"
@@ -62,7 +62,7 @@
               >Kevin Wrede</a
             >
             <br />
-            <font-awesome-icon icon="phone" class="inline-block mr-2 fa-1x" />
+            <font-awesome-icon icon="phone" class="inline-block h-5 mr-2 fa-1x" />
             <a
               class="text-blue-800 underline hover:text-blue-900"
               href="tel:+491713157718"

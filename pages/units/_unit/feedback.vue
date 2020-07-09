@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 border-t-2 border-b-2">
+  <div class="bg-gray-100">
     <main class="flex flex-col justify-between h-full">
       <div class="z-0 bg-gray-800 h-1/6">
         <div class="w-full aspect aspect-3/5">
