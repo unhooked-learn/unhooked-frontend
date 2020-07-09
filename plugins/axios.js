@@ -1,5 +1,4 @@
 export default function({ $axios, store }) {
-  //console.log('axios', store.getters['profile/username'])
   // todo; soll der Username immer neu gesetzt werden ?
 
   //$axios.setHeader('username', store.getters['profile/username'])

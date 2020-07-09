@@ -38,7 +38,8 @@ const keys = {
           selectRating: 'Click to select {rating} stars',
           noRating: 'No Rating Selected',
           resetRating: 'Reset rating',
-          feedbackText: 'Write us something'
+          postRating: 'Post your rating',
+          thankYou: 'Thank you for rating!'
         },
         achievement: 'Achievements earned',
         status: {
