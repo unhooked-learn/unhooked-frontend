@@ -92,7 +92,8 @@ const keys = {
       language: 'Language',
       english: 'English',
       german: 'German',
-      save: 'Save'
+      save: 'Save',
+      disclaimer: 'Please note that this is changing only labels and control elements. Unit and Knowlegdebase texts are still in english.'
     },
     infiniteScroll: {
       label: 'Unendliches Scrollen'
