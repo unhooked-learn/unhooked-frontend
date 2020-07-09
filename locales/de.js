@@ -104,7 +104,7 @@ export default context => {
         },
         imprint: {
           label: 'Impressum',
-          buttonText: 'mpressum',
+          buttonText: 'Impressum',
           provider: {
             heading: 'Dienstleister',
             according: 'According to',

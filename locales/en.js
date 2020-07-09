@@ -97,7 +97,7 @@ const keys = {
     },
     imprint: {
       label: 'Imprint',
-      buttonText: 'mprint',
+      buttonText: 'Imprint',
       provider: {
         heading: 'Service Provider',
         according: 'According to',

@@ -18,7 +18,7 @@
     </div>
 
     <template>
-      <font-awesome-icon :icon="icon" :class="checkTextColor" v-if="isCurrent" />
+      <font-awesome-icon class="inline-block h-5" :icon="icon" :class="checkTextColor" v-if="isCurrent" />
     </template>
   </label>
 </template>

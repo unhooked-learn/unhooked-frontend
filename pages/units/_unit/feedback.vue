@@ -1,11 +1,5 @@
 <template>
-  <div class="bg-gray-100">
-    <!-- <header class="absolute top-0 left-0 z-10 text-white">
-      <UHAccessibilityButton class to="/units">
-        <font-awesome-icon icon="chevron-left" class="p-1 text-white md:p-0 fa-2x" />
-      </UHAccessibilityButton>
-    </header>-->
-
+  <div class="bg-gray-100 border-t-2 border-b-2">
     <main class="flex flex-col justify-between h-full">
       <div class="z-0 bg-gray-800 h-1/6">
         <div class="w-full aspect aspect-3/5">
@@ -50,7 +44,7 @@
             >
               <div class="text-center">
                 <span class="pr-2 uppercase">{{ $t('general.button.finished') }}</span>
-                <font-awesome-icon icon="check" class="m-auto text-gray-100 fa-1x" />
+                <font-awesome-icon icon="check" class="inline-block h-5 m-auto text-gray-100 fa-1x" />
               </div>
             </UHButton>
           </div>
