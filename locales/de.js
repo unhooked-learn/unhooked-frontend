@@ -102,8 +102,29 @@ export default context => {
           save: 'Speichern',
           disclaimer: 'Diese Einstellung ändert nur die Beschriftungen und Kontrollelement Texte. Unit und Knowlegdebase Texte sind weiterhin in Englisch.'
         },
+        imprint: {
+          label: 'Impressum',
+          buttonText: 'mpressum',
+          provider: {
+            heading: 'Dienstleister',
+            according: 'According to',
+            title: 'Hochschule für Technik und Wirtschaft Berlin',
+            subtitle: 'Fachbereich 4',
+          },
+          contact: {
+            heading: 'Kontakt',
+          },
+          sources: {
+            heading: 'Quellen',
+            title: 'Bildquellen und Rechte.',
+            text: 'Das Logo, Banner und alle Screenshots wurden von uns selbst aufgenommen. Die Quellen der einzelnen Units sind zudem in der Wissensdatenbank (Knowledgebase) aufgeführt.',
+          },
+          team: {
+            heading: 'Das Team',
+          }
+        },
         infiniteScroll: {
-          label: 'Infinite Scroll'
+          label: 'Unendliches Scrollen'
         },
         quiz: {
           answers: 'Antworten:',

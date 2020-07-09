@@ -95,8 +95,29 @@ const keys = {
       save: 'Save',
       disclaimer: 'Please note that this is changing only labels and control elements. Unit and Knowlegdebase texts are still in english.'
     },
+    imprint: {
+      label: 'Imprint',
+      buttonText: 'mprint',
+      provider: {
+        heading: 'Service Provider',
+        according: 'According to',
+        title: 'HTW Berlin - University of Applied Sciences',
+        subtitle: 'Faculty 4',
+      },
+      contact: {
+        heading: 'Contact',
+      },
+      sources: {
+        heading: 'Sources',
+        title: 'Image sources and copyright.',
+        text: 'The logo and banner were created by us. The source information for the individual units is listed inside a knowledgebase card.',
+      },
+      team: {
+        heading: 'The Team',
+      }
+    },
     infiniteScroll: {
-      label: 'Unendliches Scrollen'
+      label: 'Infinite Scrolling'
     },
     quiz: {
       answers: 'Answers:',
