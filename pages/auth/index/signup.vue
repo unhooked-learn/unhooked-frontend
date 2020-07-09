@@ -22,7 +22,7 @@
           </template>
         </UHInput>
 
-        <UHInput label="name" :placeholder="$t('general.input.name')" v-model="form.username">
+        <UHInput type="username" label="username" :placeholder="$t('general.input.name')" v-model="form.username">
           <template #prepent>
             <font-awesome-icon icon="user" class="w-5 mr-2 opacity-50 fa-1x" />
           </template>

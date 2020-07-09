@@ -9,10 +9,10 @@
 
       <div class="rounded-md shadow-sm">
         <UHInput
-          label="text"
+          label="username"
           required
           :placeholder="$t('general.input.username')"
-          type="text"
+          type="username"
           class="rounded-b-md"
           :has-error="!isEmpty(autherrors)"
           v-model="form.user"
@@ -77,7 +77,6 @@ export default {
       if(!this.form.user) {
         return;
       }
-
       this.createUser(this.form.user)
 
       this.$router.push(
@@ -87,7 +86,7 @@ export default {
       )
     },
     createRandomName() {
-      this.form.user = this.$faker().helpers.slugify(this.$faker().name.firstName())
+      this.form.user = this.$faker().helpers.slugify(this.$faker().name.firstName()).toUpperCase()
     }
   },
   mounted() {

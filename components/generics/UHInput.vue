@@ -60,7 +60,12 @@ export default {
   },
   methods: {
     inputChange(event) {
-      this.$emit('input', event.target.value)
+      if (this.label == "username"){
+        this.$emit('input', event.target.value.toUpperCase().replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/\s]/gi, ''))  
+      } else {
+        this.$emit('input', event.target.value)
+      }
+      
     }
   }
 }
