@@ -8,7 +8,7 @@
         <UHQuizProgress @goToQuestion="setNextQuestion" />
       </div>
     </header>
-    <main class="p-4" :style="{ marginBottom: modalHeight + 'px' }">
+    <main class="p-4 bg-gray-100" :style="{ marginBottom: modalHeight + 'px' }">
       <template v-if="$fetchState.pending">
         <UHQuizLoading />
       </template>
