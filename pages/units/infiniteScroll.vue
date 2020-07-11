@@ -6,7 +6,7 @@
       </h3>
     </header>
     <main>
-      <div class="relative z-0 h-full pt-2 mb-10">
+      <div class="relative z-0 h-full pt-2 mb-10 bg-gray-100">
         <div class="absolute inset-0 bg-gray-800 h-1/6 -z-10"></div>
         <UHInfiniteScroll :items="pictures" @refetch='fetch'>
           <template v-slot:item="{ item }">
@@ -50,9 +50,8 @@ export default {
   methods: {
     async fetch(page) {
         if(page > this.lastPage) {return}
-
         let pictures = await this.$axios.$get(
-        `https://pixabay.com/api/?key=15819227-ef2d84d1681b9442aaa9755b8&q=cat+cats+animals&image_type=all&per_page=10&page=${page}`
+        `https://cors-anywhere.herokuapp.com/https://pixabay.com/api/?key=15819227-ef2d84d1681b9442aaa9755b8&q=cat+cats+animals&image_type=all&per_page=10&page=${page}`
         )
 
         this.pictures.push(...pictures.hits) 
