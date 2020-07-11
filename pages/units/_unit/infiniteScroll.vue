@@ -56,7 +56,7 @@ export default {
 
         this.pictures.push(...pictures.hits) 
         this.lastPage = Math.floor(pictures.totalHits/10)
-    }
+    },
   },  
   mounted() {
       this.fetch(1)
