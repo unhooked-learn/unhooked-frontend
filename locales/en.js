@@ -16,7 +16,7 @@ const keys = {
       username: 'Username'
     },
     toast: {
-      gratulations: 'Gratulations! You have earned {points} Points'
+      gratulations: 'Congratulations! You have earned {points} Points'
     },
     button: {
       skipButtonText: 'Skip',
