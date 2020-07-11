@@ -70,7 +70,7 @@
           </div>
 
           <div class="flex justify-between mb-3">
-            <font-awesome-icon icon="flag" class="w-8 opacity-50 fa-2x" />
+            <font-awesome-icon icon="flag" class="w-12 opacity-50 fa-2x" />
             <nuxt-link
               :to="switchLocalePath('en')"
               class="relative px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-md appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
