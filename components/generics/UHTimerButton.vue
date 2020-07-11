@@ -4,7 +4,7 @@
       <UHButton @click="goToQuiz" v-show="enabled"
         class="w-auto px-3 py-3 text-white transition transform bg-gray-600 rounded-full shadow hover:scale-110 hover:bg-gray-700 active:shadow-lg mouse focus:outline-none"
       >
-        <font-awesome-icon icon="forward" class="m-auto text-gray-100 fa-1x" />
+        <font-awesome-icon icon="forward" class="inline-block h-5 m-auto text-gray-100 fa-1x" />
         <span class="pl-2">{{text}}</span>
       </UHButton>
     </div>

@@ -26,7 +26,7 @@ export default {
       default: 'bottom-center'
     },
     duration: {
-      type: Number,
+      type: [String, Number],
       required: false,
       default: 3000
     },

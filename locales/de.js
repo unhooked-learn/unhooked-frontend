@@ -43,7 +43,8 @@ export default context => {
               selectRating: 'Klick um {rating} Sterne auszuwählen',
               noRating: 'Nichts ausgewählt',
               resetRating: 'Auswahl zurücksetzen',
-              feedbackText: 'Lass uns ein Feedback da:'
+              postRating: 'Bewertung übermitteln',
+              thankYou: 'Danke für die Bewertung!'
             },
             achievement: 'Freigeschaltete Errungenschaften',
             status: {
@@ -98,7 +99,29 @@ export default context => {
           language: 'Sprache',
           english: 'Englisch',
           german: 'Deutsch',
-          save: 'Speichern'
+          save: 'Speichern',
+          disclaimer: 'Diese Einstellung ändert nur die Beschriftungen und Kontrollelement Texte. Unit und Knowlegdebase Texte sind weiterhin in Englisch.'
+        },
+        imprint: {
+          label: 'Impressum',
+          buttonText: 'Impressum',
+          provider: {
+            heading: 'Dienstleister',
+            according: 'According to',
+            title: 'Hochschule für Technik und Wirtschaft Berlin',
+            subtitle: 'Fachbereich 4',
+          },
+          contact: {
+            heading: 'Kontakt',
+          },
+          sources: {
+            heading: 'Quellen',
+            title: 'Bildquellen und Rechte.',
+            text: 'Das Logo, Banner und alle Screenshots wurden von uns selbst aufgenommen. Die Quellen der einzelnen Units sind zudem in der Wissensdatenbank (Knowledgebase) aufgeführt.',
+          },
+          team: {
+            heading: 'Das Team',
+          }
         },
         infiniteScroll: {
           label: 'Unendliches Scrollen'

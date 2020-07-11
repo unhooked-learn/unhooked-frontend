@@ -11,7 +11,7 @@
     >
       {{item.answerText || '&nbsp;'}}
       <span class="ml-2"  v-if="check">
-        <font-awesome-icon :icon="icon" />
+        <font-awesome-icon class="inline-block h-5" :icon="icon" />
       </span>
     </span>
   </button>

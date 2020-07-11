@@ -20,9 +20,9 @@
             <div
               v-else
               :key="idx"
-              v-for="(article, idx) in articles"
+              v-for="(article, idx) in unlockedArticles"
             >
-              <UHKnowledgebaseCard v-if="article.unlocked"
+              <UHKnowledgebaseCard 
                 :to="localePath(`/knowledge/${article.id}`)"
                 :card="article"
               />
@@ -50,7 +50,10 @@ export default {
   computed: {
     ...mapGetters({
        articles: 'knowledge/articles',
-    })
+    }),
+    unlockedArticles(){
+      return this.articles.filter(article => article.unlocked)
+    }
   },
   activated() {
     // Call fetch again if last fetch more than 5 minues ago

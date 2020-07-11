@@ -22,7 +22,13 @@
           </template>
         </UHInput>
 
-        <UHInput label="name" :placeholder="$t('general.input.name')" v-model="form.username">
+        <UHInput
+          type="username"
+          label="username"
+          :placeholder="$t('general.input.name')"
+          v-model="form.username"
+          :transformer="uppercasify"
+        >
           <template #prepent>
             <font-awesome-icon icon="user" class="w-5 mr-2 opacity-50 fa-1x" />
           </template>
@@ -70,6 +76,7 @@
 import UHInput from '@/components/generics/UHInput'
 import UHAuthErrors from '@/components/auth/UHAuthError'
 import UHAccessibilityButton from '@/components/generics/UHAccessibilityButton'
+import { uppercasify } from '@/helper'
 
 import { isEmpty } from 'lodash'
 import { mapActions, mapGetters } from 'vuex'
@@ -106,6 +113,7 @@ export default {
     }
   },
   methods: {
+    uppercasify,
     isEmpty,
     ...mapActions({
       signup: 'auth/signup'

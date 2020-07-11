@@ -16,7 +16,7 @@ const keys = {
       username: 'Username'
     },
     toast: {
-      gratulations: 'Gratulations! You have earned {points} Points'
+      gratulations: 'Congratulations! You have earned {points} Points'
     },
     button: {
       skipButtonText: 'Skip',
@@ -38,7 +38,8 @@ const keys = {
           selectRating: 'Click to select {rating} stars',
           noRating: 'No Rating Selected',
           resetRating: 'Reset rating',
-          feedbackText: 'Write us something'
+          postRating: 'Post your rating',
+          thankYou: 'Thank you for rating!'
         },
         achievement: 'Achievements earned',
         status: {
@@ -91,7 +92,29 @@ const keys = {
       language: 'Language',
       english: 'English',
       german: 'German',
-      save: 'Save'
+      save: 'Save',
+      disclaimer: 'Please note that this is changing only labels and control elements. Unit and Knowlegdebase texts are still in english.'
+    },
+    imprint: {
+      label: 'Imprint',
+      buttonText: 'Imprint',
+      provider: {
+        heading: 'Service Provider',
+        according: 'According to',
+        title: 'HTW Berlin - University of Applied Sciences',
+        subtitle: 'Faculty 4',
+      },
+      contact: {
+        heading: 'Contact',
+      },
+      sources: {
+        heading: 'Sources',
+        title: 'Image sources and copyright.',
+        text: 'The logo and banner were created by us. The source information for the individual units is listed inside a knowledgebase card.',
+      },
+      team: {
+        heading: 'The Team',
+      }
     },
     infiniteScroll: {
       label: 'Infinite Scrolling'

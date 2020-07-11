@@ -10,6 +10,14 @@
           </UHAccessibilityButton>
         </div>
 
+        <div class="absolute top-0 left-0">
+          <UHAccessibilityButton to="/profile/imprint">
+            <div class="flex items-baseline w-12 p-2 ml-2 md:p-0">
+              <div class="text-md">{{ $t('pages.imprint.buttonText') }}</div> 
+            </div>
+          </UHAccessibilityButton>
+        </div>
+
         <div class="flex justify-center">
           <div class="mt-3">
             <font-awesome-icon icon="user-circle" class="w-32 fa-7x" />

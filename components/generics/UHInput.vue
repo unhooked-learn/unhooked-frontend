@@ -56,12 +56,16 @@ export default {
     hasError: {
       type: Boolean,
       default: false
+    },
+    transformer: {
+      type: Function,
+      default: (a) => a
     }
   },
   methods: {
-    inputChange(event) {
-      this.$emit('input', event.target.value)
-    }
+    inputChange(event) {      
+      this.$emit('input', this.transformer(event.target.value))
+    },
   }
 }
 </script>
