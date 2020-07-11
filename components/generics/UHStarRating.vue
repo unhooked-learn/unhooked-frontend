@@ -62,7 +62,10 @@ export default {
   computed: {
     ...mapGetters({
       units: 'units/units'
-    })
+    }),
+    getUnitId() {
+      return +this.$route.params.unit
+    },
   },
 
   methods: {
@@ -95,6 +98,8 @@ export default {
       })
 
       this.rated = true
+
+      await this.$store.dispatch('units/fetchFeedback', this.getUnitId)
     }
   }
 }
