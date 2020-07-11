@@ -75,6 +75,9 @@ export default {
     await this.$store.dispatch('units/fetch')
   },
   methods: {
+    isGameType(type) {
+      return this.units[(this.unitNumber)-1].gameType === type
+    },
     goToQuiz() {
       this.$router.push(
         this.localePath({
@@ -84,21 +87,19 @@ export default {
       )
     },
     goToGame() {
-      if(this.units[(this.unitNumber)-1].gameType == "INFINITE_SCROLL"){
-        this.$router.push(
-          this.localePath({
-            name: 'units-unit-infiniteScroll',
-            params: { unit: this.$route.params.unit }
-          })
-        )
-      }else{
-        this.$router.push(
-          this.localePath({
-            name: 'units-unit-pullToRefresh',
-            params: { unit: this.$route.params.unit }
-          })
-        )
+       const gameTypes = {
+        INFINITE_SCROLL: 'INFINITE_SCROLL',
+        PULL_TO_REFRESH:  'PULL_TO_REFRESH'
       }
+      
+      const gameName = this.isGameType(gameTypes.INFINITE_SCROLL) ? 'infiniteScroll' : 'pullToRefresh';
+  
+      this.$router.push(
+          this.localePath({
+            name: `units-unit-${gameName}`,
+            params: { unit: this.$route.params.unit }
+          })
+      )
     }
   },
   watch: {
