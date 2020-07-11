@@ -13,7 +13,7 @@
         :config="config"
       >
         <div
-          class="m-3 mt-5 mb-5 overflow-hidden bg-white border-b-4 border-blue-500"
+          class="m-3 mt-5 mb-5 overflow-hidden bg-white border-b-4 border-blue-500 rounded-md shadow-xl"
           v-for="(item, idx) in news"
           :key="idx"
         >
@@ -72,7 +72,7 @@ export default {
   async fetch() {
     this.topic = this.$faker().commerce.product()
     let news = await this.$axios.$get(
-      `http://newsapi.org/v2/everything?q=${this.topic}&language=de&pageSize=5&apiKey=a1ef913e98c94358994dc8a8f7347aff`
+      `https://cors-anywhere.herokuapp.com/http://newsapi.org/v2/everything?q=${this.topic}&language=de&pageSize=5&apiKey=a1ef913e98c94358994dc8a8f7347aff`
     )
     this.news.unshift(...news.articles)
   },
