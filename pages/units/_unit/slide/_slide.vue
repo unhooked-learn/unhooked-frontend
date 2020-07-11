@@ -11,8 +11,17 @@
         </div>
         <p class="mb-6 text-lg text-justify text-gray-900" v-html="content.text"></p>
       </div>
-      <div class="w-full p-5 bg-gray-100">
-        <div
+
+      <div v-if="units[(unitNumber)-1].gameType" class="w-full p-5 bg-gray-100">
+        <div 
+          class="my-6 text-lg font-semibold uppercase"
+        >{{ $t('pages.game.label')}}</div>
+        <div class="mb-6">{{ $t('pages.game.text')}}</div>
+        <UHButton @click="goToGame">{{ $t('pages.game.buttonText')}}</UHButton>
+      </div>
+      
+      <div v-else class="w-full p-5 bg-gray-100">
+        <div 
           class="my-6 text-lg font-semibold uppercase"
         >{{ $t('pages.course.unit.slides.finished')}}</div>
         <div class="mb-6">{{ $t('pages.course.unit.slides.text', { number: unitNumber }) }}</div>
@@ -26,6 +35,11 @@
 import UHButton from '@/components/generics/UHButton'
 import UHVerticalSlider from '@/components/generics/UHVerticalSlider'
 import { mapGetters, mapActions } from 'vuex'
+
+const gameTypes = {
+    INFINITE_SCROLL: 'INFINITE_SCROLL',
+    PULL_TO_REFRESH:  'PULL_TO_REFRESH'
+}
 
 export default {
   name: 'Slide',
@@ -48,7 +62,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      contents: 'units/content'
+      contents: 'units/content',
+      units: 'units/units'
     }),
     unitNumber() {
       return this.$route.params.unit
@@ -62,14 +77,28 @@ export default {
   },
   async fetch() {
     await this.$store.dispatch('units/fetchContent', this.$route.params.unit)
+    await this.$store.dispatch('units/fetch')
   },
   methods: {
+    isGameType(type) {
+      return this.units[(this.unitNumber)-1].gameType === type
+    },
     goToQuiz() {
       this.$router.push(
         this.localePath({
           name: 'units-unit-quiz-quiz',
           params: { unit: this.$route.params.unit, quiz: 1 }
         })
+      )
+    },
+    goToGame() {
+      const gameName = this.isGameType(gameTypes.INFINITE_SCROLL) ? 'infiniteScroll' : 'pullToRefresh';
+  
+      this.$router.push(
+          this.localePath({
+            name: `units-unit-${gameName}`,
+            params: { unit: this.$route.params.unit }
+          })
       )
     }
   },
