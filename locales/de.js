@@ -100,7 +100,14 @@ export default context => {
           english: 'Englisch',
           german: 'Deutsch',
           save: 'Speichern',
-          disclaimer: 'Diese Einstellung ändert nur die Beschriftungen und Kontrollelement Texte. Unit und Knowlegdebase Texte sind weiterhin in Englisch.'
+          disclaimer: 'Diese Einstellung ändert nur die Beschriftungen und Kontrollelement Texte. Unit und Knowlegdebase Texte sind weiterhin in Englisch.',
+          profile: {
+            label: 'Profil',
+            delete: 'Lösche meinen Account',
+            attention: 'Achtung',
+            text: 'Bist du dir sicher, dass du deinen Account löschen willst?',
+            deleteButton: 'Löschen'
+          }
         },
         imprint: {
           label: 'Impressum',

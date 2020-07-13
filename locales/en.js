@@ -93,7 +93,14 @@ const keys = {
       english: 'English',
       german: 'German',
       save: 'Save',
-      disclaimer: 'Please note that this is changing only labels and control elements. Unit and Knowlegdebase texts are still in english.'
+      disclaimer: 'Please note that this is changing only labels and control elements. Unit and Knowlegdebase texts are still in english.',
+      profile: {
+        label: 'Profile',
+        delete: 'Delete my account',
+        attention: 'Attention',
+        text: 'Do you really want to delete your account?',
+        deleteButton: 'Delete'
+      }
     },
     imprint: {
       label: 'Imprint',
