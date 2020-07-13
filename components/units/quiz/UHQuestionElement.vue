@@ -9,7 +9,7 @@
     </div>
 
     <!-- Answers -->
-    <div class="mt-6">
+    <div id="toBottom" class="mt-6">
       <div class="flex justify-between">
         <h4 class="font-semibold text-md">{{ $t('pages.quiz.answers') }}</h4>
         <span class="sr-only">{{type}}</span>
@@ -26,7 +26,7 @@
     <slot name="footer" :isAnswerSelected="isAnswerSelected">
       <div v-show="isAnswerSelected(hasAnswer)&&!check">
         <button
-          @click.prevent="checkAnswer"
+          @click.prevent="checkAnswer" v-scroll-to="'#toBottom'"
           class="flex justify-center w-full p-4 font-semibold text-white uppercase bg-gray-900 rounded-lg hover:bg-gray-800 mt-7"
         >{{ $t('pages.quiz.check') }}</button>
       </div>
