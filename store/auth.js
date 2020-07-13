@@ -76,6 +76,8 @@ export const actions = {
       .$post('/api/auth/signup', data)
       .then(response => {
         dispatch('setAuthUser', response)
+      }).then(() => {
+        this.$axios.$post('user/unit/1')
       })
       .catch(error => {
         commit(mutationTypes.SET_ERRORS, error.response.data)
@@ -87,6 +89,8 @@ export const actions = {
     this.$axios
       .$put('user')
       .then(() => {
+        this.$axios.$post('user/unit/1')
+
         commit('profile/SET_USERNAME', username, { root: true })
 
         if (window) {
