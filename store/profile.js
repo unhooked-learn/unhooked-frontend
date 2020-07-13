@@ -53,6 +53,9 @@ export const actions = {
     let user = await this.$axios.$get('user/details')
     commit(mutationsTypes.SET_USER, user)
   },
+  async deleteUser({}) {
+    await this.$axios.$delete('user')
+  },
   activeTime({ commit }) {
     let activeTime = setInterval(() => {
       commit(mutationsTypes.TRACK_ACTIVETIME)
