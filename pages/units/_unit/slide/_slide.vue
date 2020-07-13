@@ -3,6 +3,11 @@
     <div
       class="p-6 font-semibold tracking-wider text-gray-400 uppercase text-md md:ml-8"
     >{{ $t('pages.course.module', { number: unitNumber }) }}</div>
+    <div class="absolute top-0 right-0">
+      <UHAccessibilityButton to="units">
+        <font-awesome-icon icon="times" class="w-5 p-1 text-gray-600 md:p-0 fa-2x" />
+      </UHAccessibilityButton>
+    </div>
     <UHVerticalSlider ref="slider" :options="flickityOptions">
       <div class="w-full p-5 bg-gray-100 hyphenate" :key="idx" v-for="(content, idx) in contents">
         <div class="my-6 text-lg font-semibold uppercase">{{ content.headline }}</div>
@@ -33,6 +38,7 @@
 
 <script>
 import UHButton from '@/components/generics/UHButton'
+import UHAccessibilityButton from '@/components/generics/UHAccessibilityButton'
 import UHVerticalSlider from '@/components/generics/UHVerticalSlider'
 import { mapGetters, mapActions } from 'vuex'
 
@@ -45,6 +51,7 @@ export default {
   name: 'Slide',
   components: {
     UHButton,
+    UHAccessibilityButton,
     UHVerticalSlider
   },
   layout: 'clear',
