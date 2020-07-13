@@ -63,7 +63,7 @@
               :linkText="user.totalScore"
               type="success"
               icon="coins"
-              :close="$t('general.modal.close')"
+              :confirm="$t('general.modal.close')"
             />
             {{ $t('pages.profile.xp', { points: user.totalScore }) }}
           </div>
