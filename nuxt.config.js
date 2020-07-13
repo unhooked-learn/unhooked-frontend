@@ -153,7 +153,7 @@ router: {
     // - 'prefix_except_default': add locale prefix for every locale except default
     // - 'prefix': add locale prefix for every locale
     // - 'prefix_and_default': add locale prefix for every locale and default
-    strategy: 'prefix',
+    strategy: 'prefix_and_default',
 
     // Wether or not the translations should be lazy-loaded, if this is enabled,
     // you MUST configure langDir option, and locales must be an array of objects,
