@@ -1,6 +1,5 @@
 <template>
   <UHModal name="delete-user" ref="modal">
-
     <template #cardHeading>
       <span>{{ $t('pages.settings.profile.delete') }}</span>
     </template>
@@ -29,7 +28,6 @@
         </UHButton>
       </div>
     </template>
-    
   </UHModal>
 </template>
 

@@ -2,7 +2,9 @@
   <div
     class="flex items-center justify-center min-h-screen px-4 py-12 bg-gray-50 sm:px-6 lg:px-8"
   >
-    <UHUserDeleteModal />
+    <client-only>
+      <UHUserDeleteModal />
+    </client-only>
 
     <div class="w-full max-w-md">
       <div class="absolute top-0 left-0">
@@ -127,17 +129,12 @@
         {{ $t('pages.settings.profile.label') }}
       </h3>
 
-      <div
-        class="flex items-center justify-between pl-3 pr-6 my-5 text-white bg-red-500 border-2 border-red-500 rounded-lg"
-      >
-        {{ $t('pages.settings.profile.delete') }}
-
-        <UHAccessibilityButton @click="showModal()">
-          <font-awesome-icon icon="trash" class="w-5 p-1 md:p-0 fa-2x" />
-          {{ $t('pages.settings.profile.deleteButton') }}
-        </UHAccessibilityButton>
-      </div>
-
+      <UHButton
+        class="flex items-center justify-between w-full pl-3 my-5 text-white bg-red-500 border-2 border-red-500 rounded-lg focus:bg-red-600 focus:border-red-600 hover:bg-red-600 hover:border-red-600"
+        @click="showModal()"
+        >{{ $t('pages.settings.profile.delete') }}
+        <font-awesome-icon icon="trash" class="w-5 p-1 md:p-0 fa-2x" />
+      </UHButton>
     </div>
   </div>
 </template>
@@ -146,6 +143,7 @@
 import { mapGetters } from 'vuex'
 import UHInput from '@/components/generics/UHInput'
 import UHAccessibilityButton from '@/components/generics/UHAccessibilityButton'
+import UHButton from '@/components/generics/UHButton'
 import UHUserDeleteModal from '@/components/generics/UHUserDeleteModal'
 
 export default {
@@ -154,6 +152,7 @@ export default {
   fetchDelay: 1000,
   components: {
     UHInput,
+    UHButton,
     UHAccessibilityButton,
     UHUserDeleteModal
   },
