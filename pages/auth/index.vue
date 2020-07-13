@@ -8,6 +8,12 @@
       </div>-->
       <Logo />
 
+      <div class="absolute top-0 left-0 md:top-5 md:left-5">
+        <a @click="$router.go(-1)" class="flex flex-col items-center justify-center w-12 h-12 pt-2 md:w-18 md:h-18 focus:outline-none focus:shadow-outline-gray">
+          <font-awesome-icon icon="chevron-left" class="w-5 p-1 md:p-0 fa-2x" />
+        </a>
+      </div>
+
       <nuxt-child />
 
       <div
