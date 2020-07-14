@@ -44,6 +44,8 @@
 
 <script>
 import UHNewsCardLoadingState from '@/components/generics/UHNewsCardLoadingState'
+import { mapActions } from 'vuex'
+import { achievementName } from '@/helpers/achievements'
 
 export default {
   name: 'UHNewsCard',
@@ -77,7 +79,17 @@ export default {
     this.news.unshift(...news.articles)
   },
   methods: {
+    ...mapActions({
+      rewardBadgeDirectly: 'badge/rewardBadgeDirectly'
+    }),
+    pullBadge(news) {
+      this.rewardBadgeDirectly({
+        name: achievementName.GAME_NEWS_50,
+        condition: news
+      })
+    },
     onRefresh() {
+      this.pullBadge(this.news.length)
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           this.$fetch()

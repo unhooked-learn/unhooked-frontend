@@ -12,8 +12,8 @@ export default {
       },
 
       app: {
-        timeSpendInGame: 0,
-        openendTime: 0
+        timeSpendInApp: 0,
+        timesOpened: 0
       }
     }
   },
@@ -35,24 +35,24 @@ export default {
     },
     checkForTimeSpend() {
       this.config.appTimer = setInterval(() => {
-        this.app.timeSpendInGame++
+        this.app.timeSpendInApp++
 
         this.rewardBadgeDirectly({
           name: achievementName.APP_OPEN_MINUTES_60,
-          condition: this.config.appTimer
+          condition: this.app.timeSpendInApp
         })
 
         this.surpriseBadge()
 
         this.saveData()
-      }, 1000)
+      }, 1000*60)
     },
     openApp() {
-      this.app.openendTime++
+      this.app.timesOpened++
 
       this.rewardBadgeDirectly({
         name: achievementName.APP_OPEN_5,
-        condition: this.app.openendTime
+        condition: this.app.timesOpened
       })
 
       this.saveData()

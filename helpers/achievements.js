@@ -36,7 +36,7 @@ export const achievementName = {
   EASTER_EGG: 'EASTER_EGG',
   EASTER_EGG_GHOST: 'IDLE_MINUTE_5', // backend ?
   GAME_SCROLL_5: 'SCROLL_MINUTE_5',
-  GAME_PUSH_10: 'REFRESH_TIME_10',
+  GAME_NEWS_50: 'REFRESH_TIME_10',
   APP_KNOWLEDGE_10: 'KNOWLEDGE_MINUTE_5',
   APP_OPEN_MINUTES_60: 'OPEN_MINUTE_60',
   APP_OPEN_5: 'OPEN_TIME_5',
@@ -152,8 +152,9 @@ export const achievements = [
   {
     id: 15,
     icon: 'newspaper',
-    name: achievementName.GAME_PUSH_10,
-    unlocked: count => count >= 10,
+    name: achievementName.GAME_NEWS_50,
+    // read 50 news articles
+    unlocked: count => count >= 50,
     type: achievementType.GAME
   },
   {
