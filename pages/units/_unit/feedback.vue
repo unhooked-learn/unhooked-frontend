@@ -26,7 +26,7 @@
             <div class="mb-1 star-rating-container">
               <UHStarRating />
             </div>
-            <span class="mt-2 mb-4 text-xs ">
+            <span class="mt-2 mb-4 text-xs">
               {{
               $t('pages.course.unit.feedback.vote', {
               points: feedback.averageValue,
@@ -44,7 +44,10 @@
             >
               <div class="text-center">
                 <span class="pr-2 uppercase">{{ $t('general.button.finished') }}</span>
-                <font-awesome-icon icon="check" class="inline-block h-5 m-auto text-gray-100 fa-1x" />
+                <font-awesome-icon
+                  icon="check"
+                  class="inline-block h-5 m-auto text-gray-100 fa-1x"
+                />
               </div>
             </UHButton>
           </div>
@@ -55,7 +58,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import UHStarRating from '@/components/generics/UHStarRating'
 import UHBadge from '@/components/profile/UHBadge'
 import UHButton from '@/components/generics/UHButton'
@@ -83,9 +86,15 @@ export default {
     }
   },
   methods: {
+    ...mapActions({
+      rewardBadgeUnit: 'badge/rewardBadgeUnit',
+      fetchUnits: 'units/fetch',
+      fetchProfile: 'profile/fetch',
+      fetchFeedback: 'units/fetchFeedback'
+    }),
     async goHome() {
       // unlock next unit ¯\_(ツ)_/¯
-      await this.$store.dispatch('units/unlockUnit', this.getUnitId ++)
+      await this.$store.dispatch('units/unlockUnit', this.getUnitId+1)
 
       this.$router.push({
         path: this.localePath('units')
@@ -99,9 +108,11 @@ export default {
     }
   },
   async fetch() {
-    await this.$store.dispatch('units/fetch')
-    await this.$store.dispatch('profile/fetch')
-    await this.$store.dispatch('units/fetchFeedback', this.getUnitId)
+    console.log(this.getUnitId)
+    await this.fetchUnits()
+    await this.fetchProfile()
+    await this.fetchFeedback(this.getUnitId)
+    await this.rewardBadgeUnit(this.getUnitId)
   }
 }
 </script>
