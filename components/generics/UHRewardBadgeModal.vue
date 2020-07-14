@@ -1,5 +1,5 @@
 <template>
-  <UHModal name="badge-modal" ref="modal" @beforeClose="nextRewardedBadges">
+  <UHModal name="reward-badge-modal" ref="modal" @beforeClose="nextRewardedBadges">
     <template #cardHeading>Congratulations!</template>
 
     <template #header>
