@@ -51,7 +51,8 @@ export default context => {
               noRating: 'Nichts ausgewählt',
               resetRating: 'Auswahl zurücksetzen',
               postRating: 'Bewertung übermitteln',
-              thankYou: 'Danke für die Bewertung!'
+              thankYou: 'Danke für die Bewertung!',
+              points: 'In dieser Runde hast du <b>{points}</b> Punkte verdient.'
             },
             achievement: 'Freigeschaltete Errungenschaften',
             status: {

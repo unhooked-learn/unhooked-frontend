@@ -2,9 +2,7 @@
   <div>
     <header class="p-4 pb-6 text-white bg-gray-800">
       <div>
-        <h1 class="text-lg font-semibold uppercase">
-          # {{ getUnitParams }} - Unit
-        </h1>
+        <h1 class="text-lg font-semibold uppercase"># {{ getUnitParams }} - Unit</h1>
         <UHQuizProgress @goToQuestion="setNextQuestion" />
       </div>
     </header>
@@ -74,12 +72,10 @@ export default {
   async fetch() {
     await this.$store.dispatch('quiz/fetch', this.getUnitParams)
   },
-  created() {
-    // this.$fetch()
-  },
   methods: {
     ...mapActions({
-      setQuestion: 'quiz/setQuestion'
+      setQuestion: 'quiz/setQuestion',
+      rewardPoints: 'quiz/rewardPoints',
       //nextQuestion: 'quiz/goToNextQuestion',
     }),
     setNextQuestion(question) {
@@ -91,6 +87,11 @@ export default {
       )
     },
     goToNextQuestion() {
+      // reward points
+      if (this.selectedAnswer.isCorrect) {
+        this.rewardPoints()
+      }
+
       // reset check state
       this.checkAnswer(false)
 
@@ -138,6 +139,6 @@ export default {
       },
       immediate: true
     }
-  }
+  },
 }
 </script>
