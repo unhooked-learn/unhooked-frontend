@@ -1,6 +1,6 @@
 import { clone, isEmpty } from 'lodash'
 
-import { ucFirst } from '@/helper';
+import { ucFirst } from '~/helpers/misc';
 
 
 const regex = /({{[a-z]*_\d}})/g

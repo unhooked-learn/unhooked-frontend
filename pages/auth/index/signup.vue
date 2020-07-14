@@ -76,7 +76,7 @@
 import UHInput from '@/components/generics/UHInput'
 import UHAuthErrors from '@/components/auth/UHAuthError'
 import UHAccessibilityButton from '@/components/generics/UHAccessibilityButton'
-import { uppercasify } from '@/helper'
+import { uppercasify } from '@/helpers/misc'
 
 import { isEmpty } from 'lodash'
 import { mapActions, mapGetters } from 'vuex'

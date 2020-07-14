@@ -18,12 +18,14 @@
 <script>
 import UHBadgeModal from '@/components/generics/UHBadgeModal'
 import UHUnitModal from '@/components/generics/UHUnitModal'
+import achivements from '@/mixins/achivements'
 
 export default {
   name: 'LayoutMaster',
+  mixins: [achivements],
   components: {
     UHBadgeModal,
-    UHUnitModal
+    UHUnitModal,
   }
 }
 </script>
