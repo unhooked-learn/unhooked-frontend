@@ -83,7 +83,9 @@ export default {
       if (!this.form.user) {
         return
       }
+      localStorage.clear()
       await this.createUser(this.form.user)
+
 
       this.$router.push(
         this.localePath({

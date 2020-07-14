@@ -52,8 +52,7 @@ export const actions = {
 
   logout() {
     if (window) {
-      localStorage.removeItem('username')
-      localStorage.removeItem('token')
+      localStorage.clear
     }
 
     // todo: set logout request to api
@@ -72,6 +71,7 @@ export const actions = {
   },
   // register
   signup({ commit, dispatch }, data) {
+    localStorage.clear()
     this.$axios
       .$post('/api/auth/signup', data)
       .then(response => {
