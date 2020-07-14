@@ -175,7 +175,7 @@ router: {
     // }
     rootRedirect: {
       statusCode: 301,
-      path: 'units'
+      path: 'onboarding'
     },
 
     // If true, SEO metadata is generated for routes that have i18n enabled.

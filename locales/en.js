@@ -20,7 +20,9 @@ const keys = {
     },
     button: {
       skipButtonText: 'Skip',
-      finished: 'Finish'
+      finished: 'Finish',
+      register: 'Create an account',
+      guest: 'Continue with guest login'
     },
     desktop: {
       label: 'Be Warned',
@@ -74,7 +76,14 @@ const keys = {
     },
     onboarding: {
       skip: 'Skip Onboarding',
-      label: 'Onboarding'
+      label: 'Onboarding',
+      title: 'Want to get unhooked?',
+      intro: 'Welcome to Unhooked, an online e-learning web application which shows you the manipulative mechanisms in mobile games and social media apps.',
+      question1: 'Why do mobile applications make you cost us so much time?',
+      question2: 'Why do we spend every free minute on our smartphone?',
+      question3: 'How do we find this applicatios so tempting that every time the smartphone flashes, we pick it up and leave everything else behind and then when we look at the smartphone we forget everything around us.', 
+      question4: 'Why can applications and social media applicastions do something that can cast a spell on us?',
+      resumee: 'This e-learning application addresses exactly these points and explains its mechanisims.'
     },
     auth: {
       or: 'or',
@@ -91,6 +100,12 @@ const keys = {
       useThisUsername: 'Use this username and continue',
       continue: 'Continue'
     },
+    guest: {
+      label: 'Your name',
+      text:
+        'Fill in your name to continue.',
+      login: 'Start course'
+    },
     settings: {
       label: 'Settings',
       text: 'Here you can change your account data',
@@ -104,7 +119,9 @@ const keys = {
         delete: 'Delete my account',
         attention: 'Attention',
         text: 'Do you really want to delete your account?',
-        deleteButton: 'Delete'
+        deleteButton: 'Delete',
+        onboardingRevisit:  "You get onboarded on your next visit!",
+        redoOnboarding:  "Onboard me again!",
       }
     },
     imprint: {

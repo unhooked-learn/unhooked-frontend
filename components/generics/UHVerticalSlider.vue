@@ -56,6 +56,14 @@ export default {
       }
       return this.options
     }
+  },
+  computed: {
+    mergedOptions() {
+      if(isEmpty(this.options)){
+        return this.flickityOptions
+      }
+      return this.options
+    }
   }
 }
 </script>

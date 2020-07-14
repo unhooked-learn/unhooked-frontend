@@ -23,7 +23,9 @@ export default context => {
         },
         button: {
           skipButtonText: 'Überspringen',
-          finished: 'Abschliessen'
+          finished: 'Abschliessen',
+          register: 'Erstelle einen Account',
+          guest: 'Als Gast fortfahren'
         },
         desktop: {
           label: 'Achtung',
@@ -78,8 +80,15 @@ export default context => {
           label: 'Wissensdatenbank'
         },
         onboarding: {
-          skip: 'Skip Onboarding',
-          label: 'Einführung'
+          skip: 'Überspringe die Einführung',
+          label: 'Einführung',
+          title: 'Willst du die Ketten sprengen?',
+          intro: 'Willkommen bei Unhooked, eine online E-Learning web Applikation, welche dir die manipulativen Mechanismen in Spielen und auf den sozialen Media zeigt.',
+          question1: 'Wie machen es mobile Applikation das diese uns so viel Zeit kosten?',
+          question2: 'Warum kleben wir jede freie Minute an unserem Handy?',
+          question3: 'Wie verführen uns diese Applikation dass wir auch bei jedem Aufblinken des Handys wir zum Handy greifen und alles andere stehen und liegen lassen?', 
+          question4: 'Warum können Applikation und Soziale Medien sowas, dass sie uns so in den Bann ziehen?',
+          resumee: 'Diese E-Learning Anwendung adressiert genau diese Punkte und Problematiken.'
         },
         auth: {
           or: 'Oder',
@@ -97,6 +106,12 @@ export default context => {
           useThisUsername: 'Benutze diesen Namen und fahre fort',
           continue: 'Fortfahren'
         },
+        guest: {
+          label: 'Dein Name',
+          text:
+            'Gebe deinen Namen im Texfeld ein um fortzufahren.',
+          login: 'Starte den Kurs'
+        },
         settings: {
           label: 'Einstellungen',
           text:
@@ -111,7 +126,9 @@ export default context => {
             delete: 'Lösche meinen Account',
             attention: 'Achtung',
             text: 'Bist du dir sicher, dass du deinen Account löschen willst?',
-            deleteButton: 'Löschen'
+            deleteButton: 'Löschen',
+            onboardingRevisit:  "Die Einführung wird bei deinem nächsten Besuch angezeigt!",
+            redoOnboarding:  "Einführung wiederholen",
           }
         },
         imprint: {

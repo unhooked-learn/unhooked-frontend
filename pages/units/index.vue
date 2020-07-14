@@ -26,7 +26,7 @@
           <UHUnitCardLoadingState class="mx-2 " :elementHeight="380" />
         </UHMockLoadingState>
 
-        <UHVerticalSlider v-else>
+        <UHVerticalSlider :options="flickityOptions" v-else>
           <UHUnitCard
             class="mx-2"
             :unit="unit"
@@ -86,7 +86,18 @@ export default {
     // refactor
     this.$store.dispatch('profile/activeTime')
   },
-
+   data() {
+    return {
+      flickityOptions: {
+        initialIndex: 0,
+        pageDots: true,
+        resize: false,
+        prevNextButtons: false,
+        wrapAround: false,
+        adaptiveHeight: false
+      }
+    }
+  },
   activated() {
     // Call fetch again if last fetch more than 5 minues ago
     if (this.$fetchState.timestamp <= Date.now() - 1000 * 60 * 5) {
