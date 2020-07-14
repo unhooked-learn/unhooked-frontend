@@ -67,16 +67,25 @@ export const actions = {
     let units = await this.$axios.$get('user/units')
     commit(mutationsTypes.SET_UNITS, units)
   },
-  async fetchContent({ commit }, id) {
-    let unitContent = await this.$axios.$get(`unit/${id}/contents`)
+  async fetchContent({ commit, state }, orderId) {
+     // Find unit by its orderid ¯\_(ツ)_/¯
+    let unit = state.find(item => item.orderId = orderId)
+
+    let unitContent = await this.$axios.$get(`unit/${unit.id}/contents`)
     commit(mutationsTypes.SET_UNIT_CONTENT, unitContent)
   },
-  async fetchFeedback({ commit }, id) {
-    let feedback = await this.$axios.$get(`unit/${id}/averagefeedback`)
+  async fetchFeedback({ commit }, orderId) {
+     // Find unit by its orderid  ¯\_(ツ)_/¯
+    let unit = state.find(item => item.orderId = orderId)
+
+    let feedback = await this.$axios.$get(`unit/${unit.id}/averagefeedback`)
     commit(mutationsTypes.SET_UNIT_FEEDBACK, feedback)
   },
   async postFeedback({}, feedback ) {
-    await this.$axios.$post(`feedback/unit/${feedback.unit}?value=${feedback.rating}`)
+    // Find unit by its orderid  ¯\_(ツ)_/¯
+    let unit = state.find(item => item.orderId = feedback.unit)
+
+    await this.$axios.$post(`feedback/unit/${unit.id}?value=${feedback.rating}`)
   },
   async unlockUnit({}, unlock ) {
     await this.$axios.$post(`user/unit/${unlock}`)
