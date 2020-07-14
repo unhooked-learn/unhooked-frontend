@@ -79,11 +79,11 @@ export default {
     ...mapActions({
       createUser: 'auth/createUser'
     }),
-    createNewUser() {
+    async createNewUser() {
       if (!this.form.user) {
         return
       }
-      this.createUser(this.form.user)
+      await this.createUser(this.form.user)
 
       this.$router.push(
         this.localePath({

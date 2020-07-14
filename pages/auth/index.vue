@@ -1,17 +1,12 @@
 <template>
   <div class="flex items-center justify-center min-h-screen px-4 py-12 bg-gray-50 sm:px-6 lg:px-8">
     <div class="w-full max-w-md">
-      <!--  <div class="absolute top-0 left-0">
-        <UHAccessibilityButton to="profile">
-          <font-awesome-icon icon="chevron-left" class="p-1 md:p-0 fa-2x" />
-        </UHAccessibilityButton>
-      </div>-->
       <Logo />
 
-      <div class="absolute top-0 left-0 md:top-5 md:left-5">
-        <a @click="$router.go(-1)" class="flex flex-col items-center justify-center w-12 h-12 pt-2 md:w-18 md:h-18 focus:outline-none focus:shadow-outline-gray">
+      <div class="absolute top-0 left-0">
+        <UHAccessibilityButton to="profile">
           <font-awesome-icon icon="chevron-left" class="w-5 p-1 md:p-0 fa-2x" />
-        </a>
+        </UHAccessibilityButton>
       </div>
 
       <nuxt-child />

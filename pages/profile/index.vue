@@ -5,7 +5,7 @@
         <div class="absolute top-0 right-0">
           <UHAccessibilityButton to="/profile/settings">
             <div class="w-12 p-2 md:p-0">
-              <font-awesome-icon icon="pen" class="pt-2 fa-2x" />
+              <font-awesome-icon icon="pen" class="w-5 pt-2 fa-2x" />
             </div>
           </UHAccessibilityButton>
         </div>
@@ -31,24 +31,22 @@
           $t('pages.profile.active', { minutes: active.activeTime })
           }}
         </h4>
-        <template v-if="user.registered">
-          <nuxt-link
-            v-if="user.loggedin"
-            :to="localePath('/profile')"
-            class="px-2 py-1 text-xs bg-gray-400 border-gray-800 rounded-full pill"
-          >{{ $t('pages.auth.logout') }}</nuxt-link>
-          <nuxt-link
-            v-else
-            :to="localePath('/auth/signin')"
-            class="px-2 py-1 text-xs bg-gray-400 border-gray-800 rounded-full pill"
-          >{{ $t('pages.auth.signin') }}</nuxt-link>
+        
+        <template v-if="hasToken">
+          <a @click.prevent="logoutUser"
+            
+            class="px-2 py-1 text-xs rounded-full shadow-solid pill"
+          >{{ $t('pages.auth.logout') }}
+          </a>
         </template>
         <template v-else>
           <nuxt-link
             :to="localePath('/auth/signup')"
-            class="px-2 py-1 text-xs bg-gray-400 border-gray-800 rounded-full shadow-solid pill"
-          >{{ $t('pages.auth.signup') }}</nuxt-link>
+            class="px-2 py-1 text-xs rounded-full shadow-solid pill"
+          >{{ $t('pages.auth.signup') }}
+          </nuxt-link>
         </template>
+
       </div>
     </header>
     <main class="mb-16 bg-gray-100">
@@ -115,7 +113,8 @@ export default {
     ...mapGetters({
       user: 'profile/user',
       active: 'profile/active',
-      badges: 'badge/badges'
+      badges: 'badge/badges',
+      hasToken: 'auth/hasToken'
     })
   },
   activated() {
@@ -131,11 +130,15 @@ export default {
   },
   methods: {
     ...mapActions({
-      // user: 'profile/fetch'
+       logout: 'auth/logout'
     }),
     showMinutes(timestamp) {
       return Math.floor((Date.now() - timestamp) / 1000 / 60)
+    },
+    logoutUser() {
+      this.logout()
+      this.$router.push(this.localePath('auth-index'))
     }
-  }
+  }  
 }
 </script>

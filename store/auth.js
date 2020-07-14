@@ -76,7 +76,8 @@ export const actions = {
       .$post('/api/auth/signup', data)
       .then(response => {
         dispatch('setAuthUser', response)
-      }).then(() => {
+      })
+      .then(() => {
         this.$axios.$post('user/unit/1')
       })
       .catch(error => {
@@ -88,9 +89,16 @@ export const actions = {
     this.$axios.setHeader('username', username)
     this.$axios
       .$put('user')
+      .then(() =>
+        this.$axios({
+          method: 'post',
+          url: 'user/unit/1',
+          headers: {
+            username: username
+          }
+        })
+      )
       .then(() => {
-        this.$axios.$post('user/unit/1')
-
         commit('profile/SET_USERNAME', username, { root: true })
 
         if (window) {
@@ -101,6 +109,8 @@ export const actions = {
       })
       .catch(error => {
         commit(mutationTypes.SET_ERRORS, error.response.data)
+
+        return Promise.reject()
       })
   },
   loadLocalUser({ commit }) {

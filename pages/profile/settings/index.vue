@@ -95,7 +95,7 @@
               <div class="flex items-center justify-center w-1/5 bg-red-500">
                 <font-awesome-icon
                   icon="exclamation-triangle"
-                  class="w-5 p-1 text-white md:p-0 fa-3x"
+                  class="w-12 p-1 text-white md:p-0 fa-3x"
                 />
               </div>
               <div class="flex items-center justify-center w-4/5 ">
@@ -106,7 +106,7 @@
             </div>
           </div>
 
-          <div class="flex justify-between mb-8">
+          <div class="flex justify-between mb-8 font-medium">
             <font-awesome-icon icon="flag" class="w-12 opacity-50 fa-2x" />
             <nuxt-link
               :to="switchLocalePath('en')"
