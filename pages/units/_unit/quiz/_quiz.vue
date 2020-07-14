@@ -45,7 +45,7 @@ import UHFillTheBlank from '@/components/units/quiz/UHFillTheBlank'
 import UHQuizProgress from '@/components/units/quiz/elements/UHQuizProgress'
 import UHQuestionToast from '@/components/units/quiz/elements/UHQuestionToast'
 
-import { SnakeCaseCapsToPascalCase } from '@/helper'
+import { SnakeCaseCapsToPascalCase } from '@/helpers/misc'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {

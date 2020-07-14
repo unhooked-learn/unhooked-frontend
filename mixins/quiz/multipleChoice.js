@@ -1,4 +1,4 @@
-import { sluggify } from '@/helper'
+import { sluggify } from '~/helpers/misc'
 
 const itemState = {
   ANSWER_IS_SELECTED: 'ANSWER_IS_SELECTED',

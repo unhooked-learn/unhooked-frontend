@@ -25,7 +25,7 @@
 
 <script>
 import { eq } from 'lodash'
-import { sluggify } from '@/helper'
+import { sluggify } from '@/helpers/misc'
 import multipleChoice from '@/mixins/quiz/multipleChoice'
 
 export default {
