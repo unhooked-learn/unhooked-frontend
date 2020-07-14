@@ -21,6 +21,11 @@ const keys = {
     button: {
       skipButtonText: 'Skip',
       finished: 'Finish'
+    },
+    desktop: {
+      label: 'Be Warned',
+      text: 'This site is only optimised for mobile and tablet devices. Your experiance may be vary. Please use your mobile phone or tablet.',
+      button: 'Hide'
     }
   },
   pages: {
