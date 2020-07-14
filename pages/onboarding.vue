@@ -40,12 +40,6 @@
 import UHButton from '@/components/generics/UHButton'
 import UHVerticalSlider from '@/components/generics/UHVerticalSlider'
 
-import '@/assets/images/logo_big_orig.png'
-import '@/assets/images/svg/social_girl.svg'
-import '@/assets/images/svg/social_life.svg'
-import '@/assets/images/svg/social_influencer.svg'
-import '@/assets/images/svg/social_share.svg'
-
 export default {
   name: 'Onboarding',
   components: {
@@ -59,13 +53,13 @@ export default {
       slides: [
         {
           id: 1,
-          img: '/_nuxt/assets/images/logo_big_orig.png',
+          img: 'https://hosting142537.a2e76.netcup.net/media/logo_big_orig.png',
           heading: 'pages.onboarding.title',
           paragraphs: ['pages.onboarding.intro']
         },
         {
           id: 2,
-          img: '/_nuxt/assets/images/svg/social_girl.svg',
+          img: 'https://hosting142537.a2e76.netcup.net/media/social_girl.svg',
           paragraphs: [
             'pages.onboarding.question1',
             'pages.onboarding.question2'
@@ -73,17 +67,17 @@ export default {
         },
         {
           id: 3,
-          img: '/_nuxt/assets/images/svg/social_life.svg',
+          img: 'https://hosting142537.a2e76.netcup.net/media/social_life.svg',
           paragraphs: ['pages.onboarding.question3']
         },
         {
           id: 4,
-          img: '/_nuxt/assets/images/svg/social_influencer.svg',
+          img: 'https://hosting142537.a2e76.netcup.net/media/social_influencer.svg',
           paragraphs: ['pages.onboarding.question4']
         },
         {
           id: 5,
-          img: '/_nuxt/assets/images/svg/social_share.svg',
+          img: 'https://hosting142537.a2e76.netcup.net/media/social_share.svg',
           paragraphs: ['pages.onboarding.resumee']
         }
       ],
@@ -108,8 +102,6 @@ export default {
   },
   mounted() {
     const onboarded = localStorage.getItem(this.itemKey)
-    console.log('onboarded', onboarded)
-
     if (onboarded) {
       this.goToRoute()
     }
