@@ -25,7 +25,8 @@
 import UHInfiniteScroll from '@/components/units/UHInfiniteScroll'
 import UHInstagramCard from '@/components/generics/UHInstagramCard'
 import UHTimerButton from '@/components/generics/UHTimerButton'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
+import { achievementName } from '@/helpers/achievements'
 
 export default {
   name: 'infiniteScroll',   
@@ -47,13 +48,22 @@ export default {
       user: 'profile/user'
     })
   },
-  methods: {
+  methods: {   
+    ...mapActions({
+      rewardBadgeDirectly: 'badge/rewardBadgeDirectly'
+    }),
+    scrollBadge(page) {
+      this.rewardBadgeDirectly({
+        name: achievementName.GAME_SCROLL_5,
+        condition: page
+      })
+    },
     async fetch(page) {
+        this.scrollBadge(page)
         if(page > this.lastPage) {return}
         let pictures = await this.$axios.$get(
         `https://cors-anywhere.herokuapp.com/https://pixabay.com/api/?key=15819227-ef2d84d1681b9442aaa9755b8&q=cat+cats+animals&image_type=all&per_page=10&page=${page}`
         )
-
         this.pictures.push(...pictures.hits) 
         this.lastPage = Math.floor(pictures.totalHits/10)
     },

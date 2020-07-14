@@ -47,7 +47,6 @@ export const mutations = {
     let badge = state.badgesToReward.shift()
     if (!badge) return
 
-   
     state.rewardedBadge = state.badges.find(item => item.id === badge.id)
   }
 }
