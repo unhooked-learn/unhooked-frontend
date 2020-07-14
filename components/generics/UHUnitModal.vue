@@ -16,7 +16,7 @@
     <template #body>
       <div class="px-4 mt-2">
         <h1 class="py-2 font-semibold uppercase">
-          #{{ unit.id }} {{ unit.name }}
+          #{{ unit.orderId }} {{ unit.name }}
           <span
             class="ml-3 text-sm text-green-500 text-semibold"
             v-if="unit.complete"
@@ -68,7 +68,7 @@ export default {
        this.$router.push(
           this.localePath({
             name: 'units-unit-slide-slide',
-            params: { unit: this.unit.id, slide: 1 }
+            params: { unit: this.unit.orderId, slide: 1 }
           })
         )
     },
@@ -76,9 +76,7 @@ export default {
   watch: {
     unit: {
       handler(newValue) {
-        //if (!!newValue.description) {
         this.$refs.modal.open()
-        // }
       }
     }
   }
