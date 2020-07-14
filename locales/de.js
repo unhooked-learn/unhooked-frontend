@@ -24,6 +24,11 @@ export default context => {
         button: {
           skipButtonText: 'Überspringen',
           finished: 'Abschliessen'
+        },
+        desktop: {
+          label: 'Achtung',
+          text: 'Diese Seite ist für eine Darstellung auf mobilen Endgeräten optimiert. Bitte nutzer dein Handy, da die Erfahrung auf dem Desktop stark abweichen kann.',
+          button: 'Ausblenden'
         }
       },
       pages: {

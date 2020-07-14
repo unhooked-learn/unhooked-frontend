@@ -4,6 +4,7 @@
       <slot name="prepent">
         <client-only>
           <template>
+            <UHDesktopWarning/>
             <UHBadgeModal />
             <UHUnitModal />
           </template>
@@ -18,12 +19,14 @@
 <script>
 import UHBadgeModal from '@/components/generics/UHBadgeModal'
 import UHUnitModal from '@/components/generics/UHUnitModal'
+import UHDesktopWarning from '@/components/layout/UHDesktopWarning'
 
 export default {
   name: 'LayoutMaster',
   components: {
     UHBadgeModal,
-    UHUnitModal
+    UHUnitModal,
+    UHDesktopWarning
   }
 }
 </script>
