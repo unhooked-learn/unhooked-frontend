@@ -51,6 +51,9 @@ module.exports = {
     '@nuxtjs/eslint-module',
 
     '@nuxtjs/pwa',
+
+    // Doc: https://github.com/nuxt-community/device-module
+    '@nuxtjs/device',
   ],
   /*
    ** Nuxt.js modules

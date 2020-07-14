@@ -4,6 +4,7 @@
       <slot name="prepent">
         <client-only>
           <template>
+            <UHDesktopWarning/>
             <UHBadgeModal />
             <UHUnitModal />
           </template>
@@ -18,6 +19,7 @@
 <script>
 import UHBadgeModal from '@/components/generics/UHBadgeModal'
 import UHUnitModal from '@/components/generics/UHUnitModal'
+import UHDesktopWarning from '@/components/layout/UHDesktopWarning'
 import achivements from '@/mixins/achivements'
 
 export default {
@@ -26,6 +28,7 @@ export default {
   components: {
     UHBadgeModal,
     UHUnitModal,
+    UHDesktopWarning
   }
 }
 </script>
