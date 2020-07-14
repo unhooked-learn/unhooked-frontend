@@ -68,12 +68,10 @@ import UHStarRating from '@/components/generics/UHStarRating'
 import UHBadge from '@/components/profile/UHBadge'
 import UHButton from '@/components/generics/UHButton'
 import UHAccessibilityButton from '@/components/generics/UHAccessibilityButton'
-import rewardPoints from '@/mixins/quiz/rewardPoints'
 
 export default {
   name: 'feedback',
   layout: 'clear',
-  mixins: [rewardPoints],
   components: {
     UHStarRating,
     UHButton,
@@ -91,7 +89,7 @@ export default {
       return +this.$route.params.unit
     },
     currentUnit() {
-      return this.units.find(unit => unit.id === this.getUnitId)
+      return this.units.find(unit => unit.orderId === this.getUnitId)
     }
   },
   methods: {
@@ -128,7 +126,7 @@ export default {
     await this.rewardBadgeUnit(this.getUnitId)
 
     await this.submitScore({
-      unitId: this.getUnitId,
+      unitId: this.currentUnit.id,
       score: this.userEarnedPoints
     })
 
