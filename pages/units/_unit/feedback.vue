@@ -37,6 +37,11 @@
             </span>
           </div>
           <!-- /rating card -->
+          <p
+            class="mt-5 text-sm tracking-wider text-center text-gray-700 uppercase"
+            v-html="$t('pages.course.unit.feedback.points', {points: userEarnedPoints})"
+          ></p>
+
           <div class="fixed bottom-5 right-4">
             <UHButton
               class="w-full px-3 py-3 text-white transition transform bg-gray-600 rounded-md shadow hover:scale-110 hover:bg-gray-700 active:shadow-lg mouse focus:outline-none"
@@ -63,10 +68,12 @@ import UHStarRating from '@/components/generics/UHStarRating'
 import UHBadge from '@/components/profile/UHBadge'
 import UHButton from '@/components/generics/UHButton'
 import UHAccessibilityButton from '@/components/generics/UHAccessibilityButton'
+import rewardPoints from '@/mixins/quiz/rewardPoints'
 
 export default {
   name: 'feedback',
   layout: 'clear',
+  mixins: [rewardPoints],
   components: {
     UHStarRating,
     UHButton,
@@ -76,7 +83,9 @@ export default {
     ...mapGetters({
       units: 'units/units',
       user: 'profile/user',
-      feedback: 'units/feedback'
+      feedback: 'units/feedback',
+      unitScore: 'score/unitScore',
+      userScore: 'profile/userScore'
     }),
     getUnitId() {
       return +this.$route.params.unit
@@ -90,11 +99,17 @@ export default {
       rewardBadgeUnit: 'badge/rewardBadgeUnit',
       fetchUnits: 'units/fetch',
       fetchProfile: 'profile/fetch',
-      fetchFeedback: 'units/fetchFeedback'
+      fetchFeedback: 'units/fetchFeedback',
+      submitScore: 'score/submitScore',
+      fetchScore: 'score/fetchScore',
+      clearPoints: 'quiz/clearPoints',
+      rewardBadgePoints: 'badge/rewardBadgePoints'
     }),
     async goHome() {
       // unlock next unit ¯\_(ツ)_/¯
-      await this.$store.dispatch('units/unlockUnit', this.getUnitId+1)
+      await this.$store.dispatch('units/unlockUnit', this.getUnitId + 1)
+
+      this.clearPoints()
 
       this.$router.push({
         path: this.localePath('units')
@@ -108,11 +123,18 @@ export default {
     }
   },
   async fetch() {
-    console.log(this.getUnitId)
     await this.fetchUnits()
-    await this.fetchProfile()
     await this.fetchFeedback(this.getUnitId)
     await this.rewardBadgeUnit(this.getUnitId)
+
+    await this.submitScore({
+      unitId: this.getUnitId,
+      score: this.userEarnedPoints
+    })
+
+    await this.fetchProfile()
+
+    this.rewardBadgePoints(this.userScore)
   }
 }
 </script>

@@ -46,7 +46,8 @@ const keys = {
           noRating: 'No Rating Selected',
           resetRating: 'Reset rating',
           postRating: 'Post your rating',
-          thankYou: 'Thank you for rating!'
+          thankYou: 'Thank you for rating!',
+          points: 'You earned <b>{points}</b> points this round .'
         },
         achievement: 'Achievements earned',
         status: {

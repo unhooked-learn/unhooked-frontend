@@ -62,11 +62,11 @@ export const actions = {
     let badges = await this.$axios.$get('achievements')
     commit(mutationsTypes.SET_BADGES, badges)
   },
-  
-  async rewardBadgePoints({ commit, dispatch, state }, point) {
+
+  async rewardBadgePoints({ commit, dispatch, state }, points) {
     const items = achievements
       .filter(item => item.type === achievementType.POINTS)
-      .filter(item => item.unlocked(point))
+      .filter(item => item.unlocked(points))
       .filter(item => !state.badges.find(i => i.id === item.id).active)
 
     if (isEmpty(items)) return
@@ -88,29 +88,29 @@ export const actions = {
       .find(item => item.unlocked(unitOrderId))
 
     if (isEmpty(item)) return
-     
+
     await dispatch('_updateUserBadges', item.name)
-        
+
     commit(mutationsTypes.DISPALY_REWARD_BADGE)
 
     await dispatch('fetchBadges')
   },
 
-  async rewardBadgeUnit({commit, dispatch, state}, unitOrderId) {
-      const item = achievements
-        .filter(item  => item.type === achievementType.UNIT)
-        .filter(item => !state.badges.find(i => i.id === item.id).active)
-        .find(item => item.unlocked(unitOrderId))
+  async rewardBadgeUnit({ commit, dispatch, state }, unitOrderId) {
+    const item = achievements
+      .filter(item => item.type === achievementType.UNIT)
+      .filter(item => !state.badges.find(i => i.id === item.id).active)
+      .find(item => item.unlocked(unitOrderId))
 
-        if (isEmpty(item)) return
+    if (isEmpty(item)) return
 
-        commit(mutationsTypes.REWARD_BADGE, item)
-        
-        await dispatch('_updateUserBadges', item.name)
-        
-        commit(mutationsTypes.DISPALY_REWARD_BADGE)
+    commit(mutationsTypes.REWARD_BADGE, item)
 
-        await dispatch('fetchBadges')
+    await dispatch('_updateUserBadges', item.name)
+
+    commit(mutationsTypes.DISPALY_REWARD_BADGE)
+
+    await dispatch('fetchBadges')
   },
 
   /**
@@ -125,12 +125,11 @@ export const actions = {
    */
 
   async rewardBadgeDirectly({ commit, dispatch, state }, badge) {
-    const item = achievements
-    .find(item => item.name == badge.name)
+    const item = achievements.find(item => item.name == badge.name)
 
-    if(isEmpty(item))  return;
+    if (isEmpty(item)) return
 
-    if(state.badges.find(i => i.id === item.id).active) return;
+    if (state.badges.find(i => i.id === item.id).active) return
 
     if (!item.unlocked(badge.condition)) return
 
@@ -149,7 +148,7 @@ export const actions = {
       url: 'achievement',
       data: achievementName,
       headers: {
-        'Content-Type': 'text/plain',
+        'Content-Type': 'text/plain'
       }
     })
   },

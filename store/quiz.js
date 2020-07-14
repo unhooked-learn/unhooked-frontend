@@ -2,7 +2,9 @@ import axios from 'axios'
 
 const mutationsTypes = {
   SET_QUIZ: 'SET_QUIZ',
-  SET_QUESTION: 'SET_QUESTION'
+  SET_QUESTION: 'SET_QUESTION',
+  REWARD_POINTS: 'REWARD_POINTS',
+  CLEAR_REWARD_POINTS: 'CLEAR_REWARD_POINTS',
 }
 
 const questionStub = {
@@ -21,7 +23,8 @@ export const state = () => ({
       questionStub
     ]
   },
-  current: 1
+  current: 1,
+  points: 0
 })
 
 export const getters = {
@@ -36,6 +39,9 @@ export const getters = {
   },
   currentQuestion(state) {
     return state.quiz.questions[state.current - 1]
+  },
+  earnedPoints(state) {
+    return state.points;
   }
 }
 
@@ -47,6 +53,12 @@ export const mutations = {
     if (current >= 1 && current <= state.quiz.questions.length) {
       state.current = +current
     }
+  },
+  [mutationsTypes.REWARD_POINTS](state, points) {
+    state.points += points;
+  },
+  [mutationsTypes.CLEAR_REWARD_POINTS](state) {
+    state.points = 0;
   }
 }
 
@@ -57,5 +69,11 @@ export const actions = {
   },
   setQuestion({ commit }, question) {
     commit(mutationsTypes.SET_QUESTION, question)
+  },
+  rewardPoints({commit}, points = 100) {
+    commit(mutationsTypes.REWARD_POINTS, points)
+  },
+  clearPoints({commit}) {
+    commit(mutationsTypes.CLEAR_REWARD_POINTS)
   }
 }

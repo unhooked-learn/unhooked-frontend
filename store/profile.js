@@ -9,9 +9,11 @@ export const state = () => ({
   user: {
     username: 'emma',
     email: '',
-    score: 250000,
+    totalScore: 0,
+    totalFeedback: 0,
     registered: true,
-    loggedin: false
+    loggedin: false,
+    courseCompleted: false,
   },
   active: {
     timestamp: Date.now(),
@@ -29,6 +31,9 @@ export const getters = {
   },
   active(state) {
     return state.active
+  },
+  userScore(state) {
+    return state.user.totalScore
   }
 }
 
@@ -57,8 +62,8 @@ export const actions = {
     await this.$axios.$delete('user')
   },
   activeTime({ commit }) {
-    let activeTime = setInterval(() => {
+    /* let activeTime = setInterval(() => {
       commit(mutationsTypes.TRACK_ACTIVETIME)
-    }, 60000)
+    }, 60000) */
   }
 }
