@@ -69,21 +69,21 @@ export const actions = {
   },
   async fetchContent({ commit, state }, orderId) {
      // Find unit by its orderid ¯\_(ツ)_/¯
-    let unit = state.find(item => item.orderId = orderId)
+    let unit = state.units.find(item => item.orderId = orderId)
 
     let unitContent = await this.$axios.$get(`unit/${unit.id}/contents`)
     commit(mutationsTypes.SET_UNIT_CONTENT, unitContent)
   },
   async fetchFeedback({ commit }, orderId) {
      // Find unit by its orderid  ¯\_(ツ)_/¯
-    let unit = state.find(item => item.orderId = orderId)
+    let unit = state.units.find(item => item.orderId = orderId)
 
     let feedback = await this.$axios.$get(`unit/${unit.id}/averagefeedback`)
     commit(mutationsTypes.SET_UNIT_FEEDBACK, feedback)
   },
   async postFeedback({}, feedback ) {
     // Find unit by its orderid  ¯\_(ツ)_/¯
-    let unit = state.find(item => item.orderId = feedback.unit)
+    let unit = state.units.find(item => item.orderId = feedback.unit)
 
     await this.$axios.$post(`feedback/unit/${unit.id}?value=${feedback.rating}`)
   },
