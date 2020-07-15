@@ -50,7 +50,7 @@
 
       </div>
     </header>
-    <main class="mb-16 bg-gray-100">
+    <main class="pb-20 bg-gray-100">
       <div class="relative z-0">
         <div class="absolute inset-0 bg-gray-800 h-1/2 -z-10"></div>
         <div class="flex justify-center">
