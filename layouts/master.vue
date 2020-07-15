@@ -20,11 +20,11 @@
 import UHBadgeModal from '@/components/generics/UHBadgeModal'
 import UHUnitModal from '@/components/generics/UHUnitModal'
 import UHDesktopWarning from '@/components/layout/UHDesktopWarning'
-import achivements from '@/mixins/achivements'
+import achievements from '@/mixins/achievements'
 
 export default {
   name: 'LayoutMaster',
-  mixins: [achivements],
+  mixins: [achievements],
   components: {
     UHBadgeModal,
     UHUnitModal,

@@ -64,7 +64,8 @@ export default {
     return {
       form: {
         user: ''
-      }
+      },
+      itemsToClear: ['token', 'username', 'appInfo', 'achievements.knowledge']
     }
   },
   computed: {
@@ -83,9 +84,13 @@ export default {
       if (!this.form.user) {
         return
       }
-      localStorage.clear()
-      await this.createUser(this.form.user)
 
+      // clear items before creating a new user
+      this.itemsToClear.forEach(item => {
+        localStorage.removeItem(item)
+      })
+
+      await this.createUser(this.form.user)
 
       this.$router.push(
         this.localePath({
@@ -101,6 +106,21 @@ export default {
   },
   mounted() {
     this.$store.commit('auth/CLEAN_ERROR')
+  },
+  watch: {
+    username: {
+      handler(name) {
+        console.log("Name: ",name)
+        if (name) {
+          this.$router.push(
+            this.localePath({
+              name: 'units'
+            })
+          )
+        }
+      },
+      deep: true
+    }
   }
 }
 </script>

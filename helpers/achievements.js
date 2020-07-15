@@ -40,7 +40,7 @@ export const achievementName = {
   APP_KNOWLEDGE_10: 'KNOWLEDGE_MINUTE_5',
   APP_OPEN_MINUTES_60: 'OPEN_MINUTE_60',
   APP_OPEN_5: 'OPEN_TIME_5',
-  APP_ALL_ACHIVEMENTS: 'COMPLETE_ALL_ACHIEVEMENT'
+  APP_ALL_ACHIEVEMENTS: 'COMPLETE_ALL_ACHIEVEMENT'
 }
 
 export const achievements = [
@@ -188,7 +188,7 @@ export const achievements = [
   {
     id: 20,
     icon: 'globe',
-    name: achievementName.APP_ALL_ACHIVEMENTS,
+    name: achievementName.APP_ALL_ACHIEVEMENTS,
     unlocked: count => count >= 20,
     type: achievementType.APP
   }

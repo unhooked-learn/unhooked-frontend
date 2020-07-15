@@ -1,5 +1,5 @@
 module.exports = {
-  mode: 'universal',
+  mode: 'spa', // universal
   /*
    ** Headers of the page
    */
@@ -17,7 +17,10 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css' },
-      { rel: 'stylesheet', href: 'https://unpkg.com/flickity@2/dist/flickity.min.css' }
+      {
+        rel: 'stylesheet',
+        href: 'https://unpkg.com/flickity@2/dist/flickity.min.css'
+      }
     ]
   },
   /*
@@ -53,7 +56,7 @@ module.exports = {
     '@nuxtjs/pwa',
 
     // Doc: https://github.com/nuxt-community/device-module
-    '@nuxtjs/device',
+    '@nuxtjs/device'
   ],
   /*
    ** Nuxt.js modules
@@ -72,24 +75,30 @@ module.exports = {
   ],
   pwa: {
     manifest: {
-      "name": "Unhooked",
-      "short_name": "Unhooked",
+      name: 'Unhooked',
+      short_name: 'Unhooked',
       //"start_url": ".",
-      "display": "fullscreen",
-      "background_color": "gray",
-      "description": "Manipulative Methods in Mobile Games: An E-Learning Unit",
-      "categories": ["elearning", "education", "course", "social media", "awareness"],
-      "dir": "ltr",
-      "orientation": "portrait"
+      display: 'fullscreen',
+      background_color: 'gray',
+      description: 'Manipulative Methods in Mobile Games: An E-Learning Unit',
+      categories: [
+        'elearning',
+        'education',
+        'course',
+        'social media',
+        'awareness'
+      ],
+      dir: 'ltr',
+      orientation: 'portrait'
     }
   },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-   axios: {
-       baseURL: 'https://unhooked-backend.herokuapp.com/'
-   },
+  axios: {
+    baseURL: 'https://unhooked-backend.herokuapp.com/'
+  },
   /*
    ** Fontawesome module configuration
    **
@@ -105,13 +114,13 @@ module.exports = {
 
   toast: {
     iconPack: 'fontawesome'
-},
-/**
- * router
- */
-router: {
-  middleware: ['authenticated']
-},
+  },
+  /**
+   * router
+   */
+  router: {
+    middleware: ['authenticated']
+  },
   /*
    ** i18n module configuration
    ** See https://nuxt-community.github.io/nuxt-i18n/options-reference.html
@@ -175,7 +184,7 @@ router: {
     // }
     rootRedirect: {
       statusCode: 301,
-      path: 'onboarding'
+      path: '/'
     },
 
     // If true, SEO metadata is generated for routes that have i18n enabled.
@@ -189,7 +198,7 @@ router: {
     // fallback URL will be used.
     // Can also be a function that will be passed a Nuxt context as a parameter and
     // should return a string. Useful to make base url dynamic based on request headers.
-    baseUrl: ''
+    baseUrl: '/'
   },
 
   /*

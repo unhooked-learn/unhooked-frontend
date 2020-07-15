@@ -1,7 +1,28 @@
-export default function({ store, redirect, route, app, $axios }) {
+
+export default async function(ctx) {
+  const { store, redirect, route, app, $axios } = ctx
+
   //  skip if route is authentication
   if (route.name.indexOf('auth') != -1) {
     return
+  }
+
+  //  skip if route is onboarding
+  if (route.name.indexOf('onboarding') != -1) {
+    return
+  }
+
+  if(!store.getters['profile/username']) {
+    await store.dispatch('auth/loadLocalUser')
+  }
+
+  // move to onboarding
+  if(!(store.getters['profile/username'] && localStorage.getItem('onboarded'))) {
+    return redirect(
+      app.localePath({
+        name: 'onboarding'
+      })
+    )
   }
 
   // reset Username on each route change
@@ -16,7 +37,7 @@ export default function({ store, redirect, route, app, $axios }) {
   if (!store.getters['profile/username']) {
     return redirect(
       app.localePath({
-        name: 'auth-index-create'
+        name: 'auth-index'
       })
     )
   }

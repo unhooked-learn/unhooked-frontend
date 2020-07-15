@@ -22,13 +22,9 @@
 
           <div class="flex flex-col mt-10 space-y-4" v-if="idx === slides.length -1">
             <UHButton
-              @click="goToRoute('auth-index-signup')"
-              class="focus:shadow-outline-blue hover:text-white"
-            >{{ $t('general.button.register') }}</UHButton>
-            <UHButton
               @click="goToRoute()"
               class="focus:shadow-outline-blue hover:text-white"
-            >{{ $t('general.button.guest') }}</UHButton>
+            >{{ $t('general.button.continue') }}</UHButton>
           </div>
         </div>
       </section>
@@ -46,7 +42,7 @@ export default {
     UHButton,
     UHVerticalSlider
   },
-  layout: 'clear',
+  layout: 'auth',
   data() {
     return {
       itemKey: 'onboarded',
