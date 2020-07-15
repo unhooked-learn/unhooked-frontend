@@ -1,16 +1,16 @@
 <template>
   <div
-    class="flex flex-col justify-center my-5 bg-white border border-red-500 rounded" v-if="!isEmpty(autherrors)"
+    class="flex flex-col justify-center my-5 text-red-800 bg-red-200 border border-red-500 rounded" v-if="!isEmpty(autherrors)"
   >
     <div class="flex w-full h-full">
-      <div class="flex items-center justify-center w-1/5 bg-red-500">
+      <div class="flex items-center justify-center w-1/5 text-red-900">
         <font-awesome-icon
           icon="exclamation-triangle"
-          class="w-12 p-1 text-white md:p-0 fa-3x"
+          class="w-12 p-2 md:p-0 fa-3x"
         />
       </div>
       <div class="flex items-center justify-center w-4/5 ">
-        <p class="m-2 text-gray-900 text-md">
+        <p class="m-2 text-md">
           {{ autherrors.message }}
         </p>
       </div>

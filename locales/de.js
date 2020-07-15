@@ -17,6 +17,9 @@ export default context => {
           repeatPassword: 'Password wiederholen',
           username: 'Benutzername'
         },
+        errors: {
+          passwordEqual: 'Fehler: Passwörter sind nicht gleich'
+        },
         toast: {
           gratulations:
             'Herzlichen Glückwunsch! Du hast {points} Punkte erhalten'
@@ -105,7 +108,9 @@ export default context => {
           createUsername: 'Gebe dir einen Namen',
           createUser: 'Gastzugang',
           useThisUsername: 'Benutze diesen Namen und fahre fort',
-          continue: 'Fortfahren'
+          continue: 'Fortfahren',
+          changeCredentials: 'Bitte melde dich an, um deine Daten zu ändern!',
+          changeCredentialsSuccessfully: 'Deine Daten wurden geändert'
         },
         guest: {
           label: 'Dein Name',

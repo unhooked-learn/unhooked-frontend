@@ -8,6 +8,10 @@ export default function({ store, redirect, route, app, $axios }) {
   // todo: zum besprechen wo der header gesetzt werden soll ¯\_(ツ)_/¯
   $axios.setHeader('username', store.getters['profile/username'])
 
+
+
+  $axios.setHeader('Authorization', `Bearer ${store.getters['auth/token']}`)
+
   // If the user is not authenticated
   if (!store.getters['profile/username']) {
     return redirect(

@@ -108,7 +108,7 @@ export default {
     },
     passwordErrors() {
       return !this.passwordEqual
-        ? { message: 'Error: Passwords are not equal' }
+        ? { message: this.$t('general.errors.passwordEqual') }
         : {}
     }
   },
