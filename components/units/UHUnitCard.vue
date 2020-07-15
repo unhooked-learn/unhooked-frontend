@@ -1,5 +1,5 @@
 <template>
-  <a href="#" @click="selectUnit(unit)" class="w-64">
+  <a href="#" @click.prevent="selectUnit(unit)" class="w-64">
     <div
       class="min-w-full my-2 overflow-hidden text-white rounded-md shadow-md h-80"
       :class="{ 'bg-gray-600 text-white': active, 'bg-white': !active }"

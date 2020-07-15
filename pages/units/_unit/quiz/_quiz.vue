@@ -70,7 +70,7 @@ export default {
     }
   },
   async fetch() {
-    await this.$store.dispatch('quiz/fetch', this.getUnitParams)
+    await this.$store.dispatch('quiz/fetch', this.getUnitId)
   },
   methods: {
     ...mapActions({
@@ -122,13 +122,18 @@ export default {
     ...mapGetters({
       currentQuestion: 'quiz/currentQuestion',
       totalQuestions: 'quiz/total',
-      currentQuestionNumber: 'quiz/current'
+      currentQuestionNumber: 'quiz/current',
+      units: 'units/units'
     }),
     questionType() {
       return `UH${SnakeCaseCapsToPascalCase(this.currentQuestion.questionType)}`
     },
     getUnitParams() {
-      return this.$route.params.unit
+      return +this.$route.params.unit
+    },
+    getUnitId() {
+      // ¯\_(ツ)_/¯
+      return this.units.find(item => item.orderId === this.getUnitParams).id
     }
   },
   watch: {

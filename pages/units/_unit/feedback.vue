@@ -83,7 +83,8 @@ export default {
       user: 'profile/user',
       feedback: 'units/feedback',
       unitScore: 'score/unitScore',
-      userScore: 'profile/userScore'
+      userScore: 'profile/userScore',
+      userEarnedPoints: 'quiz/earnedPoints',
     }),
     getUnitId() {
       return +this.$route.params.unit
@@ -105,8 +106,10 @@ export default {
     }),
     async goHome() {
       // unlock next unit ¯\_(ツ)_/¯
-      await this.$store.dispatch('units/unlockUnit', this.getUnitId + 1)
-
+      if(this.getUnitId+1  <= this.units.length) {
+         await this.$store.dispatch('units/unlockUnit', this.getUnitId + 1)
+      }
+     
       this.clearPoints()
 
       this.$router.push({
