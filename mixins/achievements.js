@@ -94,7 +94,7 @@ export default {
     completedBadges: {
       handler(value) {
         this.rewardBadgeDirectly({
-          name: achievementName.APP_ALL_ACHIVEMENTS,
+          name: achievementName.APP_ALL_ACHIEVEMENTS,
           condition: value
         })
       }

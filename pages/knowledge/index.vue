@@ -43,7 +43,7 @@ export default {
     return {
       config: {
         knowledgeTimer: 0,
-        itemKey: 'achivements.knowledge'
+        itemKey: 'achievements.knowledge'
       },
       app: {
         knowledgebaseTime: 0
