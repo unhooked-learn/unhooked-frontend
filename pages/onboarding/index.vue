@@ -46,7 +46,7 @@ export default {
     UHButton,
     UHVerticalSlider
   },
-  layout: 'clear',
+  layout: 'auth',
   data() {
     return {
       itemKey: 'onboarded',
