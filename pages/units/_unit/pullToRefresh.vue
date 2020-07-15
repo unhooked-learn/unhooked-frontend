@@ -8,8 +8,10 @@
     <main>
       <div class="relative z-0 h-full pt-6 mb-10">
         <div class="absolute inset-0 bg-gray-800 h-1/6 -z-10"></div>
-        <UHNewsCard/>
-        <UHTimerButton :timer="30000" :text="$t('general.button.skipButtonText')" />
+        <client-only>
+          <UHNewsCard/>
+          <UHTimerButton :timer="30000" :text="$t('general.button.skipButtonText')" />
+        </client-only>
       </div>
     </main>
   </div>

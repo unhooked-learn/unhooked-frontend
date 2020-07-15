@@ -30,7 +30,8 @@ import { achievementName } from '@/helpers/achievements'
 
 export default {
   name: 'infiniteScroll',   
-  layout: 'clear',  
+  layout: 'clear',
+  fetchOnServer: false,
   data () {
     return {
       pictures: [],
