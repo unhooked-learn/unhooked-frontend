@@ -105,11 +105,8 @@ export default {
       rewardBadgePoints: 'badge/rewardBadgePoints'
     }),
     async goHome() {
-      // unlock next unit ¯\_(ツ)_/¯
-      if(this.getUnitId+1  <= this.units.length) {
-         await this.$store.dispatch('units/unlockUnit', this.getUnitId + 1)
-      }
-     
+      await this.$store.dispatch('units/unlockUnit', this.getUnitId + 1)
+      
       this.clearPoints()
 
       this.$router.push({
