@@ -101,7 +101,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      autherrors: 'auth/errors'
+      autherrors: 'auth/errors',
+      username: 'profile/username'
     }),
     passwordEqual() {
       return this.form.password === this.form.repeatPassword
@@ -121,6 +122,20 @@ export default {
   },
   mounted() {
     this.$store.commit('auth/CLEAN_ERROR')
+  },
+  watch: {
+    username: {
+      handler(name) {
+        if (name) {
+          this.$router.push(
+            this.localePath({
+              name: 'units'
+            })
+          )
+        }
+      },
+      deep: true
+    }
   }
 }
 </script>

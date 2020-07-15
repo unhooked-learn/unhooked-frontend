@@ -106,6 +106,21 @@ export default {
   },
   mounted() {
     this.$store.commit('auth/CLEAN_ERROR')
+  },
+  watch: {
+    username: {
+      handler(name) {
+        console.log("Name: ",name)
+        if (name) {
+          this.$router.push(
+            this.localePath({
+              name: 'units'
+            })
+          )
+        }
+      },
+      deep: true
+    }
   }
 }
 </script>

@@ -24,8 +24,7 @@ export default context => {
         button: {
           skipButtonText: 'Überspringen',
           finished: 'Abschliessen',
-          register: 'Erstelle einen Account',
-          guest: 'Als Gast fortfahren'
+          continue: 'Weiter'
         },
         desktop: {
           label: 'Achtung',

@@ -21,8 +21,7 @@ const keys = {
     button: {
       skipButtonText: 'Skip',
       finished: 'Finish',
-      register: 'Create an account',
-      guest: 'Continue with guest login'
+      continue: 'Continue'
     },
     desktop: {
       label: 'Be Warned',

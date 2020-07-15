@@ -2,7 +2,9 @@
   <div>
     <h2
       class="mt-4 text-3xl font-extrabold leading-9 text-center text-gray-900"
-    >{{ $t('pages.auth.loginText') }}</h2>
+    >
+      {{ $t('pages.auth.loginText') }}
+    </h2>
     <form class="mt-4" @submit.prevent="signin(form)">
       <UHAuthErrors :autherrors="autherrors" />
 
@@ -85,7 +87,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      autherrors: 'auth/errors'
+      autherrors: 'auth/errors',
+      username: 'profile/username'
     })
   },
   methods: {
@@ -96,6 +99,21 @@ export default {
   },
   mounted() {
     this.$store.commit('auth/CLEAN_ERROR')
+  },
+  watch: {
+    username: {
+      handler(name) {
+        console.log("Name: ",name)
+        if (name) {
+          this.$router.push(
+            this.localePath({
+              name: 'units'
+            })
+          )
+        }
+      },
+      deep: true
+    }
   }
 }
 </script>
