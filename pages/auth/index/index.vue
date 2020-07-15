@@ -23,6 +23,7 @@ import UHButton from '@/components/generics/UHButton'
 
 export default {
   name: 'AuthIndexIndex',
+  layout: 'auth',
   components: {
     UHButton
   },

@@ -51,9 +51,10 @@ export const actions = {
   },
 
   logout() {
-    if (window) {
-      localStorage.clear
-    }
+
+      localStorage.removeItem('username')
+      localStorage.removeItem('token')
+
 
     // todo: set logout request to api
   },

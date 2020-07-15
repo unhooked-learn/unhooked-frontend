@@ -83,7 +83,7 @@ import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'AuthIndexSignup',
-  layout: 'clear',
+  layout: 'auth',
   components: {
     UHInput,
     UHAuthErrors,

@@ -7,11 +7,11 @@ const mutationsTypes = {
 
 export const state = () => ({
   user: {
-    username: 'emma',
+    username: '',
     email: '',
     totalScore: 0,
     totalFeedback: 0,
-    registered: true,
+    registered: false,
     loggedin: false,
     courseCompleted: false,
   },
