@@ -8,7 +8,8 @@ export default {
   data() {
     return {
       config: {
-        appTimer: 0
+        appTimer: 0,
+        itemKey: 'appInfo'
       },
 
       app: {

@@ -28,8 +28,9 @@
 
         <h4 class="mb-3 text-xs">
           {{
-          $t('pages.profile.active', { minutes: active.activeTime })
+          $t('pages.profile.active', {minutes: getActiveTime()})
           }}
+          
         </h4>
         
         <template v-if="hasToken">
@@ -117,12 +118,6 @@ export default {
       hasToken: 'auth/hasToken'
     })
   },
-  activated() {
-    // Call fetch again if last fetch more than 5 minues ago
-    if (this.$fetchState.timestamp <= Date.now() - 1000 * 60 * 5) {
-      this.$fetch()
-    }
-  },
   async fetch() {
     await this.$store.dispatch('badge/fetchBadges')
     await this.$store.dispatch('profile/fetch')
@@ -132,12 +127,13 @@ export default {
     ...mapActions({
        logout: 'auth/logout'
     }),
-    showMinutes(timestamp) {
-      return Math.floor((Date.now() - timestamp) / 1000 / 60)
-    },
     logoutUser() {
       this.logout()
       this.$router.push(this.localePath('auth-index'))
+    },
+    getActiveTime() {
+     const appInfo = JSON.parse(localStorage.getItem("appInfo"));
+     return !!appInfo ? appInfo.timeSpendInApp : 0    
     }
   }  
 }
