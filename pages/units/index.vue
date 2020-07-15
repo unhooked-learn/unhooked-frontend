@@ -85,6 +85,7 @@ export default {
   mounted() {
     // refactor
     this.$store.dispatch('profile/activeTime')
+    this.$store.dispatch('profile/fetch')
   },
    data() {
     return {

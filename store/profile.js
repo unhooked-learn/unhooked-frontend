@@ -34,6 +34,9 @@ export const getters = {
   },
   userScore(state) {
     return state.user.totalScore
+  },
+  courseCompleted(state) {
+    return state.user.courseCompleted
   }
 }
 
