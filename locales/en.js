@@ -18,6 +18,9 @@ const keys = {
     toast: {
       gratulations: 'Congratulations! You have earned {points} Points'
     },
+    errors: {
+      passwordEqual: 'Error: Passwords are not equal'
+    },
     button: {
       skipButtonText: 'Skip',
       finished: 'Finish',
@@ -99,7 +102,9 @@ const keys = {
       createUsername: 'create a username',
       createUser: 'Continue as a guest',
       useThisUsername: 'Use this username and continue',
-      continue: 'Continue'
+      continue: 'Continue',
+      changeCredentials: 'Please SignIn to change your credentials!',
+      changeCredentialsSuccessfully: 'Your credentials change successfully!'
     },
     guest: {
       label: 'Your name',

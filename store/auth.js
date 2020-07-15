@@ -51,12 +51,8 @@ export const actions = {
   },
 
   logout() {
-
       localStorage.removeItem('username')
       localStorage.removeItem('token')
-
-
-    // todo: set logout request to api
   },
 
   // login
@@ -73,6 +69,7 @@ export const actions = {
   // register
   signup({ commit, dispatch }, data) {
     localStorage.clear()
+
     this.$axios
       .$post('/api/auth/signup', data)
       .then(response => {
@@ -91,6 +88,7 @@ export const actions = {
     this.$axios
       .$put('user')
       .then(() =>
+        // unlock first unit
         this.$axios({
           method: 'post',
           url: 'user/unit/1',
@@ -114,6 +112,22 @@ export const actions = {
         return Promise.reject()
       })
   },
+
+  async updateCredentials({ commit }, credentials) {
+    this.$axios.setHeader('Authorization', `Bearer ${localStorage.getItem('token')}`)
+
+   return await this.$axios
+      .$post('api/auth/update', credentials)
+      .then(() => {
+        commit(mutationTypes.CLEAN_ERROR)
+      })
+      .catch(error => {
+        commit(mutationTypes.SET_ERRORS, error.response.data)
+
+        return Promise.reject()
+      })
+  },
+
   loadLocalUser({ commit }) {
     if (window) {
       const username = localStorage.getItem('username')
@@ -122,6 +136,19 @@ export const actions = {
       const token = localStorage.getItem('token')
       commit(mutationTypes.SET_USERS_TOKEN, token)
     }
+  },
+
+  deleteUser({}) {
+    this.$axios
+    .$delete('user')
+    .then(() => {
+      commit(mutationTypes.CLEAN_ERROR)
+    })
+    .catch(error => {
+      commit(mutationTypes.SET_ERRORS, error.response.data)
+
+      return Promise.reject()
+    })
   }
 }
 
@@ -131,5 +158,8 @@ export const getters = {
   },
   hasToken(state) {
     return !!state.user.token
+  },
+  token(state) {
+    return state.user.token
   }
 }

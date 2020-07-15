@@ -8,12 +8,13 @@
       <slot name="prepent" />
     </div>
     <input
-      :class="{'pl-8':$scopedSlots.prepent,'pr-12': $scopedSlots.append, 'text-red-800 border-red-600  placeholder-red-500': hasError, 'text-gray-900 border-gray-300  placeholder-gray-500': !hasError }"
+      :class="{'pl-8':$scopedSlots.prepent,'pr-12': $scopedSlots.append, 'text-red-800 border-red-600  placeholder-red-500': hasError, 'text-gray-900 border-gray-300  placeholder-gray-500': !hasError, ' text-gray-500 bg-gray-200': disabled }"
       :aria-label="placeholder"
       :name="label"
       :type="type"
       :value="value"
       @input="inputChange"
+      :disabled="disabled"
       required
       class="relative z-0 w-full px-3 py-2 border appearance-none form-input focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5"
       :placeholder="placeholder"
@@ -60,6 +61,10 @@ export default {
     transformer: {
       type: Function,
       default: (a) => a
+    },
+    disabled: {
+      type: Boolean, 
+      default: false
     }
   },
   methods: {
