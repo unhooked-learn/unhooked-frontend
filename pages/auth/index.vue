@@ -87,7 +87,7 @@ import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'login',
-  layout: 'clear',
+  layout: 'auth',
   components: {
     Logo,
     UHInput,

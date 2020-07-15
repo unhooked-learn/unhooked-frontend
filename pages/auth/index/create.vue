@@ -54,7 +54,7 @@ import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'AuthIndexCreate',
-  layout: 'clear',
+  layout: 'auth',
   components: {
     UHAuthErrors,
     UHInput,

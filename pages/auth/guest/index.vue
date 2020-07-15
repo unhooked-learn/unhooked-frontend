@@ -48,7 +48,7 @@ import UHAccessibilityButton from '@/components/generics/UHAccessibilityButton'
 
 export default {
   name: 'guestLogin',
-  layout: 'clear',  
+  layout: 'auth',  
   components: {
     Logo,
     UHInput,

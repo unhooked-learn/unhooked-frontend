@@ -80,7 +80,7 @@ import UHAccessibilityButton from '@/components/generics/UHAccessibilityButton'
 
 export default {
   name: 'register',
-  layout: 'clear',  
+  layout: 'auth',  
   components: {
     Logo,
     UHInput,
