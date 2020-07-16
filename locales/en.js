@@ -83,11 +83,11 @@ const keys = {
       label: 'Onboarding',
       title: 'Want to get unhooked?',
       intro: 'Welcome to Unhooked, an online e-learning web application which shows you the manipulative mechanisms in mobile games and social media apps.',
-      question1: 'Why do mobile applications make you cost us so much time?',
+      question1: 'Why do mobile applications take so much of our time?',
       question2: 'Why do we spend every free minute on our smartphone?',
-      question3: 'How do we find this applicatios so tempting that every time the smartphone flashes, we pick it up and leave everything else behind and then when we look at the smartphone we forget everything around us.', 
+      question3: 'Why do we find these applications so tempting that every time the smartphone flashes, we pick it up and leave everything else behind?', 
       question4: 'Why can applications and social media applicastions do something that can cast a spell on us?',
-      resumee: 'This e-learning application addresses exactly these points and explains its mechanisims.'
+      resumee: 'This e-learning application addresses exactly these points and explains the mechanisim.'
     },
     auth: {
       or: 'or',
