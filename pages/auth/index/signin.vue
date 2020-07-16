@@ -101,9 +101,9 @@ export default {
     this.$store.commit('auth/CLEAN_ERROR')
   },
   watch: {
+    // go to unit if username exists
     username: {
       handler(name) {
-        console.log("Name: ",name)
         if (name) {
           this.$router.push(
             this.localePath({

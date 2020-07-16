@@ -82,6 +82,7 @@ export default {
     isVisible: {
       handler(value) {
         if (!process.client) return
+        // emits the calulated modal height
         if(this.$refs.questionModal){
           this.$emit('modalHeight', this.$refs.questionModal.offsetHeight + 80)
         }

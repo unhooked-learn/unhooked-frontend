@@ -76,7 +76,6 @@ export default {
     ...mapActions({
       setQuestion: 'quiz/setQuestion',
       rewardPoints: 'quiz/rewardPoints',
-      //nextQuestion: 'quiz/goToNextQuestion',
     }),
     setNextQuestion(question) {
       this.$router.push(

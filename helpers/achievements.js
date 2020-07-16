@@ -43,6 +43,9 @@ export const achievementName = {
   APP_ALL_ACHIEVEMENTS: 'COMPLETE_ALL_ACHIEVEMENT'
 }
 
+/**
+ * all available badges with its name, type and unlocked condition
+ */
 export const achievements = [
   {
     id: 1,

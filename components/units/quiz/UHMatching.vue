@@ -97,11 +97,14 @@ export default {
       this.answers.all = clone(this.collectItems)
       this.gaps.countAll = this.answers.all.length
       this.answers.selected = []
+
+      // create a list of gabs form the anwers
       this.gaps.list = Array.from(
         Array(+this.answers.all.length),
         (_, i) => i + 1
       )
 
+      // calucate the rows to display
       this.gaps.rows = Array.from(
         Array(+Math.round(this.answers.all.length / 2)),
         (_, i) => i * 2 + 1
@@ -113,6 +116,7 @@ export default {
         return
       }
 
+      // remove clicked item from selection
       this.answers.selected = this.answers.selected.filter(
         i => i.gap !== item.gap
       )
@@ -120,6 +124,7 @@ export default {
       this.gaps.list.push(item.gap)
       this.answers.all.push(item)
     },
+    // place selection in the next avialable gap
     selectAnswerForNextGap(item) {
       const gap = this.getNextAvailableGap()
 
@@ -138,14 +143,16 @@ export default {
       })
     },
 
+    // get next availible gap from a list of gaps
     getNextAvailableGap() {
       return this.gaps.list.sort().shift()
     },
 
+    // check if it has correct answers
     hasCorrectAnswers(items) {
-      let reducePairs = items.reduce((a,b) => a&&b.isPairCorrect, true);
+      let reducePairs = items.reduce((a, b) => a && b.isPairCorrect, true)
 
-      return reducePairs && items.length == this.gaps.rows.length;
+      return reducePairs && items.length == this.gaps.rows.length
     },
 
     getValidationTexts(item) {

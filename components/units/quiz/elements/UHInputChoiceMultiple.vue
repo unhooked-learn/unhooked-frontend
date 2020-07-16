@@ -40,6 +40,7 @@ export default {
     }
   },
   methods: {
+    // emit new array on change
     onChange(e) {
       // https://stackoverflow.com/questions/58187290/vue-binding-with-v-model-in-custom-checkbox-component-doesnt-work
 

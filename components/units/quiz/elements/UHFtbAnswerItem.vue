@@ -41,6 +41,7 @@ export default {
       this.$emit('remove', item)
     },
     isCorrect() {
+      // check if the position of the item is equal to the expeced position
       return this.position === clone(this.item.position);
     }
   },

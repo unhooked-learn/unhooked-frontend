@@ -21,6 +21,7 @@
 export default {
   name: 'UHNavButton',
   props: {
+    // the target of the button
     to: {
       type: [Object, String],
       required: true

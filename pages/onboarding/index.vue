@@ -46,6 +46,7 @@ export default {
   data() {
     return {
       itemKey: 'onboarded',
+      // all onboarding slides
       slides: [
         {
           id: 1,

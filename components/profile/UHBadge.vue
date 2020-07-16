@@ -36,6 +36,7 @@ export default {
       selectBadge: 'badge/selectBadge'
     }),
     showEarnedBadges() {
+      // trigger the modal to display the earned badge
       if (this.badge.active) {
         this.selectBadge(this.badge)
       }

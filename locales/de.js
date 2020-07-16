@@ -8,7 +8,8 @@ export default context => {
           units: 'Kurse'
         },
         modal: {
-          close: 'Schließen'
+          close: 'Schließen',
+          congratulation: 'Herzlichen Glückwunsch!'
         },
         input: {
           email: 'Email Adresse',

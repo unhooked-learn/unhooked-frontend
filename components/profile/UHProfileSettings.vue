@@ -53,7 +53,7 @@ export default {
     showModal() {
       this.$modal.show('delete-user')
     },
-    resetOnboarding() {
+    resetOnboarding() { 
       localStorage.removeItem('onboarded')
       this.deletedOnboardingKey = true
     },

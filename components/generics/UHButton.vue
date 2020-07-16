@@ -13,11 +13,17 @@
 export default {
   name: 'UHButton',
   props: {
+    /**
+     * secondary button state
+     */
     secondary: {
       type: Boolean,
       required: false,
       default: false
     },
+    /**
+     * disable the button
+     */
     disabled: {
       type: Boolean,
       required: false,
@@ -26,6 +32,7 @@ export default {
   },
   computed: {
     classNames() {
+      // set button style
       return {
         'text-grey-800 bg-grey-600 hover:bg-gray-500 focus:border-gray-900 focus:shadow-outline-grey active:bg-grey-700': !this
           .secondary,
