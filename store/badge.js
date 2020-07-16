@@ -64,6 +64,8 @@ export const actions = {
   },
 
   async rewardBadgePoints({ commit, dispatch, state }, points) {
+    if(isEmpty(state.badges)) return;
+
     const items = achievements
       .filter(item => item.type === achievementType.POINTS)
       .filter(item => item.unlocked(points))
@@ -82,6 +84,8 @@ export const actions = {
   },
 
   async rewardBadgeUnit({ commit, dispatch, state }, unitOrderId) {
+    if(isEmpty(state.badges)) return;
+
     const item = achievements
       .filter(item => item.type === achievementType.UNIT)
       .filter(item => !state.badges.find(i => i.id === item.id).active)
@@ -97,6 +101,8 @@ export const actions = {
   },
 
   async rewardBadgeUnit({ commit, dispatch, state }, unitOrderId) {
+    if(isEmpty(state.badges)) return;
+
     const item = achievements
       .filter(item => item.type === achievementType.UNIT)
       .filter(item => !state.badges.find(i => i.id === item.id).active)
@@ -125,9 +131,13 @@ export const actions = {
    */
 
   async rewardBadgeDirectly({ commit, dispatch, state }, badge) {
+    if(isEmpty(state.badges)) return;
+    
     const item = achievements.find(item => item.name == badge.name)
 
     if (isEmpty(item)) return
+    
+    if (isEmpty(state.badges)) return
 
     if (state.badges.find(i => i.id === item.id).active) return
 
