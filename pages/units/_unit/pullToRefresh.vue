@@ -22,7 +22,7 @@
         </div>
       </div>
     </main>
-    <UHTimerButton @beforeQuiz="deleteNews" :timer="30000" :text="$t('general.button.skipButtonText')" />
+    <UHTimerButton @beforeQuiz="deleteNews" :timer="7000" :text="$t('general.button.skipButtonText')" />
   </div>
 </template>
 
