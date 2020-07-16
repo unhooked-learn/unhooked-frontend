@@ -73,7 +73,6 @@ export default {
     }
   },
   async fetch() {
-    console.log('fetch', this.getUnitId)
     if (this.getUnitId === -1) return
 
     await this.$store.dispatch('quiz/fetch', this.getUnitId)

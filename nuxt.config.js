@@ -186,7 +186,7 @@ module.exports = {
     // }
     rootRedirect: {
       statusCode: 301,
-      path: '/'
+      path: 'onboarding'
     },
 
     // If true, SEO metadata is generated for routes that have i18n enabled.
