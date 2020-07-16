@@ -124,6 +124,7 @@ export default {
     this.$store.commit('auth/CLEAN_ERROR')
   },
   watch: {
+    // go to unit if username exists
     username: {
       handler(name) {
         if (name) {

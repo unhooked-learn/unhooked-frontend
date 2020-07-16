@@ -64,12 +64,8 @@ export const actions = {
   },
 
   async rewardBadgePoints({ commit, dispatch, state }, points) {
-<<<<<<< HEAD
     // skip if no badge loaded
     if (isEmpty(state.badges)) return
-=======
-    if(isEmpty(state.badges)) return;
->>>>>>> master
 
     const items = achievements
       // filter rewarded badge by the type of POINTS
@@ -101,11 +97,7 @@ export const actions = {
    * @param {*} unitOrderId
    */
   async rewardBadgeUnit({ commit, dispatch, state }, unitOrderId) {
-<<<<<<< HEAD
-    // skip if no badge loaded
-    if (isEmpty(state.badges)) return
-
-=======
+     // skip if no badge loaded
     if(isEmpty(state.badges)) return;
 
     const item = achievements
@@ -125,7 +117,6 @@ export const actions = {
   async rewardBadgeUnit({ commit, dispatch, state }, unitOrderId) {
     if(isEmpty(state.badges)) return;
 
->>>>>>> master
     const item = achievements
       // filter rewarded badge by the type of UNIT
       .filter(item => item.type === achievementType.UNIT)

@@ -16,7 +16,7 @@ export default async function(ctx) {
     await store.dispatch('auth/loadLocalUser')
   }
 
-  // move to onboarding
+  // go to onboarding
   if(!(store.getters['profile/username'] && localStorage.getItem('onboarded'))) {
     return redirect(
       app.localePath({
