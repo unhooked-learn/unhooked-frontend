@@ -43,6 +43,8 @@ export default {
   },
   methods: {
     goToQuiz() {
+      this.$emit('beforeQuiz')
+
       this.$router.push(
         this.localePath({
           name: 'units-unit-quiz-quiz',
