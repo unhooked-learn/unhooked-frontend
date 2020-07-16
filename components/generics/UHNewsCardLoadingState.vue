@@ -3,7 +3,6 @@
     <div
       class="min-w-full min-h-full overflow-hidden text-gray-800 bg-white rounded-md shadow-md"
     >
-      <div class="object-cover aspect aspect-1/2 loading-state"></div>
       <div class="p-4">
         <div
           class="flex h-3 mb-1 rounded loading-state"

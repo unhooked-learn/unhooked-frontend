@@ -69,7 +69,9 @@ module.exports = {
     '@nuxtjs/dotenv',
     'nuxt-fontawesome',
     // Doc: https://nuxt-community.github.io/nuxt-i18n/
-    'nuxt-i18n',
+    ['nuxt-i18n', {
+      detectBrowserLanguage: false
+    }],
     // Doc: https://github.com/shakee93/vue-toasted
     '@nuxtjs/toast'
   ],

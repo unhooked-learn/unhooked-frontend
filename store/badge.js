@@ -64,8 +64,12 @@ export const actions = {
   },
 
   async rewardBadgePoints({ commit, dispatch, state }, points) {
+<<<<<<< HEAD
     // skip if no badge loaded
     if (isEmpty(state.badges)) return
+=======
+    if(isEmpty(state.badges)) return;
+>>>>>>> master
 
     const items = achievements
       // filter rewarded badge by the type of POINTS
@@ -97,9 +101,31 @@ export const actions = {
    * @param {*} unitOrderId
    */
   async rewardBadgeUnit({ commit, dispatch, state }, unitOrderId) {
+<<<<<<< HEAD
     // skip if no badge loaded
     if (isEmpty(state.badges)) return
 
+=======
+    if(isEmpty(state.badges)) return;
+
+    const item = achievements
+      .filter(item => item.type === achievementType.UNIT)
+      .filter(item => !state.badges.find(i => i.id === item.id).active)
+      .find(item => item.unlocked(unitOrderId))
+
+    if (isEmpty(item)) return
+
+    await dispatch('_updateUserBadges', item.name)
+
+    commit(mutationsTypes.DISPALY_REWARD_BADGE)
+
+    await dispatch('fetchBadges')
+  },
+
+  async rewardBadgeUnit({ commit, dispatch, state }, unitOrderId) {
+    if(isEmpty(state.badges)) return;
+
+>>>>>>> master
     const item = achievements
       // filter rewarded badge by the type of UNIT
       .filter(item => item.type === achievementType.UNIT)
@@ -138,11 +164,13 @@ export const actions = {
     // skip if no badge loaded
     if (isEmpty(state.badges)) return
 
-    // find rewarded badge by its name
-    const item = achievements.find(item => item.name == badge.name)
+// find rewarded badge by its name    
+const item = achievements.find(item => item.name == badge.name)
 
     // skip if no badge applies
     if (isEmpty(item)) return
+    
+    if (isEmpty(state.badges)) return
 
     // skip if choosen badge is allready rewarded
     if (state.badges.find(i => i.id === item.id).active) return
