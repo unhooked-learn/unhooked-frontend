@@ -22,7 +22,7 @@
         </div>
       </div>
     </main>
-    <UHTimerButton :timer="30000" :text="$t('general.button.skipButtonText')" />
+    <UHTimerButton @beforeQuiz="deleteNews" :timer="30000" :text="$t('general.button.skipButtonText')" />
   </div>
 </template>
 
@@ -58,10 +58,13 @@ export default {
         pullDownHeight: 100,
         currentPage: 1
       },
-      news: []
+      news: [],
+      itemKey: 'gamePullToRefresh',
+      pageKey: 'currentPage'
     }
   },
   async fetch() {
+    this.getNews()
     // create a new axios instance without set headers
     let news = await axios.get(
       'https://cors-anywhere.herokuapp.com/https://content.guardianapis.com/search?',
@@ -75,6 +78,9 @@ export default {
     )
     this.news.unshift(...news.data.response.results)
     this.config.currentPage += 1
+
+    this.setNews()
+
   },
   methods: {
     ...mapActions({
@@ -90,12 +96,26 @@ export default {
         }, 2000)
       })
     },
-
     pullBadge(news) {
       this.rewardBadgeDirectly({
         name: achievementName.GAME_NEWS_50,
         condition: news
       })
+    },
+    getNews() {
+      let news = localStorage.getItem(this.itemKey)
+      let page = localStorage.getItem(this.pageKey)
+
+      this.news = news ? JSON.parse(news) : []
+      this.config.currentPage = page ? +page : 1
+    },
+    setNews() {
+      localStorage.setItem(this.itemKey, JSON.stringify(this.news))
+      localStorage.setItem(this.pageKey, this.config.currentPage)
+    },
+    deleteNews() {
+      localStorage.removeItem(this.itemKey)
+      localStorage.removeItem(this.pageKey)
     }
   }
 }
