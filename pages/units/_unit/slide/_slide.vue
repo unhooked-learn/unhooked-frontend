@@ -100,6 +100,8 @@ export default {
     },
     goToGame() {
       const gameName = this.isGameType(gameTypes.INFINITE_SCROLL) ? 'infiniteScroll' : 'pullToRefresh';
+
+      console.log('gameName', gameName)
   
       this.$router.push(
           this.localePath({

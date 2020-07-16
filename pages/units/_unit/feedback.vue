@@ -70,7 +70,7 @@ import UHButton from '@/components/generics/UHButton'
 import UHAccessibilityButton from '@/components/generics/UHAccessibilityButton'
 
 export default {
-  name: 'feedback',
+  name: 'UnitFeedback',
   layout: 'clear',
   components: {
     UHStarRating,
