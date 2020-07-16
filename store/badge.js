@@ -64,52 +64,63 @@ export const actions = {
   },
 
   async rewardBadgePoints({ commit, dispatch, state }, points) {
-    const items = achievements
-      .filter(item => item.type === achievementType.POINTS)
-      .filter(item => item.unlocked(points))
-      .filter(item => !state.badges.find(i => i.id === item.id).active)
+    // skip if no badge loaded
+    if (isEmpty(state.badges)) return
 
+    const items = achievements
+      // filter rewarded badge by the type of POINTS
+      .filter(item => item.type === achievementType.POINTS)
+      // check if bades are active and filter it out from the result array
+      .filter(item => !state.badges.find(i => i.id === item.id).active)
+      // find the badges, where the condition apply
+      .filter(item => item.unlocked(points))
+
+    // skip if no items found
     if (isEmpty(items)) return
 
+    // reward badges and send the information to the backend
     items.forEach(async item => {
       commit(mutationsTypes.REWARD_BADGE, item)
       await dispatch('_updateUserBadges', item.name)
     })
 
+    // display rewarded badge to user
     commit(mutationsTypes.DISPALY_REWARD_BADGE)
 
+    // refetch user badges
     await dispatch('fetchBadges')
   },
-
+  /**
+   *  reward unit bagde
+   *
+   * @param {*} param0
+   * @param {*} unitOrderId
+   */
   async rewardBadgeUnit({ commit, dispatch, state }, unitOrderId) {
+    // skip if no badge loaded
+    if (isEmpty(state.badges)) return
+
     const item = achievements
+      // filter rewarded badge by the type of UNIT
       .filter(item => item.type === achievementType.UNIT)
+      // check if bades are active and filter it out from the result array
       .filter(item => !state.badges.find(i => i.id === item.id).active)
+      // find the badge, where the condition apply
       .find(item => item.unlocked(unitOrderId))
 
+    // skip if no item found
     if (isEmpty(item)) return
 
-    await dispatch('_updateUserBadges', item.name)
-
-    commit(mutationsTypes.DISPALY_REWARD_BADGE)
-
-    await dispatch('fetchBadges')
-  },
-
-  async rewardBadgeUnit({ commit, dispatch, state }, unitOrderId) {
-    const item = achievements
-      .filter(item => item.type === achievementType.UNIT)
-      .filter(item => !state.badges.find(i => i.id === item.id).active)
-      .find(item => item.unlocked(unitOrderId))
-
-    if (isEmpty(item)) return
-
+    // reward badge
     commit(mutationsTypes.REWARD_BADGE, item)
 
+    // send rewarded badge to backend
     await dispatch('_updateUserBadges', item.name)
 
+    // display rewarded badge to user
     commit(mutationsTypes.DISPALY_REWARD_BADGE)
 
+    // refetch user badges
     await dispatch('fetchBadges')
   },
 
@@ -123,22 +134,32 @@ export const actions = {
    * @param {*} param0
    * @param {*} badge
    */
-
   async rewardBadgeDirectly({ commit, dispatch, state }, badge) {
+    // skip if no badge loaded
+    if (isEmpty(state.badges)) return
+
+    // find rewarded badge by its name
     const item = achievements.find(item => item.name == badge.name)
 
+    // skip if no badge applies
     if (isEmpty(item)) return
 
+    // skip if choosen badge is allready rewarded
     if (state.badges.find(i => i.id === item.id).active) return
 
+    // skip if unlock condition  does not apply
     if (!item.unlocked(badge.condition)) return
 
+    // reward badge
     commit(mutationsTypes.REWARD_BADGE, item)
 
+    // send rewarded badge to backend
     await dispatch('_updateUserBadges', item.name)
 
+    // display rewarded badge to user
     commit(mutationsTypes.DISPALY_REWARD_BADGE)
 
+    // refetch user badges
     await dispatch('fetchBadges')
   },
 
@@ -154,6 +175,7 @@ export const actions = {
   },
 
   nextRewardedBadges({ commit }) {
+    // display the next badge to the user
     commit(mutationsTypes.DISPALY_REWARD_BADGE)
   }
 }
@@ -168,7 +190,6 @@ export const getters = {
   badgesToReward(state) {
     return state.badgesToReward
   },
-  // maybe
   hasBadgesToReward(state) {
     return !isEmpty(state.badgesToReward)
   },
@@ -176,6 +197,7 @@ export const getters = {
     return state.rewardedBadge
   },
   completed(state) {
+    // count the rewarded badges
     return state.badges.reduce((prev, current) => prev + current.active, 0)
   },
   countAll(state) {

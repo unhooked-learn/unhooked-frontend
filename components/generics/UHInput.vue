@@ -43,12 +43,10 @@ export default {
     placeholder: {
       type: String,
       required: true,
-      default: 'Title'
     },
     type: {
       type: String,
       required: false,
-      default: 'text'
     },
     value: {
       type: String,
@@ -58,6 +56,9 @@ export default {
       type: Boolean,
       default: false
     },
+    /**
+     * Property to pass a Transformer function in 
+     */
     transformer: {
       type: Function,
       default: (a) => a

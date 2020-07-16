@@ -2,7 +2,7 @@
   <div class="flex w-full px-3 py-2 border-2 rounded-lg shadow-md" :class="styleClasses">
     <div class="w-2/5 text-left">
       <button
-        class="h-5 font-semibold leading-5 tracking-wide border-b-2 border-gray-500 border-dashed "
+        class="h-5 font-semibold leading-5 tracking-wide border-b-2 border-gray-500 border-dashed"
         @click.prevent="remove(itemLeft)"
         :disabled="check"
         :class="{ 'w-32' : !itemLeft.text }"
@@ -91,7 +91,7 @@ export default {
         return false
       }
 
-      // if no answeres provided
+      // if no answeres provided skip
       if (!this.answers.length) {
         return false
       }
@@ -107,12 +107,13 @@ export default {
       // and check if it is correct
       return this.isAnswerCorrect(item)
     },
-    getAnswer(item, element = 'itemRight') {
+    // check if  key is present
+    getAnswer(item, key = 'itemRight') {
       return (
-        item.matchText === this[element].text ||
-        item.answerText === this[element].text
+        item.matchText === this[key].text || item.answerText === this[key].text
       )
     },
+    // check if anser is correct
     isAnswerCorrect(item) {
       let a1 = item[this.itemLeft.key] === this.itemLeft.text
       let a2 = item[this.itemRight.key] === this.itemRight.text
@@ -143,6 +144,7 @@ export default {
     }
   },
   watch: {
+    // emit onChange if itemLeft or itemRight has changed
     itemLeft: {
       handler: 'onChange'
     },

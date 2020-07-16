@@ -29,8 +29,7 @@ export default async function(ctx) {
   // todo: zum besprechen wo der header gesetzt werden soll ¯\_(ツ)_/¯
   $axios.setHeader('username', store.getters['profile/username'])
 
-
-
+  // set Authorization header
   $axios.setHeader('Authorization', `Bearer ${store.getters['auth/token']}`)
 
   // If the user is not authenticated

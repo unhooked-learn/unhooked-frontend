@@ -20,11 +20,17 @@
 export default {
   name: 'UHAccesibilityButton',
   props: {
+    /**
+     * helper to show the click area of the button
+     */
     accesibility: {
       type: Boolean,
       required: false,
       default: false
     },
+    /**
+     * the target of the button
+     */
     to: {
       type: [String, Object],
       required: false,

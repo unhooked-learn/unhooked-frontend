@@ -34,6 +34,9 @@ export default {
     saveData() {
       localStorage.setItem(this.config.itemKey, JSON.stringify(this.app))
     },
+    /**
+     *  check how long the user spends in the app  and reward achievement accordingly
+     */
     checkForTimeSpend() {
       this.config.appTimer = setInterval(() => {
         this.app.timeSpendInApp++
@@ -48,6 +51,9 @@ export default {
         this.saveData()
       }, 1000*60)
     },
+    /**
+     * check how many times the user opens the app and reward achievement accordingly
+     */
     openApp() {
       this.app.timesOpened++
 
@@ -58,6 +64,9 @@ export default {
 
       this.saveData()
     },
+    /**
+     * reward surprise badge
+     */
     surpriseBadge() {
       if (rand() === rand()) {
         this.rewardBadgeDirectly({

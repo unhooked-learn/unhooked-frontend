@@ -110,7 +110,6 @@ export default {
   watch: {
     username: {
       handler(name) {
-        console.log("Name: ",name)
         if (name) {
           this.$router.push(
             this.localePath({

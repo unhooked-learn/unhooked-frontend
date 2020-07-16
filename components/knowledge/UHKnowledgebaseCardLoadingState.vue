@@ -20,11 +20,11 @@
 export default {
   name: 'UHKnowledgebaseCardLoadingState',
   props: {
+  // determinates how many loading lines should be shown  
     lines: {
       default: 3,
       type: Number
     }
   },
-  computed: {}
 }
 </script>
