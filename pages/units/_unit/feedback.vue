@@ -3,10 +3,7 @@
     <main class="flex flex-col justify-between h-full">
       <div class="z-0 bg-gray-800 h-1/6">
         <div class="w-full aspect aspect-3/5">
-          <template v-if="$fetchState.pending">
-            <div class="h-40 loading-state"></div>
-          </template>
-          <img v-else :src="currentUnit.mediaName" class="z-0 object-cover" />
+          <img v-if='!$fetchState.pending' :src="currentUnit.mediaName" class="z-0 object-cover" />
         </div>
       </div>
 
@@ -14,12 +11,9 @@
         <div class="h-full">
           <!-- rating card -->
           <div
-            class="py-1 py-4 text-lg font-semibold text-center text-gray-700 bg-white rounded-md shadow-md"
+            class="py-4 text-lg font-semibold text-center text-gray-700 bg-white rounded-md shadow-md"
           >
-            <template v-if="$fetchState.pending">
-              <div class="h-4 mt-5 loading-state"></div>
-            </template>
-            <h4 class="mt-5 text-lg uppercase" v-else>{{ currentUnit.name }}</h4>
+            <h4 class="mt-5 text-lg uppercase" v-if="!$fetchState.pending">{{ currentUnit.name }}</h4>
 
             <p class="px-3 my-3 text-base">{{ $t('pages.course.unit.feedback.text') }}</p>
 
