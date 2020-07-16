@@ -23,6 +23,7 @@ export default {
     }
   },
   methods: {
+    // split fill the blank text by spaces 
     splitQuestion(question) {
       return question.title
         .split(regex)
@@ -31,8 +32,10 @@ export default {
     },
     mapItems(splitQuestion) {
       return splitQuestion.map((text, index) => {
+        //  check each item if this is a text or a gap
         const type = text.startsWith('{{') ? 'answer' : 'text'
 
+        // get the positions from the {{answer_1}} key
         const position = text.substring(
           text.indexOf('_') + 1,
           text.indexOf('}}')

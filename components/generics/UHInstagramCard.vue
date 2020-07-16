@@ -6,11 +6,7 @@
           href="#"
           class="flex flex-row items-center rounded-lg focus:outline-none focus:shadow-outline"
         >
-          <img
-            class="object-cover w-8 h-8 rounded-full"
-            @error="imageLoadOnError"
-            :src="image"
-          />
+          <img class="object-cover w-8 h-8 rounded-full" @error="imageLoadOnError" :src="image" />
           <p class="ml-2 text-base font-medium">{{ name }}</p>
         </a>
       </div>
@@ -34,7 +30,7 @@
           >
             <path
               d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-            ></path>
+            />
           </svg>
           <span class="ml-1">{{ item.likes }}</span>
         </button>
@@ -48,32 +44,32 @@
 
 <script>
 export default {
-    name: 'UHInstagramCard',
-    data () {
-        return {
-            name: '',
-            image: ''
-        }
-    },
-    props: {
-        item: {
-            type: Object,
-            required: true
-        }
-    },
-    methods: {
-        fakeData() {
-            this.name = this.$faker().internet.userName();
-            this.image = this.$faker().image.avatar();
-
-        },
-        imageLoadOnError () {
-            this.fakeData()
-        }
-    },
-    created () {
-        this.fakeData()
+  name: 'UHInstagramCard',
+  data() {
+    return {
+      name: '',
+      image: ''
     }
-    
+  },
+  props: {
+    item: {
+      type: Object,
+      required: true
+    }
+  },
+  methods: {
+    fakeData() {
+      // generate a fake username and a fake avatar url
+      this.name = this.$faker().internet.userName()
+      this.image = this.$faker().image.avatar()
+    },
+    imageLoadOnError() {
+      // regenerate fakedata on error
+      this.fakeData()
+    }
+  },
+  created() {
+    this.fakeData()
+  }
 }
 </script>

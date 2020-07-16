@@ -8,9 +8,7 @@
   >
     <div class="relative flex flex-col h-full">
       <header class="pb-4 overflow-hidden rounded-tl-lg rounded-tr-lg">
-        <div
-          class="relative flex flex-col justify-end text-gray-200 bg-gray-600"
-        >
+        <div class="relative flex flex-col justify-end text-gray-200 bg-gray-600">
           <div class="flex self-end">
             <UHAccessibilityButton @click="close" class="z-10">
               <font-awesome-icon
@@ -20,11 +18,7 @@
             </UHAccessibilityButton>
             <slot name="heroImage" />
           </div>
-          <div
-            class="flex justify-center"
-            :class="headingClasses"
-            v-if="$scopedSlots.cardHeading"
-          >
+          <div class="flex justify-center" :class="headingClasses" v-if="$scopedSlots.cardHeading">
             <h3 class="z-30 text-xl font-semibold leading-tight uppercase">
               <slot name="cardHeading" />
             </h3>
@@ -38,7 +32,7 @@
       </main>
 
       <footer class="p-4 pb-6">
-        <slot name="footer" :close="close"> </slot>
+        <slot name="footer" :close="close"></slot>
       </footer>
     </div>
   </modal>
@@ -68,12 +62,15 @@ export default {
 
   methods: {
     open() {
+      // trigger modal
       this.$modal.show(this.name)
     },
     close() {
+      // close modal
       this.$modal.hide(this.name)
     },
     beforeClose() {
+      // emit event before modal is closed
       this.$emit('beforeClose')
     }
   }

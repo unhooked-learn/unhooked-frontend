@@ -43,7 +43,6 @@ export default {
   },
   methods: {
     onInput(event) {
-      // this.$emit('input', this.item)
       this.$emit('input', this.item)
     },
 

@@ -1,6 +1,6 @@
 <template>
     <span
-      class="flex self-center inline-block my-1 leading-5 tracking-wider text-gray-600"
+      class="flex self-center my-1 leading-5 tracking-wider text-gray-600"
     >{{text}}</span>
 </template>
 

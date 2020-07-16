@@ -56,6 +56,7 @@ export default {
     })
   },
   watch: {
+    // triggers modal after two seconds if a badge is rewarded
     rewardedBadge: {
       handler(value) {
         this.$nextTick(() => {

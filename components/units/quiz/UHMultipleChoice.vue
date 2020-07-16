@@ -41,11 +41,13 @@ export default {
       return items.map(i => i.validationText)
     },
     countCorrectAnswers(items, countOnly = true) {
+      // count all correct answers
       const countRightAnswers = items.reduce(
         (a, b) => a + (b.correct ? 1 : 0),
         0
       )
 
+      // check if all answers are correct
       const isCorrect = items.reduce((a, b) => a && b.correct, true)
 
       return isCorrect || countOnly ? countRightAnswers : -1

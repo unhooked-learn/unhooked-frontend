@@ -65,6 +65,7 @@ export default {
       clearSelectedUnit: 'units/clearUnit'
     }),
     goToUnit() {
+      // navigate to the slides
        this.$router.push(
           this.localePath({
             name: 'units-unit-slide-slide',

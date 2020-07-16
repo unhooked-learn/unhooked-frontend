@@ -1,7 +1,7 @@
 <template>
   <UHModal name="badge-modal" ref="modal" @beforeClose="clearSelectedBadge">
     <template #cardHeading>
-      Congratulations!
+      {{ $t('genral.modal.congratulation') }}
     </template>
 
     <template #header>
@@ -9,13 +9,6 @@
         <div
           class="absolute inset-0 bg-gray-600 rounded-b-lg h-3/5 -z-10"
         ></div>
-        <!--
-        <span v-if="selectedBadge.active" class="absolute top-0 left-0">
-          <font-awesome-icon icon="check-circle" class="text-green-500 fa-3x" />
-        </span>
-
-        -->
-
         <div
           class="flex w-32 h-32 m-auto text-center bg-gray-200 rounded-full shadow-lg"
         >
@@ -69,6 +62,7 @@ export default {
   watch: {
     selectedBadge: {
       handler(newValue) {
+        // open modal if a badge is selected 
         if (!!newValue.description) {
           this.$refs.modal.open()
         }

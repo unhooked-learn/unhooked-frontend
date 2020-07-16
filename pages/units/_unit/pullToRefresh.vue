@@ -5,7 +5,7 @@
         class="font-semibold tracking-wider text-gray-400 uppercase text-md"
       >{{ $t('pages.pullToRefresh.label') }}</h3>
     </header>
-    
+
     <main>
       <div class="relative z-0 h-full pt-6 bg-gray-100">
         <div class="absolute inset-0 bg-gray-800 h-1/6 -z-10"></div>
@@ -20,11 +20,9 @@
             <UHNewsCard :item="item" v-for="(item, idx) in news" :key="idx" />
           </vue-pull-refresh>
         </div>
-
-        <UHTimerButton :timer="30000" :text="$t('general.button.skipButtonText')" />
-
       </div>
     </main>
+    <UHTimerButton :timer="30000" :text="$t('general.button.skipButtonText')" />
   </div>
 </template>
 
@@ -64,7 +62,6 @@ export default {
     }
   },
   async fetch() {
-    
     // create a new axios instance without set headers
     let news = await axios.get(
       'https://cors-anywhere.herokuapp.com/https://content.guardianapis.com/search?',

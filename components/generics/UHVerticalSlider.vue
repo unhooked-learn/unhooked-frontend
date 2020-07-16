@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     reInitSlider() {
-      // ¯\_(ツ)_/¯
+      // reinit the slider 
       this.$nextTick(() => {
         this.reinit = false
         this.$nextTick(() => {

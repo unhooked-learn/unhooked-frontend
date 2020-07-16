@@ -12,6 +12,9 @@
 export default {
   name: 'UHVertilcalSlider',
   props: {
+    /**
+     * the amount of the mocked items 
+     */
     count: {
       type: Number,
       default: 1

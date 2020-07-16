@@ -1,6 +1,7 @@
 <script>
 export default {
   name: 'UHBadgeLoadingState',
+  // renderfuntion to display the badge loading state
   render(h) {
     return h(
       'div',

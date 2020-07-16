@@ -6,7 +6,8 @@ const keys = {
       units: 'Units'
     },
     modal: {
-      close: 'Close'
+      close: 'Close',
+      congratulation: 'Congratulations!'
     },
     input: {
       email: 'Email address',
