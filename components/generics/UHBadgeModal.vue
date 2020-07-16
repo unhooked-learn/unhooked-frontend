@@ -1,7 +1,7 @@
 <template>
   <UHModal name="badge-modal" ref="modal" @beforeClose="clearSelectedBadge">
     <template #cardHeading>
-      {{ $t('genral.modal.congratulation') }}
+      {{ $t('general.modal.congratulation') }}
     </template>
 
     <template #header>

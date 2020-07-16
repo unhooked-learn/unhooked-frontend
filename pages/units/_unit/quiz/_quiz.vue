@@ -6,8 +6,8 @@
         <UHQuizProgress @goToQuestion="setNextQuestion" />
       </div>
     </header>
-    <main class="p-4 bg-gray-100" :style="{ marginBottom: modalHeight + 'px' }">
-      <template v-if="$fetchState.pending">
+    <main class="p-4 bg-gray-100" :style="{ marginBottom: modalHeight + 'px' }" v-if="units.length">
+      <template v-if="$fetchState.pending || refetchingUnits">
         <UHQuizLoading />
       </template>
       <template v-else>
@@ -45,11 +45,13 @@ import UHQuestionToast from '@/components/units/quiz/elements/UHQuestionToast'
 
 import { SnakeCaseCapsToPascalCase } from '@/helpers/misc'
 import { mapGetters, mapActions } from 'vuex'
+import { isEmpty } from 'lodash'
 
 export default {
   name: 'UnitsUnitQuizQuiz',
   layout: 'clear',
   fetchDelay: 1000,
+  fetchOnServer: false,
   components: {
     UHQuizLoading,
     UHSingleChoice,
@@ -66,16 +68,21 @@ export default {
         isCorrect: false,
         validationTexts: []
       },
-      modalHeight: 0
+      modalHeight: 0,
+      refetchingUnits: false
     }
   },
   async fetch() {
+    console.log('fetch', this.getUnitId)
+    if (this.getUnitId === -1) return
+
     await this.$store.dispatch('quiz/fetch', this.getUnitId)
   },
   methods: {
     ...mapActions({
       setQuestion: 'quiz/setQuestion',
       rewardPoints: 'quiz/rewardPoints',
+      refetchUnits: 'units/fetch'
     }),
     setNextQuestion(question) {
       this.$router.push(
@@ -131,8 +138,8 @@ export default {
       return +this.$route.params.unit
     },
     getUnitId() {
-      // ¯\_(ツ)_/¯
-      return this.units.find(item => item.orderId === this.getUnitParams).id
+      const unit = this.units.find(item => item.orderId === this.getUnitParams)
+      return isEmpty(unit) ? -1 : unit.id
     }
   },
   watch: {
@@ -142,7 +149,25 @@ export default {
         this.setQuestion(params.quiz || 1)
       },
       immediate: true
+    },
+    units: {
+      handler(units) {
+        if (!units.length) {
+          // refetch units if navigate directly
+          this.refetchingUnits = true
+
+          this.refetchUnits()
+        } else {
+          if (!this.refetchingUnits) return
+
+          setTimeout(() => {
+            this.$fetch()
+            this.refetchingUnits = false
+          }, 1500)
+        }
+      },
+      immediate: true
     }
-  },
+  }
 }
 </script>

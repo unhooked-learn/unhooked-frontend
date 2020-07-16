@@ -1,5 +1,6 @@
 const keys = {
   general: {
+    loading: 'loading',
     navigation: {
       knowledge_base: 'Knowledge base',
       profile: 'Profile',

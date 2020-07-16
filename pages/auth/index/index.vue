@@ -8,7 +8,7 @@
     <div
       v-if="loading"
       class="py-2 my-3 text-center text-green-800 bg-green-200 border border-green-700 rounded-lg"
-    >todo refactor loading...</div>
+    >{{$t('general.loading')}}</div>
 
     <UHButton
       @click="goToUnit"

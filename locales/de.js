@@ -2,6 +2,7 @@ export default context => {
   return new Promise(resolve => {
     resolve({
       general: {
+        loading: 'Es wird geladen...',
         navigation: {
           knowledge_base: 'Wissen',
           profile: 'Profil',
