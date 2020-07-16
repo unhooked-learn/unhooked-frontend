@@ -30,6 +30,7 @@ export const getters = {
 
 export const mutations = {
   [mutationsTypes.SET_ARTICLES](state, articles) {
+    // sort articles by the order id 
     state.articles = articles.sort((a,b) => sortArticleMapper[a.id] - sortArticleMapper[b.id])
   },
   [mutationsTypes.SET_ARTICLE](state, article) {
