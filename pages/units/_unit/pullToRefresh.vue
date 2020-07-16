@@ -7,7 +7,7 @@
     </header>
     
     <main>
-      <div class="relative z-0 h-full pt-6 mb-10">
+      <div class="relative z-0 h-full pt-6 bg-gray-100">
         <div class="absolute inset-0 bg-gray-800 h-1/6 -z-10"></div>
 
         <div v-if="$fetchState.pending">
@@ -38,7 +38,7 @@ import { achievementName } from '@/helpers/achievements'
 
 import axios from 'axios'
 
-const NEWSAPI_KEY = 'a1ef913e98c94358994dc8a8f7347aff'
+const API_KEY = '8a0b0a13-f5a6-41de-9311-6ffd071bf522'
 
 export default {
   name: 'GamePullToRefresh',
@@ -58,27 +58,26 @@ export default {
         readyLabel: this.$t('pages.pullToRefresh.readyLabel'),
         loadingLabel: this.$t('pages.pullToRefresh.loadingLabel'),
         pullDownHeight: 100,
-        topic: ''
+        currentPage: 1
       },
       news: []
     }
   },
   async fetch() {
-    this.topic = this.$faker().commerce.product()
-
+    
     // create a new axios instance without set headers
     let news = await axios.get(
-      'https://cors-anywhere.herokuapp.com/http://newsapi.org/v2/everything',
+      'https://cors-anywhere.herokuapp.com/https://content.guardianapis.com/search?',
       {
         params: {
-          q: this.topic,
-          language: 'de',
-          pageSize: 5,
-          apiKey: NEWSAPI_KEY
+          page: this.config.currentPage,
+          'page-size': 5,
+          'api-key': API_KEY
         }
       }
     )
-    this.news.unshift(...news.data.articles)
+    this.news.unshift(...news.data.response.results)
+    this.config.currentPage += 1
   },
   methods: {
     ...mapActions({
